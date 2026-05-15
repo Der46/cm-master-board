@@ -279,6 +279,10 @@
             cursor: pointer;
         }
 
+        .rank-item:hover {
+            border-color: rgba(69, 223, 245, 0.65);
+        }
+
         .rank-no {
             width: 30px;
             height: 30px;
@@ -429,8 +433,8 @@
                     <div class="badge">TEAM ANALYTICS</div>
                     <h1>遊戲團隊成員數據儀表板</h1>
                     <p>
-                        只會讀取分頁名稱符合 <b>2026/4/27-5/18</b> 這類格式的工作表，
-                        其他分頁會自動略過。
+                        透過 GitHub Actions 產生資料檔後顯示。前端不會暴露 Spreadsheet ID 與 Google Sheets API Key。
+                        只會讀取分頁名稱符合 <b>2026/4/27-5/18</b> 這類格式的工作表。
                     </p>
                 </div>
 
@@ -528,14 +532,17 @@
                         <div class="mini-label">個人總分</div>
                         <div id="memberTotal" class="mini-value">-</div>
                     </div>
+
                     <div class="mini-box">
                         <div class="mini-label">平均分</div>
                         <div id="memberAvg" class="mini-value">-</div>
                     </div>
+
                     <div class="mini-box">
                         <div class="mini-label">最高單期</div>
                         <div id="memberMax" class="mini-value">-</div>
                     </div>
+
                     <div class="mini-box">
                         <div class="mini-label">參與筆數</div>
                         <div id="memberCount" class="mini-value">-</div>
@@ -587,11 +594,16 @@
                 </div>
             </section>
         </section>
+
+        <div class="footer-note">
+            &copy; coin999-長長久久 隊伍
+        </div>
     </main>
 
     <script>
         /************************************************************
-         * 1. 讀取需要的API
+         * 1. GitHub Actions 產生的公開資料檔
+         * 注意：這裡不放 Spreadsheet ID，也不放 Google Sheets API Key
          ************************************************************/
         const SHEETS_DATA_URL = "./data/sheets-values.json";
 
@@ -657,10 +669,6 @@
                 .replaceAll("'", "&#039;");
         }
 
-        function pad2(num) {
-            return String(num).padStart(2, "0");
-        }
-
         function getTeamClass(team) {
             if (String(team).includes("主")) return "main";
             if (String(team).includes("二")) return "second";
@@ -674,13 +682,7 @@
         }
 
         /************************************************************
-         * 4. 只允許指定格式的分頁
-         *
-         * 會保留：
-         * 2026/4/27-5/18
-         * 2026/04/27-05/18
-         * 2026-4-27-5-18
-         * 
+         * 4. 日期區間分頁格式判斷
          ************************************************************/
         function isValidMonthDay(month, day) {
             return (
@@ -726,7 +728,6 @@
         function parseTargetPeriodSheetName(sheetName) {
             const s = normalizeText(sheetName);
 
-            // 主要需求格式：2026/4/27-5/18 或 2026/04/27-05/18
             let match = s.match(/^(\d{4})[\/-](\d{1,2})[\/-](\d{1,2})\s*[-~～]\s*(?:(\d{4})[\/-])?(\d{1,2})[\/-](\d{1,2})$/);
 
             if (match) {
@@ -751,7 +752,6 @@
                 }
             }
 
-            // 備援支援：2026427-518
             match = s.match(/^(\d{4})(\d{2,4})\s*[-~～]\s*(\d{1,4})$/);
 
             if (match) {
@@ -925,6 +925,53 @@
             return includeKeywords.some(k => h.includes(k));
         }
 
+        function findHeaderRowIndex(values) {
+            const nameKeywords = ["成員", "成員名稱", "隊員", "姓名", "名稱", "暱稱", "玩家", "Name", "name"];
+            const scoreKeywords = ["總分", "合計", "總計", "得分", "分數", "Score", "score", "Total", "total"];
+
+            const maxScanRows = Math.min(values.length, 30);
+
+            for (let i = 0; i < maxScanRows; i++) {
+                const row = (values[i] || []).map(v => normalizeText(v));
+                const joined = row.join(" ");
+
+                const hasName = nameKeywords.some(k => joined.includes(k));
+                const hasScore = scoreKeywords.some(k => joined.includes(k));
+
+                if (hasName && hasScore) return i;
+            }
+
+            return 0;
+        }
+
+        function rowsArrayToObjects(values) {
+            if (!Array.isArray(values) || !values.length) return [];
+
+            const headerRowIndex = findHeaderRowIndex(values);
+            const headerRow = values[headerRowIndex] || [];
+
+            const headers = makeUniqueHeaders(
+                headerRow.map((h, index) => normalizeText(h) || `欄位${index + 1}`)
+            );
+
+            const objects = [];
+
+            for (let r = headerRowIndex + 1; r < values.length; r++) {
+                const row = values[r] || [];
+                const obj = {};
+
+                headers.forEach((header, index) => {
+                    obj[header] = row[index] ?? "";
+                });
+
+                if (Object.values(obj).some(v => normalizeText(v))) {
+                    objects.push(obj);
+                }
+            }
+
+            return objects;
+        }
+
         function parseObjectsFromSheet(rows, sheetConfig) {
             const parsed = [];
 
@@ -932,10 +979,9 @@
 
             const sheetName = sheetConfig.sheetName || "未命名分頁";
 
-            // 再保險：不是目標格式的分頁，直接不解析
             if (!isTargetPeriodSheetName(sheetName)) return parsed;
 
-            const period = detectPeriodFromSheetName(sheetName);
+            const period = sheetConfig.period || detectPeriodFromSheetName(sheetName);
             const sheetKey = String(sheetConfig.gid || sheetName);
             const headers = Object.keys(rows[0]).map(h => normalizeText(h));
 
@@ -1011,150 +1057,62 @@
         }
 
         /************************************************************
-         * 6. Google Sheets API 雲端讀取
+         * 6. 讀取 GitHub Actions 產生的 JSON
          ************************************************************/
-        async function fetchSpreadsheetSheets(spreadsheetId) {
-            if (
-                !GOOGLE_SHEETS_API_KEY ||
-                GOOGLE_SHEETS_API_KEY.includes("請填入")
-            ) {
-                throw new Error("尚未設定 GOOGLE_SHEETS_API_KEY，請先填入你的 Google Sheets API Key。");
-            }
-
-            const url =
-                `https://sheets.googleapis.com/v4/spreadsheets/${encodeURIComponent(spreadsheetId)}` +
-                `?fields=sheets(properties(sheetId,title))` +
-                `&key=${encodeURIComponent(GOOGLE_SHEETS_API_KEY)}`;
-
-            const response = await fetch(url);
-
-            if (!response.ok) {
-                throw new Error(`取得分頁清單失敗，HTTP ${response.status}。`);
-            }
-
-            const data = await response.json();
-
-            const allSheets = (data.sheets || []).map(sheet => ({
-                gid: String(sheet.properties.sheetId),
-                sheetName: sheet.properties.title,
-                period: detectPeriodFromSheetName(sheet.properties.title)
-            }));
-
-            // 關鍵修改：只保留名稱符合 2026/4/27-5/18 這種格式的分頁
-            return allSheets.filter(sheet => isTargetPeriodSheetName(sheet.sheetName));
-        }
-
-        async function fetchSheetValues(spreadsheetId, sheetConfig) {
-            const range = encodeURIComponent(`'${sheetConfig.sheetName}'`);
-
-            const url =
-                `https://sheets.googleapis.com/v4/spreadsheets/${encodeURIComponent(spreadsheetId)}` +
-                `/values/${range}` +
-                `?majorDimension=ROWS` +
-                `&valueRenderOption=FORMATTED_VALUE` +
-                `&key=${encodeURIComponent(GOOGLE_SHEETS_API_KEY)}`;
-
-            const response = await fetch(url);
-
-            if (!response.ok) {
-                throw new Error(`${sheetConfig.sheetName} 讀取失敗，HTTP ${response.status}`);
-            }
-
-            const data = await response.json();
-
-            return data.values || [];
-        }
-
-        function findHeaderRowIndex(values) {
-            const nameKeywords = ["成員", "成員名稱", "隊員", "姓名", "名稱", "暱稱", "玩家", "Name", "name"];
-            const scoreKeywords = ["總分", "合計", "總計", "得分", "分數", "Score", "score", "Total", "total"];
-
-            const maxScanRows = Math.min(values.length, 30);
-
-            for (let i = 0; i < maxScanRows; i++) {
-                const row = (values[i] || []).map(v => normalizeText(v));
-                const joined = row.join(" ");
-
-                const hasName = nameKeywords.some(k => joined.includes(k));
-                const hasScore = scoreKeywords.some(k => joined.includes(k));
-
-                if (hasName && hasScore) return i;
-            }
-
-            return 0;
-        }
-
-        function rowsArrayToObjects(values) {
-            if (!values.length) return [];
-
-            const headerRowIndex = findHeaderRowIndex(values);
-            const headerRow = values[headerRowIndex] || [];
-
-            const headers = makeUniqueHeaders(
-                headerRow.map((h, index) => normalizeText(h) || `欄位${index + 1}`)
-            );
-
-            const objects = [];
-
-            for (let r = headerRowIndex + 1; r < values.length; r++) {
-                const row = values[r] || [];
-                const obj = {};
-
-                headers.forEach((header, index) => {
-                    obj[header] = row[index] ?? "";
-                });
-
-                if (Object.values(obj).some(v => normalizeText(v))) {
-                    objects.push(obj);
-                }
-            }
-
-            return objects;
-        }
-
-        async function loadCloudData(spreadsheetId = DEFAULT_SPREADSHEET_ID) {
+        async function loadCloudData() {
             els.sourceStatus.innerHTML = `
-                <span class="tag cloud">雲端讀取中</span>
-                正在取得符合日期區間格式的分頁...
+                <span class="tag cloud">資料讀取中</span>
+                正在讀取 GitHub Actions 產生的資料檔...
             `;
 
             try {
-                availableSheets = await fetchSpreadsheetSheets(spreadsheetId);
+                const response = await fetch(`${SHEETS_DATA_URL}?t=${Date.now()}`, {
+                    cache: "no-store"
+                });
 
-                if (!availableSheets.length) {
+                if (!response.ok) {
+                    throw new Error(`讀取資料檔失敗，HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+                const sheets = Array.isArray(data.sheets) ? data.sheets : [];
+
+                if (!sheets.length) {
                     rawRows = [];
+                    availableSheets = [];
                     selectedMember = "";
                     refreshAll();
 
                     els.sourceStatus.innerHTML = `
-                        <span class="tag error">找不到符合格式的分頁</span>
-                        只會讀取像 2026/4/27-5/18 的分頁名稱。
+                        <span class="tag error">沒有可用資料</span>
+                        data/sheets-values.json 裡沒有符合格式的分頁資料。
                     `;
                     return;
                 }
 
-                els.sourceStatus.innerHTML = `
-                    <span class="tag cloud">已找到分頁</span>
-                    共 ${formatNumber(availableSheets.length)} 個符合格式的分頁，正在讀取資料...
-                `;
-
-                const results = await Promise.allSettled(
-                    availableSheets.map(async sheetConfig => {
-                        const values = await fetchSheetValues(spreadsheetId, sheetConfig);
-                        const objects = rowsArrayToObjects(values);
-                        return parseObjectsFromSheet(objects, sheetConfig);
-                    })
-                );
+                availableSheets = sheets
+                    .filter(sheet => isTargetPeriodSheetName(sheet.sheetName))
+                    .map(sheet => ({
+                        gid: String(sheet.gid || sheet.sheetName),
+                        sheetName: sheet.sheetName,
+                        period: sheet.period || detectPeriodFromSheetName(sheet.sheetName)
+                    }));
 
                 const rows = [];
-                const errors = [];
 
-                results.forEach(result => {
-                    if (result.status === "fulfilled") {
-                        rows.push(...result.value);
-                    } else {
-                        errors.push(result.reason.message);
-                    }
+                sheets.forEach(sheetConfig => {
+                    if (!isTargetPeriodSheetName(sheetConfig.sheetName)) return;
+
+                    const values = Array.isArray(sheetConfig.values) ? sheetConfig.values : [];
+                    const objects = rowsArrayToObjects(values);
+
+                    rows.push(
+                        ...parseObjectsFromSheet(objects, {
+                            gid: sheetConfig.gid || sheetConfig.sheetName,
+                            sheetName: sheetConfig.sheetName,
+                            period: sheetConfig.period || detectPeriodFromSheetName(sheetConfig.sheetName)
+                        })
+                    );
                 });
 
                 rawRows = rows;
@@ -1165,17 +1123,21 @@
                 if (!rows.length) {
                     els.sourceStatus.innerHTML = `
                         <span class="tag error">未解析到成員資料</span>
-                        已略過非日期區間分頁，但符合格式的分頁內沒有找到有效成員與分數欄位。
-                        ${errors.length ? `<br>${escapeHtml(errors.join("；"))}` : ""}
+                        已讀取 data/sheets-values.json，但沒有找到有效的成員與分數欄位。
+                        <br>
+                        最後更新時間：${escapeHtml(data.fetchedAt || "-")}
                     `;
                     return;
                 }
 
                 els.sourceStatus.innerHTML = `
-                    <span class="tag cloud">雲端資料已載入</span>
-                    只讀取符合格式的分頁：${formatNumber(availableSheets.length)} 個，
+                    <span class="tag cloud">資料已載入</span>
+                    已從 GitHub Pages JSON 載入資料。
+                    <br>
+                    符合格式的分頁：${formatNumber(availableSheets.length)} 個，
                     共解析 ${formatNumber(rows.length)} 筆成員分數資料。
-                    ${errors.length ? `<br><span class="tag error">部分分頁失敗</span> ${escapeHtml(errors.join("；"))}` : ""}
+                    <br>
+                    最後更新時間：${escapeHtml(data.fetchedAt || "-")}
                 `;
             } catch (error) {
                 console.error(error);
@@ -1187,19 +1149,18 @@
                 refreshAll();
 
                 els.sourceStatus.innerHTML = `
-                    <span class="tag error">雲端讀取失敗</span>
-                    ${escapeHtml(error.message || "請確認 Google Sheet 是否已開放檢視權限。")}
+                    <span class="tag error">資料讀取失敗</span>
+                    ${escapeHtml(error.message || "請確認 GitHub Actions 是否已成功產生 data/sheets-values.json。")}
                 `;
             }
         }
 
         /************************************************************
-         * 7. 本機 xlsx 解析
+         * 7. 本機 xlsx 備用解析
          ************************************************************/
         function parseWorkbook(workbook) {
             const parsed = [];
 
-            // 關鍵修改：xlsx 也只解析符合 2026/4/27-5/18 格式的工作表
             const targetSheetNames = workbook.SheetNames.filter(sheetName => {
                 return isTargetPeriodSheetName(sheetName);
             });
@@ -1547,7 +1508,7 @@
                 els.memberTableBody.innerHTML = `
                     <tr>
                         <td colspan="10" class="empty">
-                            目前沒有資料。請先載入 Google 試算表或上傳 xlsx。
+                            目前沒有資料。請確認 GitHub Actions 是否已產生 data/sheets-values.json，或上傳 xlsx。
                         </td>
                     </tr>
                 `;
@@ -1737,11 +1698,11 @@
          * 10. 事件綁定
          ************************************************************/
         els.loadCloudBtn.addEventListener("click", () => {
-            loadCloudData(DEFAULT_SPREADSHEET_ID);
+            loadCloudData();
         });
 
         els.refreshCloudBtn.addEventListener("click", () => {
-            loadCloudData(DEFAULT_SPREADSHEET_ID);
+            loadCloudData();
         });
 
         els.searchInput.addEventListener("input", () => {
@@ -1776,10 +1737,12 @@
 
             els.sourceStatus.innerHTML = `
                 <span class="tag cloud">準備完成</span>
-                ${escapeHtml(DEFAULT_SPREADSHEET_ID)}
+                將讀取 GitHub Actions 產生的資料檔：
+                <br>
+                ${escapeHtml(SHEETS_DATA_URL)}
             `;
 
-            loadCloudData(DEFAULT_SPREADSHEET_ID);
+            loadCloudData();
         }
 
         init();
