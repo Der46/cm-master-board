@@ -432,10 +432,6 @@
                 <div>
                     <div class="badge">TEAM ANALYTICS</div>
                     <h1>遊戲團隊成員數據儀表板</h1>
-                    <p>
-                        透過 GitHub Actions 產生資料檔後顯示。前端不會暴露 Spreadsheet ID 與 Google Sheets API Key。
-                        只會讀取分頁名稱符合 <b>2026/4/27-5/18</b> 這類格式的工作表。
-                    </p>
                 </div>
 
                 <div class="source-card">
@@ -444,9 +440,6 @@
                     <button id="refreshCloudBtn" class="btn secondary" type="button">重新整理</button>
 
                     <div class="source-divider"></div>
-
-                    <label for="fileInput">備用：上傳本機 xlsx 檔案</label>
-                    <input id="fileInput" type="file" accept=".xlsx,.xls" />
 
                     <div id="sourceStatus" class="status">
                         尚未載入資料。
@@ -618,7 +611,6 @@
         const els = {
             loadCloudBtn: document.getElementById("loadCloudBtn"),
             refreshCloudBtn: document.getElementById("refreshCloudBtn"),
-            fileInput: document.getElementById("fileInput"),
             sourceStatus: document.getElementById("sourceStatus"),
 
             searchInput: document.getElementById("searchInput"),
@@ -1190,70 +1182,6 @@
                 targetSheetNames
             };
         }
-
-        els.fileInput.addEventListener("change", async event => {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            els.sourceStatus.innerHTML = `
-                <span class="tag file">本機檔案</span>
-                正在解析：${escapeHtml(file.name)} ...
-            `;
-
-            try {
-                const buffer = await file.arrayBuffer();
-                const workbook = XLSX.read(buffer, { type: "array" });
-                const result = parseWorkbook(workbook);
-
-                availableSheets = result.targetSheetNames.map(sheetName => ({
-                    gid: sheetName,
-                    sheetName,
-                    period: detectPeriodFromSheetName(sheetName)
-                }));
-
-                rawRows = result.parsed;
-                selectedMember = "";
-
-                refreshAll();
-
-                if (!availableSheets.length) {
-                    els.sourceStatus.innerHTML = `
-                        <span class="tag error">找不到符合格式的工作表</span>
-                        xlsx 內只會讀取像 2026/4/27-5/18 的工作表名稱。
-                    `;
-                    return;
-                }
-
-                if (!rawRows.length) {
-                    els.sourceStatus.innerHTML = `
-                        <span class="tag error">未解析到資料</span>
-                        已找到 ${formatNumber(availableSheets.length)} 個符合格式的工作表，
-                        但沒有找到有效成員名稱與分數欄位。
-                    `;
-                    return;
-                }
-
-                els.sourceStatus.innerHTML = `
-                    <span class="tag file">本機檔案</span>
-                    已載入：${escapeHtml(file.name)}。
-                    只解析符合格式的工作表 ${formatNumber(availableSheets.length)} 個，
-                    共 ${formatNumber(rawRows.length)} 筆資料。
-                `;
-            } catch (error) {
-                console.error(error);
-
-                rawRows = [];
-                availableSheets = [];
-                selectedMember = "";
-
-                refreshAll();
-
-                els.sourceStatus.innerHTML = `
-                    <span class="tag error">Excel 解析失敗</span>
-                    ${escapeHtml(error.message || "請確認檔案格式。")}
-                `;
-            }
-        });
 
         /************************************************************
          * 8. 資料彙整
