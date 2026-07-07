@@ -362,15 +362,329 @@
             }
         }
 
+        /* ==========================================================
+   Mobile Only：手機版閱讀優化
+   不影響桌機版，只在 720px 以下套用
+   ========================================================== */
         @media (max-width: 720px) {
+            body {
+                background:
+                    radial-gradient(circle at 8% 4%, rgba(69, 223, 245, 0.20), transparent 24%),
+                    radial-gradient(circle at 92% 6%, rgba(255, 122, 217, 0.18), transparent 26%),
+                    linear-gradient(135deg, #f8fcff 0%, #f7f4ff 48%, #eefcff 100%);
+            }
 
-            .cards,
+            body::before {
+                background-size: 26px 26px;
+            }
+
+            .page {
+                width: min(100% - 18px, 1480px);
+                padding: 14px 0 34px;
+            }
+
+            .hero,
+            .panel,
+            .stat-card {
+                border-radius: 18px;
+                backdrop-filter: blur(12px);
+            }
+
+            .hero {
+                padding: 18px;
+            }
+
+            .hero-top {
+                gap: 16px;
+            }
+
+            .badge {
+                padding: 7px 11px;
+                font-size: 12px;
+            }
+
+            h1 {
+                margin: 14px 0 4px;
+                font-size: 30px;
+                line-height: 1.16;
+                letter-spacing: -0.03em;
+            }
+
+            .source-card {
+                width: 100%;
+                padding: 14px;
+                border-radius: 16px;
+            }
+
+            .btn {
+                padding: 13px 14px;
+                font-size: 15px;
+            }
+
+            .grid {
+                gap: 12px;
+                margin-top: 12px;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .stat-card {
+                padding: 14px;
+            }
+
+            .stat-label {
+                font-size: 12px;
+            }
+
+            .stat-value {
+                margin-top: 7px;
+                font-size: 22px;
+                letter-spacing: -0.04em;
+            }
+
+            .stat-hint {
+                margin-top: 4px;
+                font-size: 12px;
+                line-height: 1.45;
+            }
+
             .filter-row {
                 grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 14px;
+            }
+
+            input,
+            select {
+                min-height: 46px;
+                padding: 12px 13px;
+                font-size: 16px;
+                border-radius: 13px;
+            }
+
+            .panel-header {
+                padding: 16px 16px 10px;
+            }
+
+            .panel-title {
+                font-size: 17px;
+                line-height: 1.35;
+            }
+
+            .panel-subtitle {
+                margin: 6px 0 0;
+                font-size: 13px;
+                line-height: 1.55;
             }
 
             .member-summary {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 8px;
+                padding: 0 14px 12px;
+            }
+
+            .mini-box {
+                padding: 11px;
+                border-radius: 14px;
+            }
+
+            .mini-label {
+                font-size: 11px;
+            }
+
+            .mini-value {
+                font-size: 16px;
+            }
+
+            .chart-panel {
+                min-height: auto;
+            }
+
+            .chart-wrap {
+                height: 300px;
+                padding: 4px 10px 16px;
+            }
+
+            /* 手機版：表格改成卡片，不再橫向滑動 */
+            .table-wrap {
+                padding: 0 12px 16px;
+                overflow: visible;
+                max-height: none;
+            }
+
+            table {
+                min-width: 0;
+                width: 100%;
+                border-spacing: 0;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tbody {
+                display: block;
+            }
+
+            tbody tr {
+                display: block;
+                margin-bottom: 12px;
+                padding: 12px;
+                border: 1px solid rgba(112, 165, 255, 0.28);
+                border-radius: 18px;
+                background: rgba(255, 255, 255, 0.74);
+                box-shadow: 0 10px 26px rgba(85, 120, 180, 0.12);
+                cursor: pointer;
+            }
+
+            tbody tr:hover td {
+                background: transparent;
+            }
+
+            td {
+                display: grid;
+                grid-template-columns: 84px 1fr;
+                gap: 10px;
+                align-items: start;
+                padding: 8px 0;
+                border: 0;
+                background: transparent;
+                font-size: 14px;
+                line-height: 1.55;
+            }
+
+            td::before {
+                color: var(--text-muted);
+                font-size: 12px;
+                font-weight: 900;
+                white-space: nowrap;
+            }
+
+            td:nth-child(1)::before {
+                content: "編號";
+            }
+
+            td:nth-child(2)::before {
+                content: "成員";
+            }
+
+            td:nth-child(3)::before {
+                content: "隊伍";
+            }
+
+            td:nth-child(4)::before {
+                content: "總分";
+            }
+
+            td:nth-child(5)::before {
+                content: "平均分";
+            }
+
+            td:nth-child(6)::before {
+                content: "最高單期";
+            }
+
+            td:nth-child(7)::before {
+                content: "最低單期";
+            }
+
+            td:nth-child(8)::before {
+                content: "參與筆數";
+            }
+
+            td:nth-child(9)::before {
+                content: "出現時段";
+            }
+
+            td:nth-child(10)::before {
+                content: "來源分頁";
+            }
+
+            td:nth-child(11)::before {
+                content: "備註";
+            }
+
+            .index-cell {
+                font-size: 16px;
+            }
+
+            .tag {
+                margin: 1px 3px 3px 0;
+                padding: 5px 8px;
+                font-size: 12px;
+            }
+
+            .note {
+                word-break: break-word;
+            }
+
+            .empty {
+                display: block;
+                padding: 24px 12px;
+                text-align: center;
+            }
+
+            .empty::before {
+                content: "";
+                display: none;
+            }
+        }
+
+        /* 更小手機：再壓縮一點，避免畫面太擠 */
+        @media (max-width: 420px) {
+            .page {
+                width: min(100% - 12px, 1480px);
+                padding-top: 10px;
+            }
+
+            .hero {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            .cards {
+                gap: 8px;
+            }
+
+            .stat-card {
+                padding: 12px;
+            }
+
+            .stat-value {
+                font-size: 20px;
+            }
+
+            .stat-hint {
+                font-size: 11px;
+            }
+
+            .member-summary {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .chart-wrap {
+                height: 270px;
+            }
+
+            tbody tr {
+                padding: 11px;
+                border-radius: 16px;
+            }
+
+            td {
+                grid-template-columns: 76px 1fr;
+                gap: 8px;
+                font-size: 13px;
+            }
+
+            td::before {
+                font-size: 11px;
             }
         }
     </style>
