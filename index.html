@@ -8,7 +8,6 @@
 
     <title>CM大佬群專用記分板</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
@@ -205,7 +204,7 @@
 
         .filter-row {
             display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1.6fr 1.2fr 1fr 1fr;
             gap: 14px;
             padding: 18px;
         }
@@ -373,11 +372,6 @@
             color: #247e6b;
         }
 
-        .tag.file {
-            background: rgba(255, 200, 87, 0.22);
-            color: #956d19;
-        }
-
         .tag.error {
             background: rgba(255, 122, 122, 0.18);
             color: #a83f3f;
@@ -387,13 +381,6 @@
             padding: 30px;
             text-align: center;
             color: var(--text-muted);
-        }
-
-        .footer-note {
-            margin-top: 18px;
-            color: var(--text-muted);
-            text-align: center;
-            font-size: 13px;
         }
 
         @media (max-width: 1080px) {
@@ -469,9 +456,9 @@
                 </article>
 
                 <article class="stat-card">
-                    <div class="stat-label">資料分頁 / 時段</div>
+                    <div class="stat-label">資料時段</div>
                     <div id="statPeriods" class="stat-value">0</div>
-                    <div class="stat-hint">只計算符合日期區間格式的分頁</div>
+                    <div class="stat-hint">目前篩選下的資料分頁數</div>
                 </article>
             </div>
 
@@ -479,13 +466,13 @@
                 <div class="filter-row">
                     <div class="field">
                         <label for="searchInput">搜尋成員</label>
-                        <input id="searchInput" type="text" placeholder="輸入名稱、備註、隊伍或分頁" />
+                        <input id="searchInput" type="text" placeholder="輸入名稱、備註、隊伍、時段或分頁" />
                     </div>
 
                     <div class="field">
-                        <label for="sheetFilter">分頁篩選</label>
-                        <select id="sheetFilter">
-                            <option value="all">全部分頁</option>
+                        <label for="periodFilter">時段 / 分頁篩選</label>
+                        <select id="periodFilter">
+                            <option value="all">全部時段</option>
                         </select>
                     </div>
 
@@ -493,13 +480,6 @@
                         <label for="teamFilter">隊伍篩選</label>
                         <select id="teamFilter">
                             <option value="all">全部隊伍</option>
-                        </select>
-                    </div>
-
-                    <div class="field">
-                        <label for="periodFilter">時段篩選</label>
-                        <select id="periodFilter">
-                            <option value="all">全部時段</option>
                         </select>
                     </div>
 
@@ -587,13 +567,11 @@
                 </div>
             </section>
         </section>
-
     </main>
 
     <script>
         /************************************************************
          * 1. GitHub Actions 產生的公開資料檔
-         * 注意：這裡不放 Spreadsheet ID，也不放 Google Sheets API Key
          ************************************************************/
         const SHEETS_DATA_URL = "./data/sheets-values.json";
 
@@ -611,7 +589,6 @@
             sourceStatus: document.getElementById("sourceStatus"),
 
             searchInput: document.getElementById("searchInput"),
-            sheetFilter: document.getElementById("sheetFilter"),
             teamFilter: document.getElementById("teamFilter"),
             periodFilter: document.getElementById("periodFilter"),
             memberSelect: document.getElementById("memberSelect"),
@@ -1144,47 +1121,10 @@
         }
 
         /************************************************************
-         * 7. 本機 xlsx 備用解析
-         ************************************************************/
-        function parseWorkbook(workbook) {
-            const parsed = [];
-
-            const targetSheetNames = workbook.SheetNames.filter(sheetName => {
-                return isTargetPeriodSheetName(sheetName);
-            });
-
-            targetSheetNames.forEach(sheetName => {
-                const sheet = workbook.Sheets[sheetName];
-
-                const values = XLSX.utils.sheet_to_json(sheet, {
-                    header: 1,
-                    defval: "",
-                    raw: false
-                });
-
-                const rows = rowsArrayToObjects(values);
-
-                parsed.push(
-                    ...parseObjectsFromSheet(rows, {
-                        sheetName,
-                        gid: sheetName,
-                        period: detectPeriodFromSheetName(sheetName)
-                    })
-                );
-            });
-
-            return {
-                parsed,
-                targetSheetNames
-            };
-        }
-
-        /************************************************************
-         * 8. 資料彙整
+         * 7. 資料彙整
          ************************************************************/
         function getFilteredRows() {
             const keyword = normalizeText(els.searchInput.value).toLowerCase();
-            const sheet = els.sheetFilter.value;
             const team = els.teamFilter.value;
             const period = els.periodFilter.value;
 
@@ -1192,11 +1132,14 @@
                 const text = `${row.name} ${row.team} ${row.note} ${row.period} ${row.sheetName}`.toLowerCase();
 
                 const matchKeyword = !keyword || text.includes(keyword);
-                const matchSheet = sheet === "all" || row.sheetKey === sheet || row.sheetName === sheet;
                 const matchTeam = team === "all" || row.team === team;
-                const matchPeriod = period === "all" || row.period === period;
+                const matchPeriod =
+                    period === "all" ||
+                    row.period === period ||
+                    row.sheetKey === period ||
+                    row.sheetName === period;
 
-                return matchKeyword && matchSheet && matchTeam && matchPeriod;
+                return matchKeyword && matchTeam && matchPeriod;
             });
         }
 
@@ -1247,26 +1190,25 @@
                 .sort((a, b) => b.total - a.total);
         }
 
-        function getAllPeriods() {
-            return sortPeriods(unique(rawRows.map(r => r.period)));
-        }
-
         function getAllTeams() {
             return unique(rawRows.map(r => r.team)).sort((a, b) => a.localeCompare(b, "zh-Hant"));
         }
 
-        function getAllSheetOptions() {
+        function getAllPeriodOptions() {
             const map = new Map();
 
             rawRows.forEach(row => {
-                const key = row.sheetKey || row.sheetName;
+                const key = row.period || row.sheetKey || row.sheetName;
 
                 if (!key) return;
 
-                map.set(key, {
-                    key,
-                    label: row.sheetName || key
-                });
+                if (!map.has(key)) {
+                    map.set(key, {
+                        key,
+                        label: row.period || row.sheetName || key,
+                        sheetName: row.sheetName || key
+                    });
+                }
             });
 
             return [...map.values()].sort((a, b) => {
@@ -1314,29 +1256,29 @@
         }
 
         /************************************************************
-         * 9. 畫面更新
+         * 8. 畫面更新
          ************************************************************/
         function renderFilters() {
-            const sheets = getAllSheetOptions();
-            const teams = getAllTeams();
-            const periods = getAllPeriods();
-
-            const oldSheet = els.sheetFilter.value;
             const oldTeam = els.teamFilter.value;
             const oldPeriod = els.periodFilter.value;
             const oldMember = els.memberSelect.value;
 
-            els.sheetFilter.innerHTML = `<option value="all">全部分頁</option>`;
+            const periodOptions = getAllPeriodOptions();
+            const teams = getAllTeams();
 
-            sheets.forEach(sheet => {
+            els.periodFilter.innerHTML = `<option value="all">全部時段</option>`;
+
+            periodOptions.forEach(period => {
                 const option = document.createElement("option");
-                option.value = sheet.key;
-                option.textContent = sheet.label;
-                els.sheetFilter.appendChild(option);
+                option.value = period.key;
+                option.textContent = period.label;
+                els.periodFilter.appendChild(option);
             });
 
-            if ([...els.sheetFilter.options].some(o => o.value === oldSheet)) {
-                els.sheetFilter.value = oldSheet;
+            if ([...els.periodFilter.options].some(o => o.value === oldPeriod)) {
+                els.periodFilter.value = oldPeriod;
+            } else {
+                els.periodFilter.value = "all";
             }
 
             els.teamFilter.innerHTML = `<option value="all">全部隊伍</option>`;
@@ -1350,19 +1292,8 @@
 
             if ([...els.teamFilter.options].some(o => o.value === oldTeam)) {
                 els.teamFilter.value = oldTeam;
-            }
-
-            els.periodFilter.innerHTML = `<option value="all">全部時段</option>`;
-
-            periods.forEach(period => {
-                const option = document.createElement("option");
-                option.value = period;
-                option.textContent = period;
-                els.periodFilter.appendChild(option);
-            });
-
-            if ([...els.periodFilter.options].some(o => o.value === oldPeriod)) {
-                els.periodFilter.value = oldPeriod;
+            } else {
+                els.teamFilter.value = "all";
             }
 
             const members = aggregateMembers(getFilteredRows()).map(m => m.name);
@@ -1378,6 +1309,8 @@
 
             if ([...els.memberSelect.options].some(o => o.value === oldMember)) {
                 els.memberSelect.value = oldMember;
+            } else {
+                els.memberSelect.value = "";
             }
         }
 
@@ -1500,7 +1433,10 @@
                 els.memberMax.textContent = "-";
                 els.memberCount.textContent = "-";
 
-                if (trendChart) trendChart.destroy();
+                if (trendChart) {
+                    trendChart.destroy();
+                    trendChart = null;
+                }
 
                 return;
             }
@@ -1514,7 +1450,10 @@
             els.memberMax.textContent = formatNumber(memberAgg.max);
             els.memberCount.textContent = formatNumber(memberAgg.count);
 
-            if (trendChart) trendChart.destroy();
+            if (trendChart) {
+                trendChart.destroy();
+                trendChart = null;
+            }
 
             const gradient = ctx.createLinearGradient(0, 0, 0, 360);
             gradient.addColorStop(0, "rgba(69, 223, 245, 0.35)");
@@ -1619,7 +1558,7 @@
         }
 
         /************************************************************
-         * 10. 事件綁定
+         * 9. 事件綁定
          ************************************************************/
         els.loadCloudBtn.addEventListener("click", () => {
             loadCloudData();
@@ -1630,11 +1569,6 @@
         });
 
         els.searchInput.addEventListener("input", () => {
-            selectedMember = "";
-            refreshAll();
-        });
-
-        els.sheetFilter.addEventListener("change", () => {
             selectedMember = "";
             refreshAll();
         });
@@ -1654,7 +1588,7 @@
         });
 
         /************************************************************
-         * 11. 初始化
+         * 10. 初始化
          ************************************************************/
         function init() {
             refreshAll();
