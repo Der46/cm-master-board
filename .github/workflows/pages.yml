@@ -8,7 +8,6 @@ on:
   workflow_dispatch:
 
   schedule:
-    # 每天台灣時間 06:00 執行，GitHub cron 使用 UTC，所以是 22:00 UTC
     - cron: "0 22 * * *"
 
 permissions:
