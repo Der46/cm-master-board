@@ -188,17 +188,12 @@
         }
 
         .filters,
+        .chart-panel,
         .table-panel {
             grid-column: span 12;
         }
 
         .chart-panel {
-            grid-column: span 8;
-            min-height: 470px;
-        }
-
-        .rank-panel {
-            grid-column: span 4;
             min-height: 470px;
         }
 
@@ -257,52 +252,6 @@
             font-weight: 900;
         }
 
-        .rank-list {
-            padding: 8px 18px 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-height: 392px;
-            overflow: auto;
-        }
-
-        .rank-item {
-            display: grid;
-            grid-template-columns: 38px 1fr auto;
-            gap: 10px;
-            align-items: center;
-            padding: 12px;
-            border-radius: 16px;
-            border: 1px solid rgba(112, 165, 255, 0.22);
-            background: rgba(255, 255, 255, 0.62);
-            cursor: pointer;
-        }
-
-        .rank-item:hover {
-            border-color: rgba(69, 223, 245, 0.65);
-        }
-
-        .rank-no {
-            width: 30px;
-            height: 30px;
-            display: grid;
-            place-items: center;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(69, 223, 245, 0.36), rgba(255, 122, 217, 0.28));
-            font-weight: 900;
-        }
-
-        .rank-name,
-        .rank-score {
-            font-weight: 900;
-        }
-
-        .rank-team {
-            margin-top: 3px;
-            color: var(--text-muted);
-            font-size: 12px;
-        }
-
         .table-wrap {
             padding: 0 18px 20px;
             overflow: auto;
@@ -313,7 +262,7 @@
             width: 100%;
             border-collapse: separate;
             border-spacing: 0 10px;
-            min-width: 1120px;
+            min-width: 1180px;
         }
 
         th {
@@ -338,6 +287,16 @@
 
         tbody tr {
             cursor: pointer;
+        }
+
+        tbody tr:hover td {
+            background: rgba(247, 252, 255, 0.92);
+        }
+
+        .index-cell {
+            font-weight: 900;
+            color: #4567a8;
+            white-space: nowrap;
         }
 
         .tag {
@@ -367,6 +326,16 @@
             color: #6652b6;
         }
 
+        .tag.fourth {
+            background: rgba(255, 200, 87, 0.22);
+            color: #956d19;
+        }
+
+        .tag.unknown {
+            background: rgba(148, 163, 184, 0.18);
+            color: #64748b;
+        }
+
         .tag.cloud {
             background: rgba(116, 242, 206, 0.22);
             color: #247e6b;
@@ -386,11 +355,6 @@
         @media (max-width: 1080px) {
             .cards {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .chart-panel,
-            .rank-panel {
-                grid-column: span 12;
             }
 
             .filter-row {
@@ -496,7 +460,7 @@
                 <div class="panel-header">
                     <div>
                         <h2 id="chartTitle" class="panel-title">個人分數走勢</h2>
-                        <p id="chartSubtitle" class="panel-subtitle">點選排行榜或表格中的成員，即可查看分數變化。</p>
+                        <p id="chartSubtitle" class="panel-subtitle">點選表格中的成員，即可查看分數變化。</p>
                     </div>
                 </div>
 
@@ -527,22 +491,11 @@
                 </div>
             </section>
 
-            <section class="panel rank-panel">
-                <div class="panel-header">
-                    <div>
-                        <h2 class="panel-title">成員總分排行</h2>
-                        <p class="panel-subtitle">依目前篩選條件計算。</p>
-                    </div>
-                </div>
-
-                <div id="rankList" class="rank-list"></div>
-            </section>
-
             <section class="panel table-panel">
                 <div class="panel-header">
                     <div>
                         <h2 class="panel-title">每位成員詳細數據</h2>
-                        <p class="panel-subtitle">點選任一列可切換個人走勢圖。</p>
+                        <p class="panel-subtitle">依目前篩選條件計算，並依總分由高到低排序。點選任一列可切換個人走勢圖。</p>
                     </div>
                 </div>
 
@@ -550,6 +503,7 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>編號</th>
                                 <th>成員</th>
                                 <th>隊伍</th>
                                 <th>總分</th>
@@ -606,7 +560,6 @@
             memberMax: document.getElementById("memberMax"),
             memberCount: document.getElementById("memberCount"),
 
-            rankList: document.getElementById("rankList"),
             memberTableBody: document.getElementById("memberTableBody")
         };
 
@@ -635,10 +588,28 @@
                 .replaceAll("'", "&#039;");
         }
 
+        function normalizeTeamName(team) {
+            const text = normalizeText(team);
+
+            if (!text) return "未標註";
+            if (text.includes("主")) return "主隊";
+            if (text.includes("二") || text.includes("2")) return "二隊";
+            if (text.includes("三") || text.includes("3")) return "三隊";
+            if (text.includes("四") || text.includes("4")) return "四隊";
+            if (text === "未標注") return "未標註";
+
+            return text;
+        }
+
         function getTeamClass(team) {
-            if (String(team).includes("主")) return "main";
-            if (String(team).includes("二")) return "second";
-            if (String(team).includes("三")) return "third";
+            const normalized = normalizeTeamName(team);
+
+            if (normalized === "主隊") return "main";
+            if (normalized === "二隊") return "second";
+            if (normalized === "三隊") return "third";
+            if (normalized === "四隊") return "fourth";
+            if (normalized === "未標註") return "unknown";
+
             return "";
         }
 
@@ -1001,7 +972,7 @@
                 if (!score || score <= 0) return;
 
                 const team = teamHeader
-                    ? normalizeText(row[teamHeader]) || detectTeamFromSheetOrRow(sheetName, values)
+                    ? normalizeTeamName(row[teamHeader]) || detectTeamFromSheetOrRow(sheetName, values)
                     : detectTeamFromSheetOrRow(sheetName, values);
 
                 const note = noteHeader ? normalizeText(row[noteHeader]) : "";
@@ -1013,7 +984,7 @@
                     sheetKey,
                     gid: String(sheetConfig.gid || ""),
                     name,
-                    team,
+                    team: normalizeTeamName(team),
                     score,
                     note
                 });
@@ -1191,7 +1162,15 @@
         }
 
         function getAllTeams() {
-            return unique(rawRows.map(r => r.team)).sort((a, b) => a.localeCompare(b, "zh-Hant"));
+            const fixedOrder = ["主隊", "二隊", "三隊", "四隊", "未標註"];
+            const existingTeams = unique(rawRows.map(r => normalizeTeamName(r.team)));
+
+            const orderedTeams = fixedOrder.filter(team => existingTeams.includes(team));
+            const extraTeams = existingTeams
+                .filter(team => !fixedOrder.includes(team))
+                .sort((a, b) => a.localeCompare(b, "zh-Hant"));
+
+            return [...orderedTeams, ...extraTeams];
         }
 
         function getAllPeriodOptions() {
@@ -1332,39 +1311,11 @@
             }
         }
 
-        function renderRankList(members) {
-            const topMembers = members.slice(0, 12);
-
-            if (!topMembers.length) {
-                els.rankList.innerHTML = `<div class="empty">目前沒有資料。</div>`;
-                return;
-            }
-
-            els.rankList.innerHTML = "";
-
-            topMembers.forEach((member, index) => {
-                const item = document.createElement("div");
-
-                item.className = "rank-item";
-                item.innerHTML = `
-                    <div class="rank-no">${index + 1}</div>
-                    <div>
-                        <div class="rank-name">${escapeHtml(member.name)}</div>
-                        <div class="rank-team">${escapeHtml(member.teamsText)}</div>
-                    </div>
-                    <div class="rank-score">${formatNumber(member.total)}</div>
-                `;
-
-                item.addEventListener("click", () => selectMember(member.name));
-                els.rankList.appendChild(item);
-            });
-        }
-
         function renderTable(members) {
             if (!members.length) {
                 els.memberTableBody.innerHTML = `
                     <tr>
-                        <td colspan="10" class="empty">
+                        <td colspan="11" class="empty">
                             目前沒有資料。
                         </td>
                     </tr>
@@ -1374,15 +1325,17 @@
 
             els.memberTableBody.innerHTML = "";
 
-            members.forEach(member => {
+            members.forEach((member, index) => {
                 const tr = document.createElement("tr");
 
                 const teamTags = unique(member.teams).map(team => {
-                    const cls = getTeamClass(team);
-                    return `<span class="tag ${cls}">${escapeHtml(team)}</span>`;
+                    const normalizedTeam = normalizeTeamName(team);
+                    const cls = getTeamClass(normalizedTeam);
+                    return `<span class="tag ${cls}">${escapeHtml(normalizedTeam)}</span>`;
                 }).join(" ");
 
                 tr.innerHTML = `
+                    <td class="index-cell">${index + 1}</td>
                     <td>${escapeHtml(member.name)}</td>
                     <td>${teamTags || "-"}</td>
                     <td>${formatNumber(member.total)}</td>
@@ -1540,7 +1493,6 @@
             const members = aggregateMembers(filteredRows);
 
             renderStats(members, filteredRows);
-            renderRankList(members);
             renderTable(members);
 
             if (selectedMember && filteredRows.some(r => r.name === selectedMember)) {
