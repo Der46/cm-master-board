@@ -1799,8 +1799,18 @@
 
             const trend = getMemberTrend(memberName, filteredRows);
 
-            els.chartTitle.textContent = `${memberName}｜個人分數走勢`;
-            els.chartSubtitle.textContent = `隊伍：${memberAgg.teamsText}　來源分頁：${memberAgg.sheetsText}　備註：${memberAgg.notesText}`;
+            const isAllPeriods = els.periodFilter.value === "all";
+            const shouldUseLineChart = isAllPeriods && trend.labels.length > 1;
+            const chartType = shouldUseLineChart ? "line" : "bar";
+
+            els.chartTitle.textContent = shouldUseLineChart
+                ? `${memberName}｜個人分數走勢`
+                : `${memberName}｜本時段分數`;
+
+            els.chartSubtitle.textContent = shouldUseLineChart
+                ? `目前顯示全部時段的連續變化。隊伍：${memberAgg.teamsText}　來源分頁：${memberAgg.sheetsText}　備註：${memberAgg.notesText}`
+                : `目前顯示單一時段 / 分頁資料。隊伍：${memberAgg.teamsText}　來源分頁：${memberAgg.sheetsText}　備註：${memberAgg.notesText}`;
+
             els.memberTotal.textContent = formatNumber(memberAgg.total);
             els.memberAvg.textContent = formatNumber(memberAgg.avg);
             els.memberMax.textContent = formatNumber(memberAgg.max);
@@ -1816,30 +1826,48 @@
             gradient.addColorStop(0.55, "rgba(255, 122, 217, 0.14)");
             gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
 
+            const barGradient = ctx.createLinearGradient(0, 0, 0, 360);
+            barGradient.addColorStop(0, "rgba(69, 223, 245, 0.72)");
+            barGradient.addColorStop(0.55, "rgba(255, 122, 217, 0.42)");
+            barGradient.addColorStop(1, "rgba(167, 139, 250, 0.28)");
+
+            const dataset = shouldUseLineChart
+                ? {
+                    label: `${memberName} 分數`,
+                    data: trend.scores,
+                    borderColor: "#45dff5",
+                    backgroundColor: gradient,
+                    pointBackgroundColor: "#ff7ad9",
+                    pointBorderColor: "#ffffff",
+                    pointBorderWidth: 3,
+                    pointRadius: 6,
+                    borderWidth: 4,
+                    fill: true,
+                    tension: 0.35
+                }
+                : {
+                    label: `${memberName} 分數`,
+                    data: trend.scores,
+                    backgroundColor: barGradient,
+                    borderColor: "rgba(69, 223, 245, 0.85)",
+                    borderWidth: 2,
+                    borderRadius: 16,
+                    borderSkipped: false,
+                    maxBarThickness: 96
+                };
+
             trendChart = new Chart(ctx, {
-                type: "line",
+                type: chartType,
                 data: {
                     labels: trend.labels,
-                    datasets: [{
-                        label: `${memberName} 分數`,
-                        data: trend.scores,
-                        borderColor: "#45dff5",
-                        backgroundColor: gradient,
-                        pointBackgroundColor: "#ff7ad9",
-                        pointBorderColor: "#ffffff",
-                        pointBorderWidth: 3,
-                        pointRadius: 6,
-                        borderWidth: 4,
-                        fill: true,
-                        tension: 0.35
-                    }]
+                    datasets: [dataset]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
                     interaction: {
                         intersect: false,
-                        mode: "index"
+                        mode: shouldUseLineChart ? "index" : "nearest"
                     },
                     plugins: {
                         legend: {
@@ -1868,14 +1896,20 @@
                                 color: "#728098",
                                 font: {
                                     weight: "bold"
-                                }
+                                },
+                                maxRotation: shouldUseLineChart ? 35 : 0,
+                                minRotation: 0
                             },
                             grid: {
+                                display: shouldUseLineChart,
                                 color: "rgba(112, 165, 255, 0.16)"
                             }
                         },
                         y: {
                             beginAtZero: true,
+                            suggestedMax: trend.scores.length
+                                ? Math.max(...trend.scores) * 1.18
+                                : undefined,
                             ticks: {
                                 color: "#728098",
                                 callback: value => formatNumber(value)
