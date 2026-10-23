@@ -12,191 +12,972 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
     <link rel="apple-touch-icon" href="./icon-180.png" />
     <link rel="manifest" href="./manifest.webmanifest" />
-    <meta name="theme-color" content="#45dff5" />
+    <meta name="theme-color" content="#f4f5f7" />
     <meta name="apple-mobile-web-app-title" content="CM記分板" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
 
     <style>
         :root {
-            --bg-panel: rgba(255, 255, 255, 0.72);
-            --text-main: #263245;
-            --text-muted: #728098;
-            --neon-cyan: #45dff5;
-            --neon-pink: #ff7ad9;
-            --border-soft: rgba(112, 165, 255, 0.35);
-            --shadow-soft: 0 18px 45px rgba(85, 120, 180, 0.18);
-            --radius-xl: 24px;
-            --radius-lg: 18px;
-            --radius-md: 14px;
+            --bg: #f4f5f7;
+            --card: #ffffff;
+            --border: #e9ebef;
+            --border-strong: #dfe2e8;
+            --text: #111827;
+            --text-2: #374151;
+            --muted: #6b7280;
+            --faint: #9ca3af;
+
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --primary-soft: #eef3ff;
+
+            --green: #16a34a;
+            --green-soft: #e8f7ee;
+            --red: #dc2626;
+            --red-soft: #fdeeee;
+            --orange: #f97316;
+            --orange-soft: #fff1e7;
+            --purple: #7c3aed;
+            --purple-soft: #f3edff;
+            --gray-soft: #f1f2f5;
+
+            --radius: 16px;
+            --radius-sm: 10px;
+            --shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+            --sidebar-w: 248px;
         }
 
-        /* ==========================================================
-   Base
-   ========================================================== */
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 84px;
         }
 
         body {
             margin: 0;
             min-height: 100vh;
-            font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
-            color: var(--text-main);
-            background:
-                radial-gradient(circle at 10% 8%, rgba(69, 223, 245, 0.26), transparent 28%),
-                radial-gradient(circle at 85% 10%, rgba(255, 122, 217, 0.22), transparent 30%),
-                linear-gradient(135deg, #f8fcff 0%, #f7f4ff 48%, #eefcff 100%);
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            background-image:
-                linear-gradient(rgba(112, 165, 255, 0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(112, 165, 255, 0.08) 1px, transparent 1px);
-            background-size: 32px 32px;
-            z-index: -1;
-        }
-
-        /* ==========================================================
-   Layout
-   ========================================================== */
-        .page {
-            width: min(1480px, calc(100% - 32px));
-            margin: 0 auto;
-            padding: 34px 0 56px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 18px;
-            margin-top: 18px;
-        }
-
-        .hero,
-        .panel,
-        .stat-card {
-            border: 1px solid var(--border-soft);
-            border-radius: var(--radius-xl);
-            background: var(--bg-panel);
-            box-shadow: var(--shadow-soft);
-            backdrop-filter: blur(18px);
-        }
-
-        .filters,
-        .chart-panel,
-        .table-panel {
-            grid-column: span 12;
-        }
-
-        /* ==========================================================
-   Hero
-   ========================================================== */
-        .hero {
-            padding: 32px;
-        }
-
-        .badge {
-            display: inline-flex;
-            padding: 8px 13px;
-            border-radius: 999px;
-            color: #287d91;
-            background: rgba(236, 254, 255, 0.78);
-            font-weight: 900;
-            font-size: 13px;
-        }
-
-        h1 {
-            margin: 18px 0 10px;
-            font-size: clamp(30px, 4vw, 52px);
-            line-height: 1.08;
-            letter-spacing: -0.04em;
-        }
-
-        .hero p,
-        .panel-subtitle,
-        .stat-hint,
-        .note {
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        /* ==========================================================
-   Form / Buttons
-   ========================================================== */
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 900;
+            font-family: "Inter", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
             font-size: 14px;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
         }
 
+        button,
         input,
         select {
+            font: inherit;
+            color: inherit;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .icon {
+            width: 18px;
+            height: 18px;
+            flex: none;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        :is(button, a, input, select, tr):focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* ==========================================================
+   Sidebar
+   ========================================================== */
+        .sidebar {
+            position: fixed;
+            inset: 0 auto 0 0;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            width: var(--sidebar-w);
+            padding: 20px 14px 16px;
+            background: var(--card);
+            border-right: 1px solid var(--border);
+            overflow-y: auto;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 4px 10px 22px;
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .brand img {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 11px;
             width: 100%;
-            padding: 12px 13px;
-            border: 1px solid rgba(112, 165, 255, 0.32);
-            border-radius: var(--radius-md);
-            background: rgba(255, 255, 255, 0.78);
-            color: var(--text-main);
+            padding: 9px 12px;
+            border: 0;
+            border-radius: var(--radius-sm);
+            background: none;
+            color: var(--text-2);
+            font-weight: 500;
+            text-align: left;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .nav-item:hover {
+            background: var(--gray-soft);
+        }
+
+        .nav-item.is-active {
+            background: var(--primary-soft);
+            color: var(--primary);
+        }
+
+        .nav-item .count {
+            margin-left: auto;
+            padding: 1px 8px;
+            border-radius: 999px;
+            background: var(--gray-soft);
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .nav-item.is-active .count {
+            background: #dbe6ff;
+            color: var(--primary);
+        }
+
+        .team-dot {
+            width: 8px;
+            height: 8px;
+            margin: 0 5px;
+            border-radius: 50%;
+            background: var(--faint);
+        }
+
+        .nav-divider {
+            height: 1px;
+            margin: 14px 8px;
+            background: var(--border);
+        }
+
+        .nav-label {
+            padding: 0 12px 6px;
+            color: var(--faint);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .scrim {
+            display: none;
+        }
+
+        /* ==========================================================
+   Topbar / Layout
+   ========================================================== */
+        .main {
+            margin-left: var(--sidebar-w);
+            min-width: 0;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            height: 68px;
+            padding: 0 28px;
+            background: rgba(244, 245, 247, 0.86);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .icon-btn.menu-btn {
+            display: none;
+        }
+
+        .search {
+            position: relative;
+            flex: 0 1 360px;
+        }
+
+        .search .icon {
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            width: 16px;
+            height: 16px;
+            color: var(--faint);
+            transform: translateY(-50%);
+        }
+
+        .search input {
+            width: 100%;
+            height: 40px;
+            padding: 0 44px 0 36px;
+            border: 1px solid var(--border-strong);
+            border-radius: 999px;
+            background: var(--card);
             outline: none;
-            font-size: 14px;
+        }
+
+        .search input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-soft);
+        }
+
+        .search kbd {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            padding: 2px 7px;
+            border: 1px solid var(--border-strong);
+            border-radius: 6px;
+            background: var(--bg);
+            color: var(--muted);
+            font-family: inherit;
+            font-size: 11px;
+            transform: translateY(-50%);
+        }
+
+        .topbar-actions {
+            display: flex;
+            gap: 8px;
+            margin-left: auto;
+        }
+
+        .icon-btn {
+            display: grid;
+            place-items: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border-strong);
+            border-radius: 50%;
+            background: var(--card);
+            color: var(--text-2);
+            cursor: pointer;
+        }
+
+        .icon-btn:hover {
+            background: var(--gray-soft);
+        }
+
+        .content {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 24px 28px 48px;
+        }
+
+        .page-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .page-head h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .head-controls {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pill-select {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 40px;
+            border: 1px solid var(--border-strong);
+            border-radius: var(--radius-sm);
+            background: var(--card);
+        }
+
+        .pill-select .icon {
+            position: absolute;
+            left: 12px;
+            width: 16px;
+            height: 16px;
+            color: var(--muted);
+            pointer-events: none;
+        }
+
+        .pill-select select {
+            height: 100%;
+            padding: 0 32px 0 36px;
+            border: 0;
+            border-radius: var(--radius-sm);
+            background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 12px center;
+            font-weight: 500;
+            appearance: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            height: 40px;
+            padding: 0 18px;
+            border: 0;
+            border-radius: var(--radius-sm);
+            background: var(--primary);
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            height: 34px;
+            padding: 0 14px;
+            border: 1px solid var(--border-strong);
+            border-radius: 999px;
+            background: var(--card);
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-ghost:hover {
+            background: var(--gray-soft);
+        }
+
+        /* ==========================================================
+   Cards
+   ========================================================== */
+        .card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--card);
+            box-shadow: var(--shadow);
+        }
+
+        .card-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 18px 20px 0;
+        }
+
+        .card-title {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .card-sub {
+            margin: 3px 0 0;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .kpi {
+            padding: 18px 20px;
+        }
+
+        .kpi-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--text-2);
+            font-weight: 600;
+        }
+
+        .kpi-top .icon {
+            color: var(--primary);
+        }
+
+        .kpi-value-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .kpi-value {
+            min-width: 0;
+            max-width: 100%;
+            overflow: hidden;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .kpi-hint {
+            margin-top: 8px;
+            color: var(--faint);
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .delta {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .delta.up {
+            background: var(--green-soft);
+            color: var(--green);
+        }
+
+        .delta.down {
+            background: var(--red-soft);
+            color: var(--red);
+        }
+
+        .delta.flat {
+            background: var(--gray-soft);
+            color: var(--muted);
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.9fr) minmax(300px, 1fr);
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .side-stack {
+            display: grid;
+            gap: 16px;
+            align-content: start;
+        }
+
+        /* Trend card */
+        .trend-body {
+            display: grid;
+            grid-template-columns: 220px minmax(0, 1fr);
+            gap: 8px;
+            align-items: center;
+            padding: 6px 20px 0;
+        }
+
+        .trend-total {
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .trend-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .trend-name {
+            margin-bottom: 6px;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .chart-wrap {
+            position: relative;
+            height: 230px;
+        }
+
+        /* 卡片內的搜尋框（走勢卡的成員搜尋、排行搜尋） */
+        .combo,
+        .field-search {
+            position: relative;
+            flex: none;
+            width: 220px;
+        }
+
+        .combo > .icon,
+        .field-search > .icon {
+            position: absolute;
+            top: 50%;
+            left: 11px;
+            width: 15px;
+            height: 15px;
+            color: var(--faint);
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .combo input,
+        .field-search input {
+            width: 100%;
+            height: 36px;
+            padding: 0 12px 0 32px;
+            border: 1px solid var(--border-strong);
+            border-radius: 999px;
+            background: var(--card);
+            font-size: 13px;
+            font-weight: 500;
+            outline: none;
+        }
+
+        .combo input:focus,
+        .field-search input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-soft);
+        }
+
+        .combo-list {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            left: 0;
+            z-index: 30;
+            max-height: 300px;
+            margin: 0;
+            padding: 6px;
+            overflow-y: auto;
+            list-style: none;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--card);
+            box-shadow: 0 12px 32px rgba(16, 24, 40, 0.12);
+        }
+
+        .combo-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .combo-option.is-active {
+            background: var(--primary-soft);
+            color: var(--primary);
+        }
+
+        .combo-option .rank-mini {
+            min-width: 34px;
+            color: var(--faint);
+            font-size: 12px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .combo-option .name {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            font-weight: 500;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .combo-option[aria-selected="true"] .name {
+            font-weight: 700;
+        }
+
+        .combo-option .pts {
+            color: var(--muted);
+            font-size: 12px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .combo-empty {
+            padding: 10px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* 各期總分的 ‹ › */
+        .pager {
+            display: flex;
+            flex: none;
+            gap: 6px;
+        }
+
+        .pager-btn {
+            display: grid;
+            place-items: center;
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--border-strong);
+            border-radius: 50%;
+            background: var(--card);
+            color: var(--text-2);
+            cursor: pointer;
+        }
+
+        .pager-btn:hover:not(:disabled) {
+            background: var(--gray-soft);
+        }
+
+        .pager-btn:disabled {
+            opacity: 0.35;
+            cursor: default;
+        }
+
+        .pager-btn .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .substats {
+            margin: 14px 20px 20px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .substats-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px 4px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .substats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 4px;
+            padding: 8px 12px 12px;
+        }
+
+        .substat {
+            padding: 6px 4px 10px;
+            border-bottom: 4px solid var(--accent, var(--primary));
+            border-radius: 0 0 3px 3px;
+        }
+
+        .substat-value {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 18px;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .substat-value i {
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            background: var(--accent, var(--primary));
+        }
+
+        .substat-label {
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* Bars card */
+        .bars-wrap {
+            position: relative;
+            height: 200px;
+            padding: 8px 14px 14px;
+        }
+
+        /* Gauge card */
+        .gauge {
+            display: grid;
+            justify-items: center;
+            padding: 6px 20px 20px;
+        }
+
+        .gauge svg {
+            width: 100%;
+            max-width: 240px;
+            height: auto;
+        }
+
+        .gauge-value {
+            margin-top: -74px;
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .gauge-hint {
+            margin: 2px 0 12px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* ==========================================================
+   Table
+   ========================================================== */
+        .table-tools {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 12px;
+            white-space: nowrap;
         }
 
         .link-btn {
             border: 0;
-            padding: 4px 2px;
+            padding: 0;
             background: none;
-            color: #4567a8;
-            font: inherit;
+            color: var(--primary);
             font-size: 13px;
-            font-weight: 900;
+            font-weight: 600;
             cursor: pointer;
-            text-decoration: underline;
-            text-underline-offset: 3px;
         }
 
         .link-btn:hover {
-            color: #a34888;
+            text-decoration: underline;
         }
 
-        .filter-actions {
+        .table-wrap {
+            max-height: 620px;
+            margin-top: 12px;
+            overflow: auto;
+        }
+
+        table {
+            width: 100%;
+            min-width: 860px;
+            border-collapse: collapse;
+        }
+
+        th {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            padding: 11px 14px;
+            border-bottom: 1px solid var(--border);
+            background: var(--card);
+            color: var(--faint);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-align: left;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        th:first-child,
+        td:first-child {
+            padding-left: 20px;
+        }
+
+        th.sortable {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        th.sortable:hover,
+        th.is-sorted {
+            color: var(--text-2);
+        }
+
+        th.sortable::after {
+            content: "↕";
+            margin-left: 4px;
+            opacity: 0.4;
+        }
+
+        th.is-sorted[data-dir="asc"]::after {
+            content: "↑";
+            opacity: 1;
+        }
+
+        th.is-sorted[data-dir="desc"]::after {
+            content: "↓";
+            opacity: 1;
+        }
+
+        td {
+            padding: 13px 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-2);
+            vertical-align: middle;
+        }
+
+        tbody tr {
+            cursor: pointer;
+        }
+
+        tbody tr:hover td {
+            background: #fafbfc;
+        }
+
+        tbody tr.is-selected td {
+            background: var(--primary-soft);
+        }
+
+        tbody tr.is-selected td:first-child {
+            box-shadow: inset 3px 0 0 var(--primary);
+        }
+
+        .rank {
+            color: var(--muted);
+            font-weight: 600;
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .member {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            flex-wrap: wrap;
-            gap: 6px 16px;
-            padding: 0 18px 14px;
+            gap: 10px;
+            color: var(--text);
+            font-weight: 600;
         }
 
-        .result-count {
-            margin-right: auto;
-            color: var(--text-muted);
+        .avatar {
+            display: grid;
+            place-items: center;
+            flex: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background: var(--gray-soft);
+            color: var(--text-2);
             font-size: 13px;
-            font-weight: 900;
+            font-weight: 700;
         }
 
-        :is(button, a, input, select, tr):focus-visible {
-            outline: 3px solid rgba(69, 223, 245, 0.75);
-            outline-offset: 2px;
+        .num {
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
         }
 
+        .score {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* 備註欄吃掉剩餘寬度，過長以 … 截斷（滑鼠移上去看全文） */
+        .note {
+            width: 100%;
+            max-width: 1px;
+            color: var(--muted);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .empty {
+            padding: 40px 20px;
+            color: var(--muted);
+            text-align: center;
+            cursor: default;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin: 1px 4px 1px 0;
+            padding: 3px 9px;
+            border-radius: 999px;
+            background: var(--gray-soft);
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .tag.main {
+            background: var(--primary-soft);
+            color: var(--primary);
+        }
+
+        .tag.second {
+            background: var(--green-soft);
+            color: var(--green);
+        }
+
+        .tag.third {
+            background: var(--orange-soft);
+            color: #c2410c;
+        }
+
+        .tag.fourth {
+            background: var(--purple-soft);
+            color: var(--purple);
+        }
+
+        /* ==========================================================
+   Toast / Back to top
+   ========================================================== */
         .toast {
             position: fixed;
             left: 50%;
             bottom: 28px;
-            z-index: 1000;
+            z-index: 100;
             padding: 11px 18px;
             border-radius: 999px;
-            color: #ffffff;
-            background: rgba(38, 50, 69, 0.92);
-            font-size: 14px;
-            font-weight: 900;
+            background: var(--text);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
             opacity: 0;
             transform: translate(-50%, 12px);
             pointer-events: none;
@@ -208,423 +989,259 @@
             transform: translate(-50%, 0);
         }
 
-        .filter-row {
-            display: grid;
-            grid-template-columns: 1.6fr 1.2fr 1fr 1fr;
-            gap: 14px;
-            padding: 18px;
-        }
-
-        .field label {
-            color: var(--text-muted);
-            font-size: 12px;
-        }
-
-        /* ==========================================================
-   Stat Cards
-   ========================================================== */
-        .cards {
-            grid-column: span 12;
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 18px;
-        }
-
-        .stat-card {
-            padding: 20px;
-        }
-
-        .stat-label {
-            color: var(--text-muted);
-            font-size: 13px;
-            font-weight: 900;
-        }
-
-        .stat-value {
-            margin-top: 10px;
-            font-size: clamp(24px, 3vw, 34px);
-            font-weight: 900;
-            letter-spacing: -0.05em;
-            word-break: break-word;
-        }
-
-        /* ==========================================================
-   Panel / Chart
-   ========================================================== */
-        .panel-header {
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-            padding: 20px 22px 12px;
-        }
-
-        .panel-title {
-            margin: 0;
-            font-size: 18px;
-        }
-
-        .chart-panel {
-            min-height: 470px;
-        }
-
-        .chart-wrap {
-            height: 360px;
-            padding: 8px 18px 22px;
-        }
-
-        .member-summary {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            padding: 0 18px 18px;
-        }
-
-        .mini-box {
-            padding: 12px;
-            border-radius: 16px;
-            background: rgba(246, 250, 255, 0.78);
-            border: 1px solid rgba(112, 165, 255, 0.24);
-        }
-
-        .mini-label {
-            color: var(--text-muted);
-            font-size: 12px;
-            font-weight: 900;
-        }
-
-        .mini-value {
-            margin-top: 6px;
-            font-size: 17px;
-            font-weight: 900;
-        }
-
-        /* ==========================================================
-   Table
-   ========================================================== */
-        .table-wrap {
-            padding: 0 18px 20px;
-            overflow: auto;
-            max-height: 560px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0 10px;
-            min-width: 900px;
-        }
-
-        th {
-            position: sticky;
-            top: 0;
-            z-index: 2;
-            padding: 12px;
-            text-align: left;
-            color: var(--text-muted);
-            background: rgba(247, 251, 255, 0.96);
-            font-size: 12px;
-        }
-
-        td {
-            padding: 14px 12px;
-            background: rgba(255, 255, 255, 0.68);
-            border-top: 1px solid rgba(112, 165, 255, 0.18);
-            border-bottom: 1px solid rgba(112, 165, 255, 0.18);
-            font-size: 14px;
-            vertical-align: top;
-        }
-
-        tbody tr {
-            cursor: pointer;
-        }
-
-        tbody tr:hover td {
-            background: rgba(247, 252, 255, 0.92);
-        }
-
-        tbody tr.is-selected td {
-            background: rgba(236, 254, 255, 0.95);
-            border-color: rgba(69, 223, 245, 0.55);
-        }
-
-        tbody tr.is-selected td:first-child {
-            box-shadow: inset 4px 0 0 #45dff5;
-        }
-
-        th.sortable {
-            cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-        }
-
-        th.sortable:hover {
-            color: #4567a8;
-        }
-
-        th.sortable::after {
-            content: "↕";
-            margin-left: 4px;
-            opacity: 0.35;
-        }
-
-        th.is-sorted {
-            color: #4567a8;
-        }
-
-        th.is-sorted[data-dir="asc"]::after {
-            content: "▲";
-            opacity: 1;
-        }
-
-        th.is-sorted[data-dir="desc"]::after {
-            content: "▼";
-            opacity: 1;
-        }
-
-        .index-cell {
-            font-weight: 900;
-            color: #4567a8;
-            white-space: nowrap;
-        }
-
-        .medal {
-            margin-right: 4px;
-        }
-
-        .name-cell {
-            font-weight: 900;
-        }
-
-        .num {
-            font-variant-numeric: tabular-nums;
-        }
-
-        .empty {
-            padding: 30px;
-            text-align: center;
-            color: var(--text-muted);
-        }
-
-        /* ==========================================================
-   Tags
-   ========================================================== */
-        .tag {
-            display: inline-flex;
-            padding: 5px 9px;
-            border-radius: 999px;
-            font-size: 12px;
-            font-weight: 900;
-            background: rgba(112, 165, 255, 0.14);
-            color: #4567a8;
-            white-space: nowrap;
-            margin: 2px;
-        }
-
-        .tag.main {
-            background: rgba(69, 223, 245, 0.18);
-            color: #2f8294;
-        }
-
-        .tag.second {
-            background: rgba(255, 122, 217, 0.16);
-            color: #a34888;
-        }
-
-        .tag.third {
-            background: rgba(167, 139, 250, 0.18);
-            color: #6652b6;
-        }
-
-        .tag.fourth {
-            background: rgba(255, 200, 87, 0.22);
-            color: #956d19;
-        }
-
-        .tag.unknown {
-            background: rgba(148, 163, 184, 0.18);
-            color: #64748b;
-        }
-
-        /* ==========================================================
-   Floating Button：回到編號 1
-   ========================================================== */
         .back-to-first-btn {
             display: none;
         }
 
         /* ==========================================================
-   Tablet
+   Responsive
    ========================================================== */
-        @media (max-width: 1080px) {
-            .cards {
-                grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 1200px) {
+            .layout {
+                grid-template-columns: minmax(0, 1fr);
             }
 
-            .filter-row {
-                grid-template-columns: repeat(2, 1fr);
+            .side-stack {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
-        /* ==========================================================
-   Mobile
-   ========================================================== */
-        @media (max-width: 720px) {
-            body {
-                background:
-                    radial-gradient(circle at 8% 4%, rgba(69, 223, 245, 0.20), transparent 24%),
-                    radial-gradient(circle at 92% 6%, rgba(255, 122, 217, 0.18), transparent 26%),
-                    linear-gradient(135deg, #f8fcff 0%, #f7f4ff 48%, #eefcff 100%);
-            }
-
-            body::before {
-                background-size: 26px 26px;
-            }
-
-            .page {
-                width: min(100% - 18px, 1480px);
-                padding: 14px 0 34px;
-            }
-
-            .hero,
-            .panel,
-            .stat-card {
-                border-radius: 18px;
-                backdrop-filter: blur(12px);
-            }
-
-            .hero {
-                padding: 18px;
-            }
-
-            .badge {
-                padding: 7px 11px;
-                font-size: 12px;
-            }
-
-            h1 {
-                margin: 14px 0 4px;
-                font-size: 30px;
-                line-height: 1.16;
-                letter-spacing: -0.03em;
-            }
-
-            .grid {
-                gap: 12px;
-                margin-top: 12px;
-            }
-
-            .cards {
+        @media (max-width: 1080px) {
+            .kpis {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* 平板：排行表縮小間距、長名字換行，避免左右捲動 */
+        @media (max-width: 1200px) {
+            table {
+                min-width: 0;
+            }
+
+            th,
+            td {
+                padding-left: 9px;
+                padding-right: 9px;
+            }
+
+            th:first-child,
+            td:first-child {
+                padding-left: 16px;
+            }
+
+            .member {
+                min-width: 120px;
+            }
+
+            .avatar {
+                display: none;
+            }
+
+            /* 最低單期在走勢卡的「個人數據」裡仍看得到 */
+            th:nth-child(7),
+            td:nth-child(7) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 960px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.22s ease;
+                box-shadow: 0 10px 40px rgba(16, 24, 40, 0.18);
+            }
+
+            body.nav-open .sidebar {
+                transform: none;
+            }
+
+            body.nav-open .scrim {
+                display: block;
+                position: fixed;
+                inset: 0;
+                z-index: 45;
+                background: rgba(17, 24, 39, 0.32);
+            }
+
+            .main {
+                margin-left: 0;
+            }
+
+            .icon-btn.menu-btn {
+                display: grid;
+            }
+        }
+
+        @media (max-width: 720px) {
+            html {
+                scroll-padding-top: 70px;
+            }
+
+            .topbar {
+                height: 60px;
+                padding: 0 12px;
+                gap: 8px;
+            }
+
+            .search {
+                flex: 1;
+            }
+
+            .search kbd {
+                display: none;
+            }
+
+            .search input {
+                font-size: 16px;
+                padding-right: 12px;
+            }
+
+            .content {
+                padding: 16px 12px 40px;
+            }
+
+            .page-head h1 {
+                font-size: 22px;
+            }
+
+            .head-controls {
+                width: 100%;
+            }
+
+            .head-controls .pill-select {
+                flex: 1 1 130px;
+                min-width: 0;
+                height: 44px;
+            }
+
+            .pill-select select {
+                width: 100%;
+                font-size: 16px;
+            }
+
+            .head-controls .btn-primary {
+                display: none;
+            }
+
+            .kpis {
                 gap: 10px;
             }
 
-            .stat-card {
+            .kpi {
                 padding: 14px;
             }
 
-            .stat-label {
-                font-size: 12px;
+            .kpi-value {
+                font-size: 21px;
             }
 
-            .stat-value {
-                margin-top: 7px;
-                font-size: 22px;
-                letter-spacing: -0.04em;
+            .kpi-value-row {
+                gap: 6px;
+                margin-top: 10px;
             }
 
-            .stat-hint {
-                margin-top: 4px;
-                font-size: 12px;
-                line-height: 1.45;
+            .kpi-hint {
+                white-space: normal;
+                line-height: 1.4;
             }
 
-            .filter-row {
-                grid-template-columns: 1fr;
-                gap: 12px;
-                padding: 14px;
+            .side-stack {
+                grid-template-columns: minmax(0, 1fr);
             }
 
-            input,
-            select {
-                min-height: 46px;
-                padding: 12px 13px;
-                font-size: 16px;
-                border-radius: 13px;
+            .trend-body {
+                grid-template-columns: minmax(0, 1fr);
+                padding: 8px 16px 0;
             }
 
-            .panel-header {
-                padding: 16px 16px 10px;
+            .trend-total {
+                font-size: 28px;
             }
 
-            .panel-title {
-                font-size: 17px;
-                line-height: 1.35;
+            .card-head {
+                padding: 16px 16px 0;
             }
 
-            .panel-subtitle {
-                margin: 6px 0 0;
-                font-size: 13px;
-                line-height: 1.55;
+            /* 走勢卡：成員選單換到標題下方，整列寬 */
+            #trendCard .card-head {
+                flex-direction: column;
+                align-items: stretch;
             }
 
-            .member-summary {
+            .substats {
+                margin: 12px 16px 16px;
+            }
+
+            .substats-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 8px;
-                padding: 0 14px 12px;
+                gap: 12px 10px;
             }
 
-            .mini-box {
-                padding: 11px;
-                border-radius: 14px;
-            }
-
-            .mini-label {
-                font-size: 11px;
-            }
-
-            .mini-value {
+            .substat-value {
                 font-size: 16px;
             }
 
-            .chart-panel {
-                min-height: auto;
+            .combo,
+            .field-search {
+                width: 100%;
             }
 
-            .chart-wrap {
-                height: 300px;
-                padding: 4px 10px 16px;
+            .combo input,
+            .field-search input {
+                height: 44px;
+                font-size: 16px;
             }
 
-            /* Mobile table becomes member cards */
+            .pager-btn {
+                width: 40px;
+                height: 40px;
+            }
+
+            /* 排行卡：搜尋框換到標題下方 */
+            #rankingCard .card-head {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .table-tools {
+                flex-wrap: wrap;
+            }
+
+            .btn-ghost {
+                height: 40px;
+                padding: 0 18px;
+            }
+
+            /* table → cards */
             .table-wrap {
-                padding: 0 12px 16px;
-                overflow: visible;
                 max-height: none;
+                padding: 0 12px 12px;
+                overflow: visible;
             }
 
             table {
                 min-width: 0;
-                width: 100%;
-                border-spacing: 0;
             }
 
             thead {
                 display: none;
             }
 
-            tbody {
+            tbody,
+            tbody tr {
                 display: block;
             }
 
             tbody tr {
-                display: block;
-                margin-bottom: 12px;
-                padding: 12px;
-                border: 1px solid rgba(112, 165, 255, 0.28);
-                border-radius: 18px;
-                background: rgba(255, 255, 255, 0.74);
-                box-shadow: 0 10px 26px rgba(85, 120, 180, 0.12);
-                cursor: pointer;
+                margin-bottom: 10px;
+                padding: 8px 14px;
+                border: 1px solid var(--border);
+                border-radius: 14px;
+            }
+
+            tbody tr.is-selected {
+                border-color: var(--primary);
+                background: var(--primary-soft);
             }
 
             tbody tr:hover td,
@@ -634,57 +1251,37 @@
                 box-shadow: none;
             }
 
-            tbody tr.is-selected {
-                border-color: rgba(69, 223, 245, 0.8);
-                box-shadow: 0 0 0 2px rgba(69, 223, 245, 0.35), 0 10px 26px rgba(85, 120, 180, 0.12);
-            }
-
-            .filter-actions {
-                padding: 0 14px 12px;
-            }
-
-            td {
+            td,
+            td:first-child {
                 display: grid;
-                grid-template-columns: 84px 1fr;
+                grid-template-columns: 76px 1fr;
                 gap: 10px;
-                align-items: start;
-                padding: 8px 0;
+                align-items: center;
+                padding: 6px 0;
                 border: 0;
-                background: transparent;
-                font-size: 14px;
-                line-height: 1.55;
+            }
+
+            td:nth-child(7) {
+                display: grid;
             }
 
             td::before {
                 content: attr(data-label);
-                color: var(--text-muted);
+                color: var(--faint);
                 font-size: 12px;
-                font-weight: 900;
-                white-space: nowrap;
-            }
-
-            .index-cell {
-                font-size: 16px;
-            }
-
-            .tag {
-                margin: 1px 3px 3px 0;
-                padding: 5px 8px;
-                font-size: 12px;
+                font-weight: 600;
             }
 
             .note {
-                word-break: break-word;
+                max-width: none;
+                white-space: normal;
             }
 
             .empty {
                 display: block;
-                padding: 24px 12px;
-                text-align: center;
             }
 
             .empty::before {
-                content: "";
                 display: none;
             }
 
@@ -692,225 +1289,246 @@
                 position: fixed;
                 right: 14px;
                 bottom: 18px;
-                z-index: 999;
+                z-index: 30;
                 display: inline-flex;
                 align-items: center;
-                justify-content: center;
-                gap: 6px;
-                min-width: 118px;
-                min-height: 44px;
-                padding: 11px 14px;
-                border: 1px solid rgba(112, 165, 255, 0.42);
+                height: 42px;
+                padding: 0 16px;
+                border: 0;
                 border-radius: 999px;
-                color: #244050;
+                background: var(--primary);
+                color: #fff;
                 font-size: 13px;
-                font-weight: 900;
-                font-family: inherit;
-                background:
-                    linear-gradient(135deg, rgba(69, 223, 245, 0.86), rgba(255, 122, 217, 0.70)),
-                    rgba(255, 255, 255, 0.88);
-                box-shadow: 0 12px 28px rgba(85, 120, 180, 0.26);
-                backdrop-filter: blur(14px);
-                cursor: pointer;
+                font-weight: 600;
+                box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
                 opacity: 0;
                 transform: translateY(12px);
                 pointer-events: none;
-                transition:
-                    opacity 0.22s ease,
-                    transform 0.22s ease,
-                    box-shadow 0.22s ease;
+                transition: opacity 0.2s ease, transform 0.2s ease;
             }
 
             .back-to-first-btn.is-visible {
                 opacity: 1;
-                transform: translateY(0);
+                transform: none;
                 pointer-events: auto;
-            }
-
-            .back-to-first-btn:active {
-                transform: translateY(1px) scale(0.98);
-                box-shadow: 0 8px 20px rgba(85, 120, 180, 0.22);
-            }
-        }
-
-        /* ==========================================================
-   Small Mobile
-   ========================================================== */
-        @media (max-width: 420px) {
-            .page {
-                width: min(100% - 12px, 1480px);
-                padding-top: 10px;
-            }
-
-            .hero {
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 27px;
-            }
-
-            .cards {
-                gap: 8px;
-            }
-
-            .stat-card {
-                padding: 12px;
-            }
-
-            .stat-value {
-                font-size: 20px;
-            }
-
-            .stat-hint {
-                font-size: 11px;
-            }
-
-            .member-summary {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .chart-wrap {
-                height: 270px;
-            }
-
-            tbody tr {
-                padding: 11px;
-                border-radius: 16px;
-            }
-
-            td {
-                grid-template-columns: 76px 1fr;
-                gap: 8px;
-                font-size: 13px;
-            }
-
-            td::before {
-                font-size: 11px;
-            }
-
-            .back-to-first-btn {
-                right: 10px;
-                bottom: 14px;
-                min-width: 108px;
-                min-height: 42px;
-                padding: 10px 12px;
-                font-size: 12px;
             }
         }
     </style>
 </head>
 
 <body>
-    <main class="page">
-        <section class="hero">
-            <div class="badge">TEAM ANALYTICS</div>
-            <h1>大佬群成績</h1>
-        </section>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-dashboard" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5" /><rect x="14" y="3" width="7" height="5" rx="1.5" /><rect x="14" y="12" width="7" height="9" rx="1.5" /><rect x="3" y="16" width="7" height="5" rx="1.5" /></symbol>
+        <symbol id="i-trend" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></symbol>
+        <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6" /><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11" /></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></symbol>
+        <symbol id="i-bars" viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10" /><line x1="18" y1="20" x2="18" y2="4" /><line x1="6" y1="20" x2="6" y2="16" /></symbol>
+        <symbol id="i-crown" viewBox="0 0 24 24"><path d="M2 7l4 10h12l4-10-6 4-4-7-4 7z" /><line x1="6" y1="21" x2="18" y2="21" /></symbol>
+        <symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></symbol>
+        <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></symbol>
+        <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></symbol>
+        <symbol id="i-up" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15" /></symbol>
+        <symbol id="i-down" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9" /></symbol>
+        <symbol id="i-left" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></symbol>
+        <symbol id="i-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></symbol>
+    </svg>
 
-        <section class="grid">
-            <div class="cards">
-                <article class="stat-card">
-                    <div class="stat-label">成員數</div>
-                    <div id="statMembers" class="stat-value">0</div>
-                    <div class="stat-hint">目前篩選下的不重複成員</div>
-                </article>
+    <aside id="sidebar" class="sidebar" aria-label="側邊選單">
+        <div class="brand">
+            <img src="./icon.svg" alt="" />
+            CM大佬群
+        </div>
 
-                <article class="stat-card">
-                    <div class="stat-label">總累積分數</div>
-                    <div id="statTotalScore" class="stat-value">0</div>
-                    <div class="stat-hint">目前篩選資料加總</div>
-                </article>
+        <nav class="nav">
+            <a class="nav-item is-active" href="#top" data-nav><svg class="icon"><use href="#i-dashboard" /></svg>總覽</a>
+            <a class="nav-item" href="#trendCard" data-nav><svg class="icon"><use href="#i-trend" /></svg>個人走勢</a>
+            <a class="nav-item" href="#periodCard" data-nav><svg class="icon"><use href="#i-bars" /></svg>各期總分</a>
+            <a class="nav-item" href="#rankingCard" data-nav><svg class="icon"><use href="#i-award" /></svg>成員排行</a>
+        </nav>
 
-                <article class="stat-card">
-                    <div class="stat-label">最高個人總分</div>
-                    <div id="statTopMember" class="stat-value">-</div>
-                    <div id="statTopMemberHint" class="stat-hint">尚無資料</div>
-                </article>
+        <div class="nav-divider"></div>
+        <div class="nav-label">隊伍</div>
+        <nav id="teamNav" class="nav"></nav>
+    </aside>
+    <div class="scrim" id="scrim"></div>
 
-                <article class="stat-card">
-                    <div class="stat-label">資料時段</div>
-                    <div id="statPeriods" class="stat-value">0</div>
-                    <div class="stat-hint">目前篩選下的時段數</div>
-                </article>
+    <div class="main">
+        <header class="topbar">
+            <button id="menuBtn" class="icon-btn menu-btn" type="button" aria-label="開啟選單">
+                <svg class="icon"><use href="#i-menu" /></svg>
+            </button>
+
+            <label class="search">
+                <svg class="icon"><use href="#i-search" /></svg>
+                <input id="searchInput" type="search" placeholder="搜尋成員、備註、隊伍..." autocomplete="off" aria-label="搜尋成員" />
+                <kbd>/</kbd>
+            </label>
+
+            <div class="topbar-actions">
+                <button id="copyLinkIconBtn" class="icon-btn" type="button" aria-label="複製目前畫面連結" title="複製目前畫面連結">
+                    <svg class="icon"><use href="#i-link" /></svg>
+                </button>
             </div>
+        </header>
 
-            <section class="panel filters">
-                <div class="filter-row">
-                    <div class="field">
-                        <label for="searchInput">搜尋成員</label>
-                        <input id="searchInput" type="search" placeholder="輸入名稱、備註、隊伍或時段" autocomplete="off" />
-                    </div>
+        <main id="top" class="content">
+            <div class="page-head">
+                <h1>CM大佬群專用記分板</h1>
 
-                    <div class="field">
-                        <label for="periodFilter">時段篩選</label>
-                        <select id="periodFilter">
+                <div class="head-controls">
+                    <label class="pill-select">
+                        <svg class="icon"><use href="#i-calendar" /></svg>
+                        <select id="periodFilter" aria-label="時段篩選">
                             <option value="all">全部時段</option>
                         </select>
-                    </div>
+                    </label>
 
-                    <div class="field">
-                        <label for="teamFilter">隊伍篩選</label>
-                        <select id="teamFilter">
+                    <label class="pill-select">
+                        <svg class="icon"><use href="#i-users" /></svg>
+                        <select id="teamFilter" aria-label="隊伍篩選">
                             <option value="all">全部隊伍</option>
                         </select>
-                    </div>
+                    </label>
 
-                    <div class="field">
-                        <label for="memberSelect">個人走勢圖</label>
-                        <select id="memberSelect">
-                            <option value="">選擇成員</option>
-                        </select>
-                    </div>
+                    <button id="copyLinkBtn" class="btn-primary" type="button">
+                        <svg class="icon"><use href="#i-link" /></svg>
+                        複製連結
+                    </button>
                 </div>
+            </div>
 
-                <div class="filter-actions">
-                    <span id="resultCount" class="result-count"></span>
-                    <button id="clearFiltersBtn" class="link-btn" type="button" hidden>清除篩選</button>
-                    <button id="copyLinkBtn" class="link-btn" type="button">複製目前畫面連結</button>
+            <section class="kpis">
+                <article class="card kpi">
+                    <div class="kpi-top">成員數 <svg class="icon"><use href="#i-users" /></svg></div>
+                    <div class="kpi-value-row"><span id="statMembers" class="kpi-value">0</span><span id="statMembersDelta"></span></div>
+                    <div id="statMembersHint" class="kpi-hint">-</div>
+                </article>
+
+                <article class="card kpi">
+                    <div class="kpi-top">總累積分數 <svg class="icon"><use href="#i-bars" /></svg></div>
+                    <div class="kpi-value-row"><span id="statTotalScore" class="kpi-value">0</span><span id="statTotalDelta"></span></div>
+                    <div id="statTotalHint" class="kpi-hint">-</div>
+                </article>
+
+                <article class="card kpi">
+                    <div class="kpi-top">最高個人總分 <svg class="icon"><use href="#i-crown" /></svg></div>
+                    <div class="kpi-value-row"><span id="statTopMember" class="kpi-value">-</span></div>
+                    <div id="statTopMemberHint" class="kpi-hint">尚無資料</div>
+                </article>
+
+                <article class="card kpi">
+                    <div class="kpi-top">資料時段 <svg class="icon"><use href="#i-layers" /></svg></div>
+                    <div class="kpi-value-row"><span id="statPeriods" class="kpi-value">0</span></div>
+                    <div id="statPeriodsHint" class="kpi-hint">-</div>
+                </article>
+            </section>
+
+            <section class="layout">
+                <article id="trendCard" class="card">
+                    <div class="card-head">
+                        <div>
+                            <h2 id="chartTitle" class="card-title">個人分數走勢</h2>
+                            <p id="chartSubtitle" class="card-sub">點選排行中的成員，即可查看分數變化。</p>
+                        </div>
+                        <div class="combo">
+                            <svg class="icon"><use href="#i-search" /></svg>
+                            <input id="memberInput" type="text" role="combobox" autocomplete="off" spellcheck="false"
+                                placeholder="搜尋成員..." aria-label="搜尋成員" aria-autocomplete="list"
+                                aria-expanded="false" aria-controls="memberList" />
+                            <ul id="memberList" class="combo-list" role="listbox" hidden></ul>
+                        </div>
+                    </div>
+
+                    <div class="trend-body">
+                        <div>
+                            <div id="trendName" class="trend-name">-</div>
+                            <div id="memberTotal" class="trend-total">-</div>
+                            <div class="trend-meta">
+                                <span id="memberDelta"></span>
+                                <span id="memberDeltaHint"></span>
+                            </div>
+                        </div>
+                        <div class="chart-wrap">
+                            <canvas id="trendChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="substats">
+                        <div class="substats-head">個人數據</div>
+                        <div class="substats-grid">
+                            <div class="substat" style="--accent: var(--primary)">
+                                <div class="substat-value"><i></i><span id="memberAvg">-</span></div>
+                                <div class="substat-label">平均分</div>
+                            </div>
+                            <div class="substat" style="--accent: #22c55e">
+                                <div class="substat-value"><i></i><span id="memberMax">-</span></div>
+                                <div class="substat-label">最高單期</div>
+                            </div>
+                            <div class="substat" style="--accent: var(--orange)">
+                                <div class="substat-value"><i></i><span id="memberMin">-</span></div>
+                                <div class="substat-label">最低單期</div>
+                            </div>
+                            <div class="substat" style="--accent: #a78bfa">
+                                <div class="substat-value"><i></i><span id="memberCount">-</span></div>
+                                <div class="substat-label">參與期數</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="side-stack">
+                    <article id="periodCard" class="card">
+                        <div class="card-head">
+                            <div>
+                                <h2 class="card-title">各期總分</h2>
+                                <p id="periodRange" class="card-sub">-</p>
+                            </div>
+                            <div class="pager">
+                                <button id="barPrev" class="pager-btn" type="button" aria-label="較早的時段">
+                                    <svg class="icon"><use href="#i-left" /></svg>
+                                </button>
+                                <button id="barNext" class="pager-btn" type="button" aria-label="較新的時段">
+                                    <svg class="icon"><use href="#i-right" /></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bars-wrap" title="點長條可切換到該時段">
+                            <canvas id="periodChart"></canvas>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-head">
+                            <div>
+                                <h2 class="card-title">出席率</h2>
+                                <p id="gaugeSub" class="card-sub">-</p>
+                            </div>
+                        </div>
+                        <div class="gauge">
+                            <svg id="gaugeSvg" viewBox="0 0 240 132" role="img" aria-label="出席率"></svg>
+                            <div id="gaugeValue" class="gauge-value">-</div>
+                            <div id="gaugeHint" class="gauge-hint">-</div>
+                            <a class="btn-ghost" href="#trendCard">查看走勢</a>
+                        </div>
+                    </article>
                 </div>
             </section>
 
-            <section id="chartPanel" class="panel chart-panel">
-                <div class="panel-header">
+            <section id="rankingCard" class="card">
+                <div class="card-head">
                     <div>
-                        <h2 id="chartTitle" class="panel-title">個人分數走勢</h2>
-                        <p id="chartSubtitle" class="panel-subtitle">點選表格中的成員，即可查看分數變化。</p>
+                        <h2 class="card-title">成員排行</h2>
+                        <p class="card-sub">依目前篩選計算，搜尋時保留原本名次。點欄位標題排序，點任一列切換個人走勢。</p>
                     </div>
-                </div>
-
-                <div class="member-summary">
-                    <div class="mini-box">
-                        <div class="mini-label">個人總分</div>
-                        <div id="memberTotal" class="mini-value">-</div>
-                    </div>
-
-                    <div class="mini-box">
-                        <div class="mini-label">平均分</div>
-                        <div id="memberAvg" class="mini-value">-</div>
-                    </div>
-
-                    <div class="mini-box">
-                        <div class="mini-label">最高單期</div>
-                        <div id="memberMax" class="mini-value">-</div>
-                    </div>
-
-                    <div class="mini-box">
-                        <div class="mini-label">參與筆數</div>
-                        <div id="memberCount" class="mini-value">-</div>
-                    </div>
-                </div>
-
-                <div class="chart-wrap">
-                    <canvas id="trendChart"></canvas>
-                </div>
-            </section>
-
-            <section class="panel table-panel">
-                <div class="panel-header">
-                    <div>
-                        <h2 class="panel-title">每位成員詳細數據</h2>
-                        <p class="panel-subtitle">依目前篩選條件計算。點選欄位標題可排序，點選任一列可切換個人走勢圖。</p>
+                    <div class="table-tools">
+                        <label class="field-search">
+                            <svg class="icon"><use href="#i-search" /></svg>
+                            <input id="rankSearch" type="search" placeholder="搜尋成員名次..." autocomplete="off" aria-label="在排行中搜尋成員" />
+                        </label>
+                        <span id="resultCount"></span>
+                        <button id="clearFiltersBtn" class="link-btn" type="button" hidden>清除篩選</button>
                     </div>
                 </div>
 
@@ -925,7 +1543,7 @@
                                 <th data-sort="avg" class="sortable">平均分</th>
                                 <th data-sort="max" class="sortable">最高單期</th>
                                 <th data-sort="min" class="sortable">最低單期</th>
-                                <th data-sort="count" class="sortable">參與筆數</th>
+                                <th data-sort="count" class="sortable">參與</th>
                                 <th>備註</th>
                             </tr>
                         </thead>
@@ -933,8 +1551,8 @@
                     </table>
                 </div>
             </section>
-        </section>
-    </main>
+        </main>
+    </div>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
@@ -946,7 +1564,18 @@
 
         const TEAM_ORDER = ["主隊", "二隊", "三隊", "四隊", "未標註"];
         const TEAM_CLASS = { 主隊: "main", 二隊: "second", 三隊: "third", 四隊: "fourth", 未標註: "unknown" };
+        const TEAM_COLOR = { 主隊: "#2563eb", 二隊: "#16a34a", 三隊: "#f97316", 四隊: "#7c3aed", 未標註: "#9ca3af" };
         const MEDALS = ["🥇", "🥈", "🥉"];
+        const BAR_PERIODS = 8;
+
+        const COLORS = {
+            primary: "#2563eb",
+            grid: "#eef0f3",
+            tick: "#9ca3af",
+            barIdle: "#e9ebef",
+            gaugeOn: "#22c55e",
+            gaugeOff: "#e5e7eb"
+        };
 
         /************************************************************
          * 2. 全域狀態
@@ -957,36 +1586,62 @@
         let selectedMember = "";
         let sortState = { key: "rank", dir: "asc" };
         let trendChart = null;
+        let periodChart = null;
+        let currentMembers = [];
+        let comboOptions = [];
+        let comboActive = -1;
+        let barEnd = null;  // 各期總分顯示到第幾期（不含）；null = 自動跟著目前時段
         let isLoading = true;
         let loadError = "";
         let urlStateApplied = false;
 
+        const $ = id => document.getElementById(id);
+
         const els = {
-            searchInput: document.getElementById("searchInput"),
-            teamFilter: document.getElementById("teamFilter"),
-            periodFilter: document.getElementById("periodFilter"),
-            memberSelect: document.getElementById("memberSelect"),
-            resultCount: document.getElementById("resultCount"),
-            clearFiltersBtn: document.getElementById("clearFiltersBtn"),
-            copyLinkBtn: document.getElementById("copyLinkBtn"),
+            searchInput: $("searchInput"),
+            teamFilter: $("teamFilter"),
+            periodFilter: $("periodFilter"),
+            memberInput: $("memberInput"),
+            memberList: $("memberList"),
+            rankSearch: $("rankSearch"),
+            resultCount: $("resultCount"),
+            periodRange: $("periodRange"),
+            barPrev: $("barPrev"),
+            barNext: $("barNext"),
+            clearFiltersBtn: $("clearFiltersBtn"),
+            teamNav: $("teamNav"),
 
-            statMembers: document.getElementById("statMembers"),
-            statTotalScore: document.getElementById("statTotalScore"),
-            statTopMember: document.getElementById("statTopMember"),
-            statTopMemberHint: document.getElementById("statTopMemberHint"),
-            statPeriods: document.getElementById("statPeriods"),
+            statMembers: $("statMembers"),
+            statMembersDelta: $("statMembersDelta"),
+            statMembersHint: $("statMembersHint"),
+            statTotalScore: $("statTotalScore"),
+            statTotalDelta: $("statTotalDelta"),
+            statTotalHint: $("statTotalHint"),
+            statTopMember: $("statTopMember"),
+            statTopMemberHint: $("statTopMemberHint"),
+            statPeriods: $("statPeriods"),
+            statPeriodsHint: $("statPeriodsHint"),
 
-            chartPanel: document.getElementById("chartPanel"),
-            chartTitle: document.getElementById("chartTitle"),
-            chartSubtitle: document.getElementById("chartSubtitle"),
-            memberTotal: document.getElementById("memberTotal"),
-            memberAvg: document.getElementById("memberAvg"),
-            memberMax: document.getElementById("memberMax"),
-            memberCount: document.getElementById("memberCount"),
+            trendCard: $("trendCard"),
+            chartTitle: $("chartTitle"),
+            chartSubtitle: $("chartSubtitle"),
+            trendName: $("trendName"),
+            memberTotal: $("memberTotal"),
+            memberDelta: $("memberDelta"),
+            memberDeltaHint: $("memberDeltaHint"),
+            memberAvg: $("memberAvg"),
+            memberMax: $("memberMax"),
+            memberMin: $("memberMin"),
+            memberCount: $("memberCount"),
 
-            tableHeadRow: document.getElementById("tableHeadRow"),
-            memberTableBody: document.getElementById("memberTableBody"),
-            toast: document.getElementById("toast")
+            gaugeSvg: $("gaugeSvg"),
+            gaugeValue: $("gaugeValue"),
+            gaugeHint: $("gaugeHint"),
+            gaugeSub: $("gaugeSub"),
+
+            tableHeadRow: $("tableHeadRow"),
+            memberTableBody: $("memberTableBody"),
+            toast: $("toast")
         };
 
         /************************************************************
@@ -999,6 +1654,13 @@
         function formatNumber(num) {
             if (!Number.isFinite(num)) return "0";
             return Math.round(num).toLocaleString("zh-TW");
+        }
+
+        function formatCompact(num) {
+            if (!Number.isFinite(num)) return "0";
+            if (num >= 1e8) return `${(num / 1e8).toFixed(num >= 1e9 ? 1 : 2)}億`;
+            if (num >= 1e4) return `${(num / 1e4).toFixed(num >= 1e6 ? 0 : 1)}萬`;
+            return formatNumber(num);
         }
 
         function unique(arr) {
@@ -1021,6 +1683,16 @@
 
         function teamTag(team) {
             return `<span class="tag ${TEAM_CLASS[team] || ""}">${escapeHtml(team)}</span>`;
+        }
+
+        function deltaBadge(current, previous) {
+            if (!Number.isFinite(previous) || previous <= 0) return "";
+
+            const pct = (current - previous) / previous * 100;
+            const dir = Math.abs(pct) < 0.05 ? "flat" : pct > 0 ? "up" : "down";
+            const icon = dir === "flat" ? "" : `<svg class="icon" style="width:12px;height:12px;stroke-width:3"><use href="#i-${dir}" /></svg>`;
+
+            return `<span class="delta ${dir}">${icon}${Math.abs(pct).toFixed(1)}%</span>`;
         }
 
         function debounce(fn, wait) {
@@ -1073,7 +1745,6 @@
                     applyUrlState();
                     urlStateApplied = true;
                 }
-
             } catch (error) {
                 console.error(error);
                 loadError = `資料讀取失敗：${error.message}`;
@@ -1126,10 +1797,12 @@
         /************************************************************
          * 6. 資料彙整
          ************************************************************/
-        function getFilteredRows({ ignoreKeyword = false } = {}) {
+        function getFilteredRows({
+            ignoreKeyword = false,
+            team = els.teamFilter.value,
+            period = els.periodFilter.value
+        } = {}) {
             const keyword = ignoreKeyword ? "" : normalizeText(els.searchInput.value).toLowerCase();
-            const team = els.teamFilter.value;
-            const period = els.periodFilter.value;
 
             return rawRows.filter(row => {
                 if (team !== "all" && row.team !== team) return false;
@@ -1142,6 +1815,14 @@
 
         function periodOrder(key) {
             return periodByKey.get(key)?.order ?? 0;
+        }
+
+        function shortPeriodLabel(key) {
+            const p = periodByKey.get(key);
+            if (!p?.start) return p?.label || key;
+
+            const [, m, d] = p.start.split("-").map(Number);
+            return `${m}/${d}`;
         }
 
         function aggregateMembers(rows) {
@@ -1252,33 +1933,149 @@
             );
         }
 
-        function renderMemberOptions(members) {
-            fillSelect(
-                els.memberSelect,
-                [...members]
-                    .sort((a, b) => a.name.localeCompare(b.name, "zh-Hant"))
-                    .map(m => ({ value: m.name, label: m.name })),
-                { value: "", label: "選擇成員" }
-            );
+        function renderTeamNav() {
+            const rows = getFilteredRows({ ignoreKeyword: true, team: "all" });
+            const countOf = team => unique(rows.filter(r => team === "all" || r.team === team).map(r => r.name)).length;
+            const current = els.teamFilter.value;
 
-            els.memberSelect.value = selectedMember;
+            els.teamNav.innerHTML = ["all", ...getAllTeams()].map(team => `
+                <button type="button" class="nav-item ${team === current ? "is-active" : ""}" data-team="${escapeHtml(team)}">
+                    <span class="team-dot" style="background:${team === "all" ? "#111827" : TEAM_COLOR[team] || "#9ca3af"}"></span>
+                    ${team === "all" ? "全部隊伍" : escapeHtml(team)}
+                    <span class="count">${formatNumber(countOf(team))}</span>
+                </button>
+            `).join("");
+        }
+
+        function renderMemberInput() {
+            // 正在輸入時不要覆蓋使用者打的字
+            if (document.activeElement !== els.memberInput) {
+                els.memberInput.value = selectedMember;
+            }
+        }
+
+        function comboMatches(query) {
+            const q = normalizeText(query).toLowerCase();
+            if (!q) return currentMembers;
+
+            // 開頭符合的排前面，其餘依名次
+            return currentMembers
+                .filter(m => m.name.toLowerCase().includes(q))
+                .sort((a, b) => b.name.toLowerCase().startsWith(q) - a.name.toLowerCase().startsWith(q) || a.rank - b.rank);
+        }
+
+        function openCombo(query = "") {
+            const LIMIT = 60;
+            const matches = comboMatches(query);
+
+            comboOptions = matches.slice(0, LIMIT);
+            comboActive = query ? (comboOptions.length ? 0 : -1) : comboOptions.findIndex(m => m.name === selectedMember);
+
+            els.memberList.innerHTML = comboOptions.length
+                ? comboOptions.map((m, i) => `
+                    <li id="memberOpt${i}" class="combo-option" role="option" data-index="${i}"
+                        aria-selected="${m.name === selectedMember}">
+                        <span class="rank-mini">#${m.rank}</span>
+                        <span class="name">${escapeHtml(m.name)}</span>
+                        <span class="pts">${formatCompact(m.total)}</span>
+                    </li>
+                `).join("") + (matches.length > LIMIT
+                    ? `<li class="combo-empty">還有 ${formatNumber(matches.length - LIMIT)} 位，輸入名字縮小範圍</li>`
+                    : "")
+                : `<li class="combo-empty">找不到符合的成員</li>`;
+
+            els.memberList.hidden = false;
+            els.memberInput.setAttribute("aria-expanded", "true");
+            setComboActive(comboActive);
+        }
+
+        function closeCombo() {
+            els.memberList.hidden = true;
+            els.memberInput.setAttribute("aria-expanded", "false");
+            els.memberInput.removeAttribute("aria-activedescendant");
+            els.memberInput.value = selectedMember;
+        }
+
+        function setComboActive(index) {
+            comboActive = index;
+
+            els.memberList.querySelectorAll(".combo-option").forEach((li, i) => {
+                li.classList.toggle("is-active", i === index);
+            });
+
+            const active = els.memberList.querySelector(".combo-option.is-active");
+
+            if (active) {
+                els.memberInput.setAttribute("aria-activedescendant", active.id);
+                active.scrollIntoView({ block: "nearest" });
+            } else {
+                els.memberInput.removeAttribute("aria-activedescendant");
+            }
+        }
+
+        function chooseComboOption(index) {
+            const member = comboOptions[index];
+            if (!member) return;
+
+            selectedMember = member.name;
+            els.memberInput.blur();
+            closeCombo();
+            refreshAll();
         }
 
         function renderStats(members, rows) {
+            const period = els.periodFilter.value;
             const totalScore = rows.reduce((sum, row) => sum + row.score, 0);
             const top = members[0];
+            const periodCount = unique(rows.map(r => r.period)).length;
 
             els.statMembers.textContent = formatNumber(members.length);
-            els.statTotalScore.textContent = formatNumber(totalScore);
-            els.statPeriods.textContent = formatNumber(unique(rows.map(r => r.period)).length);
-
+            els.statTotalScore.dataset.value = totalScore;
+            els.statTotalScore.title = formatNumber(totalScore);
+            fitTotalScore();
+            els.statPeriods.textContent = formatNumber(periodCount);
             els.statTopMember.textContent = top ? top.name : "-";
+            els.statTopMember.title = top ? top.name : "";
             els.statTopMemberHint.textContent = top ? `${formatNumber(top.total)} 分` : "尚無資料";
+            els.statPeriodsHint.textContent = periods.length ? `共 ${formatNumber(periods.length)} 期資料` : "-";
+
+            // 選了單一時段時，和上一期比較
+            const prev = period === "all" ? null : periods[periodOrder(period) - 1];
+
+            if (prev) {
+                const prevRows = getFilteredRows({ period: prev.key });
+                const prevMembers = unique(prevRows.map(r => r.name)).length;
+                const prevTotal = prevRows.reduce((sum, row) => sum + row.score, 0);
+
+                els.statMembersDelta.innerHTML = deltaBadge(members.length, prevMembers);
+                els.statTotalDelta.innerHTML = deltaBadge(totalScore, prevTotal);
+                els.statMembersHint.textContent = `vs. ${formatNumber(prevMembers)} 上一期`;
+                els.statTotalHint.textContent = `vs. ${formatNumber(prevTotal)} 上一期`;
+            } else {
+                els.statMembersDelta.innerHTML = "";
+                els.statTotalDelta.innerHTML = "";
+                els.statMembersHint.textContent = period === "all" ? "全部時段的不重複成員" : "第一期，無上一期可比較";
+                els.statTotalHint.textContent = period === "all" ? "全部時段累計" : "第一期，無上一期可比較";
+            }
+        }
+
+        function rankKeyword() {
+            return normalizeText(els.rankSearch.value).toLowerCase();
+        }
+
+        // 卡片放不下完整數字時（手機、較窄的桌機），改用「119.7億」這類簡寫
+        function fitTotalScore() {
+            const el = els.statTotalScore;
+            const value = Number(el.dataset.value) || 0;
+
+            el.textContent = formatNumber(value);
+            if (el.scrollWidth > el.clientWidth) el.textContent = formatCompact(value);
         }
 
         function hasActiveFilters() {
             return Boolean(
                 normalizeText(els.searchInput.value) ||
+                rankKeyword() ||
                 els.periodFilter.value !== "all" ||
                 els.teamFilter.value !== "all"
             );
@@ -1286,7 +2083,12 @@
 
         function renderFilterActions(members) {
             els.clearFiltersBtn.hidden = !hasActiveFilters();
-            els.resultCount.textContent = rawRows.length ? `顯示 ${formatNumber(members.length)} 位成員` : "";
+            const keyword = rankKeyword();
+            const shown = keyword ? members.filter(m => m.name.toLowerCase().includes(keyword)).length : members.length;
+
+            els.resultCount.textContent = !rawRows.length ? ""
+                : keyword ? `${formatNumber(shown)} / ${formatNumber(members.length)} 位`
+                : `${formatNumber(members.length)} 位成員`;
         }
 
         function renderSortIndicators() {
@@ -1299,15 +2101,19 @@
             });
         }
 
-        function renderTable(members) {
+        function renderTable(allMembers) {
             renderSortIndicators();
+
+            // 排行搜尋只篩表格列，名次維持在全部成員中的名次
+            const keyword = rankKeyword();
+            const members = keyword ? allMembers.filter(m => m.name.toLowerCase().includes(keyword)) : allMembers;
 
             if (!members.length) {
                 els.memberTableBody.innerHTML = `
                     <tr>
                         <td colspan="9" class="empty">
                             ${rawRows.length
-                                ? `找不到符合條件的成員。<br><button type="button" class="link-btn" data-action="clear-filters">清除篩選</button>`
+                                ? `找不到符合條件的成員。<br><br><button type="button" class="link-btn" data-action="clear-filters">清除篩選</button>`
                                 : escapeHtml(loadError || (isLoading ? "資料讀取中..." : "目前沒有資料。"))}
                         </td>
                     </tr>
@@ -1319,22 +2125,24 @@
                 <tr data-member="${escapeHtml(member.name)}" tabindex="0"
                     class="${member.name === selectedMember ? "is-selected" : ""}"
                     aria-selected="${member.name === selectedMember}">
-                    <td data-label="排名" class="index-cell">
-                        <span>${member.rank <= 3 ? `<span class="medal" aria-hidden="true">${MEDALS[member.rank - 1]}</span>` : ""}${member.rank}</span>
+                    <td data-label="排名" class="rank">
+                        <span>${member.rank <= 3 ? `<span aria-hidden="true">${MEDALS[member.rank - 1]}</span> ` : "#"}${member.rank}</span>
                     </td>
-                    <td data-label="成員" class="name-cell">${escapeHtml(member.name)}</td>
-                    <td data-label="隊伍"><span>${member.teams.map(teamTag).join(" ") || "-"}</span></td>
-                    <td data-label="總分" class="num">${formatNumber(member.total)}</td>
+                    <td data-label="成員">
+                        <span class="member"><span class="avatar" aria-hidden="true">${escapeHtml([...member.name][0] || "?")}</span>${escapeHtml(member.name)}</span>
+                    </td>
+                    <td data-label="隊伍"><span>${member.teams.map(teamTag).join("") || "-"}</span></td>
+                    <td data-label="總分" class="num score">${formatNumber(member.total)}</td>
                     <td data-label="平均分" class="num">${formatNumber(member.avg)}</td>
                     <td data-label="最高單期" class="num">${formatNumber(member.max)}</td>
                     <td data-label="最低單期" class="num">${formatNumber(member.min)}</td>
-                    <td data-label="參與筆數" class="num">${formatNumber(member.count)}</td>
-                    <td data-label="備註" class="note">${escapeHtml(member.notesText)}</td>
+                    <td data-label="參與" class="num">${formatNumber(member.count)} 期</td>
+                    <td data-label="備註" class="note" title="${escapeHtml(member.notesText)}">${escapeHtml(member.notesText)}</td>
                 </tr>
             `).join("");
         }
 
-        function renderTrendChart(rows, members) {
+        function renderTrendChart(members) {
             const member = members.find(m => m.name === selectedMember);
 
             if (trendChart) {
@@ -1345,86 +2153,86 @@
             if (!member) {
                 els.chartTitle.textContent = "個人分數走勢";
                 els.chartSubtitle.textContent = "尚無可顯示的成員資料。";
+                els.trendName.textContent = "-";
                 els.memberTotal.textContent = "-";
+                els.memberDelta.innerHTML = "";
+                els.memberDeltaHint.textContent = "";
                 els.memberAvg.textContent = "-";
                 els.memberMax.textContent = "-";
+                els.memberMin.textContent = "-";
                 els.memberCount.textContent = "-";
                 return;
             }
 
             const trend = getTrend(member.name);
-            const useLine = els.periodFilter.value === "all" && trend.labels.length > 1;
+            const useLine = trend.labels.length > 1;
             const avgLabel = els.teamFilter.value === "all" ? "全體平均" : `${els.teamFilter.value}平均`;
+            const n = trend.scores.length;
 
-            els.chartTitle.textContent = `${member.name}｜第 ${member.rank} 名・${useLine ? "個人分數走勢" : "本時段分數"}`;
-            els.chartSubtitle.textContent =
-                `隊伍：${member.teams.join("、") || "-"}　備註：${member.notesText}　虛線 / 灰色為${avgLabel}，方便比較。`;
-
+            els.chartTitle.textContent = "個人分數走勢";
+            els.chartSubtitle.textContent = `${member.teams.join("、") || "未標註"}・第 ${member.rank} 名・虛線為${avgLabel}`;
+            els.trendName.textContent = member.name;
             els.memberTotal.textContent = formatNumber(member.total);
+
+            if (n > 1) {
+                els.memberDelta.innerHTML = deltaBadge(trend.scores[n - 1], trend.scores[n - 2]);
+                els.memberDeltaHint.textContent = "最近一期 vs. 前一期";
+            } else {
+                els.memberDelta.innerHTML = "";
+                els.memberDeltaHint.textContent = "目前篩選下只有一期";
+            }
+
             els.memberAvg.textContent = formatNumber(member.avg);
             els.memberMax.textContent = formatNumber(member.max);
+            els.memberMin.textContent = formatNumber(member.min);
             els.memberCount.textContent = formatNumber(member.count);
 
             const ctx = document.getElementById("trendChart").getContext("2d");
 
-            const gradient = ctx.createLinearGradient(0, 0, 0, 360);
-            gradient.addColorStop(0, "rgba(69, 223, 245, 0.35)");
-            gradient.addColorStop(0.55, "rgba(255, 122, 217, 0.14)");
-            gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
-
-            const barGradient = ctx.createLinearGradient(0, 0, 0, 360);
-            barGradient.addColorStop(0, "rgba(69, 223, 245, 0.72)");
-            barGradient.addColorStop(0.55, "rgba(255, 122, 217, 0.42)");
-            barGradient.addColorStop(1, "rgba(167, 139, 250, 0.28)");
+            const fill = ctx.createLinearGradient(0, 0, 0, 230);
+            fill.addColorStop(0, "rgba(37, 99, 235, 0.22)");
+            fill.addColorStop(1, "rgba(37, 99, 235, 0)");
 
             const memberDataset = useLine
                 ? {
-                    label: `${member.name} 分數`,
+                    label: member.name,
                     data: trend.scores,
-                    borderColor: "#45dff5",
-                    backgroundColor: gradient,
-                    pointBackgroundColor: "#ff7ad9",
-                    pointBorderColor: "#ffffff",
-                    pointBorderWidth: 3,
-                    pointRadius: 6,
-                    borderWidth: 4,
+                    borderColor: COLORS.primary,
+                    backgroundColor: fill,
+                    borderWidth: 2.5,
+                    pointRadius: 0,
+                    pointHoverRadius: 5,
+                    pointBackgroundColor: COLORS.primary,
                     fill: true,
-                    tension: 0.35
+                    tension: 0.3
                 }
                 : {
-                    label: `${member.name} 分數`,
+                    label: member.name,
                     data: trend.scores,
-                    backgroundColor: barGradient,
-                    borderColor: "rgba(69, 223, 245, 0.85)",
-                    borderWidth: 2,
-                    borderRadius: 16,
-                    borderSkipped: false,
-                    maxBarThickness: 96
+                    backgroundColor: COLORS.primary,
+                    borderRadius: 8,
+                    maxBarThickness: 56
                 };
 
             const averageDataset = useLine
                 ? {
                     label: avgLabel,
                     data: trend.averages,
-                    borderColor: "rgba(114, 128, 152, 0.7)",
+                    borderColor: "#c7ccd6",
                     borderDash: [6, 6],
                     borderWidth: 2,
                     pointRadius: 0,
+                    pointHoverRadius: 4,
                     fill: false,
-                    tension: 0.35
+                    tension: 0.3
                 }
                 : {
                     label: avgLabel,
                     data: trend.averages,
-                    backgroundColor: "rgba(148, 163, 184, 0.28)",
-                    borderColor: "rgba(114, 128, 152, 0.5)",
-                    borderWidth: 2,
-                    borderRadius: 16,
-                    borderSkipped: false,
-                    maxBarThickness: 96
+                    backgroundColor: COLORS.barIdle,
+                    borderRadius: 8,
+                    maxBarThickness: 56
                 };
-
-            const allValues = [...trend.scores, ...trend.averages];
 
             trendChart = new Chart(ctx, {
                 type: useLine ? "line" : "bar",
@@ -1435,56 +2243,190 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    interaction: {
-                        intersect: false,
-                        mode: "index"
-                    },
+                    interaction: { intersect: false, mode: "index" },
                     plugins: {
-                        legend: {
-                            labels: {
-                                color: "#42526b",
-                                font: { weight: "bold" }
-                            }
-                        },
+                        legend: { display: false },
                         tooltip: {
-                            backgroundColor: "rgba(255,255,255,0.94)",
-                            titleColor: "#263245",
-                            bodyColor: "#263245",
-                            borderColor: "rgba(69,223,245,0.55)",
-                            borderWidth: 1,
-                            padding: 12,
+                            backgroundColor: "#111827",
+                            padding: 10,
+                            cornerRadius: 8,
                             callbacks: {
-                                label: context => `${context.dataset.label}：${formatNumber(context.parsed.y)}`
+                                label: context => ` ${context.dataset.label}：${formatNumber(context.parsed.y)}`
                             }
                         }
                     },
                     scales: {
                         x: {
+                            grid: { display: false },
+                            border: { display: false },
                             ticks: {
-                                color: "#728098",
-                                font: { weight: "bold" },
-                                maxRotation: useLine ? 35 : 0,
-                                minRotation: 0
-                            },
-                            grid: {
-                                display: useLine,
-                                color: "rgba(112, 165, 255, 0.16)"
+                                color: COLORS.tick,
+                                maxRotation: 0,
+                                autoSkip: true,
+                                maxTicksLimit: 6,
+                                callback(value) {
+                                    const label = this.getLabelForValue(value);
+                                    return String(label).split("-")[0].replace(/^\d{4}\//, "");
+                                }
                             }
                         },
                         y: {
                             beginAtZero: true,
-                            suggestedMax: allValues.length ? Math.max(...allValues) * 1.18 : undefined,
+                            border: { display: false },
+                            grid: { color: COLORS.grid },
                             ticks: {
-                                color: "#728098",
-                                callback: value => formatNumber(value)
-                            },
-                            grid: {
-                                color: "rgba(112, 165, 255, 0.16)"
+                                color: COLORS.tick,
+                                maxTicksLimit: 5,
+                                callback: value => formatCompact(value)
                             }
                         }
                     }
                 }
             });
+        }
+
+        // 在指定長條上方畫數值
+        const barValueLabel = {
+            id: "barValueLabel",
+            afterDatasetsDraw(chart, _args, options) {
+                const index = options.index;
+                if (index == null || index < 0) return;
+
+                const bar = chart.getDatasetMeta(0).data[index];
+                if (!bar) return;
+
+                const { ctx } = chart;
+                ctx.save();
+                ctx.fillStyle = "#111827";
+                ctx.font = "600 12px Inter, 'Noto Sans TC', sans-serif";
+                ctx.textAlign = "center";
+                ctx.fillText(formatCompact(chart.data.datasets[0].data[index]), bar.x, bar.y - 8);
+                ctx.restore();
+            }
+        };
+
+        function renderPeriodChart() {
+            const rows = getFilteredRows({ period: "all" });
+            const selected = els.periodFilter.value;
+            const totals = new Map();
+
+            rows.forEach(r => totals.set(r.period, (totals.get(r.period) || 0) + r.score));
+
+            const allKeys = periods.map(p => p.key).filter(key => totals.has(key));
+            const autoEnd = selected !== "all" && allKeys.includes(selected) ? allKeys.indexOf(selected) + 1 : allKeys.length;
+            const endIndex = Math.min(allKeys.length, Math.max(Math.min(BAR_PERIODS, allKeys.length), barEnd ?? autoEnd));
+            const startIndex = Math.max(0, endIndex - BAR_PERIODS);
+            const keys = allKeys.slice(startIndex, endIndex);
+
+            // 標示：選取的時段；全部時段時標最新一期，翻到舊的頁面則標該頁最高
+            const values = keys.map(key => totals.get(key));
+            let highlight = keys.indexOf(selected);
+            if (highlight < 0 && selected === "all") {
+                highlight = endIndex === allKeys.length ? keys.length - 1 : values.indexOf(Math.max(...values));
+            }
+
+            els.barPrev.disabled = startIndex === 0;
+            els.barNext.disabled = endIndex >= allKeys.length;
+            els.barPrev.dataset.end = endIndex;
+            const formatDate = iso => iso.split("-").map(Number).join("/");
+            els.periodRange.textContent = keys.length
+                ? `${formatDate(periodByKey.get(keys[0]).start)} – ${formatDate(periodByKey.get(keys.at(-1)).end)}`
+                : "沒有資料";
+
+            const config = {
+                type: "bar",
+                data: {
+                    labels: keys.map(shortPeriodLabel),
+                    datasets: [{
+                        data: values,
+                        backgroundColor: keys.map((_, i) => i === highlight ? COLORS.primary : COLORS.barIdle),
+                        hoverBackgroundColor: keys.map((_, i) => i === highlight ? COLORS.primary : "#d5d9e0"),
+                        borderRadius: 10,
+                        borderSkipped: false,
+                        maxBarThickness: 40
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: { top: 22 } },
+                    onHover: (event, active) => {
+                        event.native.target.style.cursor = active.length ? "pointer" : "default";
+                    },
+                    onClick: (_event, active) => {
+                        if (!active.length) return;
+                        barEnd = endIndex;  // 點長條時畫面停在同一頁
+                        els.periodFilter.value = keys[active[0].index];
+                        refreshAll();
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        barValueLabel: { index: highlight },
+                        tooltip: {
+                            backgroundColor: "#111827",
+                            padding: 10,
+                            cornerRadius: 8,
+                            callbacks: {
+                                title: items => periodByKey.get(keys[items[0].dataIndex])?.label || "",
+                                label: context => ` 總分：${formatNumber(context.parsed.y)}`
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            border: { display: false },
+                            ticks: { color: COLORS.tick }
+                        },
+                        y: { display: false, beginAtZero: true }
+                    }
+                },
+                plugins: [barValueLabel]
+            };
+
+            if (periodChart) periodChart.destroy();
+            periodChart = new Chart(document.getElementById("periodChart"), config);
+        }
+
+        function renderGauge(members) {
+            const member = members.find(m => m.name === selectedMember);
+            const TICKS = 36;
+            const cx = 120;
+            const cy = 120;
+
+            let ratio = 0;
+
+            if (member) {
+                // 從這位成員第一次出現的時段起算，有出現的期數 / 應出席的期數
+                const own = unique(getFilteredRows({ ignoreKeyword: true, period: "all" })
+                    .filter(r => r.name === member.name)
+                    .map(r => r.period));
+                const first = Math.min(...own.map(periodOrder));
+                const possible = periods.length - first;
+
+                ratio = possible ? own.length / possible : 0;
+                els.gaugeValue.textContent = `${Math.round(ratio * 100)}%`;
+                els.gaugeHint.textContent = `參與 ${own.length} / ${possible} 期`;
+                els.gaugeSub.textContent = `${member.name}・從首次出現起算`;
+            } else {
+                els.gaugeValue.textContent = "-";
+                els.gaugeHint.textContent = "選擇成員後顯示";
+                els.gaugeSub.textContent = "-";
+            }
+
+            const on = Math.round(ratio * TICKS);
+
+            els.gaugeSvg.innerHTML = Array.from({ length: TICKS }, (_, i) => {
+                const angle = Math.PI - (i / (TICKS - 1)) * Math.PI;
+                const cos = Math.cos(angle);
+                const sin = Math.sin(angle);
+                const r1 = 84;
+                const r2 = 108;
+
+                return `<line x1="${(cx + r1 * cos).toFixed(1)}" y1="${(cy - r1 * sin).toFixed(1)}"
+                    x2="${(cx + r2 * cos).toFixed(1)}" y2="${(cy - r2 * sin).toFixed(1)}"
+                    stroke="${i < on ? COLORS.gaugeOn : COLORS.gaugeOff}" stroke-width="5" stroke-linecap="round" />`;
+            }).join("");
         }
 
         function refreshAll() {
@@ -1495,12 +2437,16 @@
                 selectedMember = members[0]?.name || "";
             }
 
-            renderMemberOptions(members);
+            renderTeamNav();
+            currentMembers = members;
+            renderMemberInput();
             renderStats(members, rows);
             renderFilterActions(members);
             renderTable(members);
-            renderTrendChart(rows, members);
+            renderTrendChart(members);
+            renderGauge(members);
 
+            if (rawRows.length) renderPeriodChart();
             if (urlStateApplied) syncUrl(members[0]?.name);
 
             updateBackToFirstButtonVisibility();
@@ -1512,12 +2458,14 @@
             selectedMember = memberName;
             refreshAll();
 
-            if (scroll && els.chartPanel.getBoundingClientRect().top < 0) {
-                els.chartPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+            if (scroll && els.trendCard.getBoundingClientRect().top < 0) {
+                els.trendCard.scrollIntoView({ behavior: "smooth", block: "start" });
             }
         }
 
         function clearFilters() {
+            barEnd = null;
+            els.rankSearch.value = "";
             els.searchInput.value = "";
             els.periodFilter.value = "all";
             els.teamFilter.value = "all";
@@ -1525,7 +2473,7 @@
         }
 
         /************************************************************
-         * 8. 手機版：回到排名 1 按鈕
+         * 8. 手機版：回到排行頂端按鈕
          ************************************************************/
         function createBackToFirstButton() {
             if (document.getElementById("backToFirstBtn")) return;
@@ -1535,12 +2483,10 @@
             button.id = "backToFirstBtn";
             button.className = "back-to-first-btn";
             button.type = "button";
-            button.textContent = "回到列表頂端";
-            button.setAttribute("aria-label", "回到目前列表的第一位");
+            button.textContent = "回到排行頂端";
 
             button.addEventListener("click", () => {
-                const target = els.memberTableBody.querySelector("tr[data-member]") || document.querySelector(".table-panel");
-                target?.scrollIntoView({ behavior: "smooth", block: "start" });
+                document.getElementById("rankingCard").scrollIntoView({ behavior: "smooth", block: "start" });
             });
 
             document.body.appendChild(button);
@@ -1548,44 +2494,127 @@
 
         function updateBackToFirstButtonVisibility() {
             const button = document.getElementById("backToFirstBtn");
-
             if (!button) return;
 
             const isMobile = window.matchMedia("(max-width: 720px)").matches;
-            const tablePanel = document.querySelector(".table-panel");
             const firstRow = els.memberTableBody.querySelector("tr[data-member]");
 
-            if (!isMobile || !tablePanel || !firstRow) {
-                button.classList.remove("is-visible");
-                return;
-            }
-
-            const hasEnteredTableArea = tablePanel.getBoundingClientRect().top < window.innerHeight * 0.45;
-            const hasScrolledPastFirstRow = firstRow.getBoundingClientRect().top < -80;
-
-            button.classList.toggle("is-visible", hasEnteredTableArea && hasScrolledPastFirstRow);
+            button.classList.toggle("is-visible", Boolean(isMobile && firstRow && firstRow.getBoundingClientRect().top < -80));
         }
 
         /************************************************************
          * 9. 事件
          ************************************************************/
-        window.addEventListener("scroll", updateBackToFirstButtonVisibility, { passive: true });
-        window.addEventListener("resize", updateBackToFirstButtonVisibility);
+        function setNavOpen(open) {
+            document.body.classList.toggle("nav-open", open);
+        }
 
-
-        els.searchInput.addEventListener("input", debounce(refreshAll, 180));
-        els.teamFilter.addEventListener("change", refreshAll);
-        els.periodFilter.addEventListener("change", refreshAll);
-        els.memberSelect.addEventListener("change", event => selectMember(event.target.value));
-        els.clearFiltersBtn.addEventListener("click", clearFilters);
-
-        els.copyLinkBtn.addEventListener("click", async () => {
+        async function copyLink() {
             try {
                 await navigator.clipboard.writeText(location.href);
                 showToast("已複製連結，可直接貼到群組");
             } catch {
                 showToast("無法自動複製，請直接複製網址列");
             }
+        }
+
+        window.addEventListener("scroll", updateBackToFirstButtonVisibility, { passive: true });
+        window.addEventListener("resize", updateBackToFirstButtonVisibility);
+        window.addEventListener("resize", debounce(fitTotalScore, 150));
+
+        els.searchInput.addEventListener("input", debounce(refreshAll, 180));
+        const resetBarsAndRefresh = () => {
+            barEnd = null;
+            refreshAll();
+        };
+
+        els.teamFilter.addEventListener("change", resetBarsAndRefresh);
+        els.periodFilter.addEventListener("change", resetBarsAndRefresh);
+
+        els.rankSearch.addEventListener("input", debounce(() => {
+            renderTable(currentMembers);
+            renderFilterActions(currentMembers);
+        }, 150));
+
+        els.barPrev.addEventListener("click", () => {
+            barEnd = Math.max(0, Number(els.barPrev.dataset.end) - BAR_PERIODS);
+            renderPeriodChart();
+        });
+
+        els.barNext.addEventListener("click", () => {
+            barEnd = Number(els.barPrev.dataset.end) + BAR_PERIODS;
+            renderPeriodChart();
+        });
+
+        // 走勢卡的成員搜尋
+        els.memberInput.addEventListener("focus", () => {
+            els.memberInput.select();
+            openCombo();
+        });
+
+        // 已經有焦點（例如按過 Esc）再點一下也要能打開清單
+        els.memberInput.addEventListener("click", () => {
+            if (els.memberList.hidden) openCombo();
+        });
+
+        els.memberInput.addEventListener("input", () => openCombo(els.memberInput.value));
+        els.memberInput.addEventListener("blur", closeCombo);
+
+        els.memberInput.addEventListener("keydown", event => {
+            const count = comboOptions.length;
+
+            if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+                event.preventDefault();
+                if (els.memberList.hidden) openCombo(els.memberInput.value);
+                if (!count) return;
+
+                const step = event.key === "ArrowDown" ? 1 : -1;
+                setComboActive((comboActive + step + count) % count);
+            } else if (event.key === "Enter") {
+                event.preventDefault();
+                chooseComboOption(comboActive);
+            } else if (event.key === "Escape") {
+                closeCombo();
+                els.memberInput.blur();
+            }
+        });
+
+        // mousedown 先擋掉，避免輸入框失焦把清單關掉
+        els.memberList.addEventListener("mousedown", event => event.preventDefault());
+        els.memberList.addEventListener("click", event => {
+            const option = event.target.closest(".combo-option");
+            if (option) chooseComboOption(Number(option.dataset.index));
+        });
+        els.clearFiltersBtn.addEventListener("click", clearFilters);
+
+        $("copyLinkBtn").addEventListener("click", copyLink);
+        $("copyLinkIconBtn").addEventListener("click", copyLink);
+        $("menuBtn").addEventListener("click", () => setNavOpen(true));
+        $("scrim").addEventListener("click", () => setNavOpen(false));
+
+        document.querySelectorAll("[data-nav]").forEach(link => {
+            link.addEventListener("click", () => {
+                document.querySelectorAll("[data-nav]").forEach(l => l.classList.toggle("is-active", l === link));
+                setNavOpen(false);
+            });
+        });
+
+        els.teamNav.addEventListener("click", event => {
+            const button = event.target.closest("[data-team]");
+            if (!button) return;
+
+            els.teamFilter.value = button.dataset.team;
+            barEnd = null;
+            setNavOpen(false);
+            refreshAll();
+        });
+
+        // 按「/」快速搜尋
+        document.addEventListener("keydown", event => {
+            if (event.key !== "/" || event.target.matches("input, select, textarea")) return;
+
+            event.preventDefault();
+            els.searchInput.focus();
         });
 
         els.tableHeadRow.addEventListener("click", event => {
