@@ -1,5 +1,7 @@
-name: Build and Deploy GitHub Pages
+name: Update Data and Deploy GitHub Pages
 
+# 排程 / 手動執行：重新下載 Google Sheets → 有變動就 commit 到 data/ → 部署
+# 一般 push：直接部署 repo 裡已下載好的 data/（data/ 還不存在時會先下載一次）
 on:
   push:
     branches:
@@ -8,10 +10,11 @@ on:
   workflow_dispatch:
 
   schedule:
+    # 每天 UTC 22:00（台灣時間 06:00）
     - cron: "0 22 * * *"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -27,16 +30,41 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Decide whether to download
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" != "push" ] || [ ! -f data/sheets/index.json ]; then
+            echo "fetch=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "fetch=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Setup Python
+        if: steps.mode.outputs.fetch == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Download Google Sheets data
+        if: steps.mode.outputs.fetch == 'true'
         env:
           DEFAULT_SPREADSHEET_ID: ${{ secrets.DEFAULT_SPREADSHEET_ID }}
           GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
         run: python scripts/fetch_sheets.py
+
+      - name: Commit updated data
+        if: steps.mode.outputs.fetch == 'true'
+        run: |
+          git add data
+          if git diff --cached --quiet; then
+            echo "資料沒有變動，不需要 commit。"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update score data $(TZ=Asia/Taipei date '+%Y-%m-%d %H:%M')"
+          git pull --rebase origin main
+          git push origin HEAD:main
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3

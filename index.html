@@ -516,11 +516,6 @@
             color: #a83f3f;
         }
 
-        .tag.warn {
-            background: rgba(255, 200, 87, 0.26);
-            color: #956d19;
-        }
-
         /* ==========================================================
    Floating Button：回到編號 1
    ========================================================== */
@@ -1050,14 +1045,13 @@
 
     <script>
         /************************************************************
-         * 1. 資料檔（由 GitHub Actions 執行 scripts/fetch_sheets.py 產生）
+         * 1. 資料檔（存在 repo 的 data/，GitHub Actions 每天執行 scripts/fetch_sheets.py 更新）
          ************************************************************/
         const DATA_URL = "./data/scores.json";
 
         const TEAM_ORDER = ["主隊", "二隊", "三隊", "四隊", "未標註"];
         const TEAM_CLASS = { 主隊: "main", 二隊: "second", 三隊: "third", 四隊: "fourth", 未標註: "unknown" };
         const MEDALS = ["🥇", "🥈", "🥉"];
-        const STALE_HOURS = 36;
 
         /************************************************************
          * 2. 全域狀態
@@ -1249,17 +1243,14 @@
                 return;
             }
 
-            const isStale = generatedAt && Date.now() - generatedAt.getTime() > STALE_HOURS * 3600 * 1000;
             const updatedText = generatedAt
                 ? `${formatDateTime(generatedAt)}（${formatRelative(generatedAt)}）`
                 : "-";
 
             els.sourceStatus.innerHTML = `
-                ${isStale
-                    ? `<span class="tag warn">資料可能未更新</span>`
-                    : `<span class="tag cloud">資料已載入</span>`}
+                <span class="tag cloud">資料已載入</span>
                 <br>
-                最後更新：${escapeHtml(updatedText)}
+                資料最後變動：${escapeHtml(updatedText)}
                 <br>
                 ${formatNumber(periods.length)} 個時段，共 ${formatNumber(rawRows.length)} 筆成員分數。
             `;

@@ -2,13 +2,14 @@
 從 Google Sheets 下載各期分數，整理成網頁可直接使用的資料檔。
 
 輸出：
-    data/scores.json  網頁讀取用（periods + records）
-    data/scores.csv   方便下載 / 用 Excel 開啟
+    data/sheets/*.csv         每個時段分頁的原始內容（一個分頁一個檔）
+    data/sheets/index.json    分頁清單（gid、分頁名稱、檔名）
+    data/scores.json          網頁讀取用（periods + records）
+    data/scores.csv           方便下載 / 用 Excel 開啟
 
 用法：
     DEFAULT_SPREADSHEET_ID=... GOOGLE_SHEETS_API_KEY=... python scripts/fetch_sheets.py
-    python scripts/fetch_sheets.py --raw raw.json        # 離線：用先前存下的原始資料重新解析
-    python scripts/fetch_sheets.py --save-raw raw.json   # 抓取時順便存下原始資料
+    python scripts/fetch_sheets.py --offline   # 不連線，直接用 data/sheets/ 裡已下載的分頁重新產生
 
 只使用 Python 標準函式庫，不需要 pip install。
 """
@@ -27,6 +28,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
+SHEETS_DIR = DATA_DIR / "sheets"
 
 NAME_KEYWORDS = ["成員", "成員名稱", "隊員", "隊員名稱", "姓名", "名稱", "名字", "暱稱", "玩家", "玩家名稱", "Name", "name"]
 TEAM_KEYWORDS = ["隊伍", "隊別", "團隊", "組別", "Team", "team"]
@@ -280,9 +282,51 @@ def fetch_raw(spreadsheet_id: str, api_key: str):
 
 
 # ==========================================================
+# 已下載分頁（data/sheets/）
+# ==========================================================
+def save_sheets(raw_sheets):
+    """每個分頁存成一個 CSV，並移除 Google Sheets 上已不存在的舊檔。"""
+    SHEETS_DIR.mkdir(parents=True, exist_ok=True)
+
+    index = []
+    used = set()
+
+    for sheet in raw_sheets:
+        info = parse_period(sheet["sheetName"])
+        filename = f"{info['start']}_{info['end']}.csv"
+        if filename in used:
+            filename = f"{info['start']}_{info['end']}_{sheet['gid']}.csv"
+        used.add(filename)
+
+        with (SHEETS_DIR / filename).open("w", newline="", encoding="utf-8") as f:
+            csv.writer(f, lineterminator="\n").writerows(sheet["values"])
+
+        index.append({"gid": sheet["gid"], "sheetName": sheet["sheetName"], "file": filename})
+
+    for old in SHEETS_DIR.glob("*.csv"):
+        if old.name not in used:
+            old.unlink()
+
+    (SHEETS_DIR / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"已儲存 {len(index)} 個分頁到 {SHEETS_DIR.relative_to(ROOT)}/")
+
+
+def load_sheets():
+    index_path = SHEETS_DIR / "index.json"
+    if not index_path.exists():
+        sys.exit(f"找不到 {index_path.relative_to(ROOT)}，請先連線下載一次。")
+
+    sheets = []
+    for item in json.loads(index_path.read_text(encoding="utf-8")):
+        with (SHEETS_DIR / item["file"]).open(newline="", encoding="utf-8") as f:
+            sheets.append({"gid": item["gid"], "sheetName": item["sheetName"], "values": list(csv.reader(f))})
+    return sheets
+
+
+# ==========================================================
 # 輸出
 # ==========================================================
-def build(raw_sheets):
+def build(raw_sheets, generated_at):
     periods = []
     records = []
 
@@ -301,7 +345,7 @@ def build(raw_sheets):
     periods.sort(key=lambda p: (p["start"], p["sheetName"]))
 
     return {
-        "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "generatedAt": generated_at,
         "periods": periods,
         "records": records,
     }
@@ -311,14 +355,14 @@ def write_outputs(data):
     DATA_DIR.mkdir(exist_ok=True)
 
     json_path = DATA_DIR / "scores.json"
-    json_path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    json_path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
     labels = {p["key"]: p["label"] for p in data["periods"]}
     order = {p["key"]: i for i, p in enumerate(data["periods"])}
     csv_path = DATA_DIR / "scores.csv"
     # utf-8-sig：讓 Excel 正確辨識中文
     with csv_path.open("w", newline="", encoding="utf-8-sig") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["時段", "成員", "隊伍", "分數", "備註"])
         for r in sorted(data["records"], key=lambda r: (order[r["period"]], -r["score"])):
             w.writerow([labels[r["period"]], r["name"], r["team"], r["score"], r["note"]])
@@ -332,22 +376,31 @@ def main():
         sys.stdout.reconfigure(encoding="utf-8")
 
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--raw", help="不連線，改從這個原始資料 JSON 解析")
-    parser.add_argument("--save-raw", help="把抓到的原始資料另存到這個路徑")
+    parser.add_argument("--offline", action="store_true", help="不連線，直接用 data/sheets/ 重新產生 scores.json / scores.csv")
     args = parser.parse_args()
 
-    if args.raw:
-        raw = json.loads(Path(args.raw).read_text(encoding="utf-8"))
-    else:
+    scores_path = DATA_DIR / "scores.json"
+    previous = json.loads(scores_path.read_text(encoding="utf-8")) if scores_path.exists() else None
+
+    if not args.offline:
         spreadsheet_id = os.environ.get("DEFAULT_SPREADSHEET_ID")
         api_key = os.environ.get("GOOGLE_SHEETS_API_KEY")
         if not spreadsheet_id or not api_key:
             sys.exit("缺少環境變數 DEFAULT_SPREADSHEET_ID 或 GOOGLE_SHEETS_API_KEY。")
-        raw = fetch_raw(spreadsheet_id, api_key)
-        if args.save_raw:
-            Path(args.save_raw).write_text(json.dumps(raw, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    write_outputs(build(raw))
+        raw = fetch_raw(spreadsheet_id, api_key)
+        if not raw:
+            # 避免 API 暫時異常時把已下載的資料清空
+            sys.exit("沒有抓到任何符合時段格式的分頁，保留現有資料不更新。")
+        save_sheets(raw)
+
+    data = build(load_sheets(), datetime.now(timezone.utc).isoformat(timespec="seconds"))
+
+    # 內容沒變就沿用舊的時間戳，避免每天產生只改時間的 commit
+    if previous and previous.get("periods") == data["periods"] and previous.get("records") == data["records"]:
+        data["generatedAt"] = previous.get("generatedAt", data["generatedAt"])
+
+    write_outputs(data)
 
 
 if __name__ == "__main__":

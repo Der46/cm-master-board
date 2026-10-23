@@ -21,21 +21,36 @@
 - **個人走勢圖**：Chart.js 繪製單一成員各期分數，並以虛線疊上全體（或該隊）平均方便比較
 - **成員明細表**：前三名獎牌標示，點欄位標題可排序，點任一列即切換走勢圖（手機版會自動捲回圖表）
 - **可分享的網址**：篩選、排序與選取的成員都會寫進網址，「複製目前畫面連結」即可貼到群組
-- **資料新鮮度**：顯示最後更新時間（含「幾小時前」），超過 36 小時未更新會提示
+- **資料新鮮度**：顯示資料最後變動時間（含「幾小時前」）
 - **下載 CSV**：一鍵下載整理好的分數表，可直接用 Excel 開啟
 - **可安裝成 App**：附 SVG / PNG 圖示與 Web App Manifest，手機可「加入主畫面」
 
 ## 運作方式
 
 ```
-Google Sheets ──(GitHub Actions + Python)──▶ data/scores.json / scores.csv ──▶ index.html（GitHub Pages）
+Google Sheets ──(每天 GitHub Actions + Python)──▶ repo 的 data/ ──▶ index.html（GitHub Pages）
 ```
 
-1. [`.github/workflows/pages.yml`](.github/workflows/pages.yml) 在 **push 到 `main`**、**手動觸發**，以及 **每天 UTC 22:00（台灣時間 06:00）** 時執行。
-2. [`scripts/fetch_sheets.py`](scripts/fetch_sheets.py)（只用 Python 標準函式庫）透過 Google Sheets API 一次抓取所有符合時段格式的分頁，**在 Actions 裡完成欄位偵測與解析**，輸出：
-   - `data/scores.json`：網頁讀取用
-   - `data/scores.csv`：給人下載 / Excel 開啟
-3. 整個專案連同資料檔一起部署到 GitHub Pages；前端只負責讀取整理好的資料、篩選與畫圖。
+所有時段分頁都已下載並 commit 在 repo 的 [`data/`](data/) 裡，網頁只讀取這些檔案，瀏覽時不會連到 Google Sheets。
+
+[`.github/workflows/pages.yml`](.github/workflows/pages.yml) 的行為：
+
+| 觸發方式 | 做的事 |
+| --- | --- |
+| 每天 UTC 22:00（台灣時間 06:00） | 重新下載所有時段分頁 → **有變動才 commit** 到 `data/` → 部署 |
+| Actions 頁面手動「Run workflow」 | 同上，想立即更新時使用 |
+| push 到 `main` | 直接部署 repo 裡現有的 `data/`（若 `data/` 還不存在會先下載一次） |
+
+[`scripts/fetch_sheets.py`](scripts/fetch_sheets.py)（只用 Python 標準函式庫）一次抓取所有符合時段格式的分頁，在 Actions 裡完成欄位偵測與解析，輸出：
+
+| 檔案 | 內容 |
+| --- | --- |
+| `data/sheets/*.csv` | 每個時段分頁的原始內容，一個分頁一個檔（檔名為起訖日期） |
+| `data/sheets/index.json` | 分頁清單：gid、分頁名稱、檔名 |
+| `data/scores.json` | 整理好的分數，網頁讀取用 |
+| `data/scores.csv` | 同上，給人下載 / Excel 開啟 |
+
+Google Sheets 上刪掉的分頁，下次更新時也會從 `data/sheets/` 移除；若 API 一個分頁都沒抓到，則保留現有資料不更新。
 
 `data/scores.json` 格式：
 
@@ -86,14 +101,16 @@ API 金鑰只存在 GitHub Secrets，不會出現在前端。
 
 需要 Python 3.9 以上，不用安裝任何套件。
 
+repo 裡已經有下載好的資料，直接開本機伺服器就能看。若有 API 金鑰，也可以自己重新下載：
+
 ```bash
-DEFAULT_SPREADSHEET_ID=你的試算表ID GOOGLE_SHEETS_API_KEY=你的金鑰 python scripts/fetch_sheets.py --save-raw raw.json
+DEFAULT_SPREADSHEET_ID=你的試算表ID GOOGLE_SHEETS_API_KEY=你的金鑰 python scripts/fetch_sheets.py
 ```
 
-`--save-raw` 會順便存下原始資料；之後調整解析規則時可以離線重跑：
+調整解析規則後，不需連線就能用 `data/sheets/` 重新產生 `scores.json`：
 
 ```bash
-python scripts/fetch_sheets.py --raw raw.json
+python scripts/fetch_sheets.py --offline
 ```
 
 ```bash
@@ -112,6 +129,10 @@ python -m http.server 8000
 ├── icon-192.png            # PWA 圖示
 ├── icon-512.png            # PWA 圖示 / maskable
 ├── manifest.webmanifest    # Web App Manifest
+├── data/
+│   ├── sheets/             # 每個時段分頁的原始 CSV + index.json
+│   ├── scores.json         # 網頁讀取的整理後資料
+│   └── scores.csv          # 可下載的分數表
 ├── scripts/
 │   └── fetch_sheets.py     # 下載並解析 Google Sheets → data/scores.json、scores.csv
 └── .github/workflows/
