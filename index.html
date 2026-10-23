@@ -15,7 +15,7 @@
     <meta name="theme-color" content="#45dff5" />
     <meta name="apple-mobile-web-app-title" content="CM記分板" />
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
 
     <style>
         :root {
@@ -187,6 +187,88 @@
             border: 1px solid rgba(112, 165, 255, 0.35);
         }
 
+        a.btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: progress;
+        }
+
+        .btn-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .btn-row .btn {
+            margin-bottom: 0;
+        }
+
+        .link-btn {
+            border: 0;
+            padding: 4px 2px;
+            background: none;
+            color: #4567a8;
+            font: inherit;
+            font-size: 13px;
+            font-weight: 900;
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .link-btn:hover {
+            color: #a34888;
+        }
+
+        .filter-actions {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+            padding: 0 18px 14px;
+        }
+
+        .result-count {
+            margin-right: auto;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        :is(button, a, input, select, tr):focus-visible {
+            outline: 3px solid rgba(69, 223, 245, 0.75);
+            outline-offset: 2px;
+        }
+
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 28px;
+            z-index: 1000;
+            padding: 11px 18px;
+            border-radius: 999px;
+            color: #ffffff;
+            background: rgba(38, 50, 69, 0.92);
+            font-size: 14px;
+            font-weight: 900;
+            opacity: 0;
+            transform: translate(-50%, 12px);
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .toast.is-visible {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+
         .filter-row {
             display: grid;
             grid-template-columns: 1.6fr 1.2fr 1fr 1fr;
@@ -321,10 +403,61 @@
             background: rgba(247, 252, 255, 0.92);
         }
 
+        tbody tr.is-selected td {
+            background: rgba(236, 254, 255, 0.95);
+            border-color: rgba(69, 223, 245, 0.55);
+        }
+
+        tbody tr.is-selected td:first-child {
+            box-shadow: inset 4px 0 0 #45dff5;
+        }
+
+        th.sortable {
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        th.sortable:hover {
+            color: #4567a8;
+        }
+
+        th.sortable::after {
+            content: "↕";
+            margin-left: 4px;
+            opacity: 0.35;
+        }
+
+        th.is-sorted {
+            color: #4567a8;
+        }
+
+        th.is-sorted[data-dir="asc"]::after {
+            content: "▲";
+            opacity: 1;
+        }
+
+        th.is-sorted[data-dir="desc"]::after {
+            content: "▼";
+            opacity: 1;
+        }
+
         .index-cell {
             font-weight: 900;
             color: #4567a8;
             white-space: nowrap;
+        }
+
+        .medal {
+            margin-right: 4px;
+        }
+
+        .name-cell {
+            font-weight: 900;
+        }
+
+        .num {
+            font-variant-numeric: tabular-nums;
         }
 
         .empty {
@@ -381,6 +514,11 @@
         .tag.error {
             background: rgba(255, 122, 122, 0.18);
             color: #a83f3f;
+        }
+
+        .tag.warn {
+            background: rgba(255, 200, 87, 0.26);
+            color: #956d19;
         }
 
         /* ==========================================================
@@ -580,8 +718,20 @@
                 cursor: pointer;
             }
 
-            tbody tr:hover td {
+            tbody tr:hover td,
+            tbody tr.is-selected td,
+            tbody tr.is-selected td:first-child {
                 background: transparent;
+                box-shadow: none;
+            }
+
+            tbody tr.is-selected {
+                border-color: rgba(69, 223, 245, 0.8);
+                box-shadow: 0 0 0 2px rgba(69, 223, 245, 0.35), 0 10px 26px rgba(85, 120, 180, 0.12);
+            }
+
+            .filter-actions {
+                padding: 0 14px 12px;
             }
 
             td {
@@ -597,54 +747,11 @@
             }
 
             td::before {
+                content: attr(data-label);
                 color: var(--text-muted);
                 font-size: 12px;
                 font-weight: 900;
                 white-space: nowrap;
-            }
-
-            td:nth-child(1)::before {
-                content: "編號";
-            }
-
-            td:nth-child(2)::before {
-                content: "成員";
-            }
-
-            td:nth-child(3)::before {
-                content: "隊伍";
-            }
-
-            td:nth-child(4)::before {
-                content: "總分";
-            }
-
-            td:nth-child(5)::before {
-                content: "平均分";
-            }
-
-            td:nth-child(6)::before {
-                content: "最高單期";
-            }
-
-            td:nth-child(7)::before {
-                content: "最低單期";
-            }
-
-            td:nth-child(8)::before {
-                content: "參與筆數";
-            }
-
-            td:nth-child(9)::before {
-                content: "出現時段";
-            }
-
-            td:nth-child(10)::before {
-                content: "來源分頁";
-            }
-
-            td:nth-child(11)::before {
-                content: "備註";
             }
 
             .index-cell {
@@ -796,13 +903,16 @@
 
                 <div class="source-card">
                     <label>資料來源</label>
-                    <button id="loadCloudBtn" class="btn" type="button">載入資料</button>
-                    <button id="refreshCloudBtn" class="btn secondary" type="button">重新整理</button>
+
+                    <div id="sourceStatus" class="status" aria-live="polite">
+                        資料讀取中...
+                    </div>
 
                     <div class="source-divider"></div>
 
-                    <div id="sourceStatus" class="status">
-                        尚未載入資料。
+                    <div class="btn-row">
+                        <button id="refreshBtn" class="btn" type="button">重新整理</button>
+                        <a id="downloadCsvBtn" class="btn secondary" href="./data/scores.csv" download="cm-scores.csv">下載 CSV</a>
                     </div>
                 </div>
             </div>
@@ -831,7 +941,7 @@
                 <article class="stat-card">
                     <div class="stat-label">資料時段</div>
                     <div id="statPeriods" class="stat-value">0</div>
-                    <div class="stat-hint">目前篩選下的資料分頁數</div>
+                    <div class="stat-hint">目前篩選下的時段數</div>
                 </article>
             </div>
 
@@ -839,11 +949,11 @@
                 <div class="filter-row">
                     <div class="field">
                         <label for="searchInput">搜尋成員</label>
-                        <input id="searchInput" type="text" placeholder="輸入名稱、備註、隊伍、時段或分頁" />
+                        <input id="searchInput" type="search" placeholder="輸入名稱、備註、隊伍或時段" autocomplete="off" />
                     </div>
 
                     <div class="field">
-                        <label for="periodFilter">時段 / 分頁篩選</label>
+                        <label for="periodFilter">時段篩選</label>
                         <select id="periodFilter">
                             <option value="all">全部時段</option>
                         </select>
@@ -863,9 +973,15 @@
                         </select>
                     </div>
                 </div>
+
+                <div class="filter-actions">
+                    <span id="resultCount" class="result-count"></span>
+                    <button id="clearFiltersBtn" class="link-btn" type="button" hidden>清除篩選</button>
+                    <button id="copyLinkBtn" class="link-btn" type="button">複製目前畫面連結</button>
+                </div>
             </section>
 
-            <section class="panel chart-panel">
+            <section id="chartPanel" class="panel chart-panel">
                 <div class="panel-header">
                     <div>
                         <h2 id="chartTitle" class="panel-title">個人分數走勢</h2>
@@ -904,24 +1020,23 @@
                 <div class="panel-header">
                     <div>
                         <h2 class="panel-title">每位成員詳細數據</h2>
-                        <p class="panel-subtitle">依目前篩選條件計算，並依總分由高到低排序。點選任一列可切換個人走勢圖。</p>
+                        <p class="panel-subtitle">依目前篩選條件計算。點選欄位標題可排序，點選任一列可切換個人走勢圖。</p>
                     </div>
                 </div>
 
                 <div class="table-wrap">
                     <table>
                         <thead>
-                            <tr>
-                                <th>編號</th>
-                                <th>成員</th>
+                            <tr id="tableHeadRow">
+                                <th data-sort="rank" class="sortable">排名</th>
+                                <th data-sort="name" class="sortable">成員</th>
                                 <th>隊伍</th>
-                                <th>總分</th>
-                                <th>平均分</th>
-                                <th>最高單期</th>
-                                <th>最低單期</th>
-                                <th>參與筆數</th>
+                                <th data-sort="total" class="sortable">總分</th>
+                                <th data-sort="avg" class="sortable">平均分</th>
+                                <th data-sort="max" class="sortable">最高單期</th>
+                                <th data-sort="min" class="sortable">最低單期</th>
+                                <th data-sort="count" class="sortable">參與筆數</th>
                                 <th>出現時段</th>
-                                <th>來源分頁</th>
                                 <th>備註</th>
                             </tr>
                         </thead>
@@ -932,29 +1047,44 @@
         </section>
     </main>
 
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
     <script>
         /************************************************************
-         * 1. GitHub Actions 產生的公開資料檔
+         * 1. 資料檔（由 GitHub Actions 執行 scripts/fetch_sheets.py 產生）
          ************************************************************/
-        const SHEETS_DATA_URL = "./data/sheets-values.json";
+        const DATA_URL = "./data/scores.json";
+
+        const TEAM_ORDER = ["主隊", "二隊", "三隊", "四隊", "未標註"];
+        const TEAM_CLASS = { 主隊: "main", 二隊: "second", 三隊: "third", 四隊: "fourth", 未標註: "unknown" };
+        const MEDALS = ["🥇", "🥈", "🥉"];
+        const STALE_HOURS = 36;
 
         /************************************************************
          * 2. 全域狀態
          ************************************************************/
+        let periods = [];
+        let periodByKey = new Map();
         let rawRows = [];
-        let availableSheets = [];
+        let generatedAt = null;
         let selectedMember = "";
+        let sortState = { key: "rank", dir: "asc" };
         let trendChart = null;
+        let isLoading = false;
+        let urlStateApplied = false;
 
         const els = {
-            loadCloudBtn: document.getElementById("loadCloudBtn"),
-            refreshCloudBtn: document.getElementById("refreshCloudBtn"),
+            refreshBtn: document.getElementById("refreshBtn"),
+            downloadCsvBtn: document.getElementById("downloadCsvBtn"),
             sourceStatus: document.getElementById("sourceStatus"),
 
             searchInput: document.getElementById("searchInput"),
             teamFilter: document.getElementById("teamFilter"),
             periodFilter: document.getElementById("periodFilter"),
             memberSelect: document.getElementById("memberSelect"),
+            resultCount: document.getElementById("resultCount"),
+            clearFiltersBtn: document.getElementById("clearFiltersBtn"),
+            copyLinkBtn: document.getElementById("copyLinkBtn"),
 
             statMembers: document.getElementById("statMembers"),
             statTotalScore: document.getElementById("statTotalScore"),
@@ -962,6 +1092,7 @@
             statTopMemberHint: document.getElementById("statTopMemberHint"),
             statPeriods: document.getElementById("statPeriods"),
 
+            chartPanel: document.getElementById("chartPanel"),
             chartTitle: document.getElementById("chartTitle"),
             chartSubtitle: document.getElementById("chartSubtitle"),
             memberTotal: document.getElementById("memberTotal"),
@@ -969,7 +1100,9 @@
             memberMax: document.getElementById("memberMax"),
             memberCount: document.getElementById("memberCount"),
 
-            memberTableBody: document.getElementById("memberTableBody")
+            tableHeadRow: document.getElementById("tableHeadRow"),
+            memberTableBody: document.getElementById("memberTableBody"),
+            toast: document.getElementById("toast")
         };
 
         /************************************************************
@@ -997,836 +1130,432 @@
                 .replaceAll("'", "&#039;");
         }
 
-        function normalizeTeamName(team) {
-            const text = normalizeText(team);
-
-            if (!text) return "未標註";
-            if (text.includes("主")) return "主隊";
-            if (text.includes("二") || text.includes("2")) return "二隊";
-            if (text.includes("三") || text.includes("3")) return "三隊";
-            if (text.includes("四") || text.includes("4")) return "四隊";
-            if (text === "未標注") return "未標註";
-
-            return text;
-        }
-
-        function getTeamClass(team) {
-            const normalized = normalizeTeamName(team);
-
-            if (normalized === "主隊") return "main";
-            if (normalized === "二隊") return "second";
-            if (normalized === "三隊") return "third";
-            if (normalized === "四隊") return "fourth";
-            if (normalized === "未標註") return "unknown";
-
-            return "";
-        }
-
         function compactText(arr, joiner = "、") {
-            const cleaned = unique(arr.map(v => normalizeText(v)).filter(Boolean));
+            const cleaned = unique(arr.map(v => normalizeText(v)));
             return cleaned.length ? cleaned.join(joiner) : "-";
         }
 
-        /************************************************************
-         * 4. 日期區間分頁格式判斷
-         ************************************************************/
-        function isValidMonthDay(month, day) {
-            return (
-                Number.isInteger(month) &&
-                Number.isInteger(day) &&
-                month >= 1 &&
-                month <= 12 &&
-                day >= 1 &&
-                day <= 31
-            );
+        function teamTag(team) {
+            return `<span class="tag ${TEAM_CLASS[team] || ""}">${escapeHtml(team)}</span>`;
         }
 
-        function parseCompactMonthDay(token) {
-            const text = String(token ?? "").replace(/\D/g, "");
-            if (!text) return null;
-
-            const candidates = [];
-
-            if (text.length === 2) {
-                candidates.push({
-                    month: Number(text.slice(0, 1)),
-                    day: Number(text.slice(1, 2))
-                });
-            }
-
-            if (text.length === 3) {
-                candidates.push({
-                    month: Number(text.slice(0, 1)),
-                    day: Number(text.slice(1, 3))
-                });
-            }
-
-            if (text.length === 4) {
-                candidates.push({
-                    month: Number(text.slice(0, 2)),
-                    day: Number(text.slice(2, 4))
-                });
-            }
-
-            return candidates.find(x => isValidMonthDay(x.month, x.day)) || null;
-        }
-
-        function parseTargetPeriodSheetName(sheetName) {
-            const s = normalizeText(sheetName);
-
-            let match = s.match(/^(\d{4})[\/-](\d{1,2})[\/-](\d{1,2})\s*[-~～]\s*(?:(\d{4})[\/-])?(\d{1,2})[\/-](\d{1,2})$/);
-
-            if (match) {
-                const year = Number(match[1]);
-                const startMonth = Number(match[2]);
-                const startDay = Number(match[3]);
-                const endMonth = Number(match[5]);
-                const endDay = Number(match[6]);
-
-                if (
-                    isValidMonthDay(startMonth, startDay) &&
-                    isValidMonthDay(endMonth, endDay)
-                ) {
-                    return {
-                        year,
-                        startMonth,
-                        startDay,
-                        endMonth,
-                        endDay,
-                        label: `${year}/${startMonth}/${startDay}-${endMonth}/${endDay}`
-                    };
-                }
-            }
-
-            match = s.match(/^(\d{4})(\d{2,4})\s*[-~～]\s*(\d{1,4})$/);
-
-            if (match) {
-                const year = Number(match[1]);
-                const start = parseCompactMonthDay(match[2]);
-                const end = parseCompactMonthDay(match[3]);
-
-                if (start && end) {
-                    return {
-                        year,
-                        startMonth: start.month,
-                        startDay: start.day,
-                        endMonth: end.month,
-                        endDay: end.day,
-                        label: `${year}/${start.month}/${start.day}-${end.month}/${end.day}`
-                    };
-                }
-            }
-
-            return null;
-        }
-
-        function isTargetPeriodSheetName(sheetName) {
-            return Boolean(parseTargetPeriodSheetName(sheetName));
-        }
-
-        function detectPeriodFromSheetName(sheetName) {
-            const parsed = parseTargetPeriodSheetName(sheetName);
-            return parsed ? parsed.label : normalizeText(sheetName);
-        }
-
-        function extractFirstDate(text) {
-            const parsed = parseTargetPeriodSheetName(text);
-
-            if (parsed) {
-                return new Date(parsed.year, parsed.startMonth - 1, parsed.startDay);
-            }
-
-            const s = String(text);
-            const match = s.match(/(\d{4})[\/-](\d{1,2})[\/-](\d{1,2})/);
-
-            if (match) {
-                return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
-            }
-
-            return null;
-        }
-
-        function sortPeriods(periods) {
-            return [...periods].sort((a, b) => {
-                const da = extractFirstDate(a);
-                const db = extractFirstDate(b);
-
-                if (da && db) return da - db;
-
-                return String(a).localeCompare(String(b), "zh-Hant");
+        function formatDateTime(date) {
+            return date.toLocaleString("zh-TW", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false
             });
         }
 
-        /************************************************************
-         * 5. 欄位偵測與資料解析
-         ************************************************************/
-        function makeUniqueHeaders(headers) {
-            const used = new Map();
+        function formatRelative(date) {
+            const minutes = (Date.now() - date.getTime()) / 60000;
 
-            return headers.map((header, index) => {
-                const base = normalizeText(header) || `欄位${index + 1}`;
-                const count = used.get(base) || 0;
+            if (minutes < 1) return "剛剛";
+            if (minutes < 60) return `${Math.floor(minutes)} 分鐘前`;
+            if (minutes < 60 * 24) return `${Math.floor(minutes / 60)} 小時前`;
 
-                used.set(base, count + 1);
-
-                return count === 0 ? base : `${base}_${count + 1}`;
-            });
+            return `${Math.floor(minutes / 60 / 24)} 天前`;
         }
 
-        function findHeader(headers, keywords) {
-            const normalizedHeaders = headers.map(h => normalizeText(h));
+        function debounce(fn, wait) {
+            let timer = null;
 
-            for (const keyword of keywords) {
-                const exact = normalizedHeaders.find(h => h === keyword);
-                if (exact) return exact;
-            }
-
-            for (const keyword of keywords) {
-                const partial = normalizedHeaders.find(h => h.includes(keyword));
-                if (partial) return partial;
-            }
-
-            return "";
+            return (...args) => {
+                clearTimeout(timer);
+                timer = setTimeout(() => fn(...args), wait);
+            };
         }
 
-        function detectTeamFromSheetOrRow(sheetName, rowValues) {
-            const allText = `${sheetName} ${rowValues.join(" ")}`;
+        function showToast(message) {
+            els.toast.textContent = message;
+            els.toast.classList.add("is-visible");
 
-            if (allText.includes("主隊")) return "主隊";
-            if (allText.includes("二隊")) return "二隊";
-            if (allText.includes("三隊")) return "三隊";
-            if (allText.includes("四隊")) return "四隊";
-
-            return "未標註";
-        }
-
-        function isProbablyDateText(value) {
-            const text = normalizeText(value);
-
-            if (!text) return false;
-
-            return (
-                /\d{4}[\/-]\d{1,2}[\/-]\d{1,2}/.test(text) ||
-                /^\d{1,2}[\/-]\d{1,2}$/.test(text)
-            );
-        }
-
-        function parseScore(value) {
-            if (value === null || value === undefined || value === "") return 0;
-            if (isProbablyDateText(value)) return 0;
-
-            if (typeof value === "number") {
-                if (!Number.isFinite(value) || value < 0) return 0;
-                return value;
-            }
-
-            const text = String(value).trim();
-
-            if (/[A-Za-z\u4e00-\u9fa5]/.test(text)) return 0;
-            if (!/^-?\d{1,3}(,\d{3})*$|^-?\d+$/.test(text)) return 0;
-
-            const parsed = Number(text.replace(/,/g, ""));
-
-            if (!Number.isFinite(parsed) || parsed < 0) return 0;
-
-            return parsed;
-        }
-
-        function isInvalidMemberName(name) {
-            const text = normalizeText(name);
-
-            if (!text) return true;
-
-            const bannedNames = [
-                "主隊", "二隊", "三隊", "四隊",
-                "總分", "合計", "小計", "隊伍", "備註",
-                "成員", "姓名", "名稱", "團隊", "分數"
-            ];
-
-            if (bannedNames.includes(text)) return true;
-            if (/^\d+$/.test(text.replace(/,/g, ""))) return true;
-            if (text.length > 50) return true;
-
-            return false;
-        }
-
-        function isLikelyScoreHeader(header) {
-            const h = normalizeText(header);
-
-            if (!h) return false;
-
-            const excludeKeywords = [
-                "日期", "時間", "進隊", "入隊", "退隊", "備註",
-                "說明", "名稱", "姓名", "成員", "隊伍", "隊別",
-                "團隊", "組別", "gid", "sheet"
-            ];
-
-            if (excludeKeywords.some(k => h.includes(k))) return false;
-
-            const includeKeywords = [
-                "總分", "合計", "總計", "小計", "得分", "分數",
-                "Score", "score", "Total", "total"
-            ];
-
-            return includeKeywords.some(k => h.includes(k));
-        }
-
-        function findHeaderRowIndex(values) {
-            const nameKeywords = ["成員", "成員名稱", "隊員", "姓名", "名稱", "暱稱", "玩家", "Name", "name"];
-            const scoreKeywords = ["總分", "合計", "總計", "得分", "分數", "Score", "score", "Total", "total"];
-
-            const maxScanRows = Math.min(values.length, 30);
-
-            for (let i = 0; i < maxScanRows; i++) {
-                const row = (values[i] || []).map(v => normalizeText(v));
-                const joined = row.join(" ");
-
-                const hasName = nameKeywords.some(k => joined.includes(k));
-                const hasScore = scoreKeywords.some(k => joined.includes(k));
-
-                if (hasName && hasScore) return i;
-            }
-
-            return 0;
-        }
-
-        function rowsArrayToObjects(values) {
-            if (!Array.isArray(values) || !values.length) return [];
-
-            const headerRowIndex = findHeaderRowIndex(values);
-            const headerRow = values[headerRowIndex] || [];
-
-            const headers = makeUniqueHeaders(
-                headerRow.map((h, index) => normalizeText(h) || `欄位${index + 1}`)
-            );
-
-            const objects = [];
-
-            for (let r = headerRowIndex + 1; r < values.length; r++) {
-                const row = values[r] || [];
-                const obj = {};
-
-                headers.forEach((header, index) => {
-                    obj[header] = row[index] ?? "";
-                });
-
-                if (Object.values(obj).some(v => normalizeText(v))) {
-                    objects.push(obj);
-                }
-            }
-
-            return objects;
-        }
-
-        function parseObjectsFromSheet(rows, sheetConfig) {
-            const parsed = [];
-
-            if (!rows.length) return parsed;
-
-            const sheetName = sheetConfig.sheetName || "未命名分頁";
-
-            if (!isTargetPeriodSheetName(sheetName)) return parsed;
-
-            const period = sheetConfig.period || detectPeriodFromSheetName(sheetName);
-            const sheetKey = String(sheetConfig.gid || sheetName);
-            const headers = Object.keys(rows[0]).map(h => normalizeText(h));
-
-            const nameHeader = findHeader(headers, [
-                "成員", "成員名稱", "隊員", "隊員名稱",
-                "姓名", "名稱", "名字", "暱稱", "玩家", "玩家名稱",
-                "Name", "name"
-            ]);
-
-            const teamHeader = findHeader(headers, [
-                "隊伍", "隊別", "團隊", "組別", "Team", "team"
-            ]);
-
-            const noteHeader = findHeader(headers, [
-                "備註", "說明", "狀態", "Note", "note", "Remark", "remark"
-            ]);
-
-            const scoreHeader = findHeader(headers, [
-                "總分", "合計", "總計", "小計", "得分", "分數",
-                "Score", "score", "Total", "total"
-            ]);
-
-            rows.forEach(row => {
-                const values = Object.values(row).map(v => normalizeText(v));
-
-                let name = nameHeader ? normalizeText(row[nameHeader]) : "";
-
-                if (!name) {
-                    const candidate = Object.entries(row).find(([key, value]) => {
-                        const text = normalizeText(value);
-                        if (!text) return false;
-                        if (isInvalidMemberName(text)) return false;
-                        if (parseScore(text) > 0) return false;
-                        return text.length <= 30;
-                    });
-
-                    name = candidate ? normalizeText(candidate[1]) : "";
-                }
-
-                if (isInvalidMemberName(name)) return;
-
-                let score = scoreHeader ? parseScore(row[scoreHeader]) : 0;
-
-                if (!score) {
-                    score = Object.entries(row).reduce((sum, [key, value]) => {
-                        if (!isLikelyScoreHeader(key)) return sum;
-                        return sum + parseScore(value);
-                    }, 0);
-                }
-
-                if (!score || score <= 0) return;
-
-                const team = teamHeader
-                    ? normalizeTeamName(row[teamHeader]) || detectTeamFromSheetOrRow(sheetName, values)
-                    : detectTeamFromSheetOrRow(sheetName, values);
-
-                const note = noteHeader ? normalizeText(row[noteHeader]) : "";
-
-                parsed.push({
-                    period,
-                    sheet: sheetName,
-                    sheetName,
-                    sheetKey,
-                    gid: String(sheetConfig.gid || ""),
-                    name,
-                    team: normalizeTeamName(team),
-                    score,
-                    note
-                });
-            });
-
-            return parsed;
+            clearTimeout(showToast.timer);
+            showToast.timer = setTimeout(() => els.toast.classList.remove("is-visible"), 1800);
         }
 
         /************************************************************
-         * 6. 讀取 GitHub Actions 產生的 JSON
+         * 4. 讀取資料
          ************************************************************/
-        async function loadCloudData() {
-            els.sourceStatus.innerHTML = `
-                <span class="tag cloud">資料讀取中</span>
-                正在讀取 GitHub Actions 產生的資料檔...
-            `;
+        function setLoading(loading) {
+            isLoading = loading;
+            els.refreshBtn.disabled = loading;
+            els.refreshBtn.textContent = loading ? "讀取中..." : "重新整理";
+        }
+
+        async function loadData() {
+            if (isLoading) return;
+
+            setLoading(true);
 
             try {
-                const response = await fetch(`${SHEETS_DATA_URL}?t=${Date.now()}`, {
-                    cache: "no-store"
-                });
+                const response = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
 
                 if (!response.ok) {
                     throw new Error(`讀取資料檔失敗，HTTP ${response.status}`);
                 }
 
                 const data = await response.json();
-                const sheets = Array.isArray(data.sheets) ? data.sheets : [];
 
-                if (!sheets.length) {
-                    rawRows = [];
-                    availableSheets = [];
-                    selectedMember = "";
-                    refreshAll();
+                periods = Array.isArray(data.periods) ? data.periods : [];
+                periodByKey = new Map(periods.map((p, index) => [p.key, { ...p, order: index }]));
 
-                    els.sourceStatus.innerHTML = `
-                        <span class="tag error">沒有可用資料</span>
-                        data/sheets-values.json 裡沒有符合格式的分頁資料。
-                    `;
-                    return;
-                }
-
-                availableSheets = sheets
-                    .filter(sheet => isTargetPeriodSheetName(sheet.sheetName))
-                    .map(sheet => ({
-                        gid: String(sheet.gid || sheet.sheetName),
-                        sheetName: sheet.sheetName,
-                        period: sheet.period || detectPeriodFromSheetName(sheet.sheetName)
+                rawRows = (Array.isArray(data.records) ? data.records : [])
+                    .filter(r => periodByKey.has(r.period))
+                    .map(r => ({
+                        period: r.period,
+                        periodLabel: periodByKey.get(r.period).label,
+                        name: normalizeText(r.name),
+                        team: normalizeText(r.team) || "未標註",
+                        score: Number(r.score) || 0,
+                        note: normalizeText(r.note)
                     }));
 
-                const rows = [];
+                generatedAt = data.generatedAt ? new Date(data.generatedAt) : null;
 
-                sheets.forEach(sheetConfig => {
-                    if (!isTargetPeriodSheetName(sheetConfig.sheetName)) return;
+                renderFilterOptions();
 
-                    const values = Array.isArray(sheetConfig.values) ? sheetConfig.values : [];
-                    const objects = rowsArrayToObjects(values);
-
-                    rows.push(
-                        ...parseObjectsFromSheet(objects, {
-                            gid: sheetConfig.gid || sheetConfig.sheetName,
-                            sheetName: sheetConfig.sheetName,
-                            period: sheetConfig.period || detectPeriodFromSheetName(sheetConfig.sheetName)
-                        })
-                    );
-                });
-
-                rawRows = rows;
-                selectedMember = "";
-
-                refreshAll();
-
-                if (!rows.length) {
-                    els.sourceStatus.innerHTML = `
-                        <span class="tag error">未解析到成員資料</span>
-                        已讀取 data/sheets-values.json，但沒有找到有效的成員與分數欄位。
-                        <br>
-                        最後更新時間：${escapeHtml(data.fetchedAt || "-")}
-                    `;
-                    return;
+                if (!urlStateApplied) {
+                    applyUrlState();
+                    urlStateApplied = true;
                 }
 
-                els.sourceStatus.innerHTML = `
-                    <span class="tag cloud">資料已載入</span>
-                    <br>
-                    符合格式的分頁：${formatNumber(availableSheets.length)} 個，
-                    共解析 ${formatNumber(rows.length)} 筆成員分數資料。
-                    <br>
-                    最後更新時間：${escapeHtml(data.fetchedAt || "-")}
-                `;
+                refreshAll();
+                renderSourceStatus();
             } catch (error) {
                 console.error(error);
 
-                rawRows = [];
-                availableSheets = [];
-                selectedMember = "";
-
-                refreshAll();
-
                 els.sourceStatus.innerHTML = `
                     <span class="tag error">資料讀取失敗</span>
-                    ${escapeHtml(error.message || "請確認 GitHub Actions 是否已成功產生 data/sheets-values.json。")}
+                    ${escapeHtml(error.message)}
+                    <br>
+                    請確認 GitHub Actions 是否已成功產生 data/scores.json。
                 `;
+
+                if (!rawRows.length) refreshAll();
+            } finally {
+                setLoading(false);
             }
         }
 
+        function renderSourceStatus() {
+            if (!rawRows.length) {
+                els.sourceStatus.innerHTML = `
+                    <span class="tag error">沒有可用資料</span>
+                    data/scores.json 裡沒有成員分數資料。
+                `;
+                return;
+            }
+
+            const isStale = generatedAt && Date.now() - generatedAt.getTime() > STALE_HOURS * 3600 * 1000;
+            const updatedText = generatedAt
+                ? `${formatDateTime(generatedAt)}（${formatRelative(generatedAt)}）`
+                : "-";
+
+            els.sourceStatus.innerHTML = `
+                ${isStale
+                    ? `<span class="tag warn">資料可能未更新</span>`
+                    : `<span class="tag cloud">資料已載入</span>`}
+                <br>
+                最後更新：${escapeHtml(updatedText)}
+                <br>
+                ${formatNumber(periods.length)} 個時段，共 ${formatNumber(rawRows.length)} 筆成員分數。
+            `;
+        }
+
         /************************************************************
-         * 7. 資料彙整
+         * 5. 網址參數（方便把目前畫面分享到群組）
          ************************************************************/
-        function getFilteredRows() {
-            const keyword = normalizeText(els.searchInput.value).toLowerCase();
+        function applyUrlState() {
+            const params = new URLSearchParams(location.search);
+
+            els.searchInput.value = params.get("q") || "";
+
+            const setIfExists = (select, value) => {
+                if (value && [...select.options].some(o => o.value === value)) {
+                    select.value = value;
+                }
+            };
+
+            setIfExists(els.teamFilter, params.get("team"));
+            setIfExists(els.periodFilter, params.get("period"));
+
+            selectedMember = params.get("member") || "";
+
+            const [sortKey, sortDir] = (params.get("sort") || "").split(":");
+
+            if (els.tableHeadRow.querySelector(`[data-sort="${CSS.escape(sortKey || "")}"]`)) {
+                sortState = { key: sortKey, dir: sortDir === "desc" ? "desc" : "asc" };
+            }
+        }
+
+        function syncUrl(defaultMember) {
+            const params = new URLSearchParams();
+            const keyword = normalizeText(els.searchInput.value);
+
+            if (keyword) params.set("q", keyword);
+            if (els.periodFilter.value !== "all") params.set("period", els.periodFilter.value);
+            if (els.teamFilter.value !== "all") params.set("team", els.teamFilter.value);
+            if (selectedMember && selectedMember !== defaultMember) params.set("member", selectedMember);
+            if (sortState.key !== "rank") params.set("sort", `${sortState.key}:${sortState.dir}`);
+
+            const qs = params.toString();
+            history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
+        }
+
+        /************************************************************
+         * 6. 資料彙整
+         ************************************************************/
+        function getFilteredRows({ ignoreKeyword = false } = {}) {
+            const keyword = ignoreKeyword ? "" : normalizeText(els.searchInput.value).toLowerCase();
             const team = els.teamFilter.value;
             const period = els.periodFilter.value;
 
             return rawRows.filter(row => {
-                const text = `${row.name} ${row.team} ${row.note} ${row.period} ${row.sheetName}`.toLowerCase();
+                if (team !== "all" && row.team !== team) return false;
+                if (period !== "all" && row.period !== period) return false;
+                if (!keyword) return true;
 
-                const matchKeyword = !keyword || text.includes(keyword);
-                const matchTeam = team === "all" || row.team === team;
-                const matchPeriod =
-                    period === "all" ||
-                    row.period === period ||
-                    row.sheetKey === period ||
-                    row.sheetName === period;
-
-                return matchKeyword && matchTeam && matchPeriod;
+                return `${row.name} ${row.team} ${row.note} ${row.periodLabel}`.toLowerCase().includes(keyword);
             });
+        }
+
+        function periodOrder(key) {
+            return periodByKey.get(key)?.order ?? 0;
         }
 
         function aggregateMembers(rows) {
             const map = new Map();
 
             rows.forEach(row => {
-                const key = row.name;
-
-                if (!map.has(key)) {
-                    map.set(key, {
+                if (!map.has(row.name)) {
+                    map.set(row.name, {
                         name: row.name,
                         teams: [],
                         notes: [],
-                        sheets: [],
                         periods: [],
                         total: 0,
                         max: 0,
                         min: Infinity,
-                        count: 0,
-                        rows: []
+                        count: 0
                     });
                 }
 
-                const item = map.get(key);
+                const item = map.get(row.name);
 
                 item.teams.push(row.team);
                 item.notes.push(row.note);
-                item.sheets.push(row.sheetName);
                 item.periods.push(row.period);
                 item.total += row.score;
                 item.max = Math.max(item.max, row.score);
                 item.min = Math.min(item.min, row.score);
                 item.count += 1;
-                item.rows.push(row);
             });
 
             return [...map.values()]
-                .map(item => ({
+                .sort((a, b) => b.total - a.total)
+                .map((item, index) => ({
                     ...item,
+                    rank: index + 1,
                     avg: item.count ? item.total / item.count : 0,
                     min: item.min === Infinity ? 0 : item.min,
-                    teamsText: compactText(item.teams),
+                    teams: TEAM_ORDER.filter(t => item.teams.includes(t))
+                        .concat(unique(item.teams).filter(t => !TEAM_ORDER.includes(t))),
                     notesText: compactText(item.notes, "；"),
-                    sheetsText: compactText(item.sheets),
-                    periodsText: sortPeriods(unique(item.periods)).join("、")
-                }))
-                .sort((a, b) => b.total - a.total);
+                    periodsText: unique(item.periods)
+                        .sort((a, b) => periodOrder(a) - periodOrder(b))
+                        .map(key => periodByKey.get(key)?.label || key)
+                        .join("、")
+                }));
+        }
+
+        function sortMembers(members) {
+            const { key, dir } = sortState;
+            const sign = dir === "asc" ? 1 : -1;
+
+            return [...members].sort((a, b) => {
+                const diff = key === "name"
+                    ? a.name.localeCompare(b.name, "zh-Hant")
+                    : a[key] - b[key];
+
+                return diff * sign || a.rank - b.rank;
+            });
         }
 
         function getAllTeams() {
-            const fixedOrder = ["主隊", "二隊", "三隊", "四隊", "未標註"];
-            const existingTeams = unique(rawRows.map(r => normalizeTeamName(r.team)));
+            const existing = unique(rawRows.map(r => r.team));
 
-            const orderedTeams = fixedOrder.filter(team => existingTeams.includes(team));
-            const extraTeams = existingTeams
-                .filter(team => !fixedOrder.includes(team))
-                .sort((a, b) => a.localeCompare(b, "zh-Hant"));
-
-            return [...orderedTeams, ...extraTeams];
+            return [
+                ...TEAM_ORDER.filter(team => existing.includes(team)),
+                ...existing.filter(team => !TEAM_ORDER.includes(team)).sort((a, b) => a.localeCompare(b, "zh-Hant"))
+            ];
         }
 
-        function getAllPeriodOptions() {
-            const map = new Map();
+        function getTrend(memberName) {
+            // 比較基準：同樣的隊伍 / 時段篩選，但不受搜尋字影響
+            const baseRows = getFilteredRows({ ignoreKeyword: true });
+            const keys = unique(baseRows.filter(r => r.name === memberName).map(r => r.period))
+                .sort((a, b) => periodOrder(a) - periodOrder(b));
 
-            rawRows.forEach(row => {
-                const key = row.period || row.sheetKey || row.sheetName;
-
-                if (!key) return;
-
-                if (!map.has(key)) {
-                    map.set(key, {
-                        key,
-                        label: row.period || row.sheetName || key,
-                        sheetName: row.sheetName || key
-                    });
-                }
-            });
-
-            return [...map.values()].sort((a, b) => {
-                const da = extractFirstDate(a.label);
-                const db = extractFirstDate(b.label);
-
-                if (da && db) return da - db;
-
-                return a.label.localeCompare(b.label, "zh-Hant");
-            });
-        }
-
-        function getMemberTrend(memberName, baseRows = getFilteredRows()) {
-            const rows = baseRows.filter(r => r.name === memberName);
-            const grouped = new Map();
-
-            rows.forEach(row => {
-                const key = row.sheetKey || row.sheetName || row.period;
-
-                if (!grouped.has(key)) {
-                    grouped.set(key, {
-                        label: row.period || row.sheetName,
-                        sheetName: row.sheetName,
-                        period: row.period,
-                        score: 0
-                    });
-                }
-
-                grouped.get(key).score += row.score;
-            });
-
-            const sorted = [...grouped.values()].sort((a, b) => {
-                const da = extractFirstDate(a.period);
-                const db = extractFirstDate(b.period);
-
-                if (da && db) return da - db;
-
-                return String(a.sheetName).localeCompare(String(b.sheetName), "zh-Hant");
-            });
+            const sumBy = (list, key) => list.filter(r => r.period === key).reduce((s, r) => s + r.score, 0);
 
             return {
-                labels: sorted.map(item => item.label),
-                scores: sorted.map(item => item.score)
+                labels: keys.map(key => periodByKey.get(key)?.label || key),
+                scores: keys.map(key => sumBy(baseRows.filter(r => r.name === memberName), key)),
+                averages: keys.map(key => {
+                    const inPeriod = baseRows.filter(r => r.period === key);
+                    const people = unique(inPeriod.map(r => r.name)).length;
+                    return people ? sumBy(inPeriod, key) / people : 0;
+                })
             };
         }
 
         /************************************************************
-         * 8. 畫面更新
+         * 7. 畫面更新
          ************************************************************/
-        function renderFilters() {
-            const oldTeam = els.teamFilter.value;
-            const oldPeriod = els.periodFilter.value;
-            const oldMember = els.memberSelect.value;
+        function fillSelect(select, options, placeholder) {
+            const old = select.value;
 
-            const periodOptions = getAllPeriodOptions();
-            const teams = getAllTeams();
+            select.innerHTML = "";
+            select.appendChild(new Option(placeholder.label, placeholder.value));
+            options.forEach(o => select.appendChild(new Option(o.label, o.value)));
 
-            els.periodFilter.innerHTML = `<option value="all">全部時段</option>`;
+            select.value = options.some(o => o.value === old) ? old : placeholder.value;
+        }
 
-            periodOptions.forEach(period => {
-                const option = document.createElement("option");
-                option.value = period.key;
-                option.textContent = period.label;
-                els.periodFilter.appendChild(option);
-            });
+        function renderFilterOptions() {
+            // 最新的時段排在最前面
+            fillSelect(
+                els.periodFilter,
+                [...periods].reverse().map(p => ({ value: p.key, label: p.label })),
+                { value: "all", label: "全部時段" }
+            );
 
-            if ([...els.periodFilter.options].some(o => o.value === oldPeriod)) {
-                els.periodFilter.value = oldPeriod;
-            } else {
-                els.periodFilter.value = "all";
-            }
+            fillSelect(
+                els.teamFilter,
+                getAllTeams().map(team => ({ value: team, label: team })),
+                { value: "all", label: "全部隊伍" }
+            );
+        }
 
-            els.teamFilter.innerHTML = `<option value="all">全部隊伍</option>`;
+        function renderMemberOptions(members) {
+            fillSelect(
+                els.memberSelect,
+                [...members]
+                    .sort((a, b) => a.name.localeCompare(b.name, "zh-Hant"))
+                    .map(m => ({ value: m.name, label: m.name })),
+                { value: "", label: "選擇成員" }
+            );
 
-            teams.forEach(team => {
-                const option = document.createElement("option");
-                option.value = team;
-                option.textContent = team;
-                els.teamFilter.appendChild(option);
-            });
-
-            if ([...els.teamFilter.options].some(o => o.value === oldTeam)) {
-                els.teamFilter.value = oldTeam;
-            } else {
-                els.teamFilter.value = "all";
-            }
-
-            const members = aggregateMembers(getFilteredRows()).map(m => m.name);
-
-            els.memberSelect.innerHTML = `<option value="">選擇成員</option>`;
-
-            members.forEach(member => {
-                const option = document.createElement("option");
-                option.value = member;
-                option.textContent = member;
-                els.memberSelect.appendChild(option);
-            });
-
-            if ([...els.memberSelect.options].some(o => o.value === oldMember)) {
-                els.memberSelect.value = oldMember;
-            } else {
-                els.memberSelect.value = "";
-            }
+            els.memberSelect.value = selectedMember;
         }
 
         function renderStats(members, rows) {
             const totalScore = rows.reduce((sum, row) => sum + row.score, 0);
             const top = members[0];
-            const sheetCount = unique(rows.map(r => r.sheetKey || r.sheetName)).length;
 
             els.statMembers.textContent = formatNumber(members.length);
             els.statTotalScore.textContent = formatNumber(totalScore);
-            els.statPeriods.textContent = formatNumber(sheetCount);
+            els.statPeriods.textContent = formatNumber(unique(rows.map(r => r.period)).length);
 
-            if (top) {
-                els.statTopMember.textContent = top.name;
-                els.statTopMemberHint.textContent = `${formatNumber(top.total)} 分`;
-            } else {
-                els.statTopMember.textContent = "-";
-                els.statTopMemberHint.textContent = "尚無資料";
-            }
+            els.statTopMember.textContent = top ? top.name : "-";
+            els.statTopMemberHint.textContent = top ? `${formatNumber(top.total)} 分` : "尚無資料";
+        }
+
+        function hasActiveFilters() {
+            return Boolean(
+                normalizeText(els.searchInput.value) ||
+                els.periodFilter.value !== "all" ||
+                els.teamFilter.value !== "all"
+            );
+        }
+
+        function renderFilterActions(members) {
+            els.clearFiltersBtn.hidden = !hasActiveFilters();
+            els.resultCount.textContent = rawRows.length ? `顯示 ${formatNumber(members.length)} 位成員` : "";
+        }
+
+        function renderSortIndicators() {
+            els.tableHeadRow.querySelectorAll("th[data-sort]").forEach(th => {
+                const active = th.dataset.sort === sortState.key;
+
+                th.classList.toggle("is-sorted", active);
+                th.dataset.dir = active ? sortState.dir : "";
+                th.setAttribute("aria-sort", active ? (sortState.dir === "asc" ? "ascending" : "descending") : "none");
+            });
         }
 
         function renderTable(members) {
+            renderSortIndicators();
+
             if (!members.length) {
                 els.memberTableBody.innerHTML = `
                     <tr>
-                        <td colspan="11" class="empty">
-                            目前沒有資料。
+                        <td colspan="10" class="empty">
+                            ${rawRows.length
+                                ? `找不到符合條件的成員。<br><button type="button" class="link-btn" data-action="clear-filters">清除篩選</button>`
+                                : isLoading ? "資料讀取中..." : "目前沒有資料。"}
                         </td>
                     </tr>
                 `;
                 return;
             }
 
-            els.memberTableBody.innerHTML = "";
-
-            members.forEach((member, index) => {
-                const tr = document.createElement("tr");
-                tr.dataset.memberRow = "true";
-
-                const teamTags = unique(member.teams).map(team => {
-                    const normalizedTeam = normalizeTeamName(team);
-                    const cls = getTeamClass(normalizedTeam);
-                    return `<span class="tag ${cls}">${escapeHtml(normalizedTeam)}</span>`;
-                }).join(" ");
-
-                tr.innerHTML = `
-                    <td class="index-cell">${index + 1}</td>
-                    <td>${escapeHtml(member.name)}</td>
-                    <td>${teamTags || "-"}</td>
-                    <td>${formatNumber(member.total)}</td>
-                    <td>${formatNumber(member.avg)}</td>
-                    <td>${formatNumber(member.max)}</td>
-                    <td>${formatNumber(member.min)}</td>
-                    <td>${formatNumber(member.count)}</td>
-                    <td>${escapeHtml(member.periodsText || "-")}</td>
-                    <td>${escapeHtml(member.sheetsText || "-")}</td>
-                    <td class="note">${escapeHtml(member.notesText)}</td>
-                `;
-
-                tr.addEventListener("click", () => selectMember(member.name));
-                els.memberTableBody.appendChild(tr);
-            });
+            els.memberTableBody.innerHTML = sortMembers(members).map(member => `
+                <tr data-member="${escapeHtml(member.name)}" tabindex="0"
+                    class="${member.name === selectedMember ? "is-selected" : ""}"
+                    aria-selected="${member.name === selectedMember}">
+                    <td data-label="排名" class="index-cell">
+                        <span>${member.rank <= 3 ? `<span class="medal" aria-hidden="true">${MEDALS[member.rank - 1]}</span>` : ""}${member.rank}</span>
+                    </td>
+                    <td data-label="成員" class="name-cell">${escapeHtml(member.name)}</td>
+                    <td data-label="隊伍"><span>${member.teams.map(teamTag).join(" ") || "-"}</span></td>
+                    <td data-label="總分" class="num">${formatNumber(member.total)}</td>
+                    <td data-label="平均分" class="num">${formatNumber(member.avg)}</td>
+                    <td data-label="最高單期" class="num">${formatNumber(member.max)}</td>
+                    <td data-label="最低單期" class="num">${formatNumber(member.min)}</td>
+                    <td data-label="參與筆數" class="num">${formatNumber(member.count)}</td>
+                    <td data-label="出現時段">${escapeHtml(member.periodsText || "-")}</td>
+                    <td data-label="備註" class="note">${escapeHtml(member.notesText)}</td>
+                </tr>
+            `).join("");
         }
 
-        function selectMember(memberName) {
-            selectedMember = memberName;
-            els.memberSelect.value = memberName;
-            renderTrendChart(memberName);
-        }
+        function renderTrendChart(rows, members) {
+            const member = members.find(m => m.name === selectedMember);
 
-        function renderTrendChart(memberName) {
-            const canvas = document.getElementById("trendChart");
-            const ctx = canvas.getContext("2d");
-
-            const filteredRows = getFilteredRows();
-            const filteredMembers = aggregateMembers(filteredRows);
-
-            if (!memberName) {
-                const firstMember = filteredMembers[0];
-
-                if (firstMember) {
-                    memberName = firstMember.name;
-                    selectedMember = memberName;
-                    els.memberSelect.value = memberName;
-                }
+            if (trendChart) {
+                trendChart.destroy();
+                trendChart = null;
             }
 
-            const memberAgg = filteredMembers.find(m => m.name === memberName);
-
-            if (!memberName || !memberAgg) {
+            if (!member) {
                 els.chartTitle.textContent = "個人分數走勢";
                 els.chartSubtitle.textContent = "尚無可顯示的成員資料。";
                 els.memberTotal.textContent = "-";
                 els.memberAvg.textContent = "-";
                 els.memberMax.textContent = "-";
                 els.memberCount.textContent = "-";
-
-                if (trendChart) {
-                    trendChart.destroy();
-                    trendChart = null;
-                }
-
                 return;
             }
 
-            const trend = getMemberTrend(memberName, filteredRows);
+            const trend = getTrend(member.name);
+            const useLine = els.periodFilter.value === "all" && trend.labels.length > 1;
+            const avgLabel = els.teamFilter.value === "all" ? "全體平均" : `${els.teamFilter.value}平均`;
 
-            const isAllPeriods = els.periodFilter.value === "all";
-            const shouldUseLineChart = isAllPeriods && trend.labels.length > 1;
-            const chartType = shouldUseLineChart ? "line" : "bar";
+            els.chartTitle.textContent = `${member.name}｜第 ${member.rank} 名・${useLine ? "個人分數走勢" : "本時段分數"}`;
+            els.chartSubtitle.textContent =
+                `隊伍：${member.teams.join("、") || "-"}　備註：${member.notesText}　虛線 / 灰色為${avgLabel}，方便比較。`;
 
-            els.chartTitle.textContent = shouldUseLineChart
-                ? `${memberName}｜個人分數走勢`
-                : `${memberName}｜本時段分數`;
+            els.memberTotal.textContent = formatNumber(member.total);
+            els.memberAvg.textContent = formatNumber(member.avg);
+            els.memberMax.textContent = formatNumber(member.max);
+            els.memberCount.textContent = formatNumber(member.count);
 
-            els.chartSubtitle.textContent = shouldUseLineChart
-                ? `目前顯示全部時段的連續變化。隊伍：${memberAgg.teamsText}　來源分頁：${memberAgg.sheetsText}　備註：${memberAgg.notesText}`
-                : `目前顯示單一時段 / 分頁資料。隊伍：${memberAgg.teamsText}　來源分頁：${memberAgg.sheetsText}　備註：${memberAgg.notesText}`;
-
-            els.memberTotal.textContent = formatNumber(memberAgg.total);
-            els.memberAvg.textContent = formatNumber(memberAgg.avg);
-            els.memberMax.textContent = formatNumber(memberAgg.max);
-            els.memberCount.textContent = formatNumber(memberAgg.count);
-
-            if (trendChart) {
-                trendChart.destroy();
-                trendChart = null;
-            }
+            const ctx = document.getElementById("trendChart").getContext("2d");
 
             const gradient = ctx.createLinearGradient(0, 0, 0, 360);
             gradient.addColorStop(0, "rgba(69, 223, 245, 0.35)");
@@ -1838,9 +1567,9 @@
             barGradient.addColorStop(0.55, "rgba(255, 122, 217, 0.42)");
             barGradient.addColorStop(1, "rgba(167, 139, 250, 0.28)");
 
-            const dataset = shouldUseLineChart
+            const memberDataset = useLine
                 ? {
-                    label: `${memberName} 分數`,
+                    label: `${member.name} 分數`,
                     data: trend.scores,
                     borderColor: "#45dff5",
                     backgroundColor: gradient,
@@ -1853,7 +1582,7 @@
                     tension: 0.35
                 }
                 : {
-                    label: `${memberName} 分數`,
+                    label: `${member.name} 分數`,
                     data: trend.scores,
                     backgroundColor: barGradient,
                     borderColor: "rgba(69, 223, 245, 0.85)",
@@ -1863,26 +1592,48 @@
                     maxBarThickness: 96
                 };
 
+            const averageDataset = useLine
+                ? {
+                    label: avgLabel,
+                    data: trend.averages,
+                    borderColor: "rgba(114, 128, 152, 0.7)",
+                    borderDash: [6, 6],
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    fill: false,
+                    tension: 0.35
+                }
+                : {
+                    label: avgLabel,
+                    data: trend.averages,
+                    backgroundColor: "rgba(148, 163, 184, 0.28)",
+                    borderColor: "rgba(114, 128, 152, 0.5)",
+                    borderWidth: 2,
+                    borderRadius: 16,
+                    borderSkipped: false,
+                    maxBarThickness: 96
+                };
+
+            const allValues = [...trend.scores, ...trend.averages];
+
             trendChart = new Chart(ctx, {
-                type: chartType,
+                type: useLine ? "line" : "bar",
                 data: {
                     labels: trend.labels,
-                    datasets: [dataset]
+                    datasets: [memberDataset, averageDataset]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
                     interaction: {
                         intersect: false,
-                        mode: shouldUseLineChart ? "index" : "nearest"
+                        mode: "index"
                     },
                     plugins: {
                         legend: {
                             labels: {
                                 color: "#42526b",
-                                font: {
-                                    weight: "bold"
-                                }
+                                font: { weight: "bold" }
                             }
                         },
                         tooltip: {
@@ -1893,7 +1644,7 @@
                             borderWidth: 1,
                             padding: 12,
                             callbacks: {
-                                label: context => `分數：${formatNumber(context.parsed.y)}`
+                                label: context => `${context.dataset.label}：${formatNumber(context.parsed.y)}`
                             }
                         }
                     },
@@ -1901,22 +1652,18 @@
                         x: {
                             ticks: {
                                 color: "#728098",
-                                font: {
-                                    weight: "bold"
-                                },
-                                maxRotation: shouldUseLineChart ? 35 : 0,
+                                font: { weight: "bold" },
+                                maxRotation: useLine ? 35 : 0,
                                 minRotation: 0
                             },
                             grid: {
-                                display: shouldUseLineChart,
+                                display: useLine,
                                 color: "rgba(112, 165, 255, 0.16)"
                             }
                         },
                         y: {
                             beginAtZero: true,
-                            suggestedMax: trend.scores.length
-                                ? Math.max(...trend.scores) * 1.18
-                                : undefined,
+                            suggestedMax: allValues.length ? Math.max(...allValues) * 1.18 : undefined,
                             ticks: {
                                 color: "#728098",
                                 callback: value => formatNumber(value)
@@ -1931,32 +1678,44 @@
         }
 
         function refreshAll() {
-            renderFilters();
+            const rows = getFilteredRows();
+            const members = aggregateMembers(rows);
 
-            const filteredRows = getFilteredRows();
-            const members = aggregateMembers(filteredRows);
-
-            renderStats(members, filteredRows);
-            renderTable(members);
-
-            if (selectedMember && filteredRows.some(r => r.name === selectedMember)) {
-                renderTrendChart(selectedMember);
-            } else {
-                const first = members[0];
-                selectedMember = first ? first.name : "";
-
-                if (selectedMember) {
-                    els.memberSelect.value = selectedMember;
-                }
-
-                renderTrendChart(selectedMember);
+            if (!members.some(m => m.name === selectedMember)) {
+                selectedMember = members[0]?.name || "";
             }
+
+            renderMemberOptions(members);
+            renderStats(members, rows);
+            renderFilterActions(members);
+            renderTable(members);
+            renderTrendChart(rows, members);
+
+            if (urlStateApplied) syncUrl(members[0]?.name);
 
             updateBackToFirstButtonVisibility();
         }
 
+        function selectMember(memberName, { scroll = false } = {}) {
+            if (!memberName) return;
+
+            selectedMember = memberName;
+            refreshAll();
+
+            if (scroll && els.chartPanel.getBoundingClientRect().top < 0) {
+                els.chartPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+
+        function clearFilters() {
+            els.searchInput.value = "";
+            els.periodFilter.value = "all";
+            els.teamFilter.value = "all";
+            refreshAll();
+        }
+
         /************************************************************
-         * 9. 手機版：回到編號 1 按鈕
+         * 8. 手機版：回到排名 1 按鈕
          ************************************************************/
         function createBackToFirstButton() {
             if (document.getElementById("backToFirstBtn")) return;
@@ -1966,28 +1725,15 @@
             button.id = "backToFirstBtn";
             button.className = "back-to-first-btn";
             button.type = "button";
-            button.textContent = "回到編號 1";
-            button.setAttribute("aria-label", "回到目前列表的編號 1");
+            button.textContent = "回到列表頂端";
+            button.setAttribute("aria-label", "回到目前列表的第一位");
 
             button.addEventListener("click", () => {
-                scrollToFirstMemberRow();
+                const target = els.memberTableBody.querySelector("tr[data-member]") || document.querySelector(".table-panel");
+                target?.scrollIntoView({ behavior: "smooth", block: "start" });
             });
 
             document.body.appendChild(button);
-        }
-
-        function scrollToFirstMemberRow() {
-            const firstRow = els.memberTableBody.querySelector("tr[data-member-row='true']");
-            const tablePanel = document.querySelector(".table-panel");
-
-            const target = firstRow || tablePanel;
-
-            if (!target) return;
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
         }
 
         function updateBackToFirstButtonVisibility() {
@@ -1997,78 +1743,85 @@
 
             const isMobile = window.matchMedia("(max-width: 720px)").matches;
             const tablePanel = document.querySelector(".table-panel");
-            const firstRow = els.memberTableBody.querySelector("tr[data-member-row='true']");
+            const firstRow = els.memberTableBody.querySelector("tr[data-member]");
 
             if (!isMobile || !tablePanel || !firstRow) {
                 button.classList.remove("is-visible");
                 return;
             }
 
-            const tableRect = tablePanel.getBoundingClientRect();
-            const firstRowRect = firstRow.getBoundingClientRect();
+            const hasEnteredTableArea = tablePanel.getBoundingClientRect().top < window.innerHeight * 0.45;
+            const hasScrolledPastFirstRow = firstRow.getBoundingClientRect().top < -80;
 
-            const hasEnteredTableArea = tableRect.top < window.innerHeight * 0.45;
-            const hasScrolledPastFirstRow = firstRowRect.top < -80;
-
-            if (hasEnteredTableArea && hasScrolledPastFirstRow) {
-                button.classList.add("is-visible");
-            } else {
-                button.classList.remove("is-visible");
-            }
+            button.classList.toggle("is-visible", hasEnteredTableArea && hasScrolledPastFirstRow);
         }
 
-        window.addEventListener("scroll", updateBackToFirstButtonVisibility, {
-            passive: true
-        });
-
+        /************************************************************
+         * 9. 事件
+         ************************************************************/
+        window.addEventListener("scroll", updateBackToFirstButtonVisibility, { passive: true });
         window.addEventListener("resize", updateBackToFirstButtonVisibility);
 
-        els.loadCloudBtn.addEventListener("click", () => {
-            loadCloudData();
+        els.refreshBtn.addEventListener("click", loadData);
+
+        els.searchInput.addEventListener("input", debounce(refreshAll, 180));
+        els.teamFilter.addEventListener("change", refreshAll);
+        els.periodFilter.addEventListener("change", refreshAll);
+        els.memberSelect.addEventListener("change", event => selectMember(event.target.value));
+        els.clearFiltersBtn.addEventListener("click", clearFilters);
+
+        els.copyLinkBtn.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(location.href);
+                showToast("已複製連結，可直接貼到群組");
+            } catch {
+                showToast("無法自動複製，請直接複製網址列");
+            }
         });
 
-        els.refreshCloudBtn.addEventListener("click", () => {
-            loadCloudData();
-        });
+        els.tableHeadRow.addEventListener("click", event => {
+            const th = event.target.closest("th[data-sort]");
+            if (!th) return;
 
-        els.searchInput.addEventListener("input", () => {
-            selectedMember = "";
+            const key = th.dataset.sort;
+            const defaultDir = key === "rank" || key === "name" ? "asc" : "desc";
+
+            sortState = sortState.key === key
+                ? { key, dir: sortState.dir === "asc" ? "desc" : "asc" }
+                : { key, dir: defaultDir };
+
             refreshAll();
         });
 
-        els.teamFilter.addEventListener("change", () => {
-            selectedMember = "";
-            refreshAll();
+        els.memberTableBody.addEventListener("click", event => {
+            if (event.target.closest("[data-action='clear-filters']")) {
+                clearFilters();
+                return;
+            }
+
+            const tr = event.target.closest("tr[data-member]");
+            if (tr) selectMember(tr.dataset.member, { scroll: true });
         });
 
-        els.periodFilter.addEventListener("change", () => {
-            selectedMember = "";
-            refreshAll();
-        });
+        els.memberTableBody.addEventListener("keydown", event => {
+            const tr = event.target.closest("tr[data-member]");
+            if (!tr || (event.key !== "Enter" && event.key !== " ")) return;
 
-        els.memberSelect.addEventListener("change", event => {
-            selectMember(event.target.value);
+            event.preventDefault();
+            selectMember(tr.dataset.member, { scroll: true });
+
+            // 表格重繪後把焦點放回同一列，方便繼續用鍵盤操作
+            [...els.memberTableBody.querySelectorAll("tr[data-member]")]
+                .find(row => row.dataset.member === selectedMember)
+                ?.focus({ preventScroll: true });
         });
 
         /************************************************************
          * 10. 初始化
          ************************************************************/
-        function init() {
-            createBackToFirstButton();
-
-            refreshAll();
-
-            els.sourceStatus.innerHTML = `
-                <span class="tag cloud">準備完成</span>
-                將讀取 GitHub Actions 產生的資料檔：
-                <br>
-                ${escapeHtml(SHEETS_DATA_URL)}
-            `;
-
-            loadCloudData();
-        }
-
-        init();
+        createBackToFirstButton();
+        refreshAll();
+        loadData();
     </script>
 </body>
 

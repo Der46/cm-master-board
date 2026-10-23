@@ -17,20 +17,39 @@
 ## 功能
 
 - **總覽統計**：成員數、總累積分數、最高個人總分、資料時段數
-- **篩選**：依成員名稱 / 備註搜尋，並可依時段（分頁）與隊伍篩選
-- **個人走勢圖**：以 Chart.js 繪製單一成員各期分數變化，附總分、平均、最高單期、參與筆數
-- **成員明細表**：依總分由高到低排序，點選任一列即可切換走勢圖
+- **篩選**：依成員名稱 / 備註搜尋，並可依時段與隊伍篩選，一鍵清除篩選
+- **個人走勢圖**：Chart.js 繪製單一成員各期分數，並以虛線疊上全體（或該隊）平均方便比較
+- **成員明細表**：前三名獎牌標示，點欄位標題可排序，點任一列即切換走勢圖（手機版會自動捲回圖表）
+- **可分享的網址**：篩選、排序與選取的成員都會寫進網址，「複製目前畫面連結」即可貼到群組
+- **資料新鮮度**：顯示最後更新時間（含「幾小時前」），超過 36 小時未更新會提示
+- **下載 CSV**：一鍵下載整理好的分數表，可直接用 Excel 開啟
 - **可安裝成 App**：附 SVG / PNG 圖示與 Web App Manifest，手機可「加入主畫面」
 
 ## 運作方式
 
 ```
-Google Sheets ──(GitHub Actions, Sheets API)──▶ data/sheets-values.json ──▶ index.html（GitHub Pages）
+Google Sheets ──(GitHub Actions + Python)──▶ data/scores.json / scores.csv ──▶ index.html（GitHub Pages）
 ```
 
 1. [`.github/workflows/pages.yml`](.github/workflows/pages.yml) 在 **push 到 `main`**、**手動觸發**，以及 **每天 UTC 22:00（台灣時間 06:00）** 時執行。
-2. [`scripts/build-data.js`](scripts/build-data.js) 透過 Google Sheets API 讀取試算表，只保留名稱符合時段格式的分頁，輸出成 `data/sheets-values.json`。
-3. 整個專案連同資料檔一起部署到 GitHub Pages；前端 [`index.html`](index.html) 讀取該 JSON 後在瀏覽器端完成解析與統計。
+2. [`scripts/fetch_sheets.py`](scripts/fetch_sheets.py)（只用 Python 標準函式庫）透過 Google Sheets API 一次抓取所有符合時段格式的分頁，**在 Actions 裡完成欄位偵測與解析**，輸出：
+   - `data/scores.json`：網頁讀取用
+   - `data/scores.csv`：給人下載 / Excel 開啟
+3. 整個專案連同資料檔一起部署到 GitHub Pages；前端只負責讀取整理好的資料、篩選與畫圖。
+
+`data/scores.json` 格式：
+
+```json
+{
+  "generatedAt": "2026-10-23T22:00:05+00:00",
+  "periods": [
+    { "key": "123456", "sheetName": "20261001-1007", "label": "2026/10/1-10/7", "start": "2026-10-01", "end": "2026-10-07" }
+  ],
+  "records": [
+    { "period": "123456", "name": "阿明", "team": "主隊", "score": 12300, "note": "" }
+  ]
+}
+```
 
 API 金鑰只存在 GitHub Secrets，不會出現在前端。
 
@@ -42,6 +61,7 @@ API 金鑰只存在 GitHub Secrets，不會出現在前端。
 | --- | --- |
 | 完整日期區間 | `2026/10/1-10/7`、`2026-10-01~10-07` |
 | 精簡寫法 | `20261001-1007` |
+| 跨年 | `2026/12/28-1/3`（自動判斷結束日為隔年） |
 
 **表頭**（前 30 列內自動偵測）需同時包含：
 
@@ -64,17 +84,23 @@ API 金鑰只存在 GitHub Secrets，不會出現在前端。
 
 ## 本機開發
 
-需要 Node.js 18 以上（使用內建 `fetch`）。
+需要 Python 3.9 以上，不用安裝任何套件。
 
 ```bash
-DEFAULT_SPREADSHEET_ID=你的試算表ID GOOGLE_SHEETS_API_KEY=你的金鑰 node scripts/build-data.js
+DEFAULT_SPREADSHEET_ID=你的試算表ID GOOGLE_SHEETS_API_KEY=你的金鑰 python scripts/fetch_sheets.py --save-raw raw.json
+```
+
+`--save-raw` 會順便存下原始資料；之後調整解析規則時可以離線重跑：
+
+```bash
+python scripts/fetch_sheets.py --raw raw.json
 ```
 
 ```bash
-npx serve .
+python -m http.server 8000
 ```
 
-接著開啟終端機顯示的網址即可（直接用 `file://` 開啟會因瀏覽器限制而無法讀取 JSON）。
+接著開啟 <http://localhost:8000> 即可（直接用 `file://` 開啟會因瀏覽器限制而無法讀取 JSON）。
 
 ## 專案結構
 
@@ -87,7 +113,7 @@ npx serve .
 ├── icon-512.png            # PWA 圖示 / maskable
 ├── manifest.webmanifest    # Web App Manifest
 ├── scripts/
-│   └── build-data.js       # 從 Google Sheets 產生 data/sheets-values.json
+│   └── fetch_sheets.py     # 下載並解析 Google Sheets → data/scores.json、scores.csv
 └── .github/workflows/
     └── pages.yml           # 建置並部署到 GitHub Pages
 ```
