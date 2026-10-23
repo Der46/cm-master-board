@@ -372,7 +372,7 @@
             width: 100%;
             border-collapse: separate;
             border-spacing: 0 10px;
-            min-width: 1180px;
+            min-width: 900px;
         }
 
         th {
@@ -1036,7 +1036,6 @@
                                 <th data-sort="max" class="sortable">最高單期</th>
                                 <th data-sort="min" class="sortable">最低單期</th>
                                 <th data-sort="count" class="sortable">參與筆數</th>
-                                <th>出現時段</th>
                                 <th>備註</th>
                             </tr>
                         </thead>
@@ -1336,7 +1335,6 @@
                         name: row.name,
                         teams: [],
                         notes: [],
-                        periods: [],
                         total: 0,
                         max: 0,
                         min: Infinity,
@@ -1348,7 +1346,6 @@
 
                 item.teams.push(row.team);
                 item.notes.push(row.note);
-                item.periods.push(row.period);
                 item.total += row.score;
                 item.max = Math.max(item.max, row.score);
                 item.min = Math.min(item.min, row.score);
@@ -1364,11 +1361,7 @@
                     min: item.min === Infinity ? 0 : item.min,
                     teams: TEAM_ORDER.filter(t => item.teams.includes(t))
                         .concat(unique(item.teams).filter(t => !TEAM_ORDER.includes(t))),
-                    notesText: compactText(item.notes, "；"),
-                    periodsText: unique(item.periods)
-                        .sort((a, b) => periodOrder(a) - periodOrder(b))
-                        .map(key => periodByKey.get(key)?.label || key)
-                        .join("、")
+                    notesText: compactText(item.notes, "；")
                 }));
         }
 
@@ -1494,7 +1487,7 @@
             if (!members.length) {
                 els.memberTableBody.innerHTML = `
                     <tr>
-                        <td colspan="10" class="empty">
+                        <td colspan="9" class="empty">
                             ${rawRows.length
                                 ? `找不到符合條件的成員。<br><button type="button" class="link-btn" data-action="clear-filters">清除篩選</button>`
                                 : isLoading ? "資料讀取中..." : "目前沒有資料。"}
@@ -1518,7 +1511,6 @@
                     <td data-label="最高單期" class="num">${formatNumber(member.max)}</td>
                     <td data-label="最低單期" class="num">${formatNumber(member.min)}</td>
                     <td data-label="參與筆數" class="num">${formatNumber(member.count)}</td>
-                    <td data-label="出現時段">${escapeHtml(member.periodsText || "-")}</td>
                     <td data-label="備註" class="note">${escapeHtml(member.notesText)}</td>
                 </tr>
             `).join("");
