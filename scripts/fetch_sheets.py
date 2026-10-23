@@ -209,9 +209,14 @@ def returning_player_name(name: str, note: str) -> str:
 
 
 def clean_name(name: str) -> str:
-    """去掉名單編號前綴：「35.明志」→「明志」、「21 .豪豪」→「豪豪」。"""
-    stripped = re.sub(r"^\d+\s*\.\s*", "", name)
-    return stripped or name
+    """
+    統一成員名稱，讓同一人跨時段能合併：
+        去掉名單編號前綴：「35.明志」→「明志」、「21 .豪豪」→「豪豪」
+        全形括號改半形、去掉括號旁的空白：「芳芳（慶）」「芳芳 (慶)」→「芳芳(慶)」
+    """
+    stripped = re.sub(r"^\d+\s*\.\s*", "", name) or name
+    stripped = stripped.replace("（", "(").replace("）", ")")
+    return re.sub(r"\s*([()])\s*", r"\1", stripped).strip()
 
 
 def unique_headers(row):
@@ -256,7 +261,7 @@ def parse_sheet(sheet_name: str, values):
         name = clean_name(row.get(name_h, "")) if name_h else ""
         if not name:
             # 沒有成員欄時，取第一個看起來像名字的格子
-            name = next((v for v in cells if v and not is_invalid_name(v) and not parse_score(v) and len(v) <= 30), "")
+            name = clean_name(next((v for v in cells if v and not is_invalid_name(v) and not parse_score(v) and len(v) <= 30), ""))
         if is_invalid_name(name):
             continue
 
