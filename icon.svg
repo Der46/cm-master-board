@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>CM大佬群專用記分板</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#45dff5"/>
+      <stop offset="0.55" stop-color="#8fa8ff"/>
+      <stop offset="1" stop-color="#ff7ad9"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#45dff5"/>
+      <stop offset="1" stop-color="#70a5ff"/>
+    </linearGradient>
+    <linearGradient id="barHot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff7ad9"/>
+      <stop offset="1" stop-color="#b98cff"/>
+    </linearGradient>
+    <linearGradient id="crown" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe27a"/>
+      <stop offset="1" stop-color="#ffb43d"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <!-- Background tile -->
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="112" fill="url(#grid)"/>
+
+  <!-- Glass board -->
+  <rect x="80" y="150" width="352" height="282" rx="44" fill="#ffffff" fill-opacity="0.9"/>
+
+  <!-- Bars -->
+  <rect x="122" y="306" width="54" height="90" rx="14" fill="url(#bar)"/>
+  <rect x="198" y="262" width="54" height="134" rx="14" fill="url(#bar)"/>
+  <rect x="274" y="282" width="54" height="114" rx="14" fill="url(#bar)"/>
+  <rect x="350" y="214" width="54" height="182" rx="14" fill="url(#barHot)"/>
+
+  <!-- Trend line -->
+  <polyline points="149,272 225,228 301,246 377,180" fill="none" stroke="#263245" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="377" cy="180" r="16" fill="#ff7ad9" stroke="#263245" stroke-width="8"/>
+
+  <!-- Crown -->
+  <path d="M168 128 L196 62 L236 104 L256 52 L276 104 L316 62 L344 128 Z" fill="url(#crown)" stroke="#263245" stroke-width="12" stroke-linejoin="round"/>
+  <circle cx="256" cy="52" r="12" fill="#ff7ad9" stroke="#263245" stroke-width="6"/>
+</svg>
