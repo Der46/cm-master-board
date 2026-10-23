@@ -196,6 +196,18 @@ def find_header_row(values) -> int:
     return 0
 
 
+def returning_player_name(name: str, note: str) -> str:
+    """
+    「回歸」或「回歸(健豪)」這類列，真正的玩家名稱寫在備註欄（例如「秀齡(健豪)」）。
+    回傳備註裡的名字；備註看起來不是名字（空白、含日期的說明文字）就回傳空字串。
+    """
+    if not re.fullmatch(r"回歸(\(.+\)|（.+）)?", name):
+        return ""
+    if not note or len(note) > 20 or re.search(r"\d+/\d+", note):
+        return ""
+    return clean_name(note)
+
+
 def clean_name(name: str) -> str:
     """去掉名單編號前綴：「35.明志」→「明志」、「21 .豪豪」→「豪豪」。"""
     stripped = re.sub(r"^\d+\s*\.\s*", "", name)
@@ -248,6 +260,12 @@ def parse_sheet(sheet_name: str, values):
         if is_invalid_name(name):
             continue
 
+        note = row.get(note_h, "") if note_h else ""
+        player = returning_player_name(name, note)
+        if player:
+            # 名稱改用備註裡的玩家，原本的「回歸(…)」標記移到備註
+            name, note = player, name
+
         score = parse_score(row.get(score_h)) if score_h else 0
         if not score:
             score = sum(parse_score(v) for h, v in row.items() if is_likely_score_header(h))
@@ -263,7 +281,7 @@ def parse_sheet(sheet_name: str, values):
             "name": name,
             "team": team,
             "score": score,
-            "note": row.get(note_h, "") if note_h else "",
+            "note": note,
         })
 
     return records
