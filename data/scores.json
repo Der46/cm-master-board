@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-23T00:39:20+00:00",
+ "generatedAt": "2026-10-23T00:45:40+00:00",
  "periods": [
   {
    "key": "0",
@@ -11506,7 +11506,7 @@
   },
   {
    "period": "553289803",
-   "name": "41.Jane Lee （！Jane Lee)",
+   "name": "Jane Lee （！Jane Lee)",
    "team": "主隊",
    "score": 5116315,
    "note": ""
@@ -12794,7 +12794,7 @@
   },
   {
    "period": "594274222",
-   "name": "41.Jane Lee （！Jane Lee)",
+   "name": "Jane Lee （！Jane Lee)",
    "team": "主隊",
    "score": 4248994,
    "note": ""
@@ -14026,7 +14026,7 @@
   },
   {
    "period": "1648990605",
-   "name": "41.Jane Lee （！Jane Lee)",
+   "name": "Jane Lee （！Jane Lee)",
    "team": "主隊",
    "score": 4724532,
    "note": ""
@@ -15601,7 +15601,7 @@
   },
   {
    "period": "694788343",
-   "name": "41.Jane Lee （！Jane Lee)",
+   "name": "Jane Lee （！Jane Lee)",
    "team": "主隊",
    "score": 2745531,
    "note": ""
@@ -16441,7 +16441,7 @@
   },
   {
    "period": "399587248",
-   "name": "41.Jane Lee （！Jane Lee)",
+   "name": "Jane Lee （！Jane Lee)",
    "team": "主隊",
    "score": 2932500,
    "note": ""
@@ -17406,6 +17406,755 @@
    "note": "2/12退隊"
   },
   {
+   "period": "2045296260",
+   "name": "耀威",
+   "team": "主隊",
+   "score": 11457704,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "俊龍",
+   "team": "主隊",
+   "score": 9870699,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "Hiram(Hiram海藍（韋書）)",
+   "team": "主隊",
+   "score": 9505898,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "長權",
+   "team": "主隊",
+   "score": 9396086,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "乾媽(惠臻)",
+   "team": "主隊",
+   "score": 9313620,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "佳佳",
+   "team": "主隊",
+   "score": 8915360,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "芳芳（慶）",
+   "team": "主隊",
+   "score": 8757987,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "建考",
+   "team": "主隊",
+   "score": 8481113,
+   "note": "二隊轉主隊"
+  },
+  {
+   "period": "2045296260",
+   "name": "娟娟",
+   "team": "主隊",
+   "score": 8217730,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "Yoki ma ma",
+   "team": "主隊",
+   "score": 7802145,
+   "note": "V帳換Lung"
+  },
+  {
+   "period": "2045296260",
+   "name": "Wanchi",
+   "team": "主隊",
+   "score": 7758810,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "許哲榮",
+   "team": "主隊",
+   "score": 7237454,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "KIKI(慧琴)(Yulg)(Hui Qin)",
+   "team": "主隊",
+   "score": 7143544,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "真好",
+   "team": "主隊",
+   "score": 6933915,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "小白",
+   "team": "主隊",
+   "score": 6719829,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "淑珍(林淑珍)",
+   "team": "主隊",
+   "score": 6713799,
+   "note": "V帳2026/0112轉主隊"
+  },
+  {
+   "period": "2045296260",
+   "name": "Jane Lee （！Jane Lee)",
+   "team": "主隊",
+   "score": 6403170,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "卉均",
+   "team": "主隊",
+   "score": 5917594,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "哲",
+   "team": "主隊",
+   "score": 5815511,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "勇智（秋田)",
+   "team": "主隊",
+   "score": 5806858,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Kevin",
+   "team": "主隊",
+   "score": 5665486,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Maggie",
+   "team": "主隊",
+   "score": 5557900,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "yeji",
+   "team": "主隊",
+   "score": 5351674,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Ivan",
+   "team": "主隊",
+   "score": 5330156,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "Yang",
+   "team": "主隊",
+   "score": 5098596,
+   "note": "二隊轉主隊1103"
+  },
+  {
+   "period": "2045296260",
+   "name": "太妃",
+   "team": "主隊",
+   "score": 5078445,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "啟賢",
+   "team": "主隊",
+   "score": 5012930,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "雅茹",
+   "team": "主隊",
+   "score": 4900179,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "仁澤",
+   "team": "主隊",
+   "score": 4894728,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "隆彬",
+   "team": "主隊",
+   "score": 4813242,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Palui",
+   "team": "主隊",
+   "score": 4766963,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "Lucy",
+   "team": "主隊",
+   "score": 4730945,
+   "note": "二隊轉主隊"
+  },
+  {
+   "period": "2045296260",
+   "name": "謝秀婷",
+   "team": "主隊",
+   "score": 4625115,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "文祥",
+   "team": "主隊",
+   "score": 4606368,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "Lin",
+   "team": "主隊",
+   "score": 4561610,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Ting(Kang)",
+   "team": "主隊",
+   "score": 4549671,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Joan",
+   "team": "主隊",
+   "score": 4402092,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "筱玲",
+   "team": "主隊",
+   "score": 4283866,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "健豪",
+   "team": "主隊",
+   "score": 3789133,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "小婷",
+   "team": "主隊",
+   "score": 3787261,
+   "note": "V帳 轉主隊1211"
+  },
+  {
+   "period": "2045296260",
+   "name": "雪櫻",
+   "team": "主隊",
+   "score": 3354435,
+   "note": "1/26轉主隊"
+  },
+  {
+   "period": "2045296260",
+   "name": "向向",
+   "team": "主隊",
+   "score": 3318743,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Na",
+   "team": "主隊",
+   "score": 2801821,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "湘湘",
+   "team": "主隊",
+   "score": 2697600,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "華城",
+   "team": "主隊",
+   "score": 2303376,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "繼強(廖繼強)",
+   "team": "主隊",
+   "score": 2139731,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Eric",
+   "team": "主隊",
+   "score": 2011356,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "承緯",
+   "team": "主隊",
+   "score": 1874043,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "皓筑(Hao)",
+   "team": "主隊",
+   "score": 1800100,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Sandy",
+   "team": "主隊",
+   "score": 1798013,
+   "note": "待轉二隊成員"
+  },
+  {
+   "period": "2045296260",
+   "name": "Yang(Hsu)",
+   "team": "三隊",
+   "score": 4197467,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Fra(Hsu)",
+   "team": "二隊",
+   "score": 8726393,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Sakya",
+   "team": "二隊",
+   "score": 7376627,
+   "note": "V帳"
+  },
+  {
+   "period": "2045296260",
+   "name": "Kevin(夠麻吉)",
+   "team": "二隊",
+   "score": 7171014,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "小考(小丁)",
+   "team": "二隊",
+   "score": 6310877,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Jane(Mandy Huang)",
+   "team": "二隊",
+   "score": 6009113,
+   "note": "休息等待回來中"
+  },
+  {
+   "period": "2045296260",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 5803321,
+   "note": "1/26入隊Cheng子龍"
+  },
+  {
+   "period": "2045296260",
+   "name": "榮焜(焜)",
+   "team": "二隊",
+   "score": 5795458,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Santa(Cheng)",
+   "team": "二隊",
+   "score": 5212320,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Joy",
+   "team": "二隊",
+   "score": 5109721,
+   "note": "主隊退轉二隊"
+  },
+  {
+   "period": "2045296260",
+   "name": "李振郁",
+   "team": "二隊",
+   "score": 5019184,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Paul",
+   "team": "二隊",
+   "score": 4853508,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Linh(向向)",
+   "team": "二隊",
+   "score": 4720564,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Gigi",
+   "team": "二隊",
+   "score": 4345685,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "柏憲(柏憲)",
+   "team": "二隊",
+   "score": 4171778,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 3959825,
+   "note": "秀齡(健豪)"
+  },
+  {
+   "period": "2045296260",
+   "name": "妤(IVAN)",
+   "team": "二隊",
+   "score": 3947177,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "億凡",
+   "team": "二隊",
+   "score": 3923301,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Jesmin(可達嘎)",
+   "team": "二隊",
+   "score": 3759646,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Qo(佩旻)",
+   "team": "二隊",
+   "score": 3608251,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "光偉",
+   "team": "二隊",
+   "score": 3555952,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Wenxuan Li(xuannn)",
+   "team": "二隊",
+   "score": 3525551,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "昱承(潘)",
+   "team": "二隊",
+   "score": 3306400,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "陳筱青(筱青)",
+   "team": "二隊",
+   "score": 3231776,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "志家（秉益）",
+   "team": "二隊",
+   "score": 3045600,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "莊鎧丞",
+   "team": "二隊",
+   "score": 2959247,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "錢來(莊錢來)",
+   "team": "二隊",
+   "score": 2915541,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "木川(峻銘)",
+   "team": "二隊",
+   "score": 2909778,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "所有(阿祥)",
+   "team": "二隊",
+   "score": 2800829,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 2794465,
+   "note": "書嫻（芳芳）"
+  },
+  {
+   "period": "2045296260",
+   "name": "Na(崴如)",
+   "team": "二隊",
+   "score": 2593166,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "真(碧真)",
+   "team": "二隊",
+   "score": 2482620,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Chi Feng（秉益）",
+   "team": "二隊",
+   "score": 2303600,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Summer",
+   "team": "二隊",
+   "score": 2268057,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "良",
+   "team": "二隊",
+   "score": 2164506,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Tiane (崴如)",
+   "team": "二隊",
+   "score": 2142166,
+   "note": "回歸(常再線)"
+  },
+  {
+   "period": "2045296260",
+   "name": "淑屏",
+   "team": "二隊",
+   "score": 1984604,
+   "note": "1/26轉二隊成員"
+  },
+  {
+   "period": "2045296260",
+   "name": "Lilian(Tata bear)",
+   "team": "二隊",
+   "score": 1929908,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "麗君(曾麗君)",
+   "team": "二隊",
+   "score": 1876146,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "wei(廖紘偉)",
+   "team": "二隊",
+   "score": 1791351,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "貴英(ㄚ頭）",
+   "team": "二隊",
+   "score": 1766770,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 1613485,
+   "note": "Shixuan(小丁)"
+  },
+  {
+   "period": "2045296260",
+   "name": "悅(悅悅)",
+   "team": "二隊",
+   "score": 1458026,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "珮綺（秉益）",
+   "team": "二隊",
+   "score": 1437200,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "戴文財",
+   "team": "二隊",
+   "score": 1258821,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Rita",
+   "team": "二隊",
+   "score": 1179388,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "皓筑",
+   "team": "二隊",
+   "score": 1115378,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "子晴 (張子晴)",
+   "team": "二隊",
+   "score": 1102600,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "佳錡（niko)",
+   "team": "二隊",
+   "score": 1044130,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "Lynn（Lynn）",
+   "team": "二隊",
+   "score": 840072,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 776890,
+   "note": "芳芳佳琪"
+  },
+  {
+   "period": "2045296260",
+   "name": "小惠",
+   "team": "二隊",
+   "score": 775553,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 738919,
+   "note": "憶凡小舞"
+  },
+  {
+   "period": "2045296260",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 708110,
+   "note": "Fang"
+  },
+  {
+   "period": "2045296260",
+   "name": "建興",
+   "team": "二隊",
+   "score": 664450,
+   "note": ""
+  },
+  {
+   "period": "2045296260",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 603179,
+   "note": "佳"
+  },
+  {
+   "period": "2045296260",
+   "name": "雅婷(楊雅婷)",
+   "team": "二隊",
+   "score": 159100,
+   "note": ""
+  },
+  {
    "period": "7609255",
    "name": "Hiram(Hiram海藍（韋書）)",
    "team": "主隊",
@@ -17659,7 +18408,7 @@
   },
   {
    "period": "7609255",
-   "name": "41.Jane Lee （！Jane Lee)",
+   "name": "Jane Lee （！Jane Lee)",
    "team": "主隊",
    "score": 3132681,
    "note": ""
@@ -18141,6 +18890,2358 @@
    "note": ""
   },
   {
+   "period": "910847445",
+   "name": "乾媽(惠臻)",
+   "team": "主隊",
+   "score": 7846730,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "文祥",
+   "team": "主隊",
+   "score": 7417594,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "Yoki ma ma",
+   "team": "主隊",
+   "score": 7142680,
+   "note": "V帳換Lung"
+  },
+  {
+   "period": "910847445",
+   "name": "Hiram(Hiram海藍（韋書）)",
+   "team": "主隊",
+   "score": 6457174,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "Ivan",
+   "team": "主隊",
+   "score": 6000345,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "小白",
+   "team": "主隊",
+   "score": 5928313,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "Eric",
+   "team": "主隊",
+   "score": 5891910,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Sakya",
+   "team": "二隊",
+   "score": 5763905,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "佳佳",
+   "team": "主隊",
+   "score": 5697525,
+   "note": "V帳 12/20轉二隊"
+  },
+  {
+   "period": "910847445",
+   "name": "耀威",
+   "team": "主隊",
+   "score": 5215750,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "Santa(Cheng)",
+   "team": "二隊",
+   "score": 5097683,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "小考(小丁)",
+   "team": "二隊",
+   "score": 4968769,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "長權",
+   "team": "主隊",
+   "score": 4709694,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "芳芳（慶）",
+   "team": "主隊",
+   "score": 4698544,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "Wanchi",
+   "team": "主隊",
+   "score": 4624767,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "承緯",
+   "team": "主隊",
+   "score": 4560606,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "娟娟",
+   "team": "主隊",
+   "score": 4560030,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "傑(冠傑)",
+   "team": "二隊",
+   "score": 4312637,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "哲",
+   "team": "主隊",
+   "score": 4266136,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "仁澤",
+   "team": "主隊",
+   "score": 4218090,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "Ting(Kang)",
+   "team": "主隊",
+   "score": 4161655,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Kevin(夠麻吉)",
+   "team": "二隊",
+   "score": 4085754,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 4061648,
+   "note": "Paul(Palui)"
+  },
+  {
+   "period": "910847445",
+   "name": "勇智（秋田)",
+   "team": "主隊",
+   "score": 4022591,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "小婷",
+   "team": "主隊",
+   "score": 3964263,
+   "note": "V帳 轉主隊1211"
+  },
+  {
+   "period": "910847445",
+   "name": "真好",
+   "team": "主隊",
+   "score": 3944202,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Kevin",
+   "team": "主隊",
+   "score": 3920096,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Na",
+   "team": "主隊",
+   "score": 3886221,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "淑珍(林淑珍)",
+   "team": "二隊",
+   "score": 3866714,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "Palui",
+   "team": "主隊",
+   "score": 3838452,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "妤(IVAN)",
+   "team": "二隊",
+   "score": 3726410,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "太妃",
+   "team": "主隊",
+   "score": 3627464,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 3626651,
+   "note": "回歸Mickey(Mandy Huang)"
+  },
+  {
+   "period": "910847445",
+   "name": "建考",
+   "team": "主隊",
+   "score": 3624793,
+   "note": "二隊轉主隊"
+  },
+  {
+   "period": "910847445",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 3624785,
+   "note": "文彬(建豪)"
+  },
+  {
+   "period": "910847445",
+   "name": "雅茹",
+   "team": "主隊",
+   "score": 3471780,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Qo(佩旻)",
+   "team": "二隊",
+   "score": 3412768,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Jane Lee （！Jane Lee)",
+   "team": "主隊",
+   "score": 3393382,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "真(碧真)",
+   "team": "二隊",
+   "score": 3385482,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "俊龍",
+   "team": "主隊",
+   "score": 3382190,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "Lucy",
+   "team": "主隊",
+   "score": 3355744,
+   "note": "二隊轉主隊"
+  },
+  {
+   "period": "910847445",
+   "name": "Jeff",
+   "team": "主隊",
+   "score": 3352189,
+   "note": "安卓加速器"
+  },
+  {
+   "period": "910847445",
+   "name": "Yang",
+   "team": "主隊",
+   "score": 3249648,
+   "note": "二隊轉主隊1103"
+  },
+  {
+   "period": "910847445",
+   "name": "隆彬",
+   "team": "主隊",
+   "score": 3230570,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "李振郁",
+   "team": "二隊",
+   "score": 3185100,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "KIKI(慧琴)(Yulg)(Hui Qin)",
+   "team": "主隊",
+   "score": 3143253,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "yeji",
+   "team": "主隊",
+   "score": 3065653,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "卉均",
+   "team": "主隊",
+   "score": 3007096,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "向向",
+   "team": "主隊",
+   "score": 2835600,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "啟賢",
+   "team": "主隊",
+   "score": 2828424,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Gigi",
+   "team": "二隊",
+   "score": 2782911,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Lin",
+   "team": "主隊",
+   "score": 2711716,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Joan",
+   "team": "主隊",
+   "score": 2681345,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "所有(阿祥)",
+   "team": "二隊",
+   "score": 2656442,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "榮焜(焜)",
+   "team": "二隊",
+   "score": 2628534,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Linh(向向)",
+   "team": "二隊",
+   "score": 2623915,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "筱玲",
+   "team": "主隊",
+   "score": 2562493,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Na(崴如)",
+   "team": "二隊",
+   "score": 2529660,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "許哲榮",
+   "team": "主隊",
+   "score": 2524135,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "健豪",
+   "team": "主隊",
+   "score": 2513570,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "湘湘",
+   "team": "主隊",
+   "score": 2513300,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "錢來(莊錢來)",
+   "team": "二隊",
+   "score": 2508247,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Joy",
+   "team": "二隊",
+   "score": 2484286,
+   "note": "主隊退轉二隊"
+  },
+  {
+   "period": "910847445",
+   "name": "Maggie",
+   "team": "主隊",
+   "score": 2459100,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "柏憲(柏憲)",
+   "team": "二隊",
+   "score": 2387253,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "謝秀婷",
+   "team": "主隊",
+   "score": 2374918,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 2280172,
+   "note": "麗娜(11)"
+  },
+  {
+   "period": "910847445",
+   "name": "Wenxuan Li(xuannn)",
+   "team": "二隊",
+   "score": 2248180,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "億凡",
+   "team": "二隊",
+   "score": 2209507,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "木川(峻銘)",
+   "team": "二隊",
+   "score": 2173159,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "光偉",
+   "team": "二隊",
+   "score": 2107540,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "昱承(潘)",
+   "team": "二隊",
+   "score": 2103300,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Yang(Hsu)",
+   "team": "二隊",
+   "score": 2075970,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "陳筱青(筱青)",
+   "team": "二隊",
+   "score": 2050300,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "繼強(廖繼強)",
+   "team": "二隊",
+   "score": 2009084,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Fra(Hsu)",
+   "team": "二隊",
+   "score": 1926416,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "良",
+   "team": "二隊",
+   "score": 1886903,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 1883451,
+   "note": "小玉(11)"
+  },
+  {
+   "period": "910847445",
+   "name": "Jesmin(可達嘎)",
+   "team": "二隊",
+   "score": 1808631,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "皓筑",
+   "team": "二隊",
+   "score": 1755903,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Chi Feng（秉益）",
+   "team": "二隊",
+   "score": 1619000,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "wei(廖紘偉)",
+   "team": "二隊",
+   "score": 1588904,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 1535980,
+   "note": "瓜瓜(健豪)"
+  },
+  {
+   "period": "910847445",
+   "name": "華城",
+   "team": "主隊",
+   "score": 1506874,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "Lynn（Lynn）",
+   "team": "二隊",
+   "score": 1488538,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "麗君(曾麗君)",
+   "team": "二隊",
+   "score": 1472228,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "皓筑(Hao)",
+   "team": "主隊",
+   "score": 1470080,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Paul",
+   "team": "二隊",
+   "score": 1434941,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "曉筱",
+   "team": "二隊",
+   "score": 1416186,
+   "note": "(娟娟)支援1215轉二隊"
+  },
+  {
+   "period": "910847445",
+   "name": "佳錡（niko)",
+   "team": "二隊",
+   "score": 1382409,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "珮綺（秉益）",
+   "team": "二隊",
+   "score": 1365000,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Sandy",
+   "team": "主隊",
+   "score": 1350631,
+   "note": "待轉二隊成員"
+  },
+  {
+   "period": "910847445",
+   "name": "萱",
+   "team": "二隊",
+   "score": 1303168,
+   "note": "(娟娟)支援1215轉二隊"
+  },
+  {
+   "period": "910847445",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 1299350,
+   "note": "Baoyun(11)"
+  },
+  {
+   "period": "910847445",
+   "name": "榆璟(Sun)",
+   "team": "二隊",
+   "score": 1171000,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "雅婷(楊雅婷)",
+   "team": "二隊",
+   "score": 1136203,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "貴英(ㄚ頭）",
+   "team": "二隊",
+   "score": 1065350,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Lilian(Tata bear)",
+   "team": "二隊",
+   "score": 1028628,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 984930,
+   "note": "霈峰"
+  },
+  {
+   "period": "910847445",
+   "name": "悅(悅悅)",
+   "team": "二隊",
+   "score": 971000,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "淑屏",
+   "team": "主隊",
+   "score": 955125,
+   "note": "待轉二隊成員"
+  },
+  {
+   "period": "910847445",
+   "name": "志家（秉益）",
+   "team": "二隊",
+   "score": 949050,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 718450,
+   "note": "君(11)"
+  },
+  {
+   "period": "910847445",
+   "name": "子晴 (張子晴)",
+   "team": "二隊",
+   "score": 684600,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Rita",
+   "team": "主隊",
+   "score": 661910,
+   "note": "待轉二隊成員"
+  },
+  {
+   "period": "910847445",
+   "name": "曜威(曜威)",
+   "team": "二隊",
+   "score": 491800,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "雪櫻",
+   "team": "二隊",
+   "score": 477550,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "Tiane (崴如)",
+   "team": "二隊",
+   "score": 225848,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "陳立祐 (立祐)",
+   "team": "二隊",
+   "score": 221250,
+   "note": "(2025/09/01入2025/10/23退)"
+  },
+  {
+   "period": "910847445",
+   "name": "Sam(志成)",
+   "team": "主隊",
+   "score": 73595,
+   "note": "12/15退遊"
+  },
+  {
+   "period": "910847445",
+   "name": "鎧丞",
+   "team": "二隊",
+   "score": 57250,
+   "note": ""
+  },
+  {
+   "period": "910847445",
+   "name": "宜芳",
+   "team": "二隊",
+   "score": 54039,
+   "note": "V帳"
+  },
+  {
+   "period": "910847445",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 6400,
+   "note": "語妡（佳佳）"
+  },
+  {
+   "period": "2125805647",
+   "name": "小白",
+   "team": "主隊",
+   "score": 16170359,
+   "note": "V帳"
+  },
+  {
+   "period": "2125805647",
+   "name": "耀威",
+   "team": "主隊",
+   "score": 13216100,
+   "note": "V帳7/21入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "1芳",
+   "team": "主隊",
+   "score": 12047850,
+   "note": "普囤能量"
+  },
+  {
+   "period": "2125805647",
+   "name": "佳佳",
+   "team": "主隊",
+   "score": 12034971,
+   "note": "V帳4/17入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "健豪",
+   "team": "主隊",
+   "score": 10429850,
+   "note": "普囤能量"
+  },
+  {
+   "period": "2125805647",
+   "name": "Palui",
+   "team": "主隊",
+   "score": 9120054,
+   "note": "V帳"
+  },
+  {
+   "period": "2125805647",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 8988950,
+   "note": "秀齡(健豪)"
+  },
+  {
+   "period": "2125805647",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 8734353,
+   "note": "小寶（小丁）"
+  },
+  {
+   "period": "2125805647",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 8644626,
+   "note": "Line(Cheng)"
+  },
+  {
+   "period": "2125805647",
+   "name": "Eric",
+   "team": "主隊",
+   "score": 8312990,
+   "note": "10/13入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "乾媽(惠臻)",
+   "team": "主隊",
+   "score": 8113010,
+   "note": "V帳"
+  },
+  {
+   "period": "2125805647",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 8061293,
+   "note": "shixuan(小丁)"
+  },
+  {
+   "period": "2125805647",
+   "name": "Sakya",
+   "team": "二隊",
+   "score": 8000699,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Wanchi",
+   "team": "主隊",
+   "score": 7894900,
+   "note": "V帳6/9入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "娟娟",
+   "team": "主隊",
+   "score": 7879705,
+   "note": "V帳8/28入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 7380730,
+   "note": "佳棋（芳芳）"
+  },
+  {
+   "period": "2125805647",
+   "name": "俊龍",
+   "team": "主隊",
+   "score": 7153770,
+   "note": "V帳8/28入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "承緯",
+   "team": "主隊",
+   "score": 7032500,
+   "note": "7/21入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "Yang",
+   "team": "主隊",
+   "score": 6994075,
+   "note": "二隊轉主隊1103"
+  },
+  {
+   "period": "2125805647",
+   "name": "李振郁",
+   "team": "二隊",
+   "score": 6914555,
+   "note": "11/24入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "謝秀婷",
+   "team": "主隊",
+   "score": 6804333,
+   "note": "V帳1/16入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "慧琴",
+   "team": "主隊",
+   "score": 6713912,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "芳芳（慶）",
+   "team": "主隊",
+   "score": 6608455,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "文祥",
+   "team": "主隊",
+   "score": 6488724,
+   "note": "V帳6/16入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "真好",
+   "team": "主隊",
+   "score": 6401575,
+   "note": "3/3入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "Jane Lee （！Jane Lee)",
+   "team": "主隊",
+   "score": 6124231,
+   "note": "蘋果加速器追蹤"
+  },
+  {
+   "period": "2125805647",
+   "name": "Ivan",
+   "team": "主隊",
+   "score": 5931860,
+   "note": "10/6入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "向向",
+   "team": "主隊",
+   "score": 5911834,
+   "note": "5/26入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "yeji",
+   "team": "主隊",
+   "score": 5872282,
+   "note": "2/24入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "回歸",
+   "team": "主隊",
+   "score": 5756012,
+   "note": "勇智（秋田)"
+  },
+  {
+   "period": "2125805647",
+   "name": "小考(小丁)",
+   "team": "二隊",
+   "score": 5738223,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "隆彬",
+   "team": "主隊",
+   "score": 5694455,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Yoki ma ma",
+   "team": "主隊",
+   "score": 5645150,
+   "note": "V帳11/24入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "傑(冠傑)",
+   "team": "二隊",
+   "score": 5586513,
+   "note": "11/24入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "KIKI(慧琴)",
+   "team": "二隊",
+   "score": 5576153,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "哲",
+   "team": "主隊",
+   "score": 5556841,
+   "note": "普囤能量"
+  },
+  {
+   "period": "2125805647",
+   "name": "Jeff",
+   "team": "主隊",
+   "score": 5501692,
+   "note": "3/27入隊/安卓加速器"
+  },
+  {
+   "period": "2125805647",
+   "name": "太妃",
+   "team": "主隊",
+   "score": 5420850,
+   "note": "V帳8/21入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 5278914,
+   "note": "語妡（佳佳）"
+  },
+  {
+   "period": "2125805647",
+   "name": "Linh(向向)",
+   "team": "二隊",
+   "score": 5213358,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "湘湘",
+   "team": "主隊",
+   "score": 5154315,
+   "note": "11/26入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "Na",
+   "team": "主隊",
+   "score": 5009661,
+   "note": "v帳10/6入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "Jane(Mandy Huang)",
+   "team": "二隊",
+   "score": 4994984,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "回歸",
+   "team": "主隊",
+   "score": 4860906,
+   "note": "書嫻（芳芳）"
+  },
+  {
+   "period": "2125805647",
+   "name": "Ting(Kang)",
+   "team": "主隊",
+   "score": 4859375,
+   "note": "9/15入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "Hiram(Hiram海藍（韋書）)",
+   "team": "主隊",
+   "score": 4838332,
+   "note": "V帳11/29入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "建考",
+   "team": "二隊",
+   "score": 4786040,
+   "note": "主隊退轉二隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "Lucy",
+   "team": "二隊",
+   "score": 4673548,
+   "note": "主隊退轉二隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "Kevin(夠麻吉)",
+   "team": "二隊",
+   "score": 4645814,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "仁澤",
+   "team": "主隊",
+   "score": 4557134,
+   "note": "V帳二隊轉主隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "曉筱",
+   "team": "主隊",
+   "score": 4525129,
+   "note": "(娟娟)"
+  },
+  {
+   "period": "2125805647",
+   "name": "卉均",
+   "team": "主隊",
+   "score": 4467771,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "啟賢",
+   "team": "主隊",
+   "score": 4389962,
+   "note": "4/28入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "真(碧真)",
+   "team": "二隊",
+   "score": 4339991,
+   "note": "8/28入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "Joan",
+   "team": "主隊",
+   "score": 4228746,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "木川(峻銘)",
+   "team": "二隊",
+   "score": 4180583,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Sam(志成)",
+   "team": "主隊",
+   "score": 4101936,
+   "note": "2024/12/05入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "勇智（秋田)",
+   "team": "主隊",
+   "score": 4036870,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "億凡",
+   "team": "二隊",
+   "score": 3910707,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 3897629,
+   "note": "Fang（芳芳）"
+  },
+  {
+   "period": "2125805647",
+   "name": "萱",
+   "team": "主隊",
+   "score": 3878718,
+   "note": "(娟娟)"
+  },
+  {
+   "period": "2125805647",
+   "name": "Yang(Hsu)",
+   "team": "二隊",
+   "score": 3587020,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Kevin",
+   "team": "主隊",
+   "score": 3537081,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "wei(廖紘偉)",
+   "team": "二隊",
+   "score": 3505198,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "雅茹",
+   "team": "主隊",
+   "score": 3457341,
+   "note": "6/30入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "皓筑(Hao)",
+   "team": "主隊",
+   "score": 3388790,
+   "note": "1013入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "Gigi",
+   "team": "二隊",
+   "score": 3314000,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Hui Qin慧琴",
+   "team": "主隊",
+   "score": 3287200,
+   "note": "4/7入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "小婷",
+   "team": "二隊",
+   "score": 3032011,
+   "note": "V帳"
+  },
+  {
+   "period": "2125805647",
+   "name": "Jesmin(可達嘎)",
+   "team": "二隊",
+   "score": 2983334,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "榮焜(焜)",
+   "team": "二隊",
+   "score": 2980625,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Joy",
+   "team": "二隊",
+   "score": 2945278,
+   "note": "主隊退轉二隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "皓筑",
+   "team": "二隊",
+   "score": 2901003,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Lin",
+   "team": "主隊",
+   "score": 2893055,
+   "note": "11/24入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "筱玲",
+   "team": "主隊",
+   "score": 2849747,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "妤(IVAN)",
+   "team": "二隊",
+   "score": 2847015,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Qo(佩旻)",
+   "team": "二隊",
+   "score": 2759600,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "繼強(廖繼強)",
+   "team": "二隊",
+   "score": 2647207,
+   "note": "8/28入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "Na(崴如)",
+   "team": "二隊",
+   "score": 2599585,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Hui-Shan",
+   "team": "主隊",
+   "score": 2519700,
+   "note": "4/10入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "Momo(Y.C.Liao)",
+   "team": "二隊",
+   "score": 2396230,
+   "note": "Y.C.L結束支援"
+  },
+  {
+   "period": "2125805647",
+   "name": "柏憲(柏憲)",
+   "team": "二隊",
+   "score": 2393846,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Fra(Hsu)",
+   "team": "二隊",
+   "score": 2224407,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "所有(阿祥)",
+   "team": "二隊",
+   "score": 2194381,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Maggie",
+   "team": "主隊",
+   "score": 2156600,
+   "note": "V帳"
+  },
+  {
+   "period": "2125805647",
+   "name": "崴如",
+   "team": "二隊",
+   "score": 2149585,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Chi Feng（秉益）",
+   "team": "二隊",
+   "score": 2021600,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "良",
+   "team": "二隊",
+   "score": 2018859,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "雅婷(楊雅婷)",
+   "team": "二隊",
+   "score": 1942300,
+   "note": "8/28入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 1903433,
+   "note": "君(11)"
+  },
+  {
+   "period": "2125805647",
+   "name": "回歸",
+   "team": "主隊",
+   "score": 1824544,
+   "note": "Baoyun(11)"
+  },
+  {
+   "period": "2125805647",
+   "name": "Lilian(Tata bear)",
+   "team": "二隊",
+   "score": 1705140,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "悅(悅悅)",
+   "team": "二隊",
+   "score": 1604750,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "淑珍(林淑珍)",
+   "team": "二隊",
+   "score": 1601302,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "麗君(曾麗君)",
+   "team": "二隊",
+   "score": 1489344,
+   "note": "8/28入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "錢來(莊錢來)",
+   "team": "二隊",
+   "score": 1446025,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Santa(Cheng)",
+   "team": "二隊",
+   "score": 1428119,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Lynn（Lynn）",
+   "team": "二隊",
+   "score": 1324881,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "Lucy",
+   "team": "主隊",
+   "score": 1249484,
+   "note": "二隊轉主隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "珮綺（秉益）",
+   "team": "二隊",
+   "score": 1123715,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 1072350,
+   "note": "Chun(Ting)"
+  },
+  {
+   "period": "2125805647",
+   "name": "建考",
+   "team": "主隊",
+   "score": 1051350,
+   "note": "二隊轉主隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "志家（秉益）",
+   "team": "二隊",
+   "score": 974700,
+   "note": ""
+  },
+  {
+   "period": "2125805647",
+   "name": "許哲榮",
+   "team": "主隊",
+   "score": 827960,
+   "note": "12/1入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "榆璟(Sun)",
+   "team": "二隊",
+   "score": 684400,
+   "note": "12/1入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "Lung(隆彬)支援",
+   "team": "主隊",
+   "score": 617668,
+   "note": "Lung"
+  },
+  {
+   "period": "2125805647",
+   "name": "昱承(潘)",
+   "team": "二隊",
+   "score": 603763,
+   "note": "12/1入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "曜威(曜威)",
+   "team": "二隊",
+   "score": 508600,
+   "note": "8/28入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "筱玲(元慈)",
+   "team": "主隊",
+   "score": 322408,
+   "note": "7/21入隊"
+  },
+  {
+   "period": "2125805647",
+   "name": "陳立祐 (立祐)",
+   "team": "二隊",
+   "score": 14300,
+   "note": "12/4入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "乾媽(惠臻)",
+   "team": "主隊",
+   "score": 13378843,
+   "note": "V帳"
+  },
+  {
+   "period": "59314848",
+   "name": "Eric",
+   "team": "主隊",
+   "score": 11618397,
+   "note": "10/13入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Rakia",
+   "team": "主隊",
+   "score": 11327656,
+   "note": "V帳未入群"
+  },
+  {
+   "period": "59314848",
+   "name": "明志",
+   "team": "主隊",
+   "score": 10694136,
+   "note": "V帳未入群"
+  },
+  {
+   "period": "59314848",
+   "name": "娟娟",
+   "team": "主隊",
+   "score": 9561202,
+   "note": "V帳8/28入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "yeji",
+   "team": "主隊",
+   "score": 9103360,
+   "note": "2/24入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Fra(Hsu)",
+   "team": "二隊",
+   "score": 8213248,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "耀威",
+   "team": "主隊",
+   "score": 8098210,
+   "note": "V帳7/21入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "俊龍",
+   "team": "主隊",
+   "score": 7928674,
+   "note": "V帳8/28入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Linh(向向)",
+   "team": "二隊",
+   "score": 7390058,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Sam(志成)",
+   "team": "主隊",
+   "score": 7226593,
+   "note": "2024/12/05入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Ivan",
+   "team": "主隊",
+   "score": 7031105,
+   "note": "10/6入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Momo(Y.C.Liao)",
+   "team": "二隊",
+   "score": 6859598,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "怡君（Elaine)",
+   "team": "主隊",
+   "score": 6736641,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "豪豪",
+   "team": "主隊",
+   "score": 6705262,
+   "note": "10/9入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "承緯",
+   "team": "主隊",
+   "score": 6579206,
+   "note": "7/21入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Palui",
+   "team": "主隊",
+   "score": 6577764,
+   "note": "V帳"
+  },
+  {
+   "period": "59314848",
+   "name": "Jane(Mandy Huang)",
+   "team": "二隊",
+   "score": 6464265,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "建考",
+   "team": "二隊",
+   "score": 6037103,
+   "note": "主隊退轉二隊"
+  },
+  {
+   "period": "59314848",
+   "name": "佳佳",
+   "team": "主隊",
+   "score": 6017908,
+   "note": "V帳4/17入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "真好",
+   "team": "主隊",
+   "score": 5895052,
+   "note": "3/3入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Wanchi",
+   "team": "主隊",
+   "score": 5886168,
+   "note": "V帳6/9入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "向向",
+   "team": "主隊",
+   "score": 5628832,
+   "note": "5/26入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "哲",
+   "team": "主隊",
+   "score": 5351184,
+   "note": "普囤能量"
+  },
+  {
+   "period": "59314848",
+   "name": "芳芳（慶）",
+   "team": "主隊",
+   "score": 5302911,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "小考(小丁)",
+   "team": "二隊",
+   "score": 5288567,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "隆彬",
+   "team": "主隊",
+   "score": 5256004,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "澤靜(katherine)",
+   "team": "主隊",
+   "score": 5216318,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "勇智（秋田)",
+   "team": "主隊",
+   "score": 5191619,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "筱玲(元慈)",
+   "team": "主隊",
+   "score": 5182469,
+   "note": "7/21入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Kevin(夠麻吉)",
+   "team": "二隊",
+   "score": 5146752,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Jeff",
+   "team": "主隊",
+   "score": 5027212,
+   "note": "3/27入隊/安卓加速器"
+  },
+  {
+   "period": "59314848",
+   "name": "Ting(Kang)",
+   "team": "主隊",
+   "score": 5010655,
+   "note": "9/15入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Na",
+   "team": "主隊",
+   "score": 4989197,
+   "note": "v帳10/6入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Lucy",
+   "team": "二隊",
+   "score": 4783412,
+   "note": "主隊退轉二隊"
+  },
+  {
+   "period": "59314848",
+   "name": "太妃",
+   "team": "主隊",
+   "score": 4754213,
+   "note": "V帳8/21入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "小白",
+   "team": "主隊",
+   "score": 4732210,
+   "note": "V帳"
+  },
+  {
+   "period": "59314848",
+   "name": "Kevin",
+   "team": "主隊",
+   "score": 4699333,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Joan",
+   "team": "主隊",
+   "score": 4525984,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "宗澤",
+   "team": "二隊",
+   "score": 4511160,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Sakya",
+   "team": "二隊",
+   "score": 4464686,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "文祥",
+   "team": "主隊",
+   "score": 4412210,
+   "note": "V帳6/16入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Jane Lee （！Jane Lee)",
+   "team": "主隊",
+   "score": 4403758,
+   "note": "蘋果加速器追蹤"
+  },
+  {
+   "period": "59314848",
+   "name": "葉俊麟",
+   "team": "主隊",
+   "score": 4313522,
+   "note": "V帳"
+  },
+  {
+   "period": "59314848",
+   "name": "謝秀婷",
+   "team": "主隊",
+   "score": 4285024,
+   "note": "V帳1/16入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Joy",
+   "team": "二隊",
+   "score": 3895735,
+   "note": "主隊退轉二隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Hui-Shan",
+   "team": "主隊",
+   "score": 3794693,
+   "note": "4/10入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "雅茹",
+   "team": "主隊",
+   "score": 3785304,
+   "note": "6/30入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Gigi",
+   "team": "二隊",
+   "score": 3680419,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "仁澤",
+   "team": "主隊",
+   "score": 3631200,
+   "note": "V帳二隊轉主隊"
+  },
+  {
+   "period": "59314848",
+   "name": "所有(阿祥)",
+   "team": "二隊",
+   "score": 3600381,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Yang(Hsu)",
+   "team": "二隊",
+   "score": 3412357,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Maggie",
+   "team": "主隊",
+   "score": 3403600,
+   "note": "V帳"
+  },
+  {
+   "period": "59314848",
+   "name": "億凡",
+   "team": "二隊",
+   "score": 3400285,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "小婷",
+   "team": "二隊",
+   "score": 3362356,
+   "note": "V帳"
+  },
+  {
+   "period": "59314848",
+   "name": "卉均",
+   "team": "主隊",
+   "score": 3303334,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "妤(IVAN)",
+   "team": "二隊",
+   "score": 3298276,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "季英（季英）",
+   "team": "主隊",
+   "score": 3236981,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "佳蓁(玲玉)",
+   "team": "主隊",
+   "score": 3178620,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Santa(Cheng)",
+   "team": "二隊",
+   "score": 3156013,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Hui Qin慧琴",
+   "team": "主隊",
+   "score": 3134138,
+   "note": "4/7入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "崴如",
+   "team": "二隊",
+   "score": 3077468,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Na(崴如)",
+   "team": "二隊",
+   "score": 2977847,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "繼強(廖繼強)",
+   "team": "二隊",
+   "score": 2918624,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "榮焜(焜)",
+   "team": "二隊",
+   "score": 2898486,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 2859932,
+   "note": "小寶"
+  },
+  {
+   "period": "59314848",
+   "name": "錢來(莊錢來)",
+   "team": "二隊",
+   "score": 2758491,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "真(碧真)",
+   "team": "二隊",
+   "score": 2753827,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Yang",
+   "team": "主隊",
+   "score": 2744876,
+   "note": "二隊轉主隊1103"
+  },
+  {
+   "period": "59314848",
+   "name": "Chi Feng（秉益）",
+   "team": "二隊",
+   "score": 2695000,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Jesmin(可達嘎)",
+   "team": "二隊",
+   "score": 2689505,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "淑珍(林淑珍)",
+   "team": "二隊",
+   "score": 2657914,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "柏憲(柏憲)",
+   "team": "二隊",
+   "score": 2616336,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "啟賢",
+   "team": "主隊",
+   "score": 2542523,
+   "note": "4/28入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Qo(佩旻)",
+   "team": "二隊",
+   "score": 2463517,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 2424050,
+   "note": "Julie"
+  },
+  {
+   "period": "59314848",
+   "name": "昕融",
+   "team": "主隊",
+   "score": 2324128,
+   "note": "V帳"
+  },
+  {
+   "period": "59314848",
+   "name": "立昌",
+   "team": "主隊",
+   "score": 2280506,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "木川(峻銘)",
+   "team": "二隊",
+   "score": 2279817,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 2250912,
+   "note": "瓜瓜(健豪)"
+  },
+  {
+   "period": "59314848",
+   "name": "秀齡（索普）",
+   "team": "主隊",
+   "score": 2228808,
+   "note": "普囤能量"
+  },
+  {
+   "period": "59314848",
+   "name": "皓筑",
+   "team": "二隊",
+   "score": 2196119,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "雅婷(楊雅婷)",
+   "team": "二隊",
+   "score": 2162400,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Yulg(慧琴)",
+   "team": "二隊",
+   "score": 2080016,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "wei(廖紘偉)",
+   "team": "二隊",
+   "score": 2079024,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "珮綺（秉益）",
+   "team": "二隊",
+   "score": 1993050,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "良",
+   "team": "二隊",
+   "score": 1966480,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "悅(悅悅)",
+   "team": "二隊",
+   "score": 1812690,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "皓筑(Hao)",
+   "team": "主隊",
+   "score": 1811122,
+   "note": "1013入隊"
+  },
+  {
+   "period": "59314848",
+   "name": "Lilliam(Tata bear)",
+   "team": "二隊",
+   "score": 1784072,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Elaine(Elaine)",
+   "team": "二隊",
+   "score": 1716222,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 1676551,
+   "note": "貓貓"
+  },
+  {
+   "period": "59314848",
+   "name": "Lynn（Lynn）",
+   "team": "二隊",
+   "score": 1544429,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "照義",
+   "team": "主隊",
+   "score": 1439107,
+   "note": "V帳20251110退隊"
+  },
+  {
+   "period": "59314848",
+   "name": "麗君(曾麗君)",
+   "team": "二隊",
+   "score": 1408815,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 1380721,
+   "note": "Chun-Ching(11)"
+  },
+  {
+   "period": "59314848",
+   "name": "志家（秉益）",
+   "team": "二隊",
+   "score": 1346700,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "曜威(曜威)",
+   "team": "二隊",
+   "score": 1341200,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 1173587,
+   "note": "Jie(11)"
+  },
+  {
+   "period": "59314848",
+   "name": "Yang(Hsu)",
+   "team": "二隊",
+   "score": 1169788,
+   "note": "轉主隊"
+  },
+  {
+   "period": "59314848",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 1049033,
+   "note": "CH"
+  },
+  {
+   "period": "59314848",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 1048130,
+   "note": "佳"
+  },
+  {
+   "period": "59314848",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 992681,
+   "note": "fang"
+  },
+  {
+   "period": "59314848",
+   "name": "小不點（秉益）",
+   "team": "二隊",
+   "score": 969500,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 957800,
+   "note": "JIE"
+  },
+  {
+   "period": "59314848",
+   "name": "KIKI(慧琴)",
+   "team": "二隊",
+   "score": 955025,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Alina",
+   "team": "二隊",
+   "score": 924700,
+   "note": "20251110退"
+  },
+  {
+   "period": "59314848",
+   "name": "慧琴",
+   "team": "主隊",
+   "score": 854000,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "Nami(劉宗靈)",
+   "team": "二隊",
+   "score": 812512,
+   "note": "20251110結束支援"
+  },
+  {
+   "period": "59314848",
+   "name": "德榮(曜威)",
+   "team": "二隊",
+   "score": 775300,
+   "note": ""
+  },
+  {
+   "period": "59314848",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 275350,
+   "note": "貓貓"
+  },
+  {
+   "period": "59314848",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 228090,
+   "note": "睿鑫(11)"
+  },
+  {
+   "period": "59314848",
+   "name": "回歸",
+   "team": "二隊",
+   "score": 213010,
+   "note": "果"
+  },
+  {
    "period": "1844830839",
    "name": "Rakia",
    "team": "未標註",
@@ -18303,7 +21404,7 @@
   },
   {
    "period": "1844830839",
-   "name": "41.Jane Lee （！Jane Lee)",
+   "name": "Jane Lee （！Jane Lee)",
    "team": "未標註",
    "score": 3777140,
    "note": "蘋果加速器追蹤"
@@ -18723,7 +21824,7 @@
   },
   {
    "period": "1143228021",
-   "name": "41.Jane Lee （！Jane Lee)",
+   "name": "Jane Lee （！Jane Lee)",
    "team": "未標註",
    "score": 3571969,
    "note": "蘋果加速器追蹤"
@@ -18859,56 +21960,56 @@
    "name": "佳佳",
    "team": "未標註",
    "score": 8602660,
-   "note": ""
+   "note": "V帳4/17入隊"
   },
   {
    "period": "197975506",
    "name": "乾媽(惠臻)",
    "team": "未標註",
    "score": 7984146,
-   "note": ""
+   "note": "V帳"
   },
   {
    "period": "197975506",
    "name": "明志",
    "team": "未標註",
    "score": 7732452,
-   "note": ""
+   "note": "V帳未入群"
   },
   {
    "period": "197975506",
    "name": "Rakia",
    "team": "未標註",
    "score": 7631651,
-   "note": ""
+   "note": "V帳未入群"
   },
   {
    "period": "197975506",
    "name": "Sam(志成)",
    "team": "未標註",
    "score": 7479931,
-   "note": ""
+   "note": "2024/12/05入隊"
   },
   {
    "period": "197975506",
    "name": "娟娟",
    "team": "未標註",
    "score": 6504610,
-   "note": ""
+   "note": "V帳8/28入隊"
   },
   {
    "period": "197975506",
    "name": "照義",
    "team": "未標註",
    "score": 6163752,
-   "note": ""
+   "note": "V帳"
   },
   {
    "period": "197975506",
    "name": "丁建考",
    "team": "未標註",
    "score": 6144617,
-   "note": ""
+   "note": "5/5入隊"
   },
   {
    "period": "197975506",
@@ -18922,7 +22023,7 @@
    "name": "Palui",
    "team": "未標註",
    "score": 5756235,
-   "note": ""
+   "note": "V帳"
   },
   {
    "period": "197975506",
@@ -18936,21 +22037,21 @@
    "name": "承緯",
    "team": "未標註",
    "score": 5262949,
-   "note": ""
+   "note": "7/21入隊"
   },
   {
    "period": "197975506",
    "name": "向",
    "team": "未標註",
    "score": 5246917,
-   "note": ""
+   "note": "5/26入隊"
   },
   {
    "period": "197975506",
    "name": "小白",
    "team": "未標註",
    "score": 5202078,
-   "note": ""
+   "note": "V帳"
   },
   {
    "period": "197975506",
@@ -18964,49 +22065,49 @@
    "name": "Wanchi",
    "team": "未標註",
    "score": 5054326,
-   "note": ""
+   "note": "V帳6/9入隊"
   },
   {
    "period": "197975506",
    "name": "耀威",
    "team": "未標註",
    "score": 5027230,
-   "note": ""
+   "note": "V帳7/21入隊"
   },
   {
    "period": "197975506",
    "name": "俊龍",
    "team": "未標註",
    "score": 5009849,
-   "note": ""
+   "note": "V帳8/28入隊"
   },
   {
    "period": "197975506",
    "name": "真好",
    "team": "未標註",
    "score": 4990746,
-   "note": ""
+   "note": "3/3入隊"
   },
   {
    "period": "197975506",
    "name": "yeji",
    "team": "未標註",
    "score": 4881652,
-   "note": ""
+   "note": "2/24入隊"
   },
   {
    "period": "197975506",
    "name": "健明(昊)",
    "team": "未標註",
    "score": 4831864,
-   "note": ""
+   "note": "8/21入隊"
   },
   {
    "period": "197975506",
    "name": "李炳奎(李)",
    "team": "未標註",
    "score": 4808320,
-   "note": ""
+   "note": "5/19入隊"
   },
   {
    "period": "197975506",
@@ -19041,35 +22142,35 @@
    "name": "Hui-Shan",
    "team": "未標註",
    "score": 4400564,
-   "note": ""
+   "note": "4/10入隊"
   },
   {
    "period": "197975506",
    "name": "佳(P).PAUL (回歸).伶",
    "team": "二隊",
    "score": 4309669,
-   "note": ""
+   "note": "4/22入隊"
   },
   {
    "period": "197975506",
    "name": "文祥",
    "team": "未標註",
    "score": 4246557,
-   "note": ""
+   "note": "V帳6/16入隊"
   },
   {
    "period": "197975506",
    "name": "健豪",
    "team": "未標註",
    "score": 4002224,
-   "note": ""
+   "note": "普囤能量"
   },
   {
    "period": "197975506",
    "name": "Jeff",
    "team": "未標註",
    "score": 3946631,
-   "note": ""
+   "note": "3/27入隊/安卓加速器"
   },
   {
    "period": "197975506",
@@ -19090,7 +22191,7 @@
    "name": "Maggie",
    "team": "未標註",
    "score": 3855600,
-   "note": ""
+   "note": "V帳"
   },
   {
    "period": "197975506",
@@ -19104,28 +22205,28 @@
    "name": "Joy",
    "team": "未標註",
    "score": 3734906,
-   "note": ""
+   "note": "8/2入隊"
   },
   {
    "period": "197975506",
    "name": "昕融",
    "team": "未標註",
    "score": 3647063,
-   "note": ""
+   "note": "V帳"
   },
   {
    "period": "197975506",
-   "name": "41.Jane Lee （！Jane Lee)",
+   "name": "Jane Lee （！Jane Lee)",
    "team": "未標註",
    "score": 3606260,
-   "note": ""
+   "note": "蘋果加速器追蹤"
   },
   {
    "period": "197975506",
    "name": "哲",
    "team": "未標註",
    "score": 3434001,
-   "note": ""
+   "note": "普囤能量"
   },
   {
    "period": "197975506",
@@ -19139,49 +22240,49 @@
    "name": "1芳",
    "team": "未標註",
    "score": 3218409,
-   "note": ""
+   "note": "普囤能量"
   },
   {
    "period": "197975506",
    "name": "啟賢",
    "team": "未標註",
    "score": 3216225,
-   "note": ""
+   "note": "4/28入隊"
   },
   {
    "period": "197975506",
    "name": "慧琴",
    "team": "未標註",
    "score": 3211005,
-   "note": ""
+   "note": "4/7入隊"
   },
   {
    "period": "197975506",
    "name": "筱玲",
    "team": "未標註",
    "score": 3124836,
-   "note": ""
+   "note": "7/21入隊"
   },
   {
    "period": "197975506",
    "name": "雅茹",
    "team": "未標註",
    "score": 3098845,
-   "note": ""
+   "note": "6/30入隊"
   },
   {
    "period": "197975506",
    "name": "秀齡（健豪小號）",
    "team": "未標註",
    "score": 3043178,
-   "note": ""
+   "note": "普囤能量"
   },
   {
    "period": "197975506",
    "name": "謝秀婷",
    "team": "未標註",
    "score": 3024009,
-   "note": ""
+   "note": "V帳1/16入隊"
   },
   {
    "period": "197975506",
@@ -19195,7 +22296,7 @@
    "name": "太妃",
    "team": "未標註",
    "score": 2415440,
-   "note": ""
+   "note": "V帳8/21入隊"
   },
   {
    "period": "197975506",
@@ -19209,28 +22310,1967 @@
    "name": "Alina貓",
    "team": "未標註",
    "score": 756627,
-   "note": ""
+   "note": "V帳"
   },
   {
    "period": "197975506",
    "name": "回歸",
    "team": "未標註",
    "score": 616338,
-   "note": ""
+   "note": "CH11"
   },
   {
    "period": "197975506",
    "name": "Alison",
    "team": "未標註",
    "score": 519372,
-   "note": ""
+   "note": "普囤能量"
   },
   {
    "period": "197975506",
    "name": "吳玲",
    "team": "未標註",
    "score": 2000,
+   "note": "V帳"
+  },
+  {
+   "period": "2059642708",
+   "name": "佳佳",
+   "team": "未標註",
+   "score": 10050468,
+   "note": "V帳  4/17入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "Palui",
+   "team": "未標註",
+   "score": 9705349,
+   "note": "V帳"
+  },
+  {
+   "period": "2059642708",
+   "name": "乾媽(惠臻)",
+   "team": "未標註",
+   "score": 8804453,
+   "note": "V帳"
+  },
+  {
+   "period": "2059642708",
+   "name": "Rakia",
+   "team": "未標註",
+   "score": 8707973,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "2059642708",
+   "name": "明志",
+   "team": "未標註",
+   "score": 7127477,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "2059642708",
+   "name": "李炳奎(李)",
+   "team": "未標註",
+   "score": 6178346,
+   "note": "5/19入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "芳芳（慶）",
+   "team": "未標註",
+   "score": 6157802,
    "note": ""
+  },
+  {
+   "period": "2059642708",
+   "name": "耀威",
+   "team": "未標註",
+   "score": 5943338,
+   "note": "V帳 7/21入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "丁建考",
+   "team": "未標註",
+   "score": 5835040,
+   "note": "5/5入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "勇智（秋田)",
+   "team": "未標註",
+   "score": 5799298,
+   "note": ""
+  },
+  {
+   "period": "2059642708",
+   "name": "小白",
+   "team": "未標註",
+   "score": 5750579,
+   "note": "V帳"
+  },
+  {
+   "period": "2059642708",
+   "name": "Hui-Shan",
+   "team": "未標註",
+   "score": 5309418,
+   "note": "4/10入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "Sam(志成)",
+   "team": "未標註",
+   "score": 5212545,
+   "note": "2024/12/05入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "澤靜(katherine)",
+   "team": "未標註",
+   "score": 5093813,
+   "note": ""
+  },
+  {
+   "period": "2059642708",
+   "name": "哲",
+   "team": "未標註",
+   "score": 4938853,
+   "note": "普囤能量"
+  },
+  {
+   "period": "2059642708",
+   "name": "Kevin",
+   "team": "未標註",
+   "score": 4902824,
+   "note": ""
+  },
+  {
+   "period": "2059642708",
+   "name": "照義",
+   "team": "未標註",
+   "score": 4783440,
+   "note": "V帳"
+  },
+  {
+   "period": "2059642708",
+   "name": "筱玲",
+   "team": "未標註",
+   "score": 4730929,
+   "note": "7/21入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "怡君（Elaine)",
+   "team": "未標註",
+   "score": 4417464,
+   "note": ""
+  },
+  {
+   "period": "2059642708",
+   "name": "Joan",
+   "team": "未標註",
+   "score": 4282432,
+   "note": ""
+  },
+  {
+   "period": "2059642708",
+   "name": "雅茹",
+   "team": "未標註",
+   "score": 4131496,
+   "note": "6/30入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "承緯",
+   "team": "未標註",
+   "score": 4092738,
+   "note": "7/21入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "1芳",
+   "team": "未標註",
+   "score": 4083979,
+   "note": "普囤能量"
+  },
+  {
+   "period": "2059642708",
+   "name": "建文",
+   "team": "未標註",
+   "score": 4069715,
+   "note": ""
+  },
+  {
+   "period": "2059642708",
+   "name": "真好",
+   "team": "未標註",
+   "score": 4038524,
+   "note": "3/3入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "季英（季英）",
+   "team": "未標註",
+   "score": 4034497,
+   "note": ""
+  },
+  {
+   "period": "2059642708",
+   "name": "立昌",
+   "team": "未標註",
+   "score": 4023609,
+   "note": ""
+  },
+  {
+   "period": "2059642708",
+   "name": "Wanchi",
+   "team": "未標註",
+   "score": 3983751,
+   "note": "V帳   6/9入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "慧琴",
+   "team": "未標註",
+   "score": 3951450,
+   "note": "4/7入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "隆彬",
+   "team": "未標註",
+   "score": 3931663,
+   "note": ""
+  },
+  {
+   "period": "2059642708",
+   "name": "卉均",
+   "team": "未標註",
+   "score": 3914511,
+   "note": ""
+  },
+  {
+   "period": "2059642708",
+   "name": "文祥",
+   "team": "未標註",
+   "score": 3846393,
+   "note": "V帳  6/16入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "秀齡（健豪小號）",
+   "team": "未標註",
+   "score": 3789054,
+   "note": "普囤能量"
+  },
+  {
+   "period": "2059642708",
+   "name": "向",
+   "team": "未標註",
+   "score": 3723626,
+   "note": "5/26入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "回歸",
+   "team": "未標註",
+   "score": 3701359,
+   "note": "文彬11"
+  },
+  {
+   "period": "2059642708",
+   "name": "健豪",
+   "team": "未標註",
+   "score": 3678878,
+   "note": "普囤能量"
+  },
+  {
+   "period": "2059642708",
+   "name": "Maggie",
+   "team": "未標註",
+   "score": 3625000,
+   "note": "V帳"
+  },
+  {
+   "period": "2059642708",
+   "name": "佳(P).PAUL (回歸)",
+   "team": "未標註",
+   "score": 3306013,
+   "note": "4/22入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "葉俊麟",
+   "team": "未標註",
+   "score": 3240105,
+   "note": "V帳"
+  },
+  {
+   "period": "2059642708",
+   "name": "Jane Lee （！Jane Lee)",
+   "team": "未標註",
+   "score": 3207171,
+   "note": "蘋果加速器追蹤"
+  },
+  {
+   "period": "2059642708",
+   "name": "Jeff",
+   "team": "未標註",
+   "score": 3160191,
+   "note": "3/27入隊/安卓加速器"
+  },
+  {
+   "period": "2059642708",
+   "name": "吳玲",
+   "team": "未標註",
+   "score": 3152053,
+   "note": "V帳"
+  },
+  {
+   "period": "2059642708",
+   "name": "佳蓁(玲玉)",
+   "team": "未標註",
+   "score": 3104766,
+   "note": ""
+  },
+  {
+   "period": "2059642708",
+   "name": "謝秀婷",
+   "team": "未標註",
+   "score": 2942921,
+   "note": "V帳  1/16入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "啟賢",
+   "team": "未標註",
+   "score": 2884320,
+   "note": "4/28入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "Lucy（Lucy 匡匡）",
+   "team": "未標註",
+   "score": 2444502,
+   "note": ""
+  },
+  {
+   "period": "2059642708",
+   "name": "回歸",
+   "team": "未標註",
+   "score": 2050032,
+   "note": "金龍11"
+  },
+  {
+   "period": "2059642708",
+   "name": "yeji",
+   "team": "未標註",
+   "score": 1673356,
+   "note": "2/24入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "Alina貓",
+   "team": "未標註",
+   "score": 1591700,
+   "note": "V帳"
+  },
+  {
+   "period": "2059642708",
+   "name": "小涼(Existence)",
+   "team": "未標註",
+   "score": 1368354,
+   "note": ""
+  },
+  {
+   "period": "2059642708",
+   "name": "健明",
+   "team": "未標註",
+   "score": 971080,
+   "note": "8/21入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "回歸",
+   "team": "未標註",
+   "score": 742572,
+   "note": "果"
+  },
+  {
+   "period": "2059642708",
+   "name": "Joy",
+   "team": "未標註",
+   "score": 621450,
+   "note": "8/2入隊"
+  },
+  {
+   "period": "2059642708",
+   "name": "Sakya",
+   "team": "未標註",
+   "score": 605143,
+   "note": "V帳"
+  },
+  {
+   "period": "2059642708",
+   "name": "回歸",
+   "team": "未標註",
+   "score": 450645,
+   "note": "11睿鑫"
+  },
+  {
+   "period": "2059642708",
+   "name": "太妃",
+   "team": "未標註",
+   "score": 332500,
+   "note": "V帳 8/21入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "Sam(志成)",
+   "team": "未標註",
+   "score": 6407629,
+   "note": "2024/12/05入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "丁建考",
+   "team": "未標註",
+   "score": 5643118,
+   "note": "5/5入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "小白",
+   "team": "未標註",
+   "score": 5131976,
+   "note": "V帳"
+  },
+  {
+   "period": "1504242843",
+   "name": "Rakia",
+   "team": "未標註",
+   "score": 5126330,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "1504242843",
+   "name": "哲",
+   "team": "未標註",
+   "score": 4943020,
+   "note": "普囤能量"
+  },
+  {
+   "period": "1504242843",
+   "name": "吳玲",
+   "team": "未標註",
+   "score": 4799863,
+   "note": "V帳"
+  },
+  {
+   "period": "1504242843",
+   "name": "明志",
+   "team": "未標註",
+   "score": 4776879,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "1504242843",
+   "name": "Kevin",
+   "team": "未標註",
+   "score": 4774360,
+   "note": ""
+  },
+  {
+   "period": "1504242843",
+   "name": "立昌",
+   "team": "未標註",
+   "score": 4687529,
+   "note": ""
+  },
+  {
+   "period": "1504242843",
+   "name": "佳(P).PAUL (回歸)",
+   "team": "未標註",
+   "score": 4660695,
+   "note": "4/22入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "Sakya",
+   "team": "未標註",
+   "score": 4570735,
+   "note": "V帳"
+  },
+  {
+   "period": "1504242843",
+   "name": "乾媽(惠臻)",
+   "team": "未標註",
+   "score": 4522971,
+   "note": "V帳"
+  },
+  {
+   "period": "1504242843",
+   "name": "建文",
+   "team": "未標註",
+   "score": 4419015,
+   "note": "普囤能量"
+  },
+  {
+   "period": "1504242843",
+   "name": "照義",
+   "team": "未標註",
+   "score": 4351214,
+   "note": "V帳"
+  },
+  {
+   "period": "1504242843",
+   "name": "佳佳",
+   "team": "未標註",
+   "score": 4336153,
+   "note": "V帳  4/17入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "怡君（Elaine)",
+   "team": "未標註",
+   "score": 4253603,
+   "note": ""
+  },
+  {
+   "period": "1504242843",
+   "name": "勇智（秋田)",
+   "team": "未標註",
+   "score": 4243223,
+   "note": ""
+  },
+  {
+   "period": "1504242843",
+   "name": "佳蓁(玲玉)",
+   "team": "未標註",
+   "score": 4065614,
+   "note": ""
+  },
+  {
+   "period": "1504242843",
+   "name": "1芳",
+   "team": "未標註",
+   "score": 3997106,
+   "note": "普囤能量"
+  },
+  {
+   "period": "1504242843",
+   "name": "李炳奎(李)",
+   "team": "未標註",
+   "score": 3887763,
+   "note": "5/19入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "澤靜(katherine)",
+   "team": "未標註",
+   "score": 3844819,
+   "note": ""
+  },
+  {
+   "period": "1504242843",
+   "name": "文祥",
+   "team": "未標註",
+   "score": 3801343,
+   "note": "V帳  6/16入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "秀齡（健豪小號）",
+   "team": "未標註",
+   "score": 3771388,
+   "note": "普囤能量"
+  },
+  {
+   "period": "1504242843",
+   "name": "承緯",
+   "team": "未標註",
+   "score": 3747994,
+   "note": "7/21入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "芳芳（慶）",
+   "team": "未標註",
+   "score": 3735849,
+   "note": ""
+  },
+  {
+   "period": "1504242843",
+   "name": "Palui",
+   "team": "未標註",
+   "score": 3664683,
+   "note": "V帳"
+  },
+  {
+   "period": "1504242843",
+   "name": "雅茹",
+   "team": "未標註",
+   "score": 3545482,
+   "note": "6/30入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "謝秀婷",
+   "team": "未標註",
+   "score": 3516709,
+   "note": "V帳  1/16入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "回歸",
+   "team": "未標註",
+   "score": 3470325,
+   "note": "霈峰11"
+  },
+  {
+   "period": "1504242843",
+   "name": "Joan",
+   "team": "未標註",
+   "score": 3327782,
+   "note": ""
+  },
+  {
+   "period": "1504242843",
+   "name": "健豪",
+   "team": "未標註",
+   "score": 3196017,
+   "note": "普囤能量"
+  },
+  {
+   "period": "1504242843",
+   "name": "Hui-Shan",
+   "team": "未標註",
+   "score": 3079767,
+   "note": "4/10入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "隆彬",
+   "team": "未標註",
+   "score": 3015343,
+   "note": ""
+  },
+  {
+   "period": "1504242843",
+   "name": "季英（季英）",
+   "team": "未標註",
+   "score": 2973235,
+   "note": ""
+  },
+  {
+   "period": "1504242843",
+   "name": "Jeff",
+   "team": "未標註",
+   "score": 2938175,
+   "note": "3/27入隊/安卓加速器"
+  },
+  {
+   "period": "1504242843",
+   "name": "yeji",
+   "team": "未標註",
+   "score": 2936293,
+   "note": "2/24入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "真好",
+   "team": "未標註",
+   "score": 2877645,
+   "note": "3/3入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "小涼(Existence)",
+   "team": "未標註",
+   "score": 2876083,
+   "note": ""
+  },
+  {
+   "period": "1504242843",
+   "name": "慧琴",
+   "team": "未標註",
+   "score": 2747055,
+   "note": "4/7入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "卉均",
+   "team": "未標註",
+   "score": 2666524,
+   "note": ""
+  },
+  {
+   "period": "1504242843",
+   "name": "回歸",
+   "team": "未標註",
+   "score": 2581729,
+   "note": "瓜瓜健豪"
+  },
+  {
+   "period": "1504242843",
+   "name": "啟賢",
+   "team": "未標註",
+   "score": 2547836,
+   "note": "4/28入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "Lucy（Lucy 匡匡）",
+   "team": "未標註",
+   "score": 2457673,
+   "note": ""
+  },
+  {
+   "period": "1504242843",
+   "name": "Alina貓",
+   "team": "未標註",
+   "score": 2450928,
+   "note": "V帳"
+  },
+  {
+   "period": "1504242843",
+   "name": "向",
+   "team": "未標註",
+   "score": 2383669,
+   "note": "5/26入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "回歸",
+   "team": "未標註",
+   "score": 2270272,
+   "note": "小玉11"
+  },
+  {
+   "period": "1504242843",
+   "name": "Jane Lee （！Jane Lee)",
+   "team": "未標註",
+   "score": 2061333,
+   "note": "蘋果加速器追蹤"
+  },
+  {
+   "period": "1504242843",
+   "name": "耀威",
+   "team": "未標註",
+   "score": 2025911,
+   "note": "V帳 7/21入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "Maggie",
+   "team": "未標註",
+   "score": 1994200,
+   "note": "V帳"
+  },
+  {
+   "period": "1504242843",
+   "name": "Wanchi",
+   "team": "未標註",
+   "score": 1829641,
+   "note": "V帳   6/9入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "筱玲",
+   "team": "未標註",
+   "score": 1569865,
+   "note": "7/21入隊"
+  },
+  {
+   "period": "1504242843",
+   "name": "葉俊麟",
+   "team": "未標註",
+   "score": 1439773,
+   "note": "V帳"
+  },
+  {
+   "period": "1504242843",
+   "name": "回歸",
+   "team": "未標註",
+   "score": 1395321,
+   "note": "Alina11"
+  },
+  {
+   "period": "1504242843",
+   "name": "回歸",
+   "team": "未標註",
+   "score": 61230,
+   "note": "凱倫33"
+  },
+  {
+   "period": "1504242843",
+   "name": "(Yang) Hsu、fra",
+   "team": "未標註",
+   "score": 23516,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "Rakia",
+   "team": "未標註",
+   "score": 10854432,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "488442556",
+   "name": "明志",
+   "team": "未標註",
+   "score": 7005650,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "488442556",
+   "name": "Jeff",
+   "team": "未標註",
+   "score": 5923277,
+   "note": "3/27入隊/安卓加速器"
+  },
+  {
+   "period": "488442556",
+   "name": "Palui",
+   "team": "未標註",
+   "score": 5758273,
+   "note": "V帳"
+  },
+  {
+   "period": "488442556",
+   "name": "丁建考",
+   "team": "未標註",
+   "score": 5698493,
+   "note": "5/5入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "佳佳",
+   "team": "未標註",
+   "score": 5516089,
+   "note": "V帳  4/17入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "小白",
+   "team": "未標註",
+   "score": 5309437,
+   "note": "V帳"
+  },
+  {
+   "period": "488442556",
+   "name": "yeji",
+   "team": "未標註",
+   "score": 5178856,
+   "note": "2/24入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "乾媽(惠臻)",
+   "team": "未標註",
+   "score": 5143482,
+   "note": "V帳"
+  },
+  {
+   "period": "488442556",
+   "name": "哲",
+   "team": "未標註",
+   "score": 5116621,
+   "note": "普囤能量"
+  },
+  {
+   "period": "488442556",
+   "name": "真好",
+   "team": "未標註",
+   "score": 5022405,
+   "note": "3/3入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "文祥",
+   "team": "未標註",
+   "score": 4902654,
+   "note": "V帳  6/16入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "1芳",
+   "team": "未標註",
+   "score": 4760724,
+   "note": "普囤能量"
+  },
+  {
+   "period": "488442556",
+   "name": "Sam(志成)",
+   "team": "未標註",
+   "score": 4649704,
+   "note": "2024/12/05入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "李炳奎(李)",
+   "team": "未標註",
+   "score": 4504460,
+   "note": "5/19入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "怡君（Elaine)",
+   "team": "未標註",
+   "score": 4355526,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "建文",
+   "team": "未標註",
+   "score": 4255319,
+   "note": "普囤能量"
+  },
+  {
+   "period": "488442556",
+   "name": "葉俊麟",
+   "team": "未標註",
+   "score": 4083474,
+   "note": "V帳"
+  },
+  {
+   "period": "488442556",
+   "name": "Maggie",
+   "team": "未標註",
+   "score": 4081200,
+   "note": "V帳"
+  },
+  {
+   "period": "488442556",
+   "name": "(Yang) Hsu、fra",
+   "team": "未標註",
+   "score": 4049720,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "慧琴",
+   "team": "未標註",
+   "score": 4003893,
+   "note": "4/7入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "Lucy（Lucy 匡匡）",
+   "team": "未標註",
+   "score": 3970326,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "Jane Lee （！Jane Lee)",
+   "team": "未標註",
+   "score": 3933753,
+   "note": "蘋果加速器追蹤"
+  },
+  {
+   "period": "488442556",
+   "name": "健豪",
+   "team": "未標註",
+   "score": 3893337,
+   "note": "普囤能量"
+  },
+  {
+   "period": "488442556",
+   "name": "芳芳（慶）",
+   "team": "未標註",
+   "score": 3867762,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "小涼(Existence)",
+   "team": "未標註",
+   "score": 3848060,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "卉均",
+   "team": "未標註",
+   "score": 3837796,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "澤靜(katherine)",
+   "team": "未標註",
+   "score": 3654611,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "Joan",
+   "team": "未標註",
+   "score": 3557087,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "季英（季英）",
+   "team": "未標註",
+   "score": 3502334,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "Sakya",
+   "team": "未標註",
+   "score": 3481851,
+   "note": "V帳"
+  },
+  {
+   "period": "488442556",
+   "name": "照義",
+   "team": "未標註",
+   "score": 3395434,
+   "note": "V帳"
+  },
+  {
+   "period": "488442556",
+   "name": "Alina貓",
+   "team": "未標註",
+   "score": 3383743,
+   "note": "V帳"
+  },
+  {
+   "period": "488442556",
+   "name": "勇智（秋田)",
+   "team": "未標註",
+   "score": 3369951,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "隆彬",
+   "team": "未標註",
+   "score": 3341981,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "Hui-Shan",
+   "team": "未標註",
+   "score": 3291721,
+   "note": "4/10入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "Kevin",
+   "team": "未標註",
+   "score": 3279682,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "秀齡（健豪小號）",
+   "team": "未標註",
+   "score": 3231284,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "雅茹",
+   "team": "未標註",
+   "score": 3198345,
+   "note": "6/30入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "謝秀婷",
+   "team": "未標註",
+   "score": 3181806,
+   "note": "V帳  1/16入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "佳蓁(玲玉)",
+   "team": "未標註",
+   "score": 3117336,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "Jasmin",
+   "team": "未標註",
+   "score": 2691144,
+   "note": "普囤能量6/19入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "啟賢",
+   "team": "未標註",
+   "score": 2551647,
+   "note": "4/28入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "佳(P)",
+   "team": "未標註",
+   "score": 2513103,
+   "note": "4/22入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "回歸伶",
+   "team": "未標註",
+   "score": 2246854,
+   "note": "P"
+  },
+  {
+   "period": "488442556",
+   "name": "Wanchi",
+   "team": "未標註",
+   "score": 2153524,
+   "note": "V帳   6/9入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "吳玲",
+   "team": "未標註",
+   "score": 2059988,
+   "note": "V帳"
+  },
+  {
+   "period": "488442556",
+   "name": "回歸君",
+   "team": "未標註",
+   "score": 2019130,
+   "note": "11"
+  },
+  {
+   "period": "488442556",
+   "name": "回歸B",
+   "team": "未標註",
+   "score": 2008059,
+   "note": "11"
+  },
+  {
+   "period": "488442556",
+   "name": "立昌",
+   "team": "未標註",
+   "score": 1988455,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "麗雪（吳麗雪）",
+   "team": "未標註",
+   "score": 1937704,
+   "note": ""
+  },
+  {
+   "period": "488442556",
+   "name": "回歸聖",
+   "team": "未標註",
+   "score": 1834800,
+   "note": "11"
+  },
+  {
+   "period": "488442556",
+   "name": "向",
+   "team": "未標註",
+   "score": 1817366,
+   "note": "5/26入隊"
+  },
+  {
+   "period": "488442556",
+   "name": "回歸鎮",
+   "team": "未標註",
+   "score": 508002,
+   "note": "11"
+  },
+  {
+   "period": "488442556",
+   "name": "回歸索",
+   "team": "未標註",
+   "score": 466379,
+   "note": "11"
+  },
+  {
+   "period": "1189237592",
+   "name": "Rakia",
+   "team": "未標註",
+   "score": 6727655,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "1189237592",
+   "name": "乾媽(惠臻)",
+   "team": "未標註",
+   "score": 7096185,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "小白",
+   "team": "未標註",
+   "score": 6132094,
+   "note": "V帳"
+  },
+  {
+   "period": "1189237592",
+   "name": "Sam(志成)",
+   "team": "未標註",
+   "score": 5388600,
+   "note": "2024/12/05入隊"
+  },
+  {
+   "period": "1189237592",
+   "name": "丁建考",
+   "team": "未標註",
+   "score": 6018211,
+   "note": "5/5入隊"
+  },
+  {
+   "period": "1189237592",
+   "name": "Maggie",
+   "team": "未標註",
+   "score": 5231409,
+   "note": "V帳"
+  },
+  {
+   "period": "1189237592",
+   "name": "建文",
+   "team": "未標註",
+   "score": 6396408,
+   "note": "普囤能量"
+  },
+  {
+   "period": "1189237592",
+   "name": "小涼(Existence)",
+   "team": "未標註",
+   "score": 5059246,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "澤靜(katherine)",
+   "team": "未標註",
+   "score": 4981713,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "芳芳（慶）",
+   "team": "未標註",
+   "score": 5236067,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "哲",
+   "team": "未標註",
+   "score": 5384817,
+   "note": "普囤能量"
+  },
+  {
+   "period": "1189237592",
+   "name": "明志",
+   "team": "未標註",
+   "score": 5169409,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "1189237592",
+   "name": "佳(P)",
+   "team": "未標註",
+   "score": 5108904,
+   "note": "4/22入隊"
+  },
+  {
+   "period": "1189237592",
+   "name": "Palui",
+   "team": "未標註",
+   "score": 4555637,
+   "note": "V帳"
+  },
+  {
+   "period": "1189237592",
+   "name": "1芳",
+   "team": "未標註",
+   "score": 4927077,
+   "note": "普囤能量"
+  },
+  {
+   "period": "1189237592",
+   "name": "李炳奎(李)",
+   "team": "未標註",
+   "score": 4917062,
+   "note": "5/19入隊"
+  },
+  {
+   "period": "1189237592",
+   "name": "季英（季英）",
+   "team": "未標註",
+   "score": 4258232,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "卉均",
+   "team": "未標註",
+   "score": 5233112,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "葉俊麟",
+   "team": "未標註",
+   "score": 5870130,
+   "note": "V帳"
+  },
+  {
+   "period": "1189237592",
+   "name": "怡君（Elaine)",
+   "team": "未標註",
+   "score": 4459739,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "照義",
+   "team": "未標註",
+   "score": 5440168,
+   "note": "V帳"
+  },
+  {
+   "period": "1189237592",
+   "name": "謝秀婷",
+   "team": "未標註",
+   "score": 3931627,
+   "note": "V帳  1/16入隊"
+  },
+  {
+   "period": "1189237592",
+   "name": "佳蓁(玲玉)",
+   "team": "未標註",
+   "score": 3908235,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "Hui-Shan",
+   "team": "未標註",
+   "score": 3994853,
+   "note": "4/10入隊"
+  },
+  {
+   "period": "1189237592",
+   "name": "(Yang) Hsu、fra",
+   "team": "未標註",
+   "score": 3619310,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "Joan",
+   "team": "未標註",
+   "score": 3338032,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "麗雪（吳麗雪）",
+   "team": "未標註",
+   "score": 3469531,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "Kevin",
+   "team": "未標註",
+   "score": 3562748,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "Jeff",
+   "team": "未標註",
+   "score": 3524318,
+   "note": "3/27入隊/安卓加速器"
+  },
+  {
+   "period": "1189237592",
+   "name": "真好",
+   "team": "未標註",
+   "score": 3963095,
+   "note": "3/3入隊"
+  },
+  {
+   "period": "1189237592",
+   "name": "慧琴",
+   "team": "未標註",
+   "score": 3320715,
+   "note": "4/7入隊"
+  },
+  {
+   "period": "1189237592",
+   "name": "立昌",
+   "team": "未標註",
+   "score": 3222450,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "佳佳",
+   "team": "未標註",
+   "score": 3660947,
+   "note": "V帳  4/17入隊"
+  },
+  {
+   "period": "1189237592",
+   "name": "Jane Lee （！Jane Lee)",
+   "team": "未標註",
+   "score": 3077900,
+   "note": "蘋果加速器追蹤"
+  },
+  {
+   "period": "1189237592",
+   "name": "健豪",
+   "team": "未標註",
+   "score": 4104981,
+   "note": "普囤能量"
+  },
+  {
+   "period": "1189237592",
+   "name": "勇智（秋田)",
+   "team": "未標註",
+   "score": 2643487,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "向",
+   "team": "未標註",
+   "score": 2588984,
+   "note": "5/26入隊"
+  },
+  {
+   "period": "1189237592",
+   "name": "Alina貓",
+   "team": "未標註",
+   "score": 3062199,
+   "note": "V帳"
+  },
+  {
+   "period": "1189237592",
+   "name": "隆彬",
+   "team": "未標註",
+   "score": 2886095,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "吳玲",
+   "team": "未標註",
+   "score": 2892642,
+   "note": "V帳"
+  },
+  {
+   "period": "1189237592",
+   "name": "yeji",
+   "team": "未標註",
+   "score": 3129618,
+   "note": "2/24入隊"
+  },
+  {
+   "period": "1189237592",
+   "name": "秀齡（健豪小號）",
+   "team": "未標註",
+   "score": 3444412,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "啟賢",
+   "team": "未標註",
+   "score": 3012298,
+   "note": "4/28入隊"
+  },
+  {
+   "period": "1189237592",
+   "name": "Lucy（Lucy 匡匡）",
+   "team": "未標註",
+   "score": 3788438,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "Sakya",
+   "team": "未標註",
+   "score": 3111558,
+   "note": "V帳"
+  },
+  {
+   "period": "1189237592",
+   "name": "東秦（東秦）",
+   "team": "未標註",
+   "score": 1942550,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "志芳（寒多露）",
+   "team": "未標註",
+   "score": 2024589,
+   "note": ""
+  },
+  {
+   "period": "1189237592",
+   "name": "Wanchi",
+   "team": "未標註",
+   "score": 1557460,
+   "note": "6/9入隊"
+  },
+  {
+   "period": "1189237592",
+   "name": "回歸",
+   "team": "未標註",
+   "score": 994399,
+   "note": "1芳-森"
+  },
+  {
+   "period": "1189237592",
+   "name": "Tuan Anh.(春派)Xuan、",
+   "team": "未標註",
+   "score": 1106926,
+   "note": "3/24入隊4/28換帳號越南"
+  },
+  {
+   "period": "1189237592",
+   "name": "Jasmin",
+   "team": "未標註",
+   "score": 995463,
+   "note": "6/19入隊"
+  },
+  {
+   "period": "1189237592",
+   "name": "文祥",
+   "team": "未標註",
+   "score": 978718,
+   "note": "V帳"
+  },
+  {
+   "period": "1189237592",
+   "name": "回歸",
+   "team": "未標註",
+   "score": 2429600,
+   "note": "1芳-J"
+  },
+  {
+   "period": "1189237592",
+   "name": "回歸",
+   "team": "未標註",
+   "score": 396050,
+   "note": "1芳C"
+  },
+  {
+   "period": "941398024",
+   "name": "Rakia",
+   "team": "未標註",
+   "score": 6666843,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "941398024",
+   "name": "明志",
+   "team": "未標註",
+   "score": 6637791,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "941398024",
+   "name": "葉俊麟",
+   "team": "未標註",
+   "score": 6353664,
+   "note": "V帳"
+  },
+  {
+   "period": "941398024",
+   "name": "建考",
+   "team": "未標註",
+   "score": 5083482,
+   "note": "5/5入隊"
+  },
+  {
+   "period": "941398024",
+   "name": "立昌",
+   "team": "未標註",
+   "score": 4216837,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "Kevin",
+   "team": "未標註",
+   "score": 4035805,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "小白",
+   "team": "未標註",
+   "score": 4003211,
+   "note": "V帳"
+  },
+  {
+   "period": "941398024",
+   "name": "乾媽(惠臻)",
+   "team": "未標註",
+   "score": 3937484,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "Alina貓",
+   "team": "未標註",
+   "score": 3582040,
+   "note": "V帳"
+  },
+  {
+   "period": "941398024",
+   "name": "澤靜(katherine)",
+   "team": "未標註",
+   "score": 3554166,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "1芳",
+   "team": "未標註",
+   "score": 3537963,
+   "note": "普囤能量"
+  },
+  {
+   "period": "941398024",
+   "name": "Sam(志成)",
+   "team": "未標註",
+   "score": 3514647,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "建文",
+   "team": "未標註",
+   "score": 3383528,
+   "note": "普囤能量"
+  },
+  {
+   "period": "941398024",
+   "name": "Tuan Anh.(春派)Xuan、",
+   "team": "未標註",
+   "score": 3348273,
+   "note": "3/24入隊4/28換帳號越南"
+  },
+  {
+   "period": "941398024",
+   "name": "勇智（秋田)",
+   "team": "未標註",
+   "score": 3319630,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "照義",
+   "team": "未標註",
+   "score": 3272085,
+   "note": "V帳"
+  },
+  {
+   "period": "941398024",
+   "name": "Lucy（Lucy 匡匡）",
+   "team": "未標註",
+   "score": 3163531,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "小涼(Existence)",
+   "team": "未標註",
+   "score": 3156912,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "yeji",
+   "team": "未標註",
+   "score": 3133134,
+   "note": "2/24入隊"
+  },
+  {
+   "period": "941398024",
+   "name": "(Yang) Hsu、fra",
+   "team": "未標註",
+   "score": 3119858,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "慧琴",
+   "team": "未標註",
+   "score": 3017043,
+   "note": "4/7入隊"
+  },
+  {
+   "period": "941398024",
+   "name": "佳(P)",
+   "team": "未標註",
+   "score": 2992095,
+   "note": "4/22入隊"
+  },
+  {
+   "period": "941398024",
+   "name": "怡君（Elaine)",
+   "team": "未標註",
+   "score": 2861042,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "芳芳（慶）",
+   "team": "未標註",
+   "score": 2857317,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "Jane Lee （！Jane Lee)",
+   "team": "未標註",
+   "score": 2820574,
+   "note": "蘋果加速器追蹤"
+  },
+  {
+   "period": "941398024",
+   "name": "健豪",
+   "team": "未標註",
+   "score": 2808817,
+   "note": "普囤能量"
+  },
+  {
+   "period": "941398024",
+   "name": "睿鑫(1芳)",
+   "team": "未標註",
+   "score": 2778442,
+   "note": "回歸"
+  },
+  {
+   "period": "941398024",
+   "name": "真好",
+   "team": "未標註",
+   "score": 2700675,
+   "note": "3/3入隊"
+  },
+  {
+   "period": "941398024",
+   "name": "佳佳",
+   "team": "未標註",
+   "score": 2591136,
+   "note": "V帳  4/17入隊"
+  },
+  {
+   "period": "941398024",
+   "name": "Paul(回歸)",
+   "team": "未標註",
+   "score": 2507646,
+   "note": "Palui"
+  },
+  {
+   "period": "941398024",
+   "name": "隆彬",
+   "team": "未標註",
+   "score": 2491758,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "季英（季英）",
+   "team": "未標註",
+   "score": 2370378,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "金蠪",
+   "team": "未標註",
+   "score": 2280042,
+   "note": "1芳回歸"
+  },
+  {
+   "period": "941398024",
+   "name": "Joan",
+   "team": "未標註",
+   "score": 2263232,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "謝秀婷",
+   "team": "未標註",
+   "score": 2258114,
+   "note": "V帳 1/16入隊"
+  },
+  {
+   "period": "941398024",
+   "name": "卉均",
+   "team": "未標註",
+   "score": 2257427,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "佳蓁(玲玉)",
+   "team": "未標註",
+   "score": 2187018,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "哲",
+   "team": "未標註",
+   "score": 2169194,
+   "note": "普囤能量"
+  },
+  {
+   "period": "941398024",
+   "name": "Palui",
+   "team": "未標註",
+   "score": 2156791,
+   "note": "V帳"
+  },
+  {
+   "period": "941398024",
+   "name": "于庭(環兒)",
+   "team": "未標註",
+   "score": 2153472,
+   "note": "5/26入隊"
+  },
+  {
+   "period": "941398024",
+   "name": "Jeff",
+   "team": "未標註",
+   "score": 2149801,
+   "note": "3/27入隊/安卓加速器"
+  },
+  {
+   "period": "941398024",
+   "name": "麗雪（吳麗雪）",
+   "team": "未標註",
+   "score": 2070744,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "東秦（東秦）",
+   "team": "未標註",
+   "score": 1793554,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "Maggie",
+   "team": "未標註",
+   "score": 1770500,
+   "note": "V帳"
+  },
+  {
+   "period": "941398024",
+   "name": "秀齡（健豪小號）",
+   "team": "未標註",
+   "score": 1759677,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "啟賢",
+   "team": "未標註",
+   "score": 1741118,
+   "note": "4/28入隊"
+  },
+  {
+   "period": "941398024",
+   "name": "Hui-Shan",
+   "team": "未標註",
+   "score": 1694155,
+   "note": "4/10入隊"
+  },
+  {
+   "period": "941398024",
+   "name": "李炳奎",
+   "team": "未標註",
+   "score": 1672996,
+   "note": "5/19入隊"
+  },
+  {
+   "period": "941398024",
+   "name": "果(回歸)",
+   "team": "未標註",
+   "score": 1602616,
+   "note": "1芳"
+  },
+  {
+   "period": "941398024",
+   "name": "志芳（寒多露）",
+   "team": "未標註",
+   "score": 1496122,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "吳玲",
+   "team": "未標註",
+   "score": 1226403,
+   "note": "V帳"
+  },
+  {
+   "period": "941398024",
+   "name": "Sakya",
+   "team": "未標註",
+   "score": 1086304,
+   "note": "V帳"
+  },
+  {
+   "period": "941398024",
+   "name": "向",
+   "team": "未標註",
+   "score": 972116,
+   "note": "5/26入隊"
+  },
+  {
+   "period": "941398024",
+   "name": "福（東福）",
+   "team": "未標註",
+   "score": 638951,
+   "note": ""
+  },
+  {
+   "period": "941398024",
+   "name": "建宇",
+   "team": "未標註",
+   "score": 445068,
+   "note": "4/22入隊"
+  },
+  {
+   "period": "941398024",
+   "name": "Chuc",
+   "team": "未標註",
+   "score": 333225,
+   "note": "4/26入隊越南"
+  },
+  {
+   "period": "941398024",
+   "name": "Alison",
+   "team": "未標註",
+   "score": 2003,
+   "note": "普囤能量"
   },
   {
    "period": "646275049",
@@ -19311,14 +24351,14 @@
   },
   {
    "period": "646275049",
-   "name": "15.Alina貓",
+   "name": "Alina貓",
    "team": "未標註",
    "score": 4103244,
    "note": "V帳"
   },
   {
    "period": "646275049",
-   "name": "44.季英（季英）",
+   "name": "季英（季英）",
    "team": "未標註",
    "score": 4096203,
    "note": ""
@@ -19367,7 +24407,7 @@
   },
   {
    "period": "646275049",
-   "name": "22.隆彬",
+   "name": "隆彬",
    "team": "未標註",
    "score": 3987117,
    "note": ""
@@ -19388,7 +24428,7 @@
   },
   {
    "period": "646275049",
-   "name": "25.Joan",
+   "name": "Joan",
    "team": "未標註",
    "score": 3518332,
    "note": ""
@@ -19430,7 +24470,7 @@
   },
   {
    "period": "646275049",
-   "name": "33. 秀齡（健豪小號）",
+   "name": "秀齡（健豪小號）",
    "team": "未標註",
    "score": 3258062,
    "note": ""
@@ -19472,7 +24512,7 @@
   },
   {
    "period": "646275049",
-   "name": "41.Jane Lee （！Jane Lee)",
+   "name": "Jane Lee （！Jane Lee)",
    "team": "未標註",
    "score": 2839554,
    "note": "蘋果加速器追蹤"
@@ -19500,7 +24540,7 @@
   },
   {
    "period": "646275049",
-   "name": "38. Lucy（Lucy 匡匡）",
+   "name": "Lucy（Lucy 匡匡）",
    "team": "未標註",
    "score": 2507608,
    "note": ""
@@ -19514,7 +24554,7 @@
   },
   {
    "period": "646275049",
-   "name": "47.志芳（寒多露）",
+   "name": "志芳（寒多露）",
    "team": "未標註",
    "score": 2353034,
    "note": ""
@@ -19563,7 +24603,7 @@
   },
   {
    "period": "646275049",
-   "name": "39.麗雪（吳麗雪）",
+   "name": "麗雪（吳麗雪）",
    "team": "未標註",
    "score": 1537419,
    "note": ""
@@ -19668,7 +24708,7 @@
   },
   {
    "period": "1397865014",
-   "name": "37.怡君（Elaine)",
+   "name": "怡君（Elaine)",
    "team": "未標註",
    "score": 4110811,
    "note": ""
@@ -19787,7 +24827,7 @@
   },
   {
    "period": "1397865014",
-   "name": "39.麗雪（吳麗雪）",
+   "name": "麗雪（吳麗雪）",
    "team": "未標註",
    "score": 3636141,
    "note": ""
@@ -19808,7 +24848,7 @@
   },
   {
    "period": "1397865014",
-   "name": "44.季英（季英）",
+   "name": "季英（季英）",
    "team": "未標註",
    "score": 3525967,
    "note": ""
@@ -19829,7 +24869,7 @@
   },
   {
    "period": "1397865014",
-   "name": "15.Alina貓",
+   "name": "Alina貓",
    "team": "未標註",
    "score": 3280462,
    "note": "V帳"
@@ -19871,14 +24911,14 @@
   },
   {
    "period": "1397865014",
-   "name": "22.隆彬",
+   "name": "隆彬",
    "team": "未標註",
    "score": 3001914,
    "note": ""
   },
   {
    "period": "1397865014",
-   "name": "41.Jane Lee （！Jane Lee)",
+   "name": "Jane Lee （！Jane Lee)",
    "team": "未標註",
    "score": 2894038,
    "note": "蘋果加速器追蹤"
@@ -19906,14 +24946,14 @@
   },
   {
    "period": "1397865014",
-   "name": "38. Lucy（Lucy 匡匡）",
+   "name": "Lucy（Lucy 匡匡）",
    "team": "未標註",
    "score": 2440235,
    "note": ""
   },
   {
    "period": "1397865014",
-   "name": "25.Joan",
+   "name": "Joan",
    "team": "未標註",
    "score": 2387299,
    "note": ""
@@ -19934,7 +24974,7 @@
   },
   {
    "period": "1397865014",
-   "name": "47.志芳（寒多露）",
+   "name": "志芳（寒多露）",
    "team": "未標註",
    "score": 2201835,
    "note": ""
@@ -19969,7 +25009,7 @@
   },
   {
    "period": "1397865014",
-   "name": "33. 秀齡（健豪小號）",
+   "name": "秀齡（健豪小號）",
    "team": "未標註",
    "score": 1762642,
    "note": ""
@@ -20024,358 +25064,1884 @@
    "note": "4/17入隊 V帳"
   },
   {
+   "period": "1540845064",
+   "name": "明志",
+   "team": "未標註",
+   "score": 9396023,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "1540845064",
+   "name": "Rakia",
+   "team": "未標註",
+   "score": 6221553,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "1540845064",
+   "name": "1芳",
+   "team": "未標註",
+   "score": 5657777,
+   "note": "普囤能量"
+  },
+  {
+   "period": "1540845064",
+   "name": "Thuan",
+   "team": "未標註",
+   "score": 5621869,
+   "note": "越南"
+  },
+  {
+   "period": "1540845064",
+   "name": "豪豪（Aaron）",
+   "team": "未標註",
+   "score": 5420685,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "小涼(Existence)",
+   "team": "未標註",
+   "score": 5168218,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "建文",
+   "team": "未標註",
+   "score": 5010716,
+   "note": "普囤能量"
+  },
+  {
+   "period": "1540845064",
+   "name": "Sam(志成)",
+   "team": "未標註",
+   "score": 4985065,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "Sakya",
+   "team": "未標註",
+   "score": 4920894,
+   "note": "V帳"
+  },
+  {
+   "period": "1540845064",
+   "name": "Katherine （澤靜）",
+   "team": "未標註",
+   "score": 4801840,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "芳芳（慶）",
+   "team": "未標註",
+   "score": 4720052,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "哲",
+   "team": "未標註",
+   "score": 4601427,
+   "note": "普囤能量"
+  },
+  {
+   "period": "1540845064",
+   "name": "許哥",
+   "team": "未標註",
+   "score": 4480413,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "怡君（Elaine)",
+   "team": "未標註",
+   "score": 4470537,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "小白",
+   "team": "未標註",
+   "score": 4095277,
+   "note": "V帳"
+  },
+  {
+   "period": "1540845064",
+   "name": "勇智（秋田)",
+   "team": "未標註",
+   "score": 3863410,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "秀齡（健豪小號）",
+   "team": "未標註",
+   "score": 3835050,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "Shih Chieh老蕭",
+   "team": "未標註",
+   "score": 3776895,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "真好",
+   "team": "未標註",
+   "score": 3772385,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "(Yang) Hsu、fra",
+   "team": "未標註",
+   "score": 3591564,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "Maggie",
+   "team": "未標註",
+   "score": 3589903,
+   "note": "V帳"
+  },
+  {
+   "period": "1540845064",
+   "name": "福（東福）",
+   "team": "未標註",
+   "score": 3585415,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "立昌",
+   "team": "未標註",
+   "score": 3532924,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "乾媽(惠臻)",
+   "team": "未標註",
+   "score": 3458920,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "謝秀婷",
+   "team": "未標註",
+   "score": 3440518,
+   "note": "V帳     1/16入隊"
+  },
+  {
+   "period": "1540845064",
+   "name": "Kevin",
+   "team": "未標註",
+   "score": 3402193,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "yeji",
+   "team": "未標註",
+   "score": 3273762,
+   "note": "2/24入隊"
+  },
+  {
+   "period": "1540845064",
+   "name": "健豪",
+   "team": "未標註",
+   "score": 3261370,
+   "note": "普囤能量"
+  },
+  {
+   "period": "1540845064",
+   "name": "隆彬",
+   "team": "未標註",
+   "score": 3232560,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "卉均",
+   "team": "未標註",
+   "score": 3211087,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "Lucy（Lucy 匡匡）",
+   "team": "未標註",
+   "score": 3196217,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "季英（季英）",
+   "team": "未標註",
+   "score": 3055385,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "照義",
+   "team": "未標註",
+   "score": 2998667,
+   "note": "V帳"
+  },
+  {
+   "period": "1540845064",
+   "name": "葉俊麟",
+   "team": "未標註",
+   "score": 2800700,
+   "note": "V帳蘋果加速器追蹤"
+  },
+  {
+   "period": "1540845064",
+   "name": "Alina貓",
+   "team": "未標註",
+   "score": 2731628,
+   "note": "V帳"
+  },
+  {
+   "period": "1540845064",
+   "name": "Palui",
+   "team": "未標註",
+   "score": 2623554,
+   "note": "V帳"
+  },
+  {
+   "period": "1540845064",
+   "name": "王董(翰)",
+   "team": "未標註",
+   "score": 2611425,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "東秦（東秦）",
+   "team": "未標註",
+   "score": 2607000,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "麗雪（吳麗雪）",
+   "team": "未標註",
+   "score": 2599683,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "佳蓁(玲玉)",
+   "team": "未標註",
+   "score": 2546267,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "Joan",
+   "team": "未標註",
+   "score": 2372467,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "Alison",
+   "team": "未標註",
+   "score": 2317543,
+   "note": "普囤能量"
+  },
+  {
+   "period": "1540845064",
+   "name": "志芳（寒多露）",
+   "team": "未標註",
+   "score": 2257987,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "吳玲",
+   "team": "未標註",
+   "score": 2230176,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "Xuan(春派)",
+   "team": "未標註",
+   "score": 2222893,
+   "note": "越南3/24入隊"
+  },
+  {
+   "period": "1540845064",
+   "name": "嚴慶峰",
+   "team": "未標註",
+   "score": 2150849,
+   "note": "1/6號入隊3/27離隊"
+  },
+  {
+   "period": "1540845064",
+   "name": "Jane Lee （！Jane Lee)",
+   "team": "未標註",
+   "score": 2123171,
+   "note": "蘋果加速器追蹤"
+  },
+  {
+   "period": "1540845064",
+   "name": "鼎峻",
+   "team": "未標註",
+   "score": 2103753,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "Jie",
+   "team": "未標註",
+   "score": 1906062,
+   "note": "回歸"
+  },
+  {
+   "period": "1540845064",
+   "name": "Yama",
+   "team": "未標註",
+   "score": 1806223,
+   "note": "V帳"
+  },
+  {
+   "period": "1540845064",
+   "name": "凱仁(凱凱)",
+   "team": "未標註",
+   "score": 1578830,
+   "note": "3/20離隊"
+  },
+  {
+   "period": "1540845064",
+   "name": "小玟",
+   "team": "未標註",
+   "score": 1296000,
+   "note": "回歸"
+  },
+  {
+   "period": "1540845064",
+   "name": "湘",
+   "team": "未標註",
+   "score": 1162600,
+   "note": ""
+  },
+  {
+   "period": "1540845064",
+   "name": "貓-Chun-Ching",
+   "team": "未標註",
+   "score": 1040824,
+   "note": "回歸"
+  },
+  {
+   "period": "1540845064",
+   "name": "Baoz",
+   "team": "未標註",
+   "score": 955752,
+   "note": "3/24入隊"
+  },
+  {
+   "period": "1540845064",
+   "name": "Jeff",
+   "team": "未標註",
+   "score": 393293,
+   "note": "3/27入隊"
+  },
+  {
+   "period": "1540845064",
+   "name": "Son",
+   "team": "未標註",
+   "score": 344291,
+   "note": "3/27入隊外國社團"
+  },
+  {
+   "period": "1540845064",
+   "name": "Huynh",
+   "team": "未標註",
+   "score": 210000,
+   "note": "外國社團越南3/18離隊"
+  },
+  {
+   "period": "221730551",
+   "name": "明志",
+   "team": "未標註",
+   "score": 8846848,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "221730551",
+   "name": "許哥",
+   "team": "未標註",
+   "score": 6592079,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "Rakia",
+   "team": "未標註",
+   "score": 6118922,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "221730551",
+   "name": "立昌",
+   "team": "未標註",
+   "score": 5454555,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "王董(翰)",
+   "team": "未標註",
+   "score": 5357829,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "豪豪（Aaron）",
+   "team": "未標註",
+   "score": 5081355,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "小白",
+   "team": "未標註",
+   "score": 4782282,
+   "note": "V帳"
+  },
+  {
+   "period": "221730551",
+   "name": "Paul",
+   "team": "未標註",
+   "score": 4758432,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "1芳",
+   "team": "未標註",
+   "score": 4704950,
+   "note": "普囤能量"
+  },
+  {
+   "period": "221730551",
+   "name": "小涼(Existence)",
+   "team": "未標註",
+   "score": 4559534,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "健豪",
+   "team": "未標註",
+   "score": 4463585,
+   "note": "普囤能量"
+  },
+  {
+   "period": "221730551",
+   "name": "Sam(志成)",
+   "team": "未標註",
+   "score": 4326669,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "哲",
+   "team": "未標註",
+   "score": 4171531,
+   "note": "普囤能量"
+  },
+  {
+   "period": "221730551",
+   "name": "勇智（秋田)",
+   "team": "未標註",
+   "score": 4106636,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "芳芳（慶）",
+   "team": "未標註",
+   "score": 4040641,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "照義",
+   "team": "未標註",
+   "score": 3944090,
+   "note": "V帳"
+  },
+  {
+   "period": "221730551",
+   "name": "Katherine （澤靜）",
+   "team": "未標註",
+   "score": 3914071,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "建文",
+   "team": "未標註",
+   "score": 3675228,
+   "note": "普囤能量"
+  },
+  {
+   "period": "221730551",
+   "name": "凱仁(凱凱)",
+   "team": "未標註",
+   "score": 3639706,
+   "note": "12/9-12/30排名48"
+  },
+  {
+   "period": "221730551",
+   "name": "怡君（Elaine)",
+   "team": "未標註",
+   "score": 3551417,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "隆彬",
+   "team": "未標註",
+   "score": 3541066,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "(Yang) Hsu",
+   "team": "未標註",
+   "score": 3504000,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "Sakya",
+   "team": "未標註",
+   "score": 3430830,
+   "note": "V帳"
+  },
+  {
+   "period": "221730551",
+   "name": "葉俊麟",
+   "team": "未標註",
+   "score": 3421350,
+   "note": "V帳"
+  },
+  {
+   "period": "221730551",
+   "name": "Jane Lee （！Jane Lee)",
+   "team": "未標註",
+   "score": 3324293,
+   "note": "10/31-11/21排名47.12/9-12/30排名47"
+  },
+  {
+   "period": "221730551",
+   "name": "秀齡（健豪小號）",
+   "team": "未標註",
+   "score": 3220079,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "卉均",
+   "team": "未標註",
+   "score": 3165628,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "福（東福）",
+   "team": "未標註",
+   "score": 3154015,
+   "note": "10/31-11/21排名46.12/9-12/30排名49"
+  },
+  {
+   "period": "221730551",
+   "name": "Lucy（Lucy 匡匡）",
+   "team": "未標註",
+   "score": 3115750,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "Alison",
+   "team": "未標註",
+   "score": 3014952,
+   "note": "普囤能量"
+  },
+  {
+   "period": "221730551",
+   "name": "(chan) Kevin",
+   "team": "未標註",
+   "score": 2995539,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "Shih Chieh老蕭",
+   "team": "未標註",
+   "score": 2946512,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "Joan",
+   "team": "未標註",
+   "score": 2686644,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "Yu Fang(小芳)",
+   "team": "未標註",
+   "score": 2621880,
+   "note": "V帳-2/27退隊"
+  },
+  {
+   "period": "221730551",
+   "name": "志芳（寒多露）",
+   "team": "未標註",
+   "score": 2504568,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "Palui",
+   "team": "未標註",
+   "score": 2479834,
+   "note": "V帳"
+  },
+  {
+   "period": "221730551",
+   "name": "Alina貓",
+   "team": "未標註",
+   "score": 2449687,
+   "note": "V帳"
+  },
+  {
+   "period": "221730551",
+   "name": "嚴慶峰",
+   "team": "未標註",
+   "score": 2320809,
+   "note": "1/6號入隊"
+  },
+  {
+   "period": "221730551",
+   "name": "湘",
+   "team": "未標註",
+   "score": 2296212,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "謝秀婷",
+   "team": "未標註",
+   "score": 2292520,
+   "note": "V帳     1/16入隊"
+  },
+  {
+   "period": "221730551",
+   "name": "東秦（東秦）",
+   "team": "未標註",
+   "score": 2279160,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "名",
+   "team": "未標註",
+   "score": 2275964,
+   "note": "V帳"
+  },
+  {
+   "period": "221730551",
+   "name": "Yama",
+   "team": "未標註",
+   "score": 2268819,
+   "note": "V帳    (12/31-01/26排名50"
+  },
+  {
+   "period": "221730551",
+   "name": "Huynh",
+   "team": "未標註",
+   "score": 2257545,
+   "note": "外國社團越南"
+  },
+  {
+   "period": "221730551",
+   "name": "麗雪（吳麗雪）",
+   "team": "未標註",
+   "score": 2248838,
+   "note": "12/31-01/26排名46"
+  },
+  {
+   "period": "221730551",
+   "name": "季英（季英）",
+   "team": "未標註",
+   "score": 2151922,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "Maggie",
+   "team": "未標註",
+   "score": 2018400,
+   "note": "V帳12/31-01/26排名48"
+  },
+  {
+   "period": "221730551",
+   "name": "雪櫻（楊雪櫻）",
+   "team": "未標註",
+   "score": 1766080,
+   "note": "12/9-12/30排名46"
+  },
+  {
+   "period": "221730551",
+   "name": "果",
+   "team": "未標註",
+   "score": 1671100,
+   "note": "回歸"
+  },
+  {
+   "period": "221730551",
+   "name": "小玉",
+   "team": "未標註",
+   "score": 1647464,
+   "note": "回歸"
+  },
+  {
+   "period": "221730551",
+   "name": "乾媽(惠臻)",
+   "team": "未標註",
+   "score": 1634635,
+   "note": ""
+  },
+  {
+   "period": "221730551",
+   "name": "榆璟",
+   "team": "未標註",
+   "score": 1002517,
+   "note": "2/11入隊2/20轉小涼隊伍"
+  },
+  {
+   "period": "221730551",
+   "name": "惠淑",
+   "team": "未標註",
+   "score": 969945,
+   "note": "1/20入隊"
+  },
+  {
+   "period": "221730551",
+   "name": "吳玲",
+   "team": "未標註",
+   "score": 792156,
+   "note": "V帳"
+  },
+  {
+   "period": "221730551",
+   "name": "yeji",
+   "team": "未標註",
+   "score": 281814,
+   "note": "2/24入隊"
+  },
+  {
+   "period": "67976139",
+   "name": "明志",
+   "team": "未標註",
+   "score": 18529963,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "67976139",
+   "name": "Rakia",
+   "team": "未標註",
+   "score": 11604892,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "67976139",
+   "name": "哲",
+   "team": "未標註",
+   "score": 11135593,
+   "note": "普囤能量"
+  },
+  {
+   "period": "67976139",
+   "name": "Alison",
+   "team": "未標註",
+   "score": 9673247,
+   "note": "普囤能量"
+  },
+  {
+   "period": "67976139",
+   "name": "王董(翰)",
+   "team": "未標註",
+   "score": 7908499,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "1芳",
+   "team": "未標註",
+   "score": 7539127,
+   "note": "普囤能量"
+  },
+  {
+   "period": "67976139",
+   "name": "Katherine （澤靜）",
+   "team": "未標註",
+   "score": 7433670,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "凱仁(凱凱)",
+   "team": "未標註",
+   "score": 6695862,
+   "note": "12/9-12/30排名48"
+  },
+  {
+   "period": "67976139",
+   "name": "豪豪（Aaron）",
+   "team": "未標註",
+   "score": 6373665,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "乾媽(惠臻)",
+   "team": "未標註",
+   "score": 5824762,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "Sam(志成)",
+   "team": "未標註",
+   "score": 5823646,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "葉俊麟",
+   "team": "未標註",
+   "score": 5752905,
+   "note": "V帳"
+  },
+  {
+   "period": "67976139",
+   "name": "芳芳（慶）",
+   "team": "未標註",
+   "score": 5621091,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "立昌",
+   "team": "未標註",
+   "score": 5394503,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "福（東福）",
+   "team": "未標註",
+   "score": 5355799,
+   "note": "10/31-11/21排名46.12/9-12/30排名49"
+  },
+  {
+   "period": "67976139",
+   "name": "小涼(Existence)",
+   "team": "未標註",
+   "score": 5288386,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "建文",
+   "team": "未標註",
+   "score": 5258119,
+   "note": "普囤能量"
+  },
+  {
+   "period": "67976139",
+   "name": "Miki",
+   "team": "未標註",
+   "score": 5088990,
+   "note": "1/9號入隊"
+  },
+  {
+   "period": "67976139",
+   "name": "勇智（秋田)",
+   "team": "未標註",
+   "score": 5056173,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "小芳",
+   "team": "未標註",
+   "score": 4942250,
+   "note": "V帳"
+  },
+  {
+   "period": "67976139",
+   "name": "Yang",
+   "team": "未標註",
+   "score": 4864647,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "Sakya",
+   "team": "未標註",
+   "score": 4858212,
+   "note": "V帳"
+  },
+  {
+   "period": "67976139",
+   "name": "Alina貓",
+   "team": "未標註",
+   "score": 4805453,
+   "note": "V帳"
+  },
+  {
+   "period": "67976139",
+   "name": "怡君（Elaine)",
+   "team": "未標註",
+   "score": 4791039,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "Joan",
+   "team": "未標註",
+   "score": 4735616,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "健豪",
+   "team": "未標註",
+   "score": 4574385,
+   "note": "普囤能量"
+  },
+  {
+   "period": "67976139",
+   "name": "Kevin (chan)",
+   "team": "未標註",
+   "score": 4482849,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "隆彬",
+   "team": "未標註",
+   "score": 4457814,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "Paul",
+   "team": "未標註",
+   "score": 4421539,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "小白",
+   "team": "未標註",
+   "score": 4263947,
+   "note": "V帳"
+  },
+  {
+   "period": "67976139",
+   "name": "許哥",
+   "team": "未標註",
+   "score": 4229120,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "吳佳蓁",
+   "team": "未標註",
+   "score": 4228999,
+   "note": "11/21入隊"
+  },
+  {
+   "period": "67976139",
+   "name": "照義",
+   "team": "未標註",
+   "score": 3976437,
+   "note": "V帳"
+  },
+  {
+   "period": "67976139",
+   "name": "Jane Lee （！Jane Lee)",
+   "team": "未標註",
+   "score": 3795635,
+   "note": "10/31-11/21排名47.12/9-12/30排名47"
+  },
+  {
+   "period": "67976139",
+   "name": "季英（季英）",
+   "team": "未標註",
+   "score": 3651216,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "秀齡（健豪小號）",
+   "team": "未標註",
+   "score": 3586557,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "卉均",
+   "team": "未標註",
+   "score": 3484309,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "Shih Chieh老蕭",
+   "team": "未標註",
+   "score": 3388549,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "志芳（寒多露）",
+   "team": "未標註",
+   "score": 3293064,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "雪櫻（楊雪櫻）",
+   "team": "未標註",
+   "score": 3247724,
+   "note": "12/9-12/30排名46"
+  },
+  {
+   "period": "67976139",
+   "name": "Lucy（Lucy 匡匡）",
+   "team": "未標註",
+   "score": 3099567,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "東秦（東秦）",
+   "team": "未標註",
+   "score": 3056825,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "瓦力",
+   "team": "未標註",
+   "score": 3055835,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "湘",
+   "team": "未標註",
+   "score": 2963605,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "麗雪（吳麗雪）",
+   "team": "未標註",
+   "score": 2695733,
+   "note": ""
+  },
+  {
+   "period": "67976139",
+   "name": "偉（易潔行-張家偉）",
+   "team": "未標註",
+   "score": 2484115,
+   "note": "10/31-11/21排名48"
+  },
+  {
+   "period": "67976139",
+   "name": "Palui",
+   "team": "未標註",
+   "score": 2482994,
+   "note": "V帳"
+  },
+  {
+   "period": "67976139",
+   "name": "Maggie",
+   "team": "未標註",
+   "score": 2480700,
+   "note": "V帳"
+  },
+  {
+   "period": "67976139",
+   "name": "宗澤（李宗澤）",
+   "team": "未標註",
+   "score": 2334683,
+   "note": "12/9-12/30排名50"
+  },
+  {
+   "period": "67976139",
+   "name": "Yama",
+   "team": "未標註",
+   "score": 2301572,
+   "note": "V帳"
+  },
+  {
+   "period": "67976139",
+   "name": "嚴慶峰",
+   "team": "未標註",
+   "score": 2256270,
+   "note": "1/6號入隊"
+  },
+  {
+   "period": "67976139",
+   "name": "惠淑",
+   "team": "未標註",
+   "score": 2030156,
+   "note": "1/20入隊"
+  },
+  {
+   "period": "67976139",
+   "name": "名",
+   "team": "未標註",
+   "score": 1714962,
+   "note": "V帳"
+  },
+  {
+   "period": "67976139",
+   "name": "謝秀婷",
+   "team": "未標註",
+   "score": 1603000,
+   "note": "1/16入隊"
+  },
+  {
+   "period": "906611198",
+   "name": "1芳",
+   "team": "未標註",
+   "score": 11365650,
+   "note": "普囤能量"
+  },
+  {
+   "period": "906611198",
+   "name": "哲",
+   "team": "未標註",
+   "score": 9318413,
+   "note": "普囤能量"
+  },
+  {
+   "period": "906611198",
+   "name": "Alison",
+   "team": "未標註",
+   "score": 8682030,
+   "note": "普囤能量"
+  },
+  {
+   "period": "906611198",
+   "name": "明志",
+   "team": "未標註",
+   "score": 7814321,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "906611198",
+   "name": "Rakia",
+   "team": "未標註",
+   "score": 6553732,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "906611198",
+   "name": "Katherine （澤靜）",
+   "team": "未標註",
+   "score": 5998740,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "建文",
+   "team": "未標註",
+   "score": 5542326,
+   "note": "普囤能量"
+  },
+  {
+   "period": "906611198",
+   "name": "Shih Chieh老蕭",
+   "team": "未標註",
+   "score": 4931056,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "王董(翰)",
+   "team": "未標註",
+   "score": 4729844,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "葉俊麟",
+   "team": "未標註",
+   "score": 4655821,
+   "note": "V帳"
+  },
+  {
+   "period": "906611198",
+   "name": "芳芳（慶）",
+   "team": "未標註",
+   "score": 4612872,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "小白",
+   "team": "未標註",
+   "score": 4419084,
+   "note": "V帳"
+  },
+  {
+   "period": "906611198",
+   "name": "小芳",
+   "team": "未標註",
+   "score": 4129706,
+   "note": "V帳"
+  },
+  {
+   "period": "906611198",
+   "name": "立昌",
+   "team": "未標註",
+   "score": 4088047,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "卉均",
+   "team": "未標註",
+   "score": 3978816,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "健豪",
+   "team": "未標註",
+   "score": 3975182,
+   "note": "普囤能量"
+  },
+  {
+   "period": "906611198",
+   "name": "鈺哲（鈺哲）",
+   "team": "未標註",
+   "score": 3909075,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "Paul",
+   "team": "未標註",
+   "score": 3881203,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "許哥",
+   "team": "未標註",
+   "score": 3873030,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "Sam(志成)",
+   "team": "未標註",
+   "score": 3814957,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "秀齡（健豪小號）",
+   "team": "未標註",
+   "score": 3745677,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "Maggie",
+   "team": "未標註",
+   "score": 3725200,
+   "note": "V帳"
+  },
+  {
+   "period": "906611198",
+   "name": "Kevin (chan)",
+   "team": "未標註",
+   "score": 3677181,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "惠臻乾媽",
+   "team": "未標註",
+   "score": 3628920,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "Joan",
+   "team": "未標註",
+   "score": 3625784,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "怡君（Elaine)",
+   "team": "未標註",
+   "score": 3610743,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "照義",
+   "team": "未標註",
+   "score": 3594570,
+   "note": "V帳"
+  },
+  {
+   "period": "906611198",
+   "name": "勇智（秋田)",
+   "team": "未標註",
+   "score": 3553240,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "瓦力",
+   "team": "未標註",
+   "score": 3462206,
+   "note": "黑五前換Pie"
+  },
+  {
+   "period": "906611198",
+   "name": "Yang",
+   "team": "未標註",
+   "score": 3422783,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "Alina貓",
+   "team": "未標註",
+   "score": 3394966,
+   "note": "V帳"
+  },
+  {
+   "period": "906611198",
+   "name": "季英（季英）",
+   "team": "未標註",
+   "score": 3331059,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "吳佳蓁",
+   "team": "未標註",
+   "score": 3239960,
+   "note": "11/21入隊"
+  },
+  {
+   "period": "906611198",
+   "name": "隆彬",
+   "team": "未標註",
+   "score": 3071934,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "Lucy（Lucy 匡匡）",
+   "team": "未標註",
+   "score": 3036557,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "偉（易潔行-張家偉）",
+   "team": "未標註",
+   "score": 3033627,
+   "note": "10/31-11/21排名48"
+  },
+  {
+   "period": "906611198",
+   "name": "麗雪（吳麗雪）",
+   "team": "未標註",
+   "score": 2795188,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "Yama",
+   "team": "未標註",
+   "score": 2786279,
+   "note": "V帳"
+  },
+  {
+   "period": "906611198",
+   "name": "Sakya",
+   "team": "未標註",
+   "score": 2754902,
+   "note": "V帳"
+  },
+  {
+   "period": "906611198",
+   "name": "湘",
+   "team": "未標註",
+   "score": 2567091,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "志芳（寒多露）",
+   "team": "未標註",
+   "score": 2541157,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "東秦（東秦）",
+   "team": "未標註",
+   "score": 2517600,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "小涼(皇)",
+   "team": "未標註",
+   "score": 2495302,
+   "note": ""
+  },
+  {
+   "period": "906611198",
+   "name": "雪櫻（楊雪櫻）",
+   "team": "未標註",
+   "score": 2408530,
+   "note": "12/9-12/30排名46"
+  },
+  {
+   "period": "906611198",
+   "name": "Jane Lee （！Jane Lee)",
+   "team": "未標註",
+   "score": 2368318,
+   "note": "10/31-11/21排名47.12/9-12/30排名47"
+  },
+  {
+   "period": "906611198",
+   "name": "凱仁(凱凱)",
+   "team": "未標註",
+   "score": 2316377,
+   "note": "12/9-12/30排名48"
+  },
+  {
+   "period": "906611198",
+   "name": "Fang",
+   "team": "未標註",
+   "score": 2158724,
+   "note": "V帳"
+  },
+  {
+   "period": "906611198",
+   "name": "福（東福）",
+   "team": "未標註",
+   "score": 1986826,
+   "note": "10/31-11/21排名46.12/9-12/30排名49"
+  },
+  {
+   "period": "906611198",
+   "name": "宗澤（李宗澤）",
+   "team": "未標註",
+   "score": 1959533,
+   "note": "12/9-12/30排名50"
+  },
+  {
+   "period": "906611198",
+   "name": "名",
+   "team": "未標註",
+   "score": 1845083,
+   "note": "V帳"
+  },
+  {
+   "period": "906611198",
+   "name": "豪豪（Aaron）",
+   "team": "未標註",
+   "score": 1376300,
+   "note": ""
+  },
+  {
    "period": "1639476719",
-   "name": "35.明志",
+   "name": "明志",
    "team": "未標註",
    "score": 14242070,
    "note": "V帳，未入群"
   },
   {
    "period": "1639476719",
-   "name": "1.1芳",
+   "name": "1芳",
    "team": "未標註",
    "score": 12797238,
    "note": "普囤能量"
   },
   {
    "period": "1639476719",
-   "name": "8.哲",
+   "name": "哲",
    "team": "未標註",
    "score": 11540452,
    "note": "普囤能量"
   },
   {
    "period": "1639476719",
-   "name": "2.Alison",
+   "name": "Alison",
    "team": "未標註",
    "score": 10251842,
    "note": "普囤能量"
   },
   {
    "period": "1639476719",
-   "name": "15.Alina貓",
+   "name": "Alina貓",
    "team": "未標註",
    "score": 9595619,
    "note": "V帳"
   },
   {
    "period": "1639476719",
-   "name": "4.照義",
+   "name": "照義",
    "team": "未標註",
    "score": 9029768,
    "note": "V帳"
   },
   {
    "period": "1639476719",
-   "name": "34.Rakia",
+   "name": "Rakia",
    "team": "未標註",
    "score": 8616919,
    "note": "V帳，未入群"
   },
   {
    "period": "1639476719",
-   "name": "13.健豪",
+   "name": "健豪",
    "team": "未標註",
    "score": 7548068,
    "note": "普囤能量"
   },
   {
    "period": "1639476719",
-   "name": "7.瓦力",
+   "name": "瓦力",
    "team": "未標註",
    "score": 7327751,
    "note": "黑五前換Pie"
   },
   {
    "period": "1639476719",
-   "name": "3.小白",
+   "name": "小白",
    "team": "未標註",
    "score": 6984840,
    "note": "V帳"
   },
   {
    "period": "1639476719",
-   "name": "17.凱仁(凱凱)",
+   "name": "凱仁(凱凱)",
    "team": "未標註",
    "score": 6909659,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "31.許哥",
+   "name": "許哥",
    "team": "未標註",
    "score": 6767532,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "9.名",
+   "name": "名",
    "team": "未標註",
    "score": 6220664,
    "note": "V帳"
   },
   {
    "period": "1639476719",
-   "name": "32.立昌",
+   "name": "立昌",
    "team": "未標註",
    "score": 5805780,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "14.建文",
+   "name": "建文",
    "team": "未標註",
    "score": 5598644,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "6.果",
+   "name": "果",
    "team": "未標註",
    "score": 5479179,
    "note": "黑五後退補勇智"
   },
   {
    "period": "1639476719",
-   "name": "29.芳芳（慶）",
+   "name": "芳芳（慶）",
    "team": "未標註",
    "score": 5363260,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "33. 秀齡（健豪小號）",
+   "name": "秀齡（健豪小號）",
    "team": "未標註",
    "score": 5043217,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "22.隆彬",
+   "name": "隆彬",
    "team": "未標註",
    "score": 4797176,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "28.Katherine （澤靜）",
+   "name": "Katherine （澤靜）",
    "team": "未標註",
    "score": 4436890,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "5.小芳",
+   "name": "小芳",
    "team": "未標註",
    "score": 4412714,
    "note": "V帳"
   },
   {
    "period": "1639476719",
-   "name": "43.鈺哲（鈺哲）",
+   "name": "鈺哲（鈺哲）",
    "team": "未標註",
    "score": 4304627,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "19.翰王董",
+   "name": "翰王董",
    "team": "未標註",
    "score": 4244862,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "21 .豪豪（Aaron）",
+   "name": "豪豪（Aaron）",
    "team": "未標註",
    "score": 4208219,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "49.葉俊麟",
+   "name": "葉俊麟",
    "team": "未標註",
    "score": 4203351,
    "note": "11/21入隊"
   },
   {
    "period": "1639476719",
-   "name": "24.Yang",
+   "name": "Yang",
    "team": "未標註",
    "score": 4174981,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "16.惠臻乾媽",
+   "name": "惠臻乾媽",
    "team": "未標註",
    "score": 3834285,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "38. Lucy（Lucy 匡匡）",
+   "name": "Lucy（Lucy 匡匡）",
    "team": "未標註",
    "score": 3713839,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "20.Paul",
+   "name": "Paul",
    "team": "未標註",
    "score": 3673417,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "37.怡君（Elaine)",
+   "name": "怡君（Elaine)",
    "team": "未標註",
    "score": 3671410,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "46.Kevin (chan)",
+   "name": "Kevin (chan)",
    "team": "未標註",
    "score": 3466959,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "11.Shih Chieh老蕭",
+   "name": "Shih Chieh老蕭",
    "team": "未標註",
    "score": 3460758,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "44.季英（季英）",
+   "name": "季英（季英）",
    "team": "未標註",
    "score": 3388227,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "18.卉均",
+   "name": "卉均",
    "team": "未標註",
    "score": 3321974,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "41.Jane Lee （！Jane Lee)",
+   "name": "Jane Lee （！Jane Lee)",
    "team": "未標註",
    "score": 3202694,
    "note": "10/31-11/21排名47"
   },
   {
    "period": "1639476719",
-   "name": "48.偉（易潔行-張家偉）",
+   "name": "偉（易潔行-張家偉）",
    "team": "未標註",
    "score": 3110064,
    "note": "10/31-11/21排名48"
   },
   {
    "period": "1639476719",
-   "name": "42.福（東福）",
+   "name": "福（東福）",
    "team": "未標註",
    "score": 3071413,
    "note": "10/31-11/21排名46"
   },
   {
    "period": "1639476719",
-   "name": "30.Snow",
+   "name": "Snow",
    "team": "未標註",
    "score": 3036351,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "26.吳佳蓁",
+   "name": "吳佳蓁",
    "team": "未標註",
    "score": 2922243,
    "note": "11/21入隊"
   },
   {
    "period": "1639476719",
-   "name": "12.湘",
+   "name": "湘",
    "team": "未標註",
    "score": 2895708,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "23.Maggie",
+   "name": "Maggie",
    "team": "未標註",
    "score": 2803900,
    "note": "V帳"
   },
   {
    "period": "1639476719",
-   "name": "25.Joan",
+   "name": "Joan",
    "team": "未標註",
    "score": 2773876,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "50. 雪櫻（楊雪櫻）",
+   "name": "雪櫻（楊雪櫻）",
    "team": "未標註",
    "score": 2738904,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "39.麗雪（吳麗雪）",
+   "name": "麗雪（吳麗雪）",
    "team": "未標註",
    "score": 2569859,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "40.宗澤（李宗澤）",
+   "name": "宗澤（李宗澤）",
    "team": "未標註",
    "score": 2514215,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "45.東秦（東秦）",
+   "name": "東秦（東秦）",
    "team": "未標註",
    "score": 2421252,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "36.Yama",
+   "name": "Yama",
    "team": "未標註",
    "score": 2352023,
    "note": "（V帳，🆘可能會跑）"
   },
   {
    "period": "1639476719",
-   "name": "47.志芳（寒多露）",
+   "name": "志芳（寒多露）",
    "team": "未標註",
    "score": 2316217,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "10.Mimi",
+   "name": "Mimi",
    "team": "未標註",
    "score": 2148879,
    "note": "V帳"
   },
   {
    "period": "1639476719",
-   "name": "32. 勇智（秋田)",
+   "name": "勇智（秋田)",
    "team": "未標註",
    "score": 1944839,
    "note": ""
   },
   {
    "period": "1639476719",
-   "name": "27.miki",
+   "name": "miki",
    "team": "未標註",
    "score": 1563264,
    "note": "11/21入隊"
@@ -20399,6 +26965,342 @@
    "name": "小涼(皇)",
    "team": "未標註",
    "score": 294706,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "明志",
+   "team": "未標註",
+   "score": 8394141,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "0",
+   "name": "名",
+   "team": "未標註",
+   "score": 5847815,
+   "note": "V帳"
+  },
+  {
+   "period": "0",
+   "name": "Rakia",
+   "team": "未標註",
+   "score": 5621547,
+   "note": "V帳，未入群"
+  },
+  {
+   "period": "0",
+   "name": "照義",
+   "team": "未標註",
+   "score": 5392427,
+   "note": "V帳"
+  },
+  {
+   "period": "0",
+   "name": "1芳",
+   "team": "未標註",
+   "score": 5383474,
+   "note": "普囤能量"
+  },
+  {
+   "period": "0",
+   "name": "Alina貓",
+   "team": "未標註",
+   "score": 5082422,
+   "note": "V帳"
+  },
+  {
+   "period": "0",
+   "name": "小白",
+   "team": "未標註",
+   "score": 5040618,
+   "note": "V帳"
+  },
+  {
+   "period": "0",
+   "name": "翰王董",
+   "team": "未標註",
+   "score": 5007317,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "小芳",
+   "team": "未標註",
+   "score": 4962337,
+   "note": "V帳"
+  },
+  {
+   "period": "0",
+   "name": "哲",
+   "team": "未標註",
+   "score": 4954896,
+   "note": "普囤能量"
+  },
+  {
+   "period": "0",
+   "name": "許哥",
+   "team": "未標註",
+   "score": 4930853,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "Yang",
+   "team": "未標註",
+   "score": 4801380,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "Katherine （澤靜）",
+   "team": "未標註",
+   "score": 4797563,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "Alison",
+   "team": "未標註",
+   "score": 4747355,
+   "note": "普囤能量"
+  },
+  {
+   "period": "0",
+   "name": "豪豪（Aaron）",
+   "team": "未標註",
+   "score": 4686189,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "鈺哲（鈺哲）",
+   "team": "未標註",
+   "score": 4312095,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "怡君（Elaine)",
+   "team": "未標註",
+   "score": 3947533,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "勇智（11/21出國會先暫退補進立昌）",
+   "team": "未標註",
+   "score": 3932433,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "Joan",
+   "team": "未標註",
+   "score": 3884807,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "惠臻乾媽",
+   "team": "未標註",
+   "score": 3865900,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "芳芳（慶）",
+   "team": "未標註",
+   "score": 3835208,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "Paul",
+   "team": "未標註",
+   "score": 3588251,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "湘",
+   "team": "未標註",
+   "score": 3524351,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "建文",
+   "team": "未標註",
+   "score": 3508054,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "瓦力",
+   "team": "未標註",
+   "score": 3438811,
+   "note": "黑五前換Pie"
+  },
+  {
+   "period": "0",
+   "name": "Shih Chieh老蕭",
+   "team": "未標註",
+   "score": 3382968,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "Maggie",
+   "team": "未標註",
+   "score": 3371800,
+   "note": "V帳"
+  },
+  {
+   "period": "0",
+   "name": "Mimi",
+   "team": "未標註",
+   "score": 3367509,
+   "note": "V帳"
+  },
+  {
+   "period": "0",
+   "name": "雪櫻（楊雪櫻）",
+   "team": "未標註",
+   "score": 3318511,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "秀齡（健豪小號）",
+   "team": "未標註",
+   "score": 3188292,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "凱仁(凱凱)",
+   "team": "未標註",
+   "score": 3100217,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "隆彬",
+   "team": "未標註",
+   "score": 2999656,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "季英（季英）",
+   "team": "未標註",
+   "score": 2976728,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "麗雪（吳麗雪）",
+   "team": "未標註",
+   "score": 2952657,
+   "note": "11/06～11/12出國"
+  },
+  {
+   "period": "0",
+   "name": "志芳（寒多露）",
+   "team": "未標註",
+   "score": 2944095,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "Lucy（Lucy 匡匡）",
+   "team": "未標註",
+   "score": 2885314,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "卉均",
+   "team": "未標註",
+   "score": 2780687,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "果",
+   "team": "未標註",
+   "score": 2690889,
+   "note": "黑五後退補勇智"
+  },
+  {
+   "period": "0",
+   "name": "健豪",
+   "team": "未標註",
+   "score": 2675615,
+   "note": "普囤能量"
+  },
+  {
+   "period": "0",
+   "name": "東秦（東秦）",
+   "team": "未標註",
+   "score": 2596952,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "Snow",
+   "team": "未標註",
+   "score": 2555294,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "宗澤（李宗澤）",
+   "team": "未標註",
+   "score": 2549873,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "Yama",
+   "team": "未標註",
+   "score": 2502326,
+   "note": "（V帳，🆘可能會跑）"
+  },
+  {
+   "period": "0",
+   "name": "福（東福）",
+   "team": "未標註",
+   "score": 2418163,
+   "note": "10/31-11/21排名46"
+  },
+  {
+   "period": "0",
+   "name": "Jane Lee （！Jane Lee)",
+   "team": "未標註",
+   "score": 2302001,
+   "note": "10/31-11/21排名47"
+  },
+  {
+   "period": "0",
+   "name": "偉（易潔行-張家偉）",
+   "team": "未標註",
+   "score": 2195520,
+   "note": "10/31-11/21排名48"
+  },
+  {
+   "period": "0",
+   "name": "Kevin (chan)",
+   "team": "未標註",
+   "score": 1257926,
+   "note": ""
+  },
+  {
+   "period": "0",
+   "name": "立昌",
+   "team": "未標註",
+   "score": 247862,
    "note": ""
   }
  ]

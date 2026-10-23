@@ -33,11 +33,11 @@ SHEETS_DIR = DATA_DIR / "sheets"
 NAME_KEYWORDS = ["成員", "成員名稱", "隊員", "隊員名稱", "姓名", "名稱", "名字", "暱稱", "玩家", "玩家名稱", "Name", "name"]
 TEAM_KEYWORDS = ["隊伍", "隊別", "團隊", "組別", "Team", "team"]
 NOTE_KEYWORDS = ["備註", "說明", "狀態", "Note", "note", "Remark", "remark"]
-SCORE_KEYWORDS = ["總分", "合計", "總計", "小計", "得分", "分數", "Score", "score", "Total", "total"]
+SCORE_KEYWORDS = ["總分", "合計", "總計", "累計", "總合", "總和", "小計", "得分", "分數", "Score", "score", "Total", "total"]
 
 # 偵測表頭列用（與欄位對應的關鍵字略有不同，沿用原本網頁的規則）
 HEADER_NAME_KEYWORDS = ["成員", "成員名稱", "隊員", "姓名", "名稱", "暱稱", "玩家", "Name", "name"]
-HEADER_SCORE_KEYWORDS = ["總分", "合計", "總計", "得分", "分數", "Score", "score", "Total", "total"]
+HEADER_SCORE_KEYWORDS = ["總分", "合計", "總計", "累計", "總合", "總和", "得分", "分數", "Score", "score", "Total", "total"]
 
 SCORE_EXCLUDE_KEYWORDS = ["日期", "時間", "進隊", "入隊", "退隊", "備註", "說明", "名稱", "姓名", "成員", "隊伍", "隊別", "團隊", "組別", "gid", "sheet"]
 BANNED_NAMES = {"主隊", "二隊", "三隊", "四隊", "總分", "合計", "小計", "隊伍", "備註", "成員", "姓名", "名稱", "團隊", "分數"}
@@ -187,7 +187,19 @@ def find_header_row(values) -> int:
         joined = " ".join(text(v) for v in row)
         if any(k in joined for k in HEADER_NAME_KEYWORDS) and any(k in joined for k in HEADER_SCORE_KEYWORDS):
             return i
+
+    # 表頭上方常有「計分方式」「主隊總分」等說明列；找第一個有「姓名」這類格子的列
+    for i, row in enumerate(values[:30]):
+        if any(text(v) in HEADER_NAME_KEYWORDS for v in row):
+            return i
+
     return 0
+
+
+def clean_name(name: str) -> str:
+    """去掉名單編號前綴：「35.明志」→「明志」、「21 .豪豪」→「豪豪」。"""
+    stripped = re.sub(r"^\d+\s*\.\s*", "", name)
+    return stripped or name
 
 
 def unique_headers(row):
@@ -206,7 +218,15 @@ def parse_sheet(sheet_name: str, values):
         return []
 
     header_index = find_header_row(values)
-    headers = unique_headers(values[header_index])
+    header_row = [text(v) for v in values[header_index]]
+
+    # 資料列可能比表頭長（例如總分欄沒有標題），表頭補齊到最長的資料列
+    width = max(len(r) for r in values[header_index:])
+    headers = unique_headers(header_row + [""] * (width - len(header_row)))
+
+    # 沒有總分標題時，最後一個有標題欄位的下一欄通常就是總分
+    labelled = [i for i, h in enumerate(header_row) if h]
+    trailing_h = headers[labelled[-1] + 1] if labelled and labelled[-1] + 1 < width else ""
 
     name_h = find_header(headers, NAME_KEYWORDS)
     team_h = find_header(headers, TEAM_KEYWORDS)
@@ -221,7 +241,7 @@ def parse_sheet(sheet_name: str, values):
         if not any(cells):
             continue
 
-        name = row.get(name_h, "") if name_h else ""
+        name = clean_name(row.get(name_h, "")) if name_h else ""
         if not name:
             # 沒有成員欄時，取第一個看起來像名字的格子
             name = next((v for v in cells if v and not is_invalid_name(v) and not parse_score(v) and len(v) <= 30), "")
@@ -231,6 +251,8 @@ def parse_sheet(sheet_name: str, values):
         score = parse_score(row.get(score_h)) if score_h else 0
         if not score:
             score = sum(parse_score(v) for h, v in row.items() if is_likely_score_header(h))
+        if not score and not score_h and trailing_h:
+            score = parse_score(row.get(trailing_h))
         if score <= 0:
             continue
 
