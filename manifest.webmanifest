@@ -1,7 +1,7 @@
 {
   "name": "CM大佬群專用記分板",
   "short_name": "CM記分板",
-  "description": "遊戲團隊成員數據儀表板",
+  "description": "大佬群成績",
   "lang": "zh-Hant",
   "start_url": "./",
   "scope": "./",

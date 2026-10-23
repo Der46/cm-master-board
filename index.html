@@ -95,17 +95,10 @@
         }
 
         /* ==========================================================
-   Hero / Source
+   Hero
    ========================================================== */
         .hero {
             padding: 32px;
-        }
-
-        .hero-top {
-            display: flex;
-            justify-content: space-between;
-            gap: 24px;
-            flex-wrap: wrap;
         }
 
         .badge {
@@ -128,24 +121,9 @@
         .hero p,
         .panel-subtitle,
         .stat-hint,
-        .status,
         .note {
             color: var(--text-muted);
             line-height: 1.7;
-        }
-
-        .source-card {
-            width: min(470px, 100%);
-            padding: 18px;
-            border: 1px solid rgba(255, 122, 217, 0.35);
-            border-radius: var(--radius-lg);
-            background: rgba(255, 255, 255, 0.72);
-        }
-
-        .source-divider {
-            margin: 14px 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(112, 165, 255, 0.45), transparent);
         }
 
         /* ==========================================================
@@ -168,45 +146,6 @@
             color: var(--text-main);
             outline: none;
             font-size: 14px;
-        }
-
-        .btn {
-            width: 100%;
-            margin-bottom: 10px;
-            border: 0;
-            border-radius: var(--radius-md);
-            padding: 12px 16px;
-            color: #244050;
-            font-weight: 900;
-            background: linear-gradient(135deg, rgba(69, 223, 245, 0.42), rgba(255, 122, 217, 0.30));
-            cursor: pointer;
-        }
-
-        .btn.secondary {
-            background: rgba(246, 250, 255, 0.86);
-            border: 1px solid rgba(112, 165, 255, 0.35);
-        }
-
-        a.btn {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .btn:disabled {
-            opacity: 0.6;
-            cursor: progress;
-        }
-
-        .btn-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        .btn-row .btn {
-            margin-bottom: 0;
         }
 
         .link-btn {
@@ -506,16 +445,6 @@
             color: #64748b;
         }
 
-        .tag.cloud {
-            background: rgba(116, 242, 206, 0.22);
-            color: #247e6b;
-        }
-
-        .tag.error {
-            background: rgba(255, 122, 122, 0.18);
-            color: #a83f3f;
-        }
-
         /* ==========================================================
    Floating Button：回到編號 1
    ========================================================== */
@@ -567,10 +496,6 @@
                 padding: 18px;
             }
 
-            .hero-top {
-                gap: 16px;
-            }
-
             .badge {
                 padding: 7px 11px;
                 font-size: 12px;
@@ -581,17 +506,6 @@
                 font-size: 30px;
                 line-height: 1.16;
                 letter-spacing: -0.03em;
-            }
-
-            .source-card {
-                width: 100%;
-                padding: 14px;
-                border-radius: 16px;
-            }
-
-            .btn {
-                padding: 13px 14px;
-                font-size: 15px;
             }
 
             .grid {
@@ -890,27 +804,8 @@
 <body>
     <main class="page">
         <section class="hero">
-            <div class="hero-top">
-                <div>
-                    <div class="badge">TEAM ANALYTICS</div>
-                    <h1>遊戲團隊成員數據儀表板</h1>
-                </div>
-
-                <div class="source-card">
-                    <label>資料來源</label>
-
-                    <div id="sourceStatus" class="status" aria-live="polite">
-                        資料讀取中...
-                    </div>
-
-                    <div class="source-divider"></div>
-
-                    <div class="btn-row">
-                        <button id="refreshBtn" class="btn" type="button">重新整理</button>
-                        <a id="downloadCsvBtn" class="btn secondary" href="./data/scores.csv" download="cm-scores.csv">下載 CSV</a>
-                    </div>
-                </div>
-            </div>
+            <div class="badge">TEAM ANALYTICS</div>
+            <h1>大佬群成績</h1>
         </section>
 
         <section class="grid">
@@ -1059,18 +954,14 @@
         let periods = [];
         let periodByKey = new Map();
         let rawRows = [];
-        let generatedAt = null;
         let selectedMember = "";
         let sortState = { key: "rank", dir: "asc" };
         let trendChart = null;
-        let isLoading = false;
+        let isLoading = true;
+        let loadError = "";
         let urlStateApplied = false;
 
         const els = {
-            refreshBtn: document.getElementById("refreshBtn"),
-            downloadCsvBtn: document.getElementById("downloadCsvBtn"),
-            sourceStatus: document.getElementById("sourceStatus"),
-
             searchInput: document.getElementById("searchInput"),
             teamFilter: document.getElementById("teamFilter"),
             periodFilter: document.getElementById("periodFilter"),
@@ -1132,27 +1023,6 @@
             return `<span class="tag ${TEAM_CLASS[team] || ""}">${escapeHtml(team)}</span>`;
         }
 
-        function formatDateTime(date) {
-            return date.toLocaleString("zh-TW", {
-                year: "numeric",
-                month: "2-digit",
-                day: "2-digit",
-                hour: "2-digit",
-                minute: "2-digit",
-                hour12: false
-            });
-        }
-
-        function formatRelative(date) {
-            const minutes = (Date.now() - date.getTime()) / 60000;
-
-            if (minutes < 1) return "剛剛";
-            if (minutes < 60) return `${Math.floor(minutes)} 分鐘前`;
-            if (minutes < 60 * 24) return `${Math.floor(minutes / 60)} 小時前`;
-
-            return `${Math.floor(minutes / 60 / 24)} 天前`;
-        }
-
         function debounce(fn, wait) {
             let timer = null;
 
@@ -1173,17 +1043,7 @@
         /************************************************************
          * 4. 讀取資料
          ************************************************************/
-        function setLoading(loading) {
-            isLoading = loading;
-            els.refreshBtn.disabled = loading;
-            els.refreshBtn.textContent = loading ? "讀取中..." : "重新整理";
-        }
-
         async function loadData() {
-            if (isLoading) return;
-
-            setLoading(true);
-
             try {
                 const response = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
 
@@ -1207,8 +1067,6 @@
                         note: normalizeText(r.note)
                     }));
 
-                generatedAt = data.generatedAt ? new Date(data.generatedAt) : null;
-
                 renderFilterOptions();
 
                 if (!urlStateApplied) {
@@ -1216,44 +1074,13 @@
                     urlStateApplied = true;
                 }
 
-                refreshAll();
-                renderSourceStatus();
             } catch (error) {
                 console.error(error);
-
-                els.sourceStatus.innerHTML = `
-                    <span class="tag error">資料讀取失敗</span>
-                    ${escapeHtml(error.message)}
-                    <br>
-                    請確認 GitHub Actions 是否已成功產生 data/scores.json。
-                `;
-
-                if (!rawRows.length) refreshAll();
+                loadError = `資料讀取失敗：${error.message}`;
             } finally {
-                setLoading(false);
+                isLoading = false;
+                refreshAll();
             }
-        }
-
-        function renderSourceStatus() {
-            if (!rawRows.length) {
-                els.sourceStatus.innerHTML = `
-                    <span class="tag error">沒有可用資料</span>
-                    data/scores.json 裡沒有成員分數資料。
-                `;
-                return;
-            }
-
-            const updatedText = generatedAt
-                ? `${formatDateTime(generatedAt)}（${formatRelative(generatedAt)}）`
-                : "-";
-
-            els.sourceStatus.innerHTML = `
-                <span class="tag cloud">資料已載入</span>
-                <br>
-                資料最後變動：${escapeHtml(updatedText)}
-                <br>
-                ${formatNumber(periods.length)} 個時段，共 ${formatNumber(rawRows.length)} 筆成員分數。
-            `;
         }
 
         /************************************************************
@@ -1481,7 +1308,7 @@
                         <td colspan="9" class="empty">
                             ${rawRows.length
                                 ? `找不到符合條件的成員。<br><button type="button" class="link-btn" data-action="clear-filters">清除篩選</button>`
-                                : isLoading ? "資料讀取中..." : "目前沒有資料。"}
+                                : escapeHtml(loadError || (isLoading ? "資料讀取中..." : "目前沒有資料。"))}
                         </td>
                     </tr>
                 `;
@@ -1745,7 +1572,6 @@
         window.addEventListener("scroll", updateBackToFirstButtonVisibility, { passive: true });
         window.addEventListener("resize", updateBackToFirstButtonVisibility);
 
-        els.refreshBtn.addEventListener("click", loadData);
 
         els.searchInput.addEventListener("input", debounce(refreshAll, 180));
         els.teamFilter.addEventListener("change", refreshAll);
