@@ -1,0 +1,74 @@
+name: Sync Google Sheets Score Data
+
+# 排程 / 手動執行：重新下載 Google Sheets → 有變動才 commit 到 data/。
+#
+# 這個 workflow 不負責部署：GitHub Pages 設為「Deploy from a branch（main / root）」，
+# 由 GitHub 內建的 pages-build-deployment 在 main 有新 commit 時自動發布。
+# 因此資料沒變就不會 commit，也不會重新部署；一般 push 也不會跑這個 workflow。
+
+on:
+  schedule:
+    # GitHub Actions cron 使用 UTC：每天 UTC 22:00（台灣時間 06:00）
+    - cron: "0 22 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-google-sheets
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+
+      # 只用 Python 標準函式庫，不需要安裝套件。
+      # 分數內容沒變時 scores.json 會沿用舊的 generatedAt，git 就不會看到變更。
+      - name: Download Google Sheets data
+        env:
+          DEFAULT_SPREADSHEET_ID: ${{ secrets.DEFAULT_SPREADSHEET_ID }}
+          GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
+        run: python scripts/fetch_sheets.py
+
+      - name: Show changed files
+        run: git status --short -- data
+
+      # 推送前先 rebase 到最新的遠端分支，避免同一時間有人推送時被拒絕而遺失這次同步。
+      # 衝突時以這次同步的資料為準（-X theirs 在 rebase 中指的是正在重放的本次 commit）；
+      # rebase 失敗時先中止，避免下一次重試卡在 rebase 進行中的狀態。
+      - name: Commit and push changes
+        run: |
+          git add -A data
+
+          if git diff --cached --quiet; then
+            echo "資料沒有變動，不需要 commit。"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update score data $(TZ=Asia/Taipei date '+%Y-%m-%d %H:%M')"
+
+          for attempt in 1 2 3; do
+            if git pull --rebase -X theirs origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME"; then
+              exit 0
+            fi
+
+            git rebase --abort 2>/dev/null || true
+            echo "推送失敗（第 ${attempt} 次），10 秒後重試"
+            sleep 10
+          done
+
+          exit 1

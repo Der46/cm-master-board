@@ -27,18 +27,19 @@
 ## 運作方式
 
 ```
-Google Sheets ──(每天 GitHub Actions + Python)──▶ repo 的 data/ ──▶ index.html（GitHub Pages）
+Google Sheets ──(每天 GitHub Actions + Python)──▶ commit 到 repo 的 data/ ──(GitHub Pages 內建部署)──▶ index.html
 ```
 
 所有時段分頁都已下載並 commit 在 repo 的 [`data/`](data/) 裡，網頁只讀取這些檔案，瀏覽時不會連到 Google Sheets。
 
-[`.github/workflows/pages.yml`](.github/workflows/pages.yml) 的行為：
+[`.github/workflows/sync-google-sheets.yml`](.github/workflows/sync-google-sheets.yml) 只負責更新資料，不負責部署：
 
 | 觸發方式 | 做的事 |
 | --- | --- |
-| 每天 UTC 22:00（台灣時間 06:00） | 重新下載所有時段分頁 → **有變動才 commit** 到 `data/` → 部署 |
+| 每天 UTC 22:00（台灣時間 06:00） | 重新下載所有時段分頁 → **有變動才 commit** 到 `data/` |
 | Actions 頁面手動「Run workflow」 | 同上，想立即更新時使用 |
-| push 到 `main` | 直接部署 repo 裡現有的 `data/`（若 `data/` 還不存在會先下載一次） |
+
+部署交給 GitHub Pages 的「Deploy from a branch」：`main` 有新 commit（資料更新或一般 push）時，GitHub 會自動重新發布。資料沒變就不會 commit，也不會重新部署。repo 根目錄的 `.nojekyll` 讓 Pages 直接發布檔案，跳過 Jekyll 建置。
 
 [`scripts/fetch_sheets.py`](scripts/fetch_sheets.py)（只用 Python 標準函式庫）一次抓取所有符合時段格式的分頁，在 Actions 裡完成欄位偵測與解析，輸出：
 
@@ -89,7 +90,7 @@ API 金鑰只存在 GitHub Secrets，不會出現在前端。
 
 ## 部署設定
 
-1. 在 repo 的 **Settings → Pages** 將 Source 設為 **GitHub Actions**。
+1. 在 repo 的 **Settings → Pages** 將 Source 設為 **Deploy from a branch**，Branch 選 `main`、資料夾選 `/ (root)`。
 2. 在 **Settings → Secrets and variables → Actions** 新增：
 
    | Secret | 說明 |
@@ -97,7 +98,7 @@ API 金鑰只存在 GitHub Secrets，不會出現在前端。
    | `DEFAULT_SPREADSHEET_ID` | 試算表網址 `/d/` 與 `/edit` 之間的 ID |
    | `GOOGLE_SHEETS_API_KEY` | 已啟用 Google Sheets API 的金鑰（試算表需設為「知道連結的人可檢視」） |
 
-3. push 到 `main` 或在 Actions 頁面手動執行 workflow 即可。
+3. 在 Actions 頁面手動執行「Sync Google Sheets Score Data」可立即更新資料；網頁本身 push 到 `main` 就會發布。
 
 ## 本機開發
 
@@ -131,6 +132,7 @@ python -m http.server 8000
 ├── icon-192.png            # PWA 圖示
 ├── icon-512.png            # PWA 圖示 / maskable
 ├── manifest.webmanifest    # Web App Manifest
+├── .nojekyll               # 讓 GitHub Pages 跳過 Jekyll 建置
 ├── data/
 │   ├── sheets/             # 每個時段分頁的原始 CSV + index.json
 │   ├── scores.json         # 網頁讀取的整理後資料
@@ -138,5 +140,5 @@ python -m http.server 8000
 ├── scripts/
 │   └── fetch_sheets.py     # 下載並解析 Google Sheets → data/scores.json、scores.csv
 └── .github/workflows/
-    └── pages.yml           # 建置並部署到 GitHub Pages
+    └── sync-google-sheets.yml  # 每天下載 Google Sheets，有變動才 commit
 ```
