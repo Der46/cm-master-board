@@ -1717,7 +1717,8 @@
          ************************************************************/
         async function loadData() {
             try {
-                const response = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
+                // no-cache：每次都向伺服器確認是否有新資料，沒變就回 304，不用重新下載整個檔案
+                const response = await fetch(DATA_URL, { cache: "no-cache" });
 
                 if (!response.ok) {
                     throw new Error(`讀取資料檔失敗，HTTP ${response.status}`);
@@ -1888,19 +1889,28 @@
 
         function getTrend(memberName) {
             // 比較基準：同樣的隊伍 / 時段篩選，但不受搜尋字影響
-            const baseRows = getFilteredRows({ ignoreKeyword: true });
-            const keys = unique(baseRows.filter(r => r.name === memberName).map(r => r.period))
-                .sort((a, b) => periodOrder(a) - periodOrder(b));
+            // 掃一次資料就算出各期全體總分 / 人數與這位成員的分數
+            const totals = new Map();
+            const own = new Map();
 
-            const sumBy = (list, key) => list.filter(r => r.period === key).reduce((s, r) => s + r.score, 0);
+            getFilteredRows({ ignoreKeyword: true }).forEach(r => {
+                if (!totals.has(r.period)) totals.set(r.period, { sum: 0, names: new Set() });
+
+                const t = totals.get(r.period);
+                t.sum += r.score;
+                if (r.name) t.names.add(r.name);
+
+                if (r.name === memberName) own.set(r.period, (own.get(r.period) || 0) + r.score);
+            });
+
+            const keys = [...own.keys()].sort((a, b) => periodOrder(a) - periodOrder(b));
 
             return {
                 labels: keys.map(key => periodByKey.get(key)?.label || key),
-                scores: keys.map(key => sumBy(baseRows.filter(r => r.name === memberName), key)),
+                scores: keys.map(key => own.get(key)),
                 averages: keys.map(key => {
-                    const inPeriod = baseRows.filter(r => r.period === key);
-                    const people = unique(inPeriod.map(r => r.name)).length;
-                    return people ? sumBy(inPeriod, key) / people : 0;
+                    const { sum, names } = totals.get(key);
+                    return names.size ? sum / names.size : 0;
                 })
             };
         }
