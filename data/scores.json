@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-14T01:57:45+00:00",
+ "generatedAt": "2026-11-15T01:30:02+00:00",
  "periods": [
   {
    "key": "0",
@@ -252,50 +252,218 @@
    "period": "363645140",
    "name": "宜芳(11本號)",
    "team": "四隊",
-   "score": 5701350,
+   "score": 7505450,
    "note": "龍哥PLAY"
-  },
-  {
-   "period": "363645140",
-   "name": "芳芳(慶)",
-   "team": "主隊",
-   "score": 4550501,
-   "note": "V帳"
   },
   {
    "period": "363645140",
    "name": "真好",
    "team": "主隊",
-   "score": 4318250,
+   "score": 5834950,
    "note": "V帳(Hui)"
+  },
+  {
+   "period": "363645140",
+   "name": "芳芳(慶)",
+   "team": "主隊",
+   "score": 5328162,
+   "note": "V帳"
   },
   {
    "period": "363645140",
    "name": "耀威",
    "team": "四隊",
-   "score": 4297108,
+   "score": 5233608,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "Zeu(Cheng)",
+   "team": "三隊",
+   "score": 231400,
+   "note": "回歸(Cheng)"
+  },
+  {
+   "period": "363645140",
+   "name": "偲凱",
+   "team": "主隊",
+   "score": 4753600,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "Ting(Kang)",
+   "team": "主隊",
+   "score": 4513594,
+   "note": "V帳 clara"
+  },
+  {
+   "period": "363645140",
+   "name": "乾媽(惠臻)",
+   "team": "主隊",
+   "score": 4216200,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "Ivan",
+   "team": "主隊",
+   "score": 3932650,
    "note": "V帳"
   },
   {
    "period": "363645140",
    "name": "小龍B遊",
    "team": "四隊",
-   "score": 3824800,
+   "score": 3928300,
    "note": "俊龍"
+  },
+  {
+   "period": "363645140",
+   "name": "澤靜A",
+   "team": "主隊",
+   "score": 3794942,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "Hiram(Hiram海藍(韋書))",
+   "team": "主隊",
+   "score": 3775571,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "Kevin(夠麻吉)",
+   "team": "主隊",
+   "score": 3769706,
+   "note": "2026/6/4轉主隊"
+  },
+  {
+   "period": "363645140",
+   "name": "邱(健豪)",
+   "team": "主隊",
+   "score": 3655175,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "Julie(勇智)",
+   "team": "三隊",
+   "score": 980540,
+   "note": "回歸(勇智)"
+  },
+  {
+   "period": "363645140",
+   "name": "淑華(卉均)",
+   "team": "四隊",
+   "score": 3604020,
+   "note": "回歸(卉均)"
+  },
+  {
+   "period": "363645140",
+   "name": "Linh(向向)",
+   "team": "三隊",
+   "score": 2795661,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "慧琴(主帳)",
+   "team": "三隊",
+   "score": 2145493,
+   "note": "回歸(慧琴)"
+  },
+  {
+   "period": "363645140",
+   "name": "李振郁",
+   "team": "二隊",
+   "score": 2477638,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "小刀B遊",
+   "team": "四隊",
+   "score": 3304950,
+   "note": "俊龍"
+  },
+  {
+   "period": "363645140",
+   "name": "婉瑜",
+   "team": "三隊",
+   "score": 3522579,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "Xin WU",
+   "team": "三隊",
+   "score": 1747981,
+   "note": "健豪的朋友"
+  },
+  {
+   "period": "363645140",
+   "name": "Dinosaur(Cheng)",
+   "team": "二隊",
+   "score": 3111012,
+   "note": "回歸(Cheng)"
+  },
+  {
+   "period": "363645140",
+   "name": "小白",
+   "team": "主隊",
+   "score": 3183239,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "Quan",
+   "team": "三隊",
+   "score": 4918930,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "木川(峻銘)",
+   "team": "二隊",
+   "score": 2607005,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "秀齡(健豪)B",
+   "team": "二隊",
+   "score": 3351400,
+   "note": "回歸(健豪)"
+  },
+  {
+   "period": "363645140",
+   "name": "小龍A遊",
+   "team": "四隊",
+   "score": 3097500,
+   "note": "俊龍"
+  },
+  {
+   "period": "363645140",
+   "name": "Yoki",
+   "team": "主隊",
+   "score": 3089150,
+   "note": "V帳拚搏隊長"
   },
   {
    "period": "363645140",
    "name": "Yvonne",
    "team": "三隊",
-   "score": 3749350,
+   "score": 4853671,
    "note": "V帳"
   },
   {
    "period": "363645140",
-   "name": "乾媽(惠臻)",
-   "team": "主隊",
-   "score": 3708650,
-   "note": "V帳"
+   "name": "文彬(健豪)",
+   "team": "二隊",
+   "score": 628400,
+   "note": "回歸(健豪)"
   },
   {
    "period": "363645140",
@@ -306,6 +474,48 @@
   },
   {
    "period": "363645140",
+   "name": "Gigi",
+   "team": "主隊",
+   "score": 2963018,
+   "note": "二隊轉主隊(小丁老婆)"
+  },
+  {
+   "period": "363645140",
+   "name": "幼幼(向向)",
+   "team": "二隊",
+   "score": 3782500,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "Sakya",
+   "team": "二隊",
+   "score": 3185552,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "Lucy",
+   "team": "主隊",
+   "score": 2903600,
+   "note": "二隊轉主隊"
+  },
+  {
+   "period": "363645140",
+   "name": "俊龍",
+   "team": "主隊",
+   "score": 2893750,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "Boyuan",
+   "team": "三隊",
+   "score": 3572296,
+   "note": "社群Boyuan"
+  },
+  {
+   "period": "363645140",
    "name": "Mona",
    "team": "三隊",
    "score": 3565892,
@@ -313,51 +523,212 @@
   },
   {
    "period": "363645140",
-   "name": "Boyuan",
+   "name": "Karem",
    "team": "三隊",
-   "score": 3455366,
-   "note": "社群Boyuan"
+   "score": 3234305,
+   "note": ""
   },
   {
    "period": "363645140",
-   "name": "Ting(Kang)",
-   "team": "主隊",
-   "score": 3412329,
-   "note": "V帳 clara"
-  },
-  {
-   "period": "363645140",
-   "name": "幼幼(向向)",
+   "name": "佳佳",
    "team": "二隊",
-   "score": 3373000,
+   "score": 3139060,
    "note": "V帳"
   },
   {
    "period": "363645140",
-   "name": "Ivan",
+   "name": "文祥",
    "team": "主隊",
-   "score": 3244050,
+   "score": 2767737,
    "note": "V帳"
   },
   {
    "period": "363645140",
-   "name": "Quan",
-   "team": "三隊",
-   "score": 3238422,
+   "name": "Canh",
+   "team": "二隊",
+   "score": 1888806,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "BlackTea(Boyuan)",
+   "team": "四隊",
+   "score": 2679343,
+   "note": "Boyuan小號"
+  },
+  {
+   "period": "363645140",
+   "name": "雪櫻",
+   "team": "主隊",
+   "score": 2201068,
+   "note": "1/26轉主隊"
+  },
+  {
+   "period": "363645140",
+   "name": "傑",
+   "team": "四隊",
+   "score": 2597265,
+   "note": "社群 森 10/29 三盾先移除"
+  },
+  {
+   "period": "363645140",
+   "name": "Xiaoting(楊小婷)",
+   "team": "主隊",
+   "score": 2586806,
+   "note": "V帳 轉主隊1211"
+  },
+  {
+   "period": "363645140",
+   "name": "士勛(筱青)",
+   "team": "二隊",
+   "score": 1239100,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "雅茹",
+   "team": "主隊",
+   "score": 2558559,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "光偉",
+   "team": "二隊",
+   "score": 2952935,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "妤(IVAN)",
+   "team": "二隊",
+   "score": 1006005,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "思寶(寶)",
+   "team": "二隊",
+   "score": 1873773,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "仁澤",
+   "team": "主隊",
+   "score": 2439750,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "繼強(廖繼強)",
+   "team": "主隊",
+   "score": 1490535,
+   "note": "二隊成員暫時轉主隊 6/18轉2隊"
+  },
+  {
+   "period": "363645140",
+   "name": "惠臻B遊",
+   "team": "四隊",
+   "score": 2315000,
+   "note": "B遊"
+  },
+  {
+   "period": "363645140",
+   "name": "小寶",
+   "team": "主隊",
+   "score": 2273400,
    "note": "路人"
   },
   {
    "period": "363645140",
-   "name": "婉瑜",
-   "team": "三隊",
-   "score": 3212971,
-   "note": "V帳"
+   "name": "錦卿",
+   "team": "二隊",
+   "score": 1392775,
+   "note": "V帳路人"
   },
   {
    "period": "363645140",
-   "name": "偲凱",
+   "name": "向向",
    "team": "主隊",
-   "score": 3180800,
+   "score": 2224631,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "芬英",
+   "team": "二隊",
+   "score": 1527466,
+   "note": "錦卿的朋友"
+  },
+  {
+   "period": "363645140",
+   "name": "咖豪",
+   "team": "二隊",
+   "score": 2252990,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "宜芳",
+   "team": "三隊",
+   "score": 3206525,
+   "note": "V帳轉三隊"
+  },
+  {
+   "period": "363645140",
+   "name": "Joy(Joan)",
+   "team": "主隊",
+   "score": 2355540,
+   "note": "主隊退轉二隊"
+  },
+  {
+   "period": "363645140",
+   "name": "卉均(卉均)小孩照片",
+   "team": "四隊",
+   "score": 2159200,
+   "note": "回歸(卉均)"
+  },
+  {
+   "period": "363645140",
+   "name": "賴安",
+   "team": "三隊",
+   "score": 3163751,
+   "note": "王隊過來的"
+  },
+  {
+   "period": "363645140",
+   "name": "秋田(勇智)",
+   "team": "主隊",
+   "score": 2125724,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "Lin",
+   "team": "主隊",
+   "score": 2079678,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "寶(思寶)",
+   "team": "四隊",
+   "score": 2020520,
+   "note": "回歸(思寶)"
+  },
+  {
+   "period": "363645140",
+   "name": "Bass",
+   "team": "四隊",
+   "score": 2017220,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "興哲",
+   "team": "主隊",
+   "score": 2000316,
    "note": "V帳"
   },
   {
@@ -369,17 +740,24 @@
   },
   {
    "period": "363645140",
-   "name": "Kevin(夠麻吉)",
+   "name": "啟賢",
    "team": "主隊",
-   "score": 3131056,
-   "note": "2026/6/4轉主隊"
+   "score": 1978800,
+   "note": "(康啟賢)"
   },
   {
    "period": "363645140",
-   "name": "淑華(卉均)",
-   "team": "四隊",
-   "score": 3104415,
-   "note": "回歸(卉均)"
+   "name": "Keo",
+   "team": "二隊",
+   "score": 1280300,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "招賢",
+   "team": "二隊",
+   "score": 1434347,
+   "note": "錦卿的朋友"
   },
   {
    "period": "363645140",
@@ -390,311 +768,38 @@
   },
   {
    "period": "363645140",
-   "name": "邱(健豪)",
-   "team": "主隊",
-   "score": 3017925,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "Shixuan(小丁)",
+   "name": "Quynh",
    "team": "二隊",
-   "score": 2993054,
-   "note": "回歸(小丁)"
+   "score": 812800,
+   "note": "路人"
   },
   {
    "period": "363645140",
-   "name": "娟娟B",
-   "team": "三隊",
-   "score": 2973000,
-   "note": "回歸(娟娟)"
-  },
-  {
-   "period": "363645140",
-   "name": "賴安",
-   "team": "三隊",
-   "score": 2972131,
-   "note": "王隊過來的"
-  },
-  {
-   "period": "363645140",
-   "name": "小刀B遊",
-   "team": "四隊",
-   "score": 2944950,
-   "note": "俊龍"
-  },
-  {
-   "period": "363645140",
-   "name": "Hiram(Hiram海藍(韋書))",
-   "team": "主隊",
-   "score": 2914163,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "Yoki",
-   "team": "主隊",
-   "score": 2794950,
-   "note": "V帳拚搏隊長"
-  },
-  {
-   "period": "363645140",
-   "name": "澤靜A",
-   "team": "主隊",
-   "score": 2791871,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "Chun(Ting)",
+   "name": "小考(小丁)",
    "team": "二隊",
-   "score": 2783775,
-   "note": "回歸(Ting)"
-  },
-  {
-   "period": "363645140",
-   "name": "Gigi",
-   "team": "主隊",
-   "score": 2706418,
-   "note": "二隊轉主隊(小丁老婆)"
-  },
-  {
-   "period": "363645140",
-   "name": "俊龍",
-   "team": "主隊",
-   "score": 2653750,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "Karem",
-   "team": "三隊",
-   "score": 2606305,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "小龍A遊",
-   "team": "四隊",
-   "score": 2599500,
-   "note": "俊龍"
-  },
-  {
-   "period": "363645140",
-   "name": "17號(志宏)",
-   "team": "三隊",
-   "score": 2558755,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "Dinosaur(Cheng)",
-   "team": "二隊",
-   "score": 2557412,
-   "note": "回歸(Cheng)"
-  },
-  {
-   "period": "363645140",
-   "name": "BlackTea(Boyuan)",
-   "team": "四隊",
-   "score": 2554843,
-   "note": "Boyuan小號"
-  },
-  {
-   "period": "363645140",
-   "name": "秀齡(健豪)B",
-   "team": "二隊",
-   "score": 2484850,
-   "note": "回歸(健豪)"
-  },
-  {
-   "period": "363645140",
-   "name": "林慶B",
-   "team": "二隊",
-   "score": 2472000,
-   "note": "回歸(芳芳)"
-  },
-  {
-   "period": "363645140",
-   "name": "光偉",
-   "team": "二隊",
-   "score": 2462335,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "Lucy",
-   "team": "主隊",
-   "score": 2448100,
-   "note": "二隊轉主隊"
-  },
-  {
-   "period": "363645140",
-   "name": "宜芳",
-   "team": "三隊",
-   "score": 2444425,
-   "note": "V帳轉三隊"
-  },
-  {
-   "period": "363645140",
-   "name": "佳佳",
-   "team": "二隊",
-   "score": 2401010,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "Sakya",
-   "team": "二隊",
-   "score": 2369452,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "小白",
-   "team": "主隊",
-   "score": 2364189,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "木川(峻銘)",
-   "team": "二隊",
-   "score": 2357005,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "Linh(向向)",
-   "team": "三隊",
-   "score": 2355656,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "雅茹",
-   "team": "主隊",
-   "score": 2290959,
+   "score": 1827120,
    "note": ""
   },
   {
    "period": "363645140",
    "name": "建興",
    "team": "二隊",
-   "score": 2262800,
+   "score": 2728400,
    "note": ""
   },
   {
    "period": "363645140",
-   "name": "宜芳B-1芳小V(B遊)",
-   "team": "二隊",
-   "score": 2223000,
-   "note": "回歸(11)"
+   "name": "Joan",
+   "team": "主隊",
+   "score": 1848950,
+   "note": ""
   },
   {
    "period": "363645140",
-   "name": "芳芳B",
-   "team": "三隊",
-   "score": 2202750,
-   "note": "回歸(芳芳)"
-  },
-  {
-   "period": "363645140",
-   "name": "Zhi",
-   "team": "二隊",
-   "score": 2183200,
+   "name": "Wanchi",
+   "team": "主隊",
+   "score": 1840500,
    "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "向向",
-   "team": "主隊",
-   "score": 2174050,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "卉均(卉均)小孩照片",
-   "team": "四隊",
-   "score": 2159200,
-   "note": "回歸(卉均)"
-  },
-  {
-   "period": "363645140",
-   "name": "惠臻B遊",
-   "team": "四隊",
-   "score": 2027200,
-   "note": "B遊"
-  },
-  {
-   "period": "363645140",
-   "name": "寶(思寶)",
-   "team": "四隊",
-   "score": 2020520,
-   "note": "回歸(思寶)"
-  },
-  {
-   "period": "363645140",
-   "name": "小寶",
-   "team": "主隊",
-   "score": 1998800,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "興哲",
-   "team": "主隊",
-   "score": 1974216,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "多多(思寶)",
-   "team": "三隊",
-   "score": 1968000,
-   "note": "回歸(思寶)"
-  },
-  {
-   "period": "363645140",
-   "name": "Xiaoting(楊小婷)",
-   "team": "主隊",
-   "score": 1952006,
-   "note": "V帳 轉主隊1211"
-  },
-  {
-   "period": "363645140",
-   "name": "Joy(Joan)",
-   "team": "主隊",
-   "score": 1930990,
-   "note": "主隊退轉二隊"
-  },
-  {
-   "period": "363645140",
-   "name": "傑",
-   "team": "四隊",
-   "score": 1902115,
-   "note": "社群 森 10/29 三盾先移除"
-  },
-  {
-   "period": "363645140",
-   "name": "文祥",
-   "team": "主隊",
-   "score": 1886785,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "俊男",
-   "team": "二隊",
-   "score": 1871022,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "Canh",
-   "team": "二隊",
-   "score": 1852612,
-   "note": ""
   },
   {
    "period": "363645140",
@@ -705,86 +810,65 @@
   },
   {
    "period": "363645140",
-   "name": "Wanchi",
-   "team": "主隊",
-   "score": 1830000,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "Bass",
-   "team": "四隊",
-   "score": 1789720,
+   "name": "源平",
+   "team": "二隊",
+   "score": 983081,
    "note": "路人"
   },
   {
    "period": "363645140",
-   "name": "秋田(勇智)",
+   "name": "娟娟B",
+   "team": "三隊",
+   "score": 2973000,
+   "note": "回歸(娟娟)"
+  },
+  {
+   "period": "363645140",
+   "name": "FAFA",
    "team": "主隊",
-   "score": 1771638,
+   "score": 1791500,
    "note": ""
   },
   {
    "period": "363645140",
-   "name": "啟賢",
-   "team": "主隊",
-   "score": 1769900,
-   "note": "(康啟賢)"
+   "name": "17號(志宏)",
+   "team": "三隊",
+   "score": 2881292,
+   "note": ""
   },
   {
    "period": "363645140",
-   "name": "億凡",
-   "team": "二隊",
-   "score": 1758100,
+   "name": "Hoang",
+   "team": "三隊",
+   "score": 2843953,
+   "note": "路人10/1移除 不同帳號入"
+  },
+  {
+   "period": "363645140",
+   "name": "芳芳B",
+   "team": "三隊",
+   "score": 2202750,
+   "note": "回歸(芳芳)"
+  },
+  {
+   "period": "363645140",
+   "name": "卉均",
+   "team": "主隊",
+   "score": 1703263,
    "note": ""
   },
   {
    "period": "363645140",
    "name": "慶志(Han)",
    "team": "三隊",
-   "score": 1750814,
+   "score": 1981314,
    "note": "回歸(Han)"
   },
   {
    "period": "363645140",
-   "name": "Wenxuan Li(xuannn)",
+   "name": "Summer",
    "team": "二隊",
-   "score": 1729950,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "雪櫻",
-   "team": "主隊",
-   "score": 1720618,
-   "note": "1/26轉主隊"
-  },
-  {
-   "period": "363645140",
-   "name": "榮焜(焜)",
-   "team": "二隊",
-   "score": 1706591,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "咖豪",
-   "team": "二隊",
-   "score": 1695690,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "Lin",
-   "team": "主隊",
-   "score": 1678658,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "泓毅",
-   "team": "二隊",
-   "score": 1639150,
+   "score": 1973633,
    "note": ""
   },
   {
@@ -796,59 +880,80 @@
   },
   {
    "period": "363645140",
-   "name": "思寶(寶)",
-   "team": "二隊",
-   "score": 1616773,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "仁澤",
+   "name": "謝秀婷",
    "team": "主隊",
-   "score": 1569750,
+   "score": 1629030,
    "note": "V帳"
   },
   {
    "period": "363645140",
-   "name": "卉均",
+   "name": "淑珍(林淑珍)",
    "team": "主隊",
-   "score": 1567363,
-   "note": ""
+   "score": 1605750,
+   "note": "V帳2026/0112轉主隊"
   },
   {
    "period": "363645140",
-   "name": "Thinh",
-   "team": "三隊",
-   "score": 1502650,
+   "name": "Eric",
+   "team": "主隊",
+   "score": 1594650,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "世雄",
+   "team": "主隊",
+   "score": 1583436,
    "note": "路人"
   },
   {
    "period": "363645140",
-   "name": "Xin WU",
+   "name": "長權",
+   "team": "主隊",
+   "score": 1579100,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "真(碧真)",
+   "team": "二隊",
+   "score": 1143450,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "榮焜(焜)",
+   "team": "二隊",
+   "score": 2203150,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "多多(思寶)",
    "team": "三隊",
-   "score": 1494627,
-   "note": "健豪的朋友"
+   "score": 1968000,
+   "note": "回歸(思寶)"
   },
   {
    "period": "363645140",
    "name": "隆彬",
    "team": "主隊",
-   "score": 1494413,
+   "score": 1519913,
    "note": ""
   },
   {
    "period": "363645140",
-   "name": "Summer",
+   "name": "James(國謙)",
    "team": "二隊",
-   "score": 1477782,
-   "note": ""
+   "score": 1633200,
+   "note": "國謙買的普號"
   },
   {
    "period": "363645140",
-   "name": "慧琴(主帳)",
-   "team": "三隊",
-   "score": 1474193,
-   "note": "回歸(慧琴)"
+   "name": "Chi Feng(秉益)",
+   "team": "二隊",
+   "score": 1054500,
+   "note": ""
   },
   {
    "period": "363645140",
@@ -859,703 +964,682 @@
   },
   {
    "period": "363645140",
-   "name": "Alina",
-   "team": "三隊",
-   "score": 1458344,
-   "note": "邪惡教會隊伍"
-  },
-  {
-   "period": "363645140",
-   "name": "長權",
-   "team": "主隊",
-   "score": 1438600,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "小考(小丁)",
+   "name": "貴英(ㄚ頭)",
    "team": "二隊",
-   "score": 1429270,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "黃彥豪(豪)",
-   "team": "二隊",
-   "score": 1405756,
-   "note": "V帳(路人)"
-  },
-  {
-   "period": "363645140",
-   "name": "謝秀婷",
-   "team": "主隊",
-   "score": 1396500,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "米娜(世廷)",
-   "team": "三隊",
-   "score": 1391026,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "佳慧(世廷)",
-   "team": "三隊",
-   "score": 1376516,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "FAFA",
-   "team": "主隊",
-   "score": 1351446,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "繼強(廖繼強)",
-   "team": "主隊",
-   "score": 1334525,
-   "note": "二隊成員暫時轉主隊 6/18轉2隊"
-  },
-  {
-   "period": "363645140",
-   "name": "Hoang",
-   "team": "三隊",
-   "score": 1332835,
-   "note": "路人10/1移除 不同帳號入"
-  },
-  {
-   "period": "363645140",
-   "name": "戴文財",
-   "team": "二隊",
-   "score": 1321298,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "Palui",
-   "team": "主隊",
-   "score": 1320775,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "愷文(小蘇)",
-   "team": "主隊",
-   "score": 1317464,
-   "note": "3/12轉主隊"
-  },
-  {
-   "period": "363645140",
-   "name": "James(國謙)",
-   "team": "二隊",
-   "score": 1277900,
-   "note": "國謙買的普號"
-  },
-  {
-   "period": "363645140",
-   "name": "育傑B遊",
-   "team": "四隊",
-   "score": 1273750,
+   "score": 1126550,
    "note": ""
   },
   {
    "period": "363645140",
    "name": "得發(順風)(八寶)",
    "team": "四隊",
-   "score": 1265097,
+   "score": 1427952,
    "note": "社群(八寶)"
-  },
-  {
-   "period": "363645140",
-   "name": "Joan",
-   "team": "主隊",
-   "score": 1265050,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "耀威B遊",
-   "team": "四隊",
-   "score": 1242060,
-   "note": "耀威B"
-  },
-  {
-   "period": "363645140",
-   "name": "芬英",
-   "team": "二隊",
-   "score": 1227649,
-   "note": "錦卿的朋友"
-  },
-  {
-   "period": "363645140",
-   "name": "淑珍(林淑珍)",
-   "team": "主隊",
-   "score": 1190250,
-   "note": "V帳2026/0112轉主隊"
-  },
-  {
-   "period": "363645140",
-   "name": "世廷",
-   "team": "二隊",
-   "score": 1157052,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "Eric",
-   "team": "主隊",
-   "score": 1134750,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "Keo",
-   "team": "二隊",
-   "score": 1126300,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "Thao",
-   "team": "三隊",
-   "score": 1110150,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "張榮(張㨗榮)",
-   "team": "主隊",
-   "score": 1106422,
-   "note": "V帳6/8轉主隊夠麻吉(金牛仔-樂樂介紹)"
-  },
-  {
-   "period": "363645140",
-   "name": "Lilian(Tata bear)",
-   "team": "三隊",
-   "score": 1101220,
-   "note": "5/28轉三隊"
-  },
-  {
-   "period": "363645140",
-   "name": "招賢",
-   "team": "二隊",
-   "score": 1089266,
-   "note": "錦卿的朋友"
-  },
-  {
-   "period": "363645140",
-   "name": "Yan Liang",
-   "team": "三隊",
-   "score": 1069500,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "榮B",
-   "team": "主隊",
-   "score": 1055120,
-   "note": "主帳在主隊"
-  },
-  {
-   "period": "363645140",
-   "name": "八寶美食",
-   "team": "四隊",
-   "score": 1046000,
-   "note": "社群(Ted)"
-  },
-  {
-   "period": "363645140",
-   "name": "世雄",
-   "team": "主隊",
-   "score": 1038730,
-   "note": "路人"
   },
   {
    "period": "363645140",
    "name": "麗君(11)",
    "team": "三隊",
-   "score": 1033539,
+   "score": 1825539,
    "note": "V帳"
   },
   {
    "period": "363645140",
-   "name": "Maggie",
-   "team": "主隊",
-   "score": 1007350,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "錦卿",
-   "team": "二隊",
-   "score": 1001775,
-   "note": "V帳路人"
-  },
-  {
-   "period": "363645140",
-   "name": "真(碧真)",
-   "team": "二隊",
-   "score": 970850,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "筱青",
+   "name": "育傑B遊",
    "team": "四隊",
-   "score": 960194,
-   "note": "陳筱青(筱青)"
-  },
-  {
-   "period": "363645140",
-   "name": "錢來(莊錢來)",
-   "team": "二隊",
-   "score": 954850,
+   "score": 1396750,
    "note": ""
   },
   {
    "period": "363645140",
-   "name": "Jane Lee",
-   "team": "主隊",
-   "score": 952950,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "秉煊",
+   "name": "戴文財",
    "team": "二隊",
-   "score": 936183,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "妤(IVAN)",
-   "team": "二隊",
-   "score": 917695,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "DAN",
-   "team": "四隊",
-   "score": 896070,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "子龍(Cheng)",
-   "team": "主隊",
-   "score": 882550,
-   "note": "把其他隊伍的帳號移到2隊 5/4二隊轉主隊"
-  },
-  {
-   "period": "363645140",
-   "name": "宥穎(Chen_1119)",
-   "team": "四隊",
-   "score": 875610,
-   "note": "慧琴女兒同學"
-  },
-  {
-   "period": "363645140",
-   "name": "Samuel",
-   "team": "主隊",
-   "score": 870350,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "士勛(筱青)",
-   "team": "二隊",
-   "score": 857300,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "Duc",
-   "team": "三隊",
-   "score": 844700,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "悠悠",
-   "team": "四隊",
-   "score": 838650,
-   "note": "Cheng"
-  },
-  {
-   "period": "363645140",
-   "name": "Chi Feng(秉益)",
-   "team": "二隊",
-   "score": 835500,
+   "score": 1578598,
    "note": ""
   },
   {
    "period": "363645140",
    "name": "仲亨(蕭黑黑)",
    "team": "四隊",
-   "score": 827722,
+   "score": 1390852,
    "note": "士勛朋友"
   },
   {
    "period": "363645140",
-   "name": "志宏",
-   "team": "四隊",
-   "score": 819431,
-   "note": "ting朋友/志宏B"
+   "name": "榮B",
+   "team": "主隊",
+   "score": 1382420,
+   "note": "主帳在主隊"
   },
   {
    "period": "363645140",
-   "name": "敖",
+   "name": "愷文(小蘇)",
+   "team": "主隊",
+   "score": 1362006,
+   "note": "3/12轉主隊"
+  },
+  {
+   "period": "363645140",
+   "name": "Alina",
+   "team": "三隊",
+   "score": 1742864,
+   "note": "邪惡教會隊伍"
+  },
+  {
+   "period": "363645140",
+   "name": "Palui",
+   "team": "主隊",
+   "score": 1324925,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "Maggie",
+   "team": "主隊",
+   "score": 1291150,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "Samuel",
+   "team": "主隊",
+   "score": 1288550,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "筱青",
    "team": "四隊",
-   "score": 817471,
+   "score": 1286394,
+   "note": "陳筱青(筱青)"
+  },
+  {
+   "period": "363645140",
+   "name": "張榮(張㨗榮)",
+   "team": "主隊",
+   "score": 1283611,
+   "note": "V帳6/8轉主隊夠麻吉(金牛仔-樂樂介紹)"
+  },
+  {
+   "period": "363645140",
+   "name": "祥倫(小丁)",
+   "team": "二隊",
+   "score": 1228216,
+   "note": "回歸(小丁)"
+  },
+  {
+   "period": "363645140",
+   "name": "耀威B遊",
+   "team": "四隊",
+   "score": 1245060,
+   "note": "耀威B"
+  },
+  {
+   "period": "363645140",
+   "name": "秉煊",
+   "team": "二隊",
+   "score": 1085644,
    "note": ""
   },
   {
    "period": "363645140",
-   "name": "Quynh",
+   "name": "俊男",
    "team": "二隊",
-   "score": 811200,
-   "note": "路人"
+   "score": 2470022,
+   "note": ""
   },
   {
    "period": "363645140",
    "name": "珮綺(秉益)",
    "team": "二隊",
-   "score": 799500,
+   "score": 976400,
    "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "源平",
-   "team": "二隊",
-   "score": 791074,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "立安(Rogor)",
-   "team": "四隊",
-   "score": 774435,
-   "note": "澤靜朋友/我考慮能轉隊"
-  },
-  {
-   "period": "363645140",
-   "name": "Angel",
-   "team": "二隊",
-   "score": 741632,
-   "note": "二隊芬英朋友"
   },
   {
    "period": "363645140",
    "name": "Andres",
    "team": "主隊",
-   "score": 738709,
+   "score": 1168151,
    "note": "路人"
   },
   {
    "period": "363645140",
-   "name": "淑屏",
-   "team": "二隊",
-   "score": 725047,
-   "note": "1/26轉二隊成員"
-  },
-  {
-   "period": "363645140",
-   "name": "貴英(ㄚ頭)",
-   "team": "二隊",
-   "score": 693450,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "裕翔",
-   "team": "四隊",
-   "score": 691680,
+   "name": "Thinh",
+   "team": "三隊",
+   "score": 1716850,
    "note": "路人"
   },
   {
    "period": "363645140",
-   "name": "沄湘B遊",
-   "team": "四隊",
-   "score": 684040,
-   "note": "社群隨心"
+   "name": "Zhi",
+   "team": "二隊",
+   "score": 2931700,
+   "note": "V帳"
   },
   {
    "period": "363645140",
-   "name": "李振郁",
+   "name": "麗君(曾麗君)",
    "team": "二隊",
-   "score": 681141,
+   "score": 640295,
    "note": ""
   },
   {
    "period": "363645140",
-   "name": "JOS",
-   "team": "四隊",
-   "score": 670300,
-   "note": "Han小號"
-  },
-  {
-   "period": "363645140",
-   "name": "莉娜A遊(張很大)",
-   "team": "四隊",
-   "score": 657006,
-   "note": "社群B（張很大）"
-  },
-  {
-   "period": "363645140",
-   "name": "Petrit",
+   "name": "Jane Lee",
    "team": "主隊",
-   "score": 648050,
-   "note": "路人(海藍前隊友)"
+   "score": 1129950,
+   "note": ""
   },
   {
    "period": "363645140",
-   "name": "白瑛(小泡)",
-   "team": "四隊",
-   "score": 633362,
-   "note": "社群小泡 B遊"
-  },
-  {
-   "period": "363645140",
-   "name": "Wei",
-   "team": "四隊",
-   "score": 618112,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "Dennis",
+   "name": "億凡",
    "team": "二隊",
-   "score": 586260,
-   "note": "路人"
+   "score": 2560800,
+   "note": ""
   },
   {
    "period": "363645140",
-   "name": "育傑",
-   "team": "三隊",
-   "score": 584450,
-   "note": "社群阿傑4轉3"
+   "name": "八寶美食",
+   "team": "四隊",
+   "score": 1103400,
+   "note": "社群(Ted)"
   },
   {
    "period": "363645140",
-   "name": "惠英(白色帽子)",
-   "team": "三隊",
-   "score": 584400,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "Sandy",
-   "team": "三隊",
-   "score": 574888,
+   "name": "Wenxuan Li(xuannn)",
+   "team": "二隊",
+   "score": 1936450,
    "note": ""
   },
   {
    "period": "363645140",
    "name": "YU Yang(羊🐑)",
    "team": "二隊",
-   "score": 564425,
+   "score": 674325,
    "note": ""
   },
   {
    "period": "363645140",
-   "name": "芬芳",
+   "name": "DAN",
+   "team": "四隊",
+   "score": 1054470,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "淑屏",
    "team": "二隊",
-   "score": 561200,
-   "note": "二隊芬英朋友"
+   "score": 840517,
+   "note": "1/26轉二隊成員"
+  },
+  {
+   "period": "363645140",
+   "name": "Dennis",
+   "team": "二隊",
+   "score": 1039310,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "佳慧(世廷)",
+   "team": "三隊",
+   "score": 1634552,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "泓毅",
+   "team": "二隊",
+   "score": 1972450,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "白瑛(小泡)",
+   "team": "四隊",
+   "score": 985016,
+   "note": "社群小泡 B遊"
+  },
+  {
+   "period": "363645140",
+   "name": "錢來(莊錢來)",
+   "team": "二隊",
+   "score": 1185850,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "Yan Liang",
+   "team": "三隊",
+   "score": 1524000,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "米娜(世廷)",
+   "team": "三隊",
+   "score": 1415026,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "小寶(小丁)",
+   "team": "二隊",
+   "score": 1020336,
+   "note": "回歸(小丁)"
+  },
+  {
+   "period": "363645140",
+   "name": "Lilian(Tata bear)",
+   "team": "三隊",
+   "score": 1339040,
+   "note": "5/28轉三隊"
+  },
+  {
+   "period": "363645140",
+   "name": "敖",
+   "team": "四隊",
+   "score": 959366,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "宥穎(Chen_1119)",
+   "team": "四隊",
+   "score": 939613,
+   "note": "慧琴女兒同學"
+  },
+  {
+   "period": "363645140",
+   "name": "志宏",
+   "team": "四隊",
+   "score": 937540,
+   "note": "ting朋友/志宏B"
+  },
+  {
+   "period": "363645140",
+   "name": "立安(Rogor)",
+   "team": "四隊",
+   "score": 906554,
+   "note": "澤靜朋友/我考慮能轉隊"
+  },
+  {
+   "period": "363645140",
+   "name": "子龍(Cheng)",
+   "team": "主隊",
+   "score": 903550,
+   "note": "把其他隊伍的帳號移到2隊 5/4二隊轉主隊"
+  },
+  {
+   "period": "363645140",
+   "name": "Thao",
+   "team": "三隊",
+   "score": 1159650,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "Wei",
+   "team": "四隊",
+   "score": 874562,
+   "note": "路人"
   },
   {
    "period": "363645140",
    "name": "孜璇A遊(張很大)",
    "team": "四隊",
-   "score": 556400,
+   "score": 866050,
    "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "悠悠",
+   "team": "四隊",
+   "score": 864150,
+   "note": "Cheng"
+  },
+  {
+   "period": "363645140",
+   "name": "Nina(柚子)",
+   "team": "二隊",
+   "score": 263272,
+   "note": "轉二隊11/11"
+  },
+  {
+   "period": "363645140",
+   "name": "森峯(11)",
+   "team": "四隊",
+   "score": 839100,
+   "note": "回歸(11)"
+  },
+  {
+   "period": "363645140",
+   "name": "莉娜A遊(張很大)",
+   "team": "四隊",
+   "score": 836986,
+   "note": "社群B（張很大）"
+  },
+  {
+   "period": "363645140",
+   "name": "沄湘B遊",
+   "team": "四隊",
+   "score": 817355,
+   "note": "社群隨心"
+  },
+  {
+   "period": "363645140",
+   "name": "裕翔",
+   "team": "四隊",
+   "score": 815980,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "黃彥豪(豪)",
+   "team": "二隊",
+   "score": 1497756,
+   "note": "V帳(路人)"
+  },
+  {
+   "period": "363645140",
+   "name": "惠英(白色帽子)",
+   "team": "三隊",
+   "score": 1013400,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "Petrit",
+   "team": "主隊",
+   "score": 791550,
+   "note": "路人(海藍前隊友)"
+  },
+  {
+   "period": "363645140",
+   "name": "Duc",
+   "team": "三隊",
+   "score": 981200,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "小英(小丁)",
+   "team": "三隊",
+   "score": 965777,
+   "note": "回歸(小丁)"
+  },
+  {
+   "period": "363645140",
+   "name": "Angel",
+   "team": "二隊",
+   "score": 902296,
+   "note": "二隊芬英朋友"
+  },
+  {
+   "period": "363645140",
+   "name": "Sandy",
+   "team": "三隊",
+   "score": 792449,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "Tat",
+   "team": "三隊",
+   "score": 789700,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "JOS",
+   "team": "四隊",
+   "score": 723306,
+   "note": "Han小號"
   },
   {
    "period": "363645140",
    "name": "孜璇B遊(張很大)",
    "team": "四隊",
-   "score": 554906,
+   "score": 683106,
    "note": "社群B（張很大）"
+  },
+  {
+   "period": "363645140",
+   "name": "Shixuan(小丁)",
+   "team": "二隊",
+   "score": 2993054,
+   "note": "回歸(小丁)"
+  },
+  {
+   "period": "363645140",
+   "name": "Chun(Ting)",
+   "team": "二隊",
+   "score": 2783775,
+   "note": "回歸(Ting)"
+  },
+  {
+   "period": "363645140",
+   "name": "Xin(Ting)",
+   "team": "三隊",
+   "score": 782625,
+   "note": "回歸(Ting)"
   },
   {
    "period": "363645140",
    "name": "奕晴",
    "team": "三隊",
-   "score": 547400,
+   "score": 776000,
    "note": ""
   },
   {
    "period": "363645140",
-   "name": "麗君(曾麗君)",
+   "name": "林慶B",
    "team": "二隊",
-   "score": 546111,
-   "note": ""
+   "score": 2472000,
+   "note": "回歸(芳芳)"
   },
   {
    "period": "363645140",
-   "name": "Phong",
-   "team": "三隊",
-   "score": 543462,
+   "name": "Lisheng(台北大叔)",
+   "team": "四隊",
+   "score": 628032,
    "note": ""
   },
   {
    "period": "363645140",
    "name": "紫涵(JZH)",
    "team": "三隊",
-   "score": 542262,
+   "score": 621525,
    "note": "轉三隊轉四"
+  },
+  {
+   "period": "363645140",
+   "name": "育傑",
+   "team": "三隊",
+   "score": 768305,
+   "note": "社群阿傑4轉3"
   },
   {
    "period": "363645140",
    "name": "EGGHEAD",
    "team": "四隊",
-   "score": 538500,
+   "score": 604500,
    "note": "社群蛋頭  阿傑朋友"
   },
   {
    "period": "363645140",
-   "name": "Lisheng(台北大叔)",
+   "name": "Dong",
    "team": "四隊",
-   "score": 505622,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "Duncan",
-   "team": "三隊",
-   "score": 492213,
+   "score": 595300,
    "note": "路人"
   },
   {
    "period": "363645140",
-   "name": "Tat",
-   "team": "三隊",
-   "score": 449700,
+   "name": "玉梅(卉均)",
+   "team": "四隊",
+   "score": 585404,
+   "note": "回歸(卉均)"
+  },
+  {
+   "period": "363645140",
+   "name": "財成",
+   "team": "四隊",
+   "score": 567750,
+   "note": "榆介朋友"
+  },
+  {
+   "period": "363645140",
+   "name": "Nnie",
+   "team": "四隊",
+   "score": 520195,
    "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "榆介",
-   "team": "三隊",
-   "score": 426000,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "郭珮玉",
-   "team": "三隊",
-   "score": 401375,
-   "note": ""
   },
   {
    "period": "363645140",
    "name": "Beshoy",
    "team": "四隊",
-   "score": 400506,
+   "score": 516006,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "Peter",
+   "team": "四隊",
+   "score": 506650,
+   "note": "路人"
+  },
+  {
+   "period": "363645140",
+   "name": "芬芳",
+   "team": "二隊",
+   "score": 755200,
+   "note": "二隊芬英朋友"
+  },
+  {
+   "period": "363645140",
+   "name": "華城",
+   "team": "主隊",
+   "score": 497098,
+   "note": "V帳"
+  },
+  {
+   "period": "363645140",
+   "name": "Duncan",
+   "team": "三隊",
+   "score": 634621,
    "note": "路人"
   },
   {
    "period": "363645140",
    "name": "沛詩",
    "team": "四隊",
-   "score": 396750,
+   "score": 461250,
    "note": "淑珍挨打號"
   },
   {
    "period": "363645140",
-   "name": "Peter",
-   "team": "四隊",
-   "score": 396550,
-   "note": "路人"
+   "name": "榆介",
+   "team": "三隊",
+   "score": 630000,
+   "note": ""
   },
   {
    "period": "363645140",
-   "name": "Nnie",
+   "name": "Phong",
+   "team": "三隊",
+   "score": 604984,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "Lixian",
    "team": "四隊",
-   "score": 379595,
-   "note": "路人"
+   "score": 428625,
+   "note": "(社群莉嫻) 順風女友"
   },
   {
    "period": "363645140",
    "name": "富翔(羊羽)",
    "team": "四隊",
-   "score": 365350,
+   "score": 423950,
    "note": "社群羊羽"
   },
   {
    "period": "363645140",
-   "name": "財成",
+   "name": "子晴",
    "team": "四隊",
-   "score": 363750,
-   "note": "榆介朋友"
+   "score": 415800,
+   "note": "娟朋友 當初3轉4"
   },
   {
    "period": "363645140",
-   "name": "小梅",
+   "name": "郭珮玉",
    "team": "三隊",
-   "score": 355905,
+   "score": 497875,
    "note": ""
   },
   {
    "period": "363645140",
    "name": "Ganesh",
    "team": "三隊",
-   "score": 340500,
+   "score": 463500,
    "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "宜芳B-1芳小V(B遊)",
+   "team": "二隊",
+   "score": 2223000,
+   "note": "回歸(11)"
   },
   {
    "period": "363645140",
    "name": "Hasan",
    "team": "三隊",
-   "score": 330400,
+   "score": 449060,
    "note": "路人"
   },
   {
    "period": "363645140",
-   "name": "華城",
-   "team": "主隊",
-   "score": 328288,
-   "note": "V帳"
-  },
-  {
-   "period": "363645140",
-   "name": "Dong",
-   "team": "四隊",
-   "score": 315500,
-   "note": "路人"
-  },
-  {
-   "period": "363645140",
-   "name": "子晴",
-   "team": "四隊",
-   "score": 299400,
-   "note": "娟朋友 當初3轉4"
-  },
-  {
-   "period": "363645140",
-   "name": "Nina(柚子)",
-   "team": "主隊",
-   "score": 263272,
+   "name": "小梅",
+   "team": "三隊",
+   "score": 431127,
    "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "梓倫",
+   "team": "四隊",
+   "score": 169050,
+   "note": "勇智挨打"
+  },
+  {
+   "period": "363645140",
+   "name": "湘湘",
+   "team": "主隊",
+   "score": 40200,
+   "note": ""
+  },
+  {
+   "period": "363645140",
+   "name": "娟娟",
+   "team": "主隊",
+   "score": 6800,
+   "note": "V帳"
   },
   {
    "period": "363645140",
    "name": "Laxman",
    "team": "三隊",
-   "score": 258260,
+   "score": 275860,
    "note": "路人"
   },
   {
    "period": "363645140",
-   "name": "Lixian",
-   "team": "四隊",
-   "score": 227325,
-   "note": "(社群莉嫻) 順風女友"
+   "name": "Mei(芳芳)",
+   "team": "三隊",
+   "score": 272045,
+   "note": "回歸(芳芳)"
   },
   {
    "period": "363645140",
@@ -1566,24 +1650,10 @@
   },
   {
    "period": "363645140",
-   "name": "Mei",
-   "team": "三隊",
-   "score": 167239,
-   "note": "芳芳小隻在練"
-  },
-  {
-   "period": "363645140",
-   "name": "湘湘",
+   "name": "世廷",
    "team": "主隊",
-   "score": 37200,
-   "note": ""
-  },
-  {
-   "period": "363645140",
-   "name": "娟娟",
-   "team": "主隊",
-   "score": 6000,
-   "note": "V帳"
+   "score": 1157052,
+   "note": "路人轉主隊"
   },
   {
    "period": "862069232",
